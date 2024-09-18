@@ -427,8 +427,8 @@
 
   .btn-type {
     font-size: 8px; /* Ukuran font tombol lebih kecil */
-    padding: 3px 6px !important; /* Kurangi padding tombol *//
-    width: 90px !important; /* Kurangi lebar tombol */
+    padding: 3px 6px !important; /* Kurangi padding tombol */
+    height: 40px;
   }
 
   .custom-btn-detail {
