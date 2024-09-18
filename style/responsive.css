@@ -463,4 +463,38 @@
     height: 35px !important; /* Mengurangi ukuran tinggi tombol */
     padding: 3px 8px !important; /* Mengurangi padding tombol */
   }
+
+  .footer {
+    padding: 10px 0;
+  }
+
+  .footer h5 {
+      font-size: 14px;
+  }
+
+  .footer p, .footer ul li a {
+      font-size: 12px;
+  }
+
+  .footer .logo-image {
+      width: 80px; /* Kurangi ukuran logo */
+  }
+
+  .footer .icon-box {
+      width: 30px;
+      height: 30px;
+      font-size: 14px;
+  }
+
+  .footer .social-link span {
+      font-size: 12px;
+  }
+
+  .footer .footer-section {
+      margin-bottom: 10px; /* Mengurangi jarak antar section */
+  }
+
+  .footer-copyright p {
+      font-size: 10px;
+  }
 }
