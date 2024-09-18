@@ -422,12 +422,13 @@
   }
 
   .card p {
-    font-size: 14px; /* Ukuran teks yang lebih kecil */
+    font-size: 16px; /* Ukuran teks yang lebih kecil */
   }
 
   .btn-type {
     font-size: 8px; /* Ukuran font tombol lebih kecil */
     padding: 3px 6px !important; /* Kurangi padding tombol *//
+    width: 90px !important; /* Kurangi lebar tombol */
   }
 
   .custom-btn-detail {
