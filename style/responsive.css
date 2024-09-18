@@ -392,16 +392,16 @@
 
 @media only screen and (max-width: 412px) {
   #about {
-    margin-bottom: 1rem;
+    margin-bottom: 1rem !important;
   }
 
   #produk {
-    margin-top: 1rem;
-    margin-bottom: 1rem;
+    margin-top: 1rem !important;
+    margin-bottom: 1rem !important;
   }
 
   #fasilitas {
-    margin-top: 1rem;
+    margin-top: 1rem !important;
   }
 
   .custom-image {
