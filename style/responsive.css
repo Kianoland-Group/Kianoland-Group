@@ -436,6 +436,10 @@
     width: 90px !important; /* Kurangi lebar tombol */
   }
 
+  h3.custom-heading {
+    text-align: start;
+  } 
+
   h2.custom-heading {
     font-size: 20px; /* Perkecil judul */
   }
