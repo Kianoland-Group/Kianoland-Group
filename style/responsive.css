@@ -391,19 +391,6 @@
 }
 
 @media only screen and (max-width: 412px) {
-  #about {
-    margin-bottom: 1rem !important;
-  }
-
-  #produk {
-    margin-top: 1rem !important;
-    margin-bottom: 1rem !important;
-  }
-
-  #fasilitas {
-    margin-top: 1rem !important;
-  }
-
   .custom-image {
     height: 300px; /* Sesuaikan dengan ukuran yang diinginkan */
     object-fit: cover; /* Menjaga proporsi gambar */
