@@ -392,8 +392,8 @@
 
 @media only screen and (max-width: 412px) {
   .custom-image {
-      height: 300px; /* Sesuaikan dengan ukuran yang diinginkan */
-      object-fit: cover; /* Menjaga proporsi gambar */
+    height: 300px; /* Sesuaikan dengan ukuran yang diinginkan */
+    object-fit: cover; /* Menjaga proporsi gambar */
   }
 
   #hero-produk {
@@ -428,7 +428,6 @@
   .btn-type {
     font-size: 8px; /* Ukuran font tombol lebih kecil */
     padding: 3px 6px !important; /* Kurangi padding tombol */
-    height: 40px;
   }
 
   .custom-btn-detail {
