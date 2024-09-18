@@ -1,0 +1,462 @@
+/* Mengatur menuToggle untuk tersembunyi pada tampilan desktop */
+.menuToggle {
+  display: none;
+}
+/* No additional CSS required for the basic responsive behavior */
+
+/* `sm` applies to x-small devices (portrait phones, less than 576px) */
+@media (min-width: 170px) and (max-width: 767px) {
+
+  #menu {
+    width: 100vw; /* Lebar penuh layar */
+    padding: 20px; /* Kurangi padding untuk ruang yang lebih baik */
+    padding-top: 70px; /* Kurangi padding top sesuai kebutuhan */
+  }
+
+  #menuToggle {
+    top: 20px; /* Kurangi jarak dari atas */
+    right: 20px; /* Kurangi jarak dari kanan */
+  }
+
+  .intro-text {
+    font-size: 16px;
+  }
+
+/* ====================================================================================================
+============ PRODUK SECTION ===========================================================================
+==================================================================================================== */
+
+.produk-section .row > div {
+  margin-bottom: 1rem; /* Optional: Adds spacing between items when stacked */
+}
+
+/* ====================================================================================================
+============ IKLAN POPUP ==============================================================================
+==================================================================================================== */
+
+  .popup-container {
+    flex-direction: column;
+    height: 100vh;
+    width: 100%;
+    overflow-y: auto; /* Ensure overflow is active if content exceeds viewport */
+    justify-content: flex-start;
+    box-sizing: border-box;
+  }
+
+  .popup-box {
+    width: 100%; /* Full width for smaller screens */
+    max-width: none; /* Remove max-width constraint */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: visible;
+    height: max-content;
+  }
+
+  .popup-content form button {
+    background-color: #ef3340;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    font-size: 16px;
+    width: 100%;
+  }
+
+  .popup-content {
+    width: 100%;
+    padding: 40px; /* Consistent padding for content spacing */
+  }
+
+  .dialog-close-button-1 {
+    display: block; /* Show close button 1 */
+  }
+
+  .dialog-close-button-2 {
+    display: none; /* Hide close button 2 */
+  }
+}
+
+/* `md` applies to small devices (landscape phones, less than 768px) */
+@media (min-width: 768px) {
+
+/* ====================================================================================================
+============ IKLAN POPUP ==============================================================================
+==================================================================================================== */
+
+  .popup-container {
+    flex-direction: column;
+    height: 100vh;
+    width: 100%;
+    overflow-y: auto; /* Pastikan overflow aktif jika konten melebihi viewport */
+    justify-content: flex-start;
+    box-sizing: border-box;
+  }
+
+  .popup-box {
+    width: 100%;
+    max-width: 720px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: visible;
+  }
+
+  .popup-content form button {
+    background-color: #ef3340;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    font-size: 16px;
+    width: 100%;
+  }
+
+  .popup-content {
+    width: 100%;
+    padding: 40px; /* Padding konsisten untuk jarak konten */
+  }
+
+  .dialog-close-button-1 {
+    display: block; /* Tampilkan tombol tutup 1 */
+  }
+
+  .dialog-close-button-2 {
+    display: none; /* Sembunyikan tombol tutup 2 */
+  }
+}
+
+@media (max-width: 768px) {
+
+/* ====================================================================================================
+============ CONTACT SECTION ==========================================================================
+==================================================================================================== */
+
+  .btn-section-contact {
+    justify-content: flex-start !important; /* Align ke start pada layar kecil */
+  }
+
+  #contact .col-md-6 {
+    margin-bottom: 35px;
+  }
+
+  #contact .row {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+/* Media query untuk layar dengan lebar maksimum 991px */
+@media screen and (max-width: 992px) {
+
+/* ====================================================================================================
+============ PRODUK SECTION ===========================================================================
+==================================================================================================== */
+
+  .row.g-0 {
+    margin: 0;
+    padding: 0;
+  }
+
+  .col-3.p-0 {
+    padding: 0;
+    width: 1000px; /* Set width of column */
+    margin: 0 auto; /* Center column */
+  }
+
+  .produk-section .row {
+    flex-direction: column;
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+
+  .produk-section .col-12 {
+    flex: 0 0 100%;
+    max-width: 100%;
+    margin-bottom: 1rem;
+  }
+
+  .produk-box {
+    margin-left: auto;
+    margin-right: auto;
+    max-height: 250px;
+    width: 100%;
+  }
+
+  .produk-box img {
+    width: 100%;
+    max-height: 250px;
+    object-fit: cover;
+    display: block;
+  }
+
+  .col-3 .p-0 {
+    width: 1000px;
+  }
+
+  #produk {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1200px; /* Sesuaikan dengan lebar maksimum yang diinginkan */
+  }
+}
+
+/* `lg` applies to medium devices (tablets, less than 992px) */
+@media (min-width: 992px) {
+
+/* ====================================================================================================
+============ IKLAN POPUP ==============================================================================
+==================================================================================================== */
+
+  .popup-container {
+    flex-direction: column;
+    height: 100vh;
+    width: 100%;
+    overflow-y: auto; /* Pastikan overflow aktif jika konten melebihi viewport */
+    justify-content: flex-start;
+    box-sizing: border-box;
+  }
+
+  .popup-box {
+    width: 100%;
+    max-width: 720px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: visible;
+  }
+
+  .popup-content form button {
+    background-color: #ef3340;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    font-size: 16px;
+    width: 100%;
+  }
+
+  .popup-content {
+    width: 100%;
+    padding: 40px; /* Padding konsisten untuk jarak konten */
+  }
+
+  .dialog-close-button-1 {
+    display: block; /* Tampilkan tombol tutup 1 */
+  }
+
+  .dialog-close-button-2 {
+    display: none; /* Sembunyikan tombol tutup 2 */
+  }
+}
+
+/* Responsive Adjustments for screen width below 1024px and height below 600px */
+@media (min-width: 1400px) {
+
+/* ====================================================================================================
+============ IKLAN POPUP ==============================================================================
+==================================================================================================== */
+
+  .popup-container {
+    flex-direction: row;
+    height: 100vh;
+    width: 100%;
+    justify-content: center; /* Center vertically */
+    box-sizing: border-box;
+    padding: 60px 0; /* Margin from top and bottom of the viewport */
+    overflow: hidden; /* Prevent scrolling within the popup */
+  }
+
+  .popup-box {
+    width: 100%;
+    max-width: 720px; /* Default max-width */
+    /* Center horizontally */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .popup-content form button {
+    background-color: #ef3340;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px; /* Default padding */
+    font-size: 16px; /* Default font size */
+    width: 100%;
+  }
+
+  .popup-content {
+    width: 100%;
+    padding: 40px; /* Default padding */
+  }
+
+  .dialog-close-button-1 {
+    display: none; /* Show close button 1 */
+  }
+
+  .dialog-close-button-2 {
+    display: block; /* Hide close button 2 */
+  }
+}
+
+/* CSS untuk tampilan responsif */
+@media (max-width: 576px) {
+
+/* ====================================================================================================
+============ FOOTER ===================================================================================
+==================================================================================================== */
+
+  .footer .container {
+      display: flex;
+      flex-direction: column;
+  }
+
+  .footer .row > div {
+      flex: none;
+      width: 100%;
+      order: initial; /* Urutan default */
+  }
+
+  .footer .social-media {
+      order: 1;
+  }
+
+  .footer .company-info {
+      order: 2;
+  }
+
+  .footer .links, .footer .services, .footer .support {
+      order: 3;
+  }
+}
+
+@media (max-width: 575.98px) {
+
+  .fasilitas-box {
+    flex: 0 0 100%; /* Pastikan elemen memenuhi 100% lebar kontainernya */
+    height: 100%; /* Pastikan elemen memenuhi tinggi kontainernya */
+    scroll-snap-align: start;
+    position: relative; /* Untuk menempatkan elemen di dalam box secara benar */
+  }
+
+  .fasilitas-box img {
+    width: 100%; /* Gambar akan memenuhi lebar fasilitas-box */
+    height: 100%; /* Gambar juga akan memenuhi tinggi fasilitas-box */
+    object-fit: cover; /* Gambar akan diatur untuk menyesuaikan area tanpa mengubah proporsi */
+  }
+
+  .svg-wrapper {
+    position: absolute;
+    top: 55%; /* Posisi dari atas */
+    left: 50%; /* Posisi horizontal di tengah */
+    transform: translateX(-50%); /* Memastikan SVG berada tepat di tengah */
+    z-index: 10; /* Tetap di atas elemen lainnya */
+    width: 100%; /* Opsional, sesuaikan dengan ukuran kontainer */
+    text-align: center; /* Pastikan svg berada di tengah dalam wrapper */
+  }
+
+.text-fasilitas {
+    position: absolute;
+    bottom: 10px; /* Posisi teks di bagian bawah */
+    left: 50%; /* Posisi horizontal di tengah */
+    transform: translateX(-50%); /* Memastikan teks tepat di tengah */
+    z-index: 9; /* Pastikan teks berada di bawah SVG */
+    color: white;
+    font-size: 16px;
+    text-align: center;
+    width: 100%; /* Memastikan teks mengambil lebar penuh */
+  }
+
+  .col-3.fasilitas-box {
+    padding: 0;
+    width: auto;
+    margin: 0 auto;
+  }
+
+  .custom-heading {
+    text-align: center;
+  }
+
+  .scroll-container {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .card {
+    flex: 0 0 auto;
+    max-width: 100%;
+  }
+
+  .scroll-container {
+    align-items: center;
+  }
+
+  /* Hide progress bar by default */
+  #responsiveProgressBar, #responsiveProgressBarKiano {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 412px) {
+  .custom-image {
+      height: 300px; /* Sesuaikan dengan ukuran yang diinginkan */
+      object-fit: cover; /* Menjaga proporsi gambar */
+  }
+
+  #hero-produk {
+    padding: 0; /* Menghapus padding di kiri dan kanan */
+    margin: 1px auto 20px; /* Jarak dari atas (untuk header), auto untuk center, dan bawah untuk menghindari tabrakan */
+  }
+
+  .image-container-produk {
+    width: 100%; /* Pastikan lebar gambar menutupi layar penuh */
+    height: auto; /* Agar tinggi menyesuaikan secara proporsional */
+    padding-top: 0; /* Menghapus padding di bagian atas untuk layar kecil */
+    clip-path: none; /* Menghapus clip-path agar tidak memotong gambar */
+    padding-top: 80px;
+  }
+
+  #hero-image-produk {
+    width: 100%; /* Pastikan gambar memenuhi layar penuh */
+    height: auto; /* Menjaga rasio gambar */
+    margin-top: 0; /* Hapus margin top agar gambar sepenuhnya sesuai dengan layar */
+    border-radius: 0; /* Hilangkan border-radius pada layar kecil */
+  }
+
+  .card-img-top {
+    max-height: 300px; /* Sesuaikan tinggi sesuai kebutuhan */
+    object-fit: cover; /* Memastikan gambar tetap proporsional */
+  }
+
+  .card p {
+    font-size: 14px; /* Ukuran teks yang lebih kecil */
+  }
+
+  .btn-type {
+    font-size: 8px; /* Ukuran font tombol lebih kecil */
+    padding: 3px 6px !important; /* Kurangi padding tombol *//
+  }
+
+  .custom-btn-detail {
+    font-size: 6px; /* Ukuran font lebih kecil */
+    padding: 2px 4px !important; /* Kurangi padding tombol "Detail" lebih lanjut */
+    width: 90px !important; /* Kurangi lebar tombol */
+  }
+
+  h2.custom-heading {
+    font-size: 20px; /* Perkecil judul */
+  }
+
+  .section-gap {
+    padding: 20px 0; /* Kurangi padding pada section */
+  }
+
+  #type {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  #fasilitas, #news {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .custom-btn-berita {
+    width: 120px; /* Mengurangi ukuran lebar tombol */
+    height: 35px; /* Mengurangi ukuran tinggi tombol */
+    padding: 3px 8px; /* Mengurangi padding tombol */
+  }
+}

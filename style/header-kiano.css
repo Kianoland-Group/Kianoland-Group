@@ -1,0 +1,187 @@
+/* Gaya Logo */
+.logo {
+  height: 50px;
+  width: auto; /* Pertahankan rasio aspek */
+}
+
+/* Gaya brand navbar dan tautan */
+header {
+  background-color: white; /* Default background */
+  transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Added box-shadow transition */
+}
+
+/* Header hover effect */
+header:hover {
+  background-color: white; /* Background color changes to white on hover */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.07); /* Thinner shadow on hover */
+}
+
+header.scrolled {
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.07); /* Thinner shadow when scrolled */
+}
+
+/* Navbar link styling */
+.navbar-brand,
+.navbar-nav .nav-link {
+  font-weight: 400; /* Set font weight */
+  font-size: 16px;  /* Set font size */
+  margin-right: 20px; /* Space between links */
+  text-transform: uppercase; /* Uppercase text */
+  padding-top: 1px; /* Reduce padding to decrease height */
+  padding-bottom: 1px; /* Reduce padding to decrease height */
+  color: black; /* Default color for links */
+  position: relative; /* Required for pseudo-element positioning */
+}
+
+/* Active link color */
+.navbar-nav .nav-item .nav-link.active {
+  color: black;
+}
+
+/* Style for dropdown items */
+.dropdown-item {
+  color: black; /* Default text color */
+  transition: color 0.3s ease; /* Smooth transition for color change */
+}
+
+.dropdown-item:hover {
+  color: rgb(0, 113, 200); /* Color on hover */
+}
+
+.dropdown-item.active {
+  color: rgb(0, 113, 200); /* Active color */
+}
+
+/* Navbar item styling */
+.navbar-nav .nav-item:last-child .nav-link {
+  margin-right: 0;
+}
+
+.navbar {
+  padding-top: 0; /* Adjust padding */
+  padding-bottom: 0; /* Adjust padding */
+}
+
+/* Navbar brand image */
+.navbar-brand img {
+  height: 50px; /* Set image height */
+  width: auto; /* Maintain aspect ratio */
+}
+
+/* Hover effect for links */
+.nav-link {
+  color: white; /* Default color for links */
+  position: relative;
+  display: inline-block;
+  padding: 10px 20px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+/* Hover effect for links */
+.nav-link:hover {
+  color: rgb(0, 0, 0); /* Change color on hover */
+}
+
+/* Pseudo-element for link background */
+.nav-link::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: calc(100% + 20px);
+  height: calc(100% + 20px);
+  background: rgba(0, 0, 0, 0.1); /* Semi-transparent background */
+  border-radius: 50px; /* Rounded corners */
+  z-index: -1;
+  transition: background 0.3s ease, transform 0.3s ease;
+  transform: translate(-50%, -50%) scale(0);
+}
+
+.nav-link:hover::before {
+  transform: translate(-50%, -50%) scale(1);
+  background: rgba(0, 0, 0, 0.2); /* Darker background on hover */
+}
+
+/* Dropdown menu styling */
+.dropdown-menu {
+  display: none; /* Hide dropdown by default */
+  position: absolute;
+  background: white; /* White background for dropdown */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.07); /* Thinner shadow */
+  z-index: 1000; /* Ensure dropdown is on top */
+  transition: opacity 0.3s ease; /* Smooth transition */
+}
+
+/* Show dropdown on hover */
+.nav-item.dropdown:hover .dropdown-menu {
+  display: block; /* Show dropdown on hover */
+  opacity: 1; /* Ensure visibility */
+  visibility: visible;
+}
+
+/* Dropdown item styling */
+.dropdown-menu .dropdown-item {
+  padding: 10px 20px; /* Padding for dropdown items */
+  border-radius: 15px; /* Rounded corners */
+  transition: background 0.3s ease; /* Smooth background transition */
+}
+
+/* Hover effect for dropdown items */
+.dropdown-menu .dropdown-item:hover {
+  background: rgba(0, 0, 0, 0.1); /* Light background on hover */
+}
+
+.custom-btn-detail {
+  padding: 4px 12px;
+  font-size: 12px;
+  border: 1px solid #000;
+  border-radius: 50px;
+  background: none;
+  display: inline-block; /* Ensures proper button display */
+  margin-left: auto; /* Pushes the button to the right */
+  width: 113px;
+}
+
+.custom-btn-detail {
+  margin: 0; /* Reset margins */
+  padding: 4px 12px;
+}
+
+.custom-btn-detail:hover {
+  border-color: #0071C8; /* Warna border berubah saat hover */
+}
+
+.custom-btn-berita {
+  background-color: #0071C8; /* Warna background tombol */
+  color: white; /* Warna teks tombol */
+  border: none; /* Menghilangkan border default */
+  padding: 5px 10px; /* Mengatur padding tombol */
+  cursor: pointer; /* Menambahkan pointer saat hover */
+  border-radius: 50px; /* Membuat sudut tombol sedikit melengkung */
+  width: 160px;
+  height: 45px;
+  transition: background-color 0.3s; /* Menghapus animasi transform dan box-shadow */
+}
+
+.custom-btn-berita:hover {
+  background-color: #005a99; /* Mengubah warna background saat hover */
+}
+
+.custom-btn-berita i {
+  transition: transform 0.3s; /* Animasi hanya untuk panah */
+}
+
+.custom-btn-berita:hover i {
+  transform: translateX(5px); /* Menggerakkan panah ke kanan saat hover */
+}
+
+.subsidi-highlight {
+  color: #0071C8;
+}
+
+.dropdown-menu li {
+  padding: 5px;
+}

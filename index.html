@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kianoland Group</title>
+    <!-- Favicon -->
+    <link rel="icon" href="assets/favicon/Kianoland Group.ico" type="image/x-icon">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Google Fonts: Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style/responsive.css">
+    <link rel="stylesheet" href="style/responsive-header-kiano.css">
+    <link rel="stylesheet" href="style/header-home.css">
+</head>
+<body>
+
+<!-- =================================================================================================================================================================================================
+============ HEADER NAVBAR ===========================================================================================================================================================================
+================================================================================================================================================================================================== -->
+
+     <header class="py-3 fixed-top header-transparent">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <a class="navbar-brand" href="https://www.kianolandgroup.co.id">
+                    <img src="assets/Kianoland Group.png" alt="Property Logo" class="logo">
+                </a>
+                <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse d-lg-flex" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Produk
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="NLD 1.html">Natureland Kiano 1</a></li>
+                                <li><a class="dropdown-item" href="NLD 2.html">Natureland Kiano 2</a></li>
+                                <li><a class="dropdown-item" href="NLD 3.html">Natureland Kiano 3</a></li>
+                                <li><a class="dropdown-item" href="GJV.html">Green Jonggol Village</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#section_contact">Contact</a>
+                        </li>                        
+                    </ul>
+                </div>
+                <!-- Responsive Menu -->
+                <div id="menuToggle" aria-label="Navbar" class="d-lg-none menuToggle">
+                    <label for="menuCheckbox" class="visually-hidden">Toggle menu</label>
+                    <input type="checkbox" id="menuCheckbox">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <ul id="menu">
+                        <li><a href="index.html">Home</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" id="produkDropdown" aria-haspopup="true" aria-expanded="false">Produk</a>
+                            <ul class="dropdown-menu" aria-labelledby="produkDropdown">
+                                <li><a class="dropdown-item" href="NLD 1.html">Natureland Kiano 1</a></li>
+                                <li><a class="dropdown-item" href="NLD 2.html">Natureland Kiano 2</a></li>
+                                <li><a class="dropdown-item" href="NLD 3.html">Natureland Kiano 3</a></li>
+                                <li><a class="dropdown-item" href="GJV.html">Green Jonggol Village</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="#section_contact">Contact</a></li>
+                    </ul>
+                </div>                
+            </nav>
+        </div>
+    </header>
+
+    <script>
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            header.classList.toggle('scrolled', window.scrollY > 0);
+        });
+    </script>
+        
+<!-- =================================================================================================================================================================================================
+============ HERO SECTION - VIDEO ====================================================================================================================================================================
+================================================================================================================================================================================================== -->
+    
+    <section id="hero">
+        <video id="hero-video" autoplay muted loop>
+            <source src="assets/video/1.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </section>
+
+<!-- =================================================================================================================================================================================================
+============ TENTANG KAMI ============================================================================================================================================================================
+================================================================================================================================================================================================== -->
+
+    <section id="about" class="section-gap">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <h2 class="section-title">TENTANG KAMI</h2>
+                    <p class="intro-text">PT. KIANO KARYA CEMERLANG dan PT. FATTAHILLAH BERKAH ABADI, merupakan bagian integral dari KIANOLAND GROUP. Kami adalah perusahaan yang berbadan hukum Perseroan Terbatas (PT) dan dengan bangga berkontribusi dalam mendukung kebijakan Pemerintah Pusat terkait Program Pembangunan Perumahan. Bersama-sama, kami berkomitmen untuk memberikan kontribusi positif dalam pembangunan masyarakat melalui proyek- proyek perumahan yang berkualitas dan berkelanjutan.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+      
+<!-- =================================================================================================================================================================================================
+============ PRODUK SECTION ==========================================================================================================================================================================
+================================================================================================================================================================================================== -->
+    
+     <section id="produk" class="section-gap">
+        <div class="container">
+            <div class="row g-0 justify-content-center">
+                <div class="col-3 p-0">
+                    <div class="produk-box">
+                        <a href="NLD 1.html">
+                            <img src="assets/produk/kiano_1.jpg" alt="Natureland Kiano 1" class="img-fluid">
+                        </a>
+                        <div class="overlay">
+                            <div class="text-wrapper">
+                                <a href="NLD 1.html" class="text natureland">NATURELAND</a>
+                                <a href="NLD 1.html" class="text kiano">KIANO 1</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3 p-0">
+                    <div class="produk-box">
+                        <a href="NLD 2.html">
+                            <img src="assets/produk/kiano_2.jpg" alt="Natureland Kiano 2" class="img-fluid">
+                        </a>
+                        <div class="overlay">
+                            <div class="text-wrapper">
+                                <a href="NLD 2.html" class="text natureland">NATURELAND</a>
+                                <a href="NLD 2.html" class="text kiano">KIANO 2</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3 p-0">
+                    <div class="produk-box">
+                        <a href="NLD 3.html">
+                            <img src="assets/produk/kiano_3.jpeg" alt="Natureland Kiano 3" class="img-fluid">
+                        </a>
+                        <div class="overlay">
+                            <div class="text-wrapper">
+                                <a href="NLD 3.html" class="text natureland">NATURELAND</a>
+                                <a href="NLD 3.html" class="text kiano">KIANO 3</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3 p-0">
+                    <div class="produk-box">
+                        <a href="GJV.html">
+                            <img src="assets/produk/gjv.jpg" alt="Green Jonggol Village" class="img-fluid">
+                        </a>
+                        <div class="overlay">
+                            <div class="text-wrapper">
+                                <a href="GJV.html" class="text natureland">GREEN JONGGOL</a>
+                                <a href="GJV.html" class="text village">VILLAGE</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+        
+<!-- =================================================================================================================================================================================================
+============ FASILITAS SECTION =======================================================================================================================================================================
+================================================================================================================================================================================================== -->
+    
+    <section id="fasilitas" class="section-gap">
+        <div class="container">
+            <div class="row text-center mb-4">
+                <h2 class="custom-heading">FASILITAS</h2>
+            </div>          
+            <div class="row text-center">
+                <div class="col-md-4 mb-4"> <!-- Changed to col-md-4 for better layout consistency -->
+                    <img src="assets/fasilitas/kolam_renang.jpg" class="img-fluid fasilitas-image rounded-image" alt="Kolam Renang">
+                    <p class="fw-semibold text-start mt-2 large-font">Kolam Renang</p>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <img src="assets/fasilitas/club_house.jpg" class="img-fluid fasilitas-image rounded-image" alt="Club House">
+                    <p class="fw-semibold text-start mt-2 large-font">Club House</p>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <img src="assets/fasilitas/hangout_area.jpg" class="img-fluid fasilitas-image rounded-image" alt="Hangout Area">
+                    <p class="fw-semibold text-start mt-2 large-font">Hangout Area</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- =================================================================================================================================================================================================
+============ BERITA SECTION ==========================================================================================================================================================================
+================================================================================================================================================================================================== -->
+
+    <section id="news" class="section-gap">
+        <div class="container">
+            <div class="heading-container d-flex justify-content-between align-items-center">
+                <h2 class="custom-heading">BERITA</h2>
+                <button class="custom-btn-berita">Lihat Semua &nbsp;&nbsp;<i class="fas fa-arrow-right"></i></button>
+            </div>                                                
+            <br>
+            <div class="row">
+                <div class="col-lg-7 mb-4 custom-col">
+                    <div class="main-news custom-main-news">
+                        <img src="assets/berita/berita_1.jpg" class="img-fluid mb-3 custom-image" alt="Main News Image">
+                        <h3 class="mt-3 custom-heading">Laris Manis, Kiano Land Group Sukses</h3>
+                        <h3 class="custom-heading">Kembangkan 4 Proyek Properti</h3>
+                        <br>
+                        <p class="custom-paragraph"><strong>BOGOR, AMC.co.id</strong> – Meskipun dihadapkan pada ancaman resesi ekonomi global, namun fakta penjualan laris – manis membuat salah satu pengembang Kiano Land Group sukses kembangkan 4 proyek properti.</p>
+                        <p class="custom-paragraph">Direktur Utama PT. Kiano Karya Cemerlang (Kiano Land Group) Afrikani Indra mengatakan, keyakinan terhadap dampak resesi di sektor properti tidak akan seburuk yang dikhawatirkan.</p>
+                    </div>
+                </div>
+                <div class="col-lg-5 custom-col-right">
+                    <div class="sub-news mb-4 custom-sub-news">
+                        <div class="content custom-content">
+                            <h4 class="custom-sub-heading">Kianoland Tawarkan Hunian untuk Prajurit TNI AL</h4>
+                            <p class="custom-small-paragraph"><strong>JAKARTA, WartaGriya.Com</strong> – PT Kiano Karya Cemerlang (Kianoland) menawarkan hunian pribadi malalui Dinas TNI Angkatan Laut (PPMD TNI AL). Penawaran ini diharapkan mampu memenuhi kebutuhan hunian khususnya bagi anggota yang belum mempunyai rumah atau masih ngontrak.</p>
+                        </div>
+                        <div class="image custom-image-wrapper">
+                            <img src="assets/berita/berita_2.jpg" class="img-fluid custom-sub-image" alt="News Image 1">
+                        </div>
+                    </div>
+                    <div class="sub-news mb-4 custom-sub-news">
+                        <div class="content custom-content">
+                            <h4 class="custom-sub-heading">Resolusi 2023, Kiano Land Fokus Penyediaan Rumah Subsidi</h4>
+                            <p class="custom-small-paragraph"><strong>medianseas.com</strong> – Resolusi tahun baru 2023, Kiano Land Group akan lebih fokus pada pengembangan properti melalui penyediaan rumah subsidi hingga pengadaan lahan kavling.
+                                Meskipun di penghujung tahun, banyak hal telah terjadi di sepanjang 2022 mulai dari adaptasi pasca pandemi hingga tantangan baru terkait isu resesi ekonomi global.</p>
+                        </div>
+                        <div class="image custom-image-wrapper">
+                            <img src="assets/berita/berita_3.jpg" class="img-fluid custom-sub-image" alt="News Image 2">
+                        </div>
+                    </div>
+                    <div class="sub-news custom-sub-news">
+                        <div class="content custom-content">
+                            <h4 class="custom-sub-heading">PT. Kiano Karya Cemerlang</h4>
+                            <p class="custom-small-paragraph"><strong>Perumahan Natureland Kiano</strong> adalah sebuah perumahan modern di Bogor yang dikembangkan oleh pengembang PT. Kiano Karya Cemerlang.</p>
+                        </div>
+                        <div class="image custom-image-wrapper">
+                            <img src="assets/berita/berita_4.jpg" class="img-fluid custom-sub-image" alt="News Image 3">
+                        </div>
+                    </div>
+                </div>                
+            </div>
+        </div>
+    </section>
+
+<!-- =================================================================================================================================================================================================
+============ CONTACT SECTION =========================================================================================================================================================================
+================================================================================================================================================================================================== -->
+    
+    <section id="section_contact" class="contact_wrap js-scrollOn on">
+        <div class="overlay"></div> <!-- Added for semi-transparent overlay -->
+        <div class="container_inner container py-5">
+            <div class="row">
+                <div class="col-md-6 info_box">
+                    <h3 class="title notoBold text-white">CONTACT US</h3>
+                    <div class="contact_info">
+                        <a href="tel:+6285282592945" class="tel roboto text-white d-block">ADMIN 1: 0852-8259-2945</a>
+                        <a href="tel:+6285777538033" class="tel roboto text-white d-block">ADMIN 2: 0857-7753-8033</a>
+                        <a href="mailto:kianolandgroup@gmail.com" class="email text-white d-block">kianolandgroup@gmail.com</a>
+                    </div>
+                    <address class="text-white mt-2">
+                        JI. Kp. Tegal No.3, RT.002/RW.01, Jatisari, Kec. Cileungsi, Kabupaten Bogor, Jawa Barat.
+                    </address>
+                </div>
+                <div class="col-md-6 d-flex justify-content-center btn-section-contact">
+                    <div class="button-wrapper">
+                        <a href="https://wa.me/628111611724" class="btn btn-contact">Contact Us</a>
+                    </div>
+                </div>
+            </div>
+        </div>      
+    </section>
+
+<!-- =================================================================================================================================================================================================
+============ FLOATING WHATSAPP =======================================================================================================================================================================
+================================================================================================================================================================================================== -->
+    
+    <a href="https://wa.me/62811161172" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Contact us on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+    
+<!-- =================================================================================================================================================================================================
+============ FOOTER ==================================================================================================================================================================================
+================================================================================================================================================================================================== -->
+
+    <footer class="footer py-4 custom-footer">
+        <div class="container">
+            <div class="row">
+                <!-- Social Media -->
+                <div class="col-12 col-md-6 col-lg-3 mb-3 d-flex flex-column align-items-start text-start">
+                    <!-- Logo Perusahaan -->
+                    <div class="mb-3">
+                        <a href="https://www.kianolandgroup.co.id">
+                            <img src="assets/logo.png" alt="kianolandgroup" class="img-fluid logo-image">
+                        </a>
+                    </div>
+                    <div class="social-icons mb-3">
+                        <a href="https://facebook.com/kianolandgroup" class="d-flex align-items-center text-decoration-none mb-2 social-link facebook-link" target="_blank" rel="noopener">
+                            <div class="icon-box facebook me-2">
+                                <i class="fab fa-facebook-f"></i>
+                            </div>
+                            <span>Facebook</span>
+                        </a>
+                        <a href="https://tiktok.com/@kianolandgroup" class="d-flex align-items-center text-decoration-none mb-2 social-link tiktok-link" target="_blank" rel="noopener">
+                            <div class="icon-box tiktok me-2">
+                                <i class="fab fa-tiktok"></i>
+                            </div>
+                            <span>TikTok</span>
+                        </a>
+                        <a href="https://instagram.com/kianolandgroup" class="d-flex align-items-center text-decoration-none social-link instagram-link" target="_blank" rel="noopener">
+                            <div class="icon-box instagram me-2">
+                                <i class="fab fa-instagram"></i>
+                            </div>
+                            <span>Instagram</span>
+                        </a>                        
+                    </div>
+                </div>
+                <!-- Company Info -->
+                <div class="col-12 col-md-6 col-lg-3 mb-3 footer-section">
+                    <h5 class="text-dark">Developed By Kianoland Group</h5>
+                    <p class="text-dark">
+                        PT. KIANO KARYA CEMERLANG<br>
+                        FATTAHILLAH BERKAH ABADI<br>
+                        PT. KIANOAFRI MAJU BERKARYA<br>
+                        PT. KIANOAFRI MAJU BERSAMA
+                    </p>
+                </div>
+                <!-- Links -->
+                <div class="col-12 col-md-6 col-lg-2 mb-3 footer-section">
+                    <h5 class="text-dark">Perusahaan</h5>
+                    <ul class="list-unstyled text-dark">
+                        <li><a href="#" class="text-decoration-none">Tentang</a></li>
+                        <li><a href="#" class="text-decoration-none">Mitra</a></li>
+                        <li><a href="#" class="text-decoration-none">Marketing</a></li>
+                        <li><a href="#" class="text-decoration-none">Lokasi</a></li>
+                    </ul>
+                </div>
+                <div class="col-12 col-md-6 col-lg-2 mb-3 footer-section">
+                    <h5 class="text-dark">Layanan</h5>
+                    <ul class="list-unstyled text-dark">
+                        <li><a href="#" class="text-decoration-none">Produk</a></li>
+                        <li><a href="#" class="text-decoration-none">KPR</a></li>
+                    </ul>
+                </div>
+                <div class="col-12 col-md-6 col-lg-2 mb-3 footer-section dukungan-section">
+                    <h5 class="text-dark">Dukungan</h5>
+                    <ul class="list-unstyled text-dark">
+                        <li><a href="#" class="text-decoration-none">Syarat dan Ketentuan</a></li>
+                        <li><a href="#" class="text-decoration-none">Kebijakan Privasi</a></li>
+                        <li><a href="#" class="text-decoration-none">Ketentuan Mitra</a></li>
+                        <li><a href="#" class="text-decoration-none">Ketentuan Marketing</a></li>
+                    </ul>
+                </div>
+                <div class="col-12 text-start mt-3 footer-copyright">
+                    <p>&copy; Hak Cipta © <span id="current-year"></span> - PT. Kiano Karya Cemerlang</p>
+                </div>                
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById("current-year").textContent = new Date().getFullYear();
+    </script>
+
+<!-- =================================================================================================================================================================================================
+============ IKLAN POPUP =============================================================================================================================================================================
+================================================================================================================================================================================================== -->
+
+    <div class="popup-container" id="popup">
+        <!-- Box 1 dengan gambar -->
+        <div class="popup-box">
+            <div class="dialog-close-button-1">
+                <i class="fas fa-xmark"></i>
+            </div>
+            <img src="assets/ads/HUT RI 79.png" alt="Diskon Kemerdekaan">
+        </div>
+        <!-- Box 2 dengan teks dan form -->
+        <div class="popup-box">
+            <div class="dialog-close-button-2">
+                <i class="fas fa-xmark"></i>
+            </div>
+            <div class="popup-content">
+                <h2 class="py-4">Dapatkan Promo Kemerdekaan Hanya Booking 500 Ribu!</h2>
+                <p>Isi formulir di bawah ini untuk informasi promo Kemerdekaan dan kami akan segera menghubungi anda kembali.</p>
+                <form>
+                    <input type="text" id="nama-lengkap" name="nama-lengkap" placeholder="Nama Lengkap" required>
+                    <input type="email" id="email" name="email" placeholder="Email" autocomplete="email" required>
+                    <input type="text" id="no-handphone" name="no-handphone" placeholder="No Handphone" required>
+                </form>                
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Fungsi untuk menutup popup
+        document.addEventListener('click', function(event) {
+            const popupContainer = document.getElementById('popup');
+            const popupBoxes = document.querySelectorAll('.popup-box');
+
+            // Periksa apakah klik terjadi di luar popup-box
+            let clickedOutside = true;
+            popupBoxes.forEach(box => {
+                if (box.contains(event.target)) {
+                    clickedOutside = false;
+                }
+            });
+
+            if (clickedOutside) {
+                // Sembunyikan popup jika klik di luar
+                popupContainer.style.display = 'none';
+            }
+        });
+        document.addEventListener("DOMContentLoaded", function() {
+            setTimeout(function() {
+                console.log('Menampilkan modal'); // Cek apakah ini muncul di konsol
+                document.getElementById("popup").style.display = "flex";
+            }, 10000); // 10000 milliseconds = 10 seconds
+        });
+        // Fungsi untuk menutup popup saat tombol close di-click
+        document.querySelectorAll('.dialog-close-button-1, .dialog-close-button-2').forEach(function(button) {
+            button.onclick = function() {
+                document.getElementById("popup").style.display = "none"; // Sembunyikan popup
+            };
+        });
+    </script>
+
+<!-- =================================================================================================================================================================================================
+============ CUSTOM JS FOR SMOOTH SCROLLING ==========================================================================================================================================================
+================================================================================================================================================================================================== -->
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const smoothScroll = (event) => {
+                event.preventDefault();
+                const targetId = event.currentTarget.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({ behavior: 'smooth' });
+                }
+            };
+
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', smoothScroll);
+            });
+        });
+    </script>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

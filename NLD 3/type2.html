@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Natureland Kiano 3</title>
+    <!-- Favicon -->
+    <link rel="icon" href="../assets/favicon/Kianoland Group.ico" type="image/x-icon">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Google Fonts: Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../style/style.css">
+    <link rel="stylesheet" href="../style/responsive.css">
+    <link rel="stylesheet" href="../style/responsive-header-kiano.css">
+    <link rel="stylesheet" href="../style/header-kiano.css">
+</head>
+<body>
+
+<!-- =================================================================================================================================================================================================
+============ HEADER NAVBAR ===========================================================================================================================================================================
+================================================================================================================================================================================================== -->
+
+    <header class="py-3 fixed-top header-transparent">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <a class="navbar-brand" href="https://www.kianolandgroup.co.id">
+                    <img src="../assets/Kianoland Group.png" alt="Property Logo" class="logo">
+                </a>
+                <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse d-lg-flex" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="../index.html">Home</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Produk
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="../NLD 1.html">Natureland Kiano 1</a></li>
+                                <li><a class="dropdown-item" href="../NLD 2.html">Natureland Kiano 2</a></li>
+                                <li><a class="dropdown-item" href="../NLD 3.html">Natureland Kiano 3</a></li>
+                                <li><a class="dropdown-item" href="../GJV.html">Green Jonggol Village</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../about.html">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../NLD 3.html#contact">Contact</a>
+                        </li>                        
+                    </ul>
+                </div>
+                <!-- Responsive Menu -->
+                <div id="menuToggle" aria-label="Navbar" class="d-lg-none menuToggle">
+                    <label for="menuCheckbox" class="visually-hidden">Toggle menu</label>
+                    <input type="checkbox" id="menuCheckbox">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <ul id="menu">
+                        <li><a href="../index.html">Home</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" id="produkDropdown" aria-haspopup="true" aria-expanded="false">Produk</a>
+                            <ul class="dropdown-menu" aria-labelledby="produkDropdown">
+                                <li><a class="dropdown-item" href="../NLD 1.html">Natureland Kiano 1</a></li>
+                                <li><a class="dropdown-item" href="../NLD 2.html">Natureland Kiano 2</a></li>
+                                <li><a class="dropdown-item" href="../NLD 3.html">Natureland Kiano 3</a></li>
+                                <li><a class="dropdown-item" href="../GJV.html">Green Jonggol Village</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="../about.html">About</a></li>
+                        <li><a href="../NLD 3.html#contact">Contact</a></li>
+                    </ul>
+                </div>  
+            </nav>
+        </div>
+    </header>
+    
+    <script>
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            header.classList.toggle('scrolled', window.scrollY > 0);
+        });
+    </script>
+
+<!-- =================================================================================================================================================================================================
+============ HERO SECTION - GAMBAR ===================================================================================================================================================================
+================================================================================================================================================================================================== -->
+
+    <section id="hero-produk">
+        <div class="container">
+            <div class="image-container-produk"> <!-- Kontainer tambahan untuk gambar -->
+                <img src="../assets/hero/background_3.jpg" alt="Natureland Kiano 1" id="hero-image-produk"> <!-- Ubah ke elemen img -->
+            </div>
+        </div>
+    </section>  
+        
+<!-- =================================================================================================================================================================================================
+============ TIPE RUMAH SECTION ======================================================================================================================================================================
+================================================================================================================================================================================================== -->
+
+    <section class="py-3 section-gap"> <!-- Mengurangi padding atas dan bawah -->
+        <div class="container my-4"> <!-- Mengurangi margin atas dan bawah -->
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-4">
+                <div class="col">
+                    <div class="card image-container">
+                        <img src="../assets/kiano_1/cibarusah.jpeg" class="card-img-top" alt="Cibarusah">
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card image-container">
+                        <img src="../assets/produk/kiano_3.jpeg" class="card-img-top" alt="Natureland Kiano 3">
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card image-container">
+                        <img src="../assets/hero/background_about.jpg" class="card-img-top" alt="Tentang Natureland">
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card image-container more-image">
+                        <img src="../assets/kiano_1/1_1 - Photo.jpg" alt="Gambar 4" class="darkened-image">
+                        <div class="more-text">+ 5</div>
+                    </div>                    
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- =================================================================================================================================================================================================
+============ INFORMASI SECTION =======================================================================================================================================================================
+================================================================================================================================================================================================== -->
+
+    <section id="info-boxes" class="mt-4">
+        <div class="container">
+            <div class="d-flex">
+                <!-- Fasilitas Box -->
+                <div class="col-md-4 mb-4">
+                    <div class="info-box p-4">
+                        <h4 class="text-start fw-bold">Fasilitas</h4>
+                        <ul class="list-unstyled text-start">
+                            <li>Taman Bermain</li>
+                            <li>One Gate System</li>
+                            <li>Smart Door System</li>
+                            <li>Perkantoran Kiano</li>
+                            <li>Club House</li>
+                            <li>Mushola</li>
+                            <li>Sport Center</li>
+                            <li>Kolam Renang</li>
+                            <li>Jogging Track</li>
+                            <li>5 Menit Akses Tol Sukaragam</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Rumah Tipe 40/60 Box and Harga Box -->
+                <div class="ms-4 flex-grow-1">
+                    <div class="row">
+                        <div class="col-md-12 mb-4">
+                            <div class="info-box p-4">
+                                <h4 class="text-start fw-bold">Rumah Tipe 40/60</h4>
+                                <ul class="list-unstyled text-start">
+                                    <li>2 Kamar tidur</li>
+                                    <li>1 Kamar mandi</li>
+                                    <li>Ruang tamu</li>
+                                    <li>Carport</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="info-box p-4">
+                                <h4 class="text-start fw-bold">Rp. 456.000.000</h4>
+                                <div class="text-center">
+                                    <a href="https://wa.me/082118378460" class="custom-button">BOOKING!</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Additional Spesifikasi Section -->
+            <div class="d-flex">
+                <!-- Spesifikasi Hunian (Duplicated Section) -->
+                <div class="col-md-4 mb-4">
+                    <div class="info-box p-4">
+                        <h4 class="text-start fw-bold">Spesifikasi Hunian</h4>
+                        <div class="d-flex justify-content-start">
+                            <!-- First Column of Specifications -->
+                            <div class="col-md-5 p-0 m-0">
+                                <ul class="list-unstyled text-start">
+                                    <li>Pondasi : Batu kali</li>
+                                    <li>Sloof : Beton Bertulang</li>
+                                    <li>Dinding : Double Hebel</li>
+                                    <li>Finishing : Plester Aci dan Cat</li>
+                                    <li>Kusen : Alumunium dan Kayu</li>
+                                    <li>Pintu : Panel Solid Wood</li>
+                                    <li>Sanitasi : Closet Duduk</li>
+                                </ul>
+                            </div>
+                            <!-- Second Column of Specifications -->
+                            <div class="col-md-5 p-0 m-0">
+                                <ul class="list-unstyled text-start">
+                                    <li>Pondasi : Batu kali</li>
+                                    <li>Sloof : Beton Bertulang</li>
+                                    <li>Dinding : Double Hebel</li>
+                                    <li>Finishing : Plester Aci dan Cat</li>
+                                    <li>Kusen : Alumunium dan Kayu</li>
+                                    <li>Pintu : Panel Solid Wood</li>
+                                    <li>Sanitasi : Closet Duduk</li>
+                                </ul>
+                            </div>
+                        </div>                                
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- =================================================================================================================================================================================================
+============ FASILITAS SECTION =======================================================================================================================================================================
+================================================================================================================================================================================================== -->
+
+    <section id="fasilitas" class="mb-4 section-gap">
+        <div class="container">
+            <div class="row text-center mb-4">
+                <h2 class="custom-heading">FASILITAS</h2>
+            </div>
+            <div class="row text-center">
+                <div class="col-md-3 mb-4">
+                    <img src="../assets/fasilitas/kolam_renang.jpg" class="img-fluid fasilitas-type" alt="Kolam Renang">
+                </div>
+                <div class="col-md-3 mb-4">
+                    <img src="../assets/fasilitas/hangout_area.jpg" class="img-fluid fasilitas-type" alt="Hangout Area">
+                </div>
+                <div class="col-md-3 mb-4">
+                    <img src="../assets/fasilitas/club_house.jpg" class="img-fluid fasilitas-type" alt="Club House">
+                </div>
+                <div class="col-md-3 mb-4">
+                    <img src="../assets/fasilitas/kolam_renang.jpg" class="img-fluid fasilitas-type" alt="Kolam Renang">
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- =================================================================================================================================================================================================
+============ FLOATING WHATSAPP =======================================================================================================================================================================
+================================================================================================================================================================================================== -->
+
+    <a href="https://wa.me/62811161172" class="whatsapp-float" target="_blank" rel="noopener" title="Chat with us on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+<!-- =================================================================================================================================================================================================
+============ FOOTER ==================================================================================================================================================================================
+================================================================================================================================================================================================== -->
+
+    <footer class="footer py-4 custom-footer">
+        <div class="container">
+            <div class="row">
+                <!-- Social Media -->
+                <div class="col-12 col-md-6 col-lg-3 mb-3 d-flex flex-column align-items-start text-start">
+                    <!-- Logo Perusahaan -->
+                    <div class="mb-3">
+                        <a href="https://www.kianolandgroup.co.id">
+                            <img src="../assets/logo.png" alt="kianolandgroup" class="img-fluid logo-image">
+                        </a>
+                    </div>
+                    <div class="social-icons mb-3">
+                        <a href="https://facebook.com/kianolandgroup" class="d-flex align-items-center text-decoration-none mb-2 social-link facebook-link" target="_blank" rel="noopener">
+                            <div class="icon-box facebook me-2">
+                                <i class="fab fa-facebook-f"></i>
+                            </div>
+                            <span>Facebook</span>
+                        </a>
+                        <a href="https://tiktok.com/@kianolandgroup" class="d-flex align-items-center text-decoration-none mb-2 social-link tiktok-link" target="_blank" rel="noopener">
+                            <div class="icon-box tiktok me-2">
+                                <i class="fab fa-tiktok"></i>
+                            </div>
+                            <span>TikTok</span>
+                        </a>
+                        <a href="https://instagram.com/kianolandgroup" class="d-flex align-items-center text-decoration-none social-link instagram-link" target="_blank" rel="noopener">
+                            <div class="icon-box instagram me-2">
+                                <i class="fab fa-instagram"></i>
+                            </div>
+                            <span>Instagram</span>
+                        </a>                        
+                    </div>
+                </div>
+                <!-- Company Info -->
+                <div class="col-12 col-md-6 col-lg-3 mb-3 footer-section">
+                    <h5 class="text-dark">Developed By Kianoland Group</h5>
+                    <p class="text-dark">
+                        PT. KIANO KARYA CEMERLANG<br>
+                        FATTAHILLAH BERKAH ABADI<br>
+                        PT. KIANOAFRI MAJU BERKARYA<br>
+                        PT. KIANOAFRI MAJU BERSAMA
+                    </p>
+                </div>
+                <!-- Links -->
+                <div class="col-12 col-md-6 col-lg-2 mb-3 footer-section">
+                    <h5 class="text-dark">Perusahaan</h5>
+                    <ul class="list-unstyled text-dark">
+                        <li><a href="#" class="text-decoration-none">Tentang</a></li>
+                        <li><a href="#" class="text-decoration-none">Mitra</a></li>
+                        <li><a href="#" class="text-decoration-none">Marketing</a></li>
+                        <li><a href="#" class="text-decoration-none">Lokasi</a></li>
+                    </ul>
+                </div>
+                <div class="col-12 col-md-6 col-lg-2 mb-3 footer-section">
+                    <h5 class="text-dark">Layanan</h5>
+                    <ul class="list-unstyled text-dark">
+                        <li><a href="#" class="text-decoration-none">Produk</a></li>
+                        <li><a href="#" class="text-decoration-none">KPR</a></li>
+                    </ul>
+                </div>
+                <div class="col-12 col-md-6 col-lg-2 mb-3 footer-section">
+                    <h5 class="text-dark">Dukungan</h5>
+                    <ul class="list-unstyled text-dark">
+                        <li><a href="#" class="text-decoration-none">Syarat dan Ketentuan</a></li>
+                        <li><a href="#" class="text-decoration-none">Kebijakan Privasi</a></li>
+                        <li><a href="#" class="text-decoration-none">Ketentuan Mitra</a></li>
+                        <li><a href="#" class="text-decoration-none">Ketentuan Marketing</a></li>
+                    </ul>
+                </div>
+                <div class="col-12 text-start mt-3 footer-copyright">
+                    <p>&copy; Hak Cipta © <span id="current-year"></span> - PT. Kiano Karya Cemerlang</p>
+                </div>                
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        document.getElementById("current-year").textContent = new Date().getFullYear();
+    </script>
+
+    <script src="../js/script.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
