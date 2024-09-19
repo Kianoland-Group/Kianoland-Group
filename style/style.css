@@ -676,6 +676,8 @@ body {
 /* Styling untuk bagian Fasilitas */
 .fasilitas-box {
   position: relative;
+  overflow: hidden;
+  border-radius: 15px;
 }
 
 .fasilitas-box img {
