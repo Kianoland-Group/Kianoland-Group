@@ -392,13 +392,10 @@
 }
 
 @media only screen and (max-width: 412px) {
-  #about {
+  #about, #fasilitas {
     margin-bottom: 1rem;
   }
   #produk {
-    margin-top: 0.5rem;
-  }
-  #fasilitas {
     margin-top: 0.5rem;
   }
 
