@@ -46,11 +46,16 @@ body {
 }
 
 .logo-image {
-  max-width: 150px;
+  width: 13rem;
+  max-width: 100%;
+  height: auto;
 }
 
 .custom-footer {
-  border-top: 1px solid #ccc;
+  border-top-width: 1px;
+  border-top-style: solid; /* Add this to define the border style */
+  border-color: rgb(229, 231, 235);
+  opacity: 1;
 }
 
 .section-title {
@@ -138,6 +143,10 @@ body {
 .footer-copyright {
   color: #555;
   font-weight: bold;
+}
+
+.text-color-555 {
+  color: #555;
 }
 
 /* Hide dropdown initially */
@@ -594,18 +603,25 @@ body {
   z-index: 0; /* Ensure it's behind the content but above the background image */
 }
 
+.custom-line-height {
+  line-height: 1.6rem;
+}
+
 .footer {
   background-color: #fff;
   padding: 20px 0;
+  font-size: 16px; /* Set the desired font size */
+  color: #808080;
 }
 
-.footer h5 {
-  font-weight: 600;
-  color: #000; /* Semi-bold and black color */
+
+.footer ul li {
+  font-size: 16px; /* Ensure paragraphs and list items have the same font size */
+  color: #808080;
 }
 
 .footer a {
-  color: #000;
+  color: #808080;
   text-decoration: none; /* Black text and no underline */
 }
 
@@ -614,59 +630,47 @@ body {
 }
 
 .social-icons .icon-box {
-  width: 40px; /* Lebar kotak */
-  height: 40px; /* Tinggi kotak */
+  width: 40px; /* Width of the box */
+  height: 40px; /* Height of the box */
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #e9ecef; /* Warna latar belakang kotak */
-  border-radius: 5px; /* Sesuaikan sudut membulat jika diperlukan */
-  margin-right: 10px; /* Jarak antara kotak ikon dan teks */
+  background-color: #e9ecef; /* Background color of the box */
+  border-radius: 5px; /* Rounded corners */
+  margin-right: 10px; /* Space between icon box and text */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Transition effects */
 }
 
 .social-icons .icon-box i {
-  font-size: 18px; /* Ukuran ikon */
-  color: #555; /* Warna ikon */
-}
-
-/* Umum untuk semua ikon */
-.social-icons .icon-box {
-  width: 40px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #e9ecef; /* Warna latar belakang default */
-  border-radius: 5px;
-  margin-right: 10px;
-  transition: background-color 0.3s ease, color 0.3s ease; /* Transisi warna latar belakang dan ikon */
+  font-size: 18px; /* Icon size */
+  color: #555; /* Icon color */
 }
 
 /* Facebook Hover */
 .social-icons .icon-box.facebook:hover {
-  background-color: #3b5998; /* Latar belakang biru Facebook */
+  background-color: #3b5998; /* Facebook blue background */
 }
 
 .social-icons .icon-box.facebook:hover i {
-  color: #fff; /* Ikon menjadi putih saat hover */
+  color: #fff; /* Icon turns white on hover */
 }
 
 /* TikTok Hover */
 .social-icons .icon-box.tiktok:hover {
-  background-color: #000; /* Latar belakang hitam */
+  background-color: #000; /* Black background */
 }
 
 .social-icons .icon-box.tiktok:hover i {
-  color: #fff; /* Ikon menjadi putih saat hover */
+  color: #fff; /* Icon turns white on hover */
 }
 
 /* Instagram Hover */
 .social-icons .icon-box.instagram:hover {
-  background-color: #f76c6c; /* Latar belakang jingga */
+  background-color: #f76c6c; /* Orange background */
 }
 
 .social-icons .icon-box.instagram:hover i {
-  color: #fff; /* Ikon menjadi putih saat hover */
+  color: #fff; /* Icon turns white on hover */
 }
 
 /* Styling untuk bagian Fasilitas */
@@ -901,6 +905,28 @@ body {
 /* Jika ingin memastikan card tidak terpusat */
 .row {
   justify-content: start; /* Mengatur posisi card ke kiri */
+}
+
+.gap-8 {
+  gap: 2rem;
+}
+.justify-between {
+  justify-content: space-between;
+}
+.flex-col {
+  flex-direction: column;
+}
+.flex {
+  display: flex;
+}
+.justify-between {
+  justify-content: space-between;
+}
+.w-full {
+  width: 100%;
+}
+.grid {
+  display: grid;
 }
 
 .product-box {
