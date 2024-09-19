@@ -674,6 +674,12 @@ body {
 }
 
 /* Styling untuk bagian Fasilitas */
+#fasilitas {
+  background-color: #f3f4f6;
+  opacity: 1;
+  border-radius: 35px;
+}
+
 .fasilitas-box {
   position: relative;
   overflow: hidden;
