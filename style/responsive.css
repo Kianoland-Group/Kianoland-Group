@@ -394,7 +394,10 @@
   #about {
     margin-bottom: 1rem;
   }
-
+  #produk {
+    margin-top: 0.5rem;
+  }
+  
   .custom-image {
     height: 300px; /* Sesuaikan dengan ukuran yang diinginkan */
     object-fit: cover; /* Menjaga proporsi gambar */
