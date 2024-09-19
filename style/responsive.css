@@ -367,7 +367,8 @@
   }
 
   .custom-heading {
-    text-align: center;
+    text-align: left;
+    font-size: 20px;
   }
 
   .scroll-container {
