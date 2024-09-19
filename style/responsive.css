@@ -455,6 +455,10 @@
     font-size: 20px; /* Perkecil judul */
   }
 
+  .large-font {
+    font-size: 20px;
+  }
+
   .section-gap {
     padding: 20px 0; /* Kurangi padding pada section */
   }
