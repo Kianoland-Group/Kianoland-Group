@@ -397,6 +397,10 @@
   #produk {
     margin-top: 0.5rem;
   }
+
+  .mt-0 {
+    margin-top: 0 !important;
+  }
   
   .custom-image {
     height: 300px; /* Sesuaikan dengan ukuran yang diinginkan */
