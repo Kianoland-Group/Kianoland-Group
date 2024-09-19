@@ -466,7 +466,7 @@
   }
 
   .custom-btn-berita {
-    width: 170px !important; /* Mengurangi ukuran lebar tombol */
+    width: 160px !important; /* Mengurangi ukuran lebar tombol */
     height: 35px !important; /* Mengurangi ukuran tinggi tombol */
     padding: 3px 8px !important; /* Mengurangi padding tombol */
   }
