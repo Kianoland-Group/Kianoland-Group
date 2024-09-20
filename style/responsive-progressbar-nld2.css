@@ -6,14 +6,6 @@
     }
 }
 
-/* Responsive Adjustments for screen width below 1024px and height below 600px */
-@media (min-width: 1400px) {
-/* Hide progress bar by default */
-    #responsiveProgressBarKiano {
-        display: none;
-    }
-}
-
 @media screen and (max-width: 992px) {
     .progress {
         height: 5px;

@@ -290,6 +290,10 @@
   .dialog-close-button-2 {
     display: block; /* Hide close button 2 */
   }
+
+  #responsiveProgressBarKiano {
+    display: none;
+  }
 }
 
 /* CSS untuk tampilan responsif */
@@ -324,6 +328,9 @@
 }
 
 @media (max-width: 575.98px) {
+  .mt-0 {
+    margin-top: 0 !important;
+  }
 
   .fasilitas-box {
     flex: 0 0 100%; /* Pastikan elemen memenuhi 100% lebar kontainernya */
@@ -367,7 +374,11 @@
   }
 
   .custom-heading {
-    text-align: left;
+    text-align: center;
+    font-size: 20px;
+  }
+
+  .large-font {
     font-size: 20px;
   }
 
@@ -397,10 +408,6 @@
   }
   #produk {
     margin-top: 0.5rem;
-  }
-
-  .mt-0 {
-    margin-top: 0 !important;
   }
   
   .custom-image {
