@@ -207,6 +207,28 @@
     margin-right: auto;
     max-width: 1200px; /* Sesuaikan dengan lebar maksimum yang diinginkan */
   }
+
+/* ====================================================================================================
+============ VISI & MISI | about.html =================================================================
+==================================================================================================== */ 
+
+  #vision-mission .vision-mission-item {
+    flex-direction: column; /* Move text below image */
+  }
+  
+  #vision-mission .image {
+    flex: 0 0 100%; /* Full width image */
+    margin-right: 0 !important; /* Remove right margin */
+  }
+
+  #vision-mission .image img {
+    width: 100%; /* Ensure image fills the container */
+    border-radius: 0; /* Optionally remove border-radius for full effect */
+  }
+
+  #vision-mission .content {
+    margin-top: 30px; /* Add space between image and text */
+  }
 }
 
 /* `lg` applies to medium devices (tablets, less than 992px) */
