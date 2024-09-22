@@ -1,7 +1,7 @@
 /* No additional CSS required for the basic responsive behavior */
 
 /* `sm` applies to x-small devices (portrait phones, less than 576px) */
-@media (min-width: 170px) and (max-width: 767px) {
+@media screen and (max-width: 767px) {
 
 /* ====================================================================================================
 ============ RESPONSIVE MENU FOR HEADER NAVBAR | ALL PAGES ============================================
@@ -30,9 +30,9 @@
 ============ PRODUK SECTION | index.html ==============================================================
 ==================================================================================================== */
 
-.produk-section .row > div {
-  margin-bottom: 1rem; /* Optional: Adds spacing between items when stacked */
-}
+  .produk-section .row > div {
+    margin-bottom: 1rem; /* Optional: Adds spacing between items when stacked */
+  }
 
 /* ====================================================================================================
 ============ IKLAN POPUP | index.html =================================================================
@@ -80,7 +80,7 @@
 }
 
 /* `md` applies to small devices (landscape phones, less than 768px) */
-@media (min-width: 768px) {
+@media screen and (min-width: 768px) {
 
 /* ====================================================================================================
 ============ FASILITAS SECTION | PERUMAHAN PAGES ======================================================
@@ -134,7 +134,7 @@
   }
 }
 
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) {
 
 /* ====================================================================================================
 ============ CONTACT SECTION | index.html =============================================================
@@ -227,12 +227,16 @@
   }
 
   #vision-mission .content {
-    margin-top: 30px; /* Add space between image and text */
+    margin-top: 20px; /* Add space between image and text */
+  }
+
+  .vision-mission-item .image {
+    display: none;
   }
 }
 
 /* `lg` applies to medium devices (tablets, less than 992px) */
-@media (min-width: 992px) {
+@media screen and (min-width: 992px) {
 
 /* ====================================================================================================
 ============ IKLAN POPUP | index.html =================================================================
@@ -279,7 +283,7 @@
 }
 
 /* Responsive Adjustments for screen width below 1024px and height below 600px */
-@media (min-width: 1400px) {
+@media screen and (min-width: 1400px) {
 
 /* ====================================================================================================
 ============ IKLAN POPUP | index.html =================================================================
@@ -335,7 +339,7 @@
 }
 
 /* CSS untuk tampilan responsif */
-@media (max-width: 576px) {
+@media screen and (max-width: 576px) {
 
 /* ====================================================================================================
 ============ FASILITAS SECTION | NLD 1.html, NLD 2.html, NLD 3.html ===================================
@@ -349,7 +353,6 @@
 
   .img-fluid {
     max-width: 100%;
-    height: auto;
   }
 
   img, svg {
@@ -392,7 +395,7 @@
   }
 }
 
-@media (max-width: 575.98px) {
+@media screen and (max-width: 575.98px) {
 
 /* ====================================================================================================
 ============ FASILITAS SECTION | NLD 1.html, NLD 2.html, NLD 3.html ===================================
@@ -485,6 +488,25 @@
   .card {
     flex: 0 0 auto;
     max-width: 100%;
+  }
+
+  .section-gap {
+    padding: 20px; /* Adjust the padding as needed */
+  }
+
+  /* Text adjustments */
+  .vision-mission-title, .achievement-title {
+    font-size: 18px; /* Adjust font size for titles */
+    margin-left: 0; /* Remove extra margins on smaller screens */
+  }
+
+  .vision-mission-text, .achievement-subtitle {
+    font-size: 14px; /* Adjust font size for text */
+  }
+
+  /* Adjust layout for vision & mission section */
+  .vision-mission-item {
+    flex-direction: column; /* Stack the image and content vertically */
   }
 }
 
