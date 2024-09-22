@@ -535,6 +535,15 @@
     font-size: 20px; /* Perkecil judul */
   }
 
+  #type {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+
+/* ====================================================================================================
+============ FASILITAS SECTION | index.html ===========================================================
+==================================================================================================== */  
+
   .large-font {
     font-size: 20px;
   }
@@ -543,15 +552,14 @@
     padding: 20px 0; /* Kurangi padding pada section */
   }
 
-  #type {
-    margin-top: 2rem;
-    margin-bottom: 1rem;
-  }
-  
   #fasilitas, #news {
     margin-top: 1rem;
     margin-bottom: 1rem;
   }
+
+/* ====================================================================================================
+============ BERITA SECTION | index.html, PERUMAHAN PAGES =============================================
+==================================================================================================== */
 
   .custom-btn-berita {
     width: 160px !important; /* Mengurangi ukuran lebar tombol */
