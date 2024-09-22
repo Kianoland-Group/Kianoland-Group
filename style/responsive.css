@@ -77,6 +77,9 @@
 
 /* `md` applies to small devices (landscape phones, less than 768px) */
 @media (min-width: 768px) {
+  .fasilitas-box {
+    flex: 0 0 250px;
+  }
 
 /* ====================================================================================================
 ============ IKLAN POPUP ==============================================================================
@@ -298,6 +301,20 @@
 
 /* CSS untuk tampilan responsif */
 @media (max-width: 576px) {
+  .fasilitas-box img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+  }
+
+  .img-fluid {
+    max-width: 100%;
+    height: auto;
+  }
+
+  img, svg {
+    vertical-align: middle;
+  }
 
 /* ====================================================================================================
 ============ FOOTER ===================================================================================

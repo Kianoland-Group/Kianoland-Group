@@ -673,11 +673,25 @@ body {
   color: #fff; /* Icon turns white on hover */
 }
 
+.scroll-container {
+  scroll-behavior: smooth;
+}
+
+.scroll-container {
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  display: flex;
+  gap: 1rem;
+  padding-bottom: 1rem;
+}
+
 /* Styling untuk bagian Fasilitas */
 .fasilitas-box {
   position: relative;
   overflow: hidden;
   border-radius: 15px;
+  flex: 0 0 312px;
+  scroll-snap-align: start;
 }
 
 .fasilitas-box img {
