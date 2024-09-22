@@ -873,6 +873,10 @@ body {
   font-size: medium;
 }
 
+.achievement-content {
+  text-align: justify;
+}
+
 .support-wrapper {
   display: flex;
   flex-wrap: nowrap;
@@ -1099,16 +1103,6 @@ body {
   width: 100%;
   height: 250px;
   border: 0;
-}
-
-@media (max-width: 767px) {
-  .facility-item {
-    padding: 8px; /* Padding lebih kecil pada perangkat mobile */
-  }
-
-  .facility-item img {
-    margin-bottom: 5px; /* Jarak bawah gambar lebih kecil pada perangkat mobile */
-  }
 }
 
 /* Style untuk kotak informasi */
@@ -1546,32 +1540,6 @@ body {
   text-align: justify;
 }
 
-/* Responsivitas */
-@media (max-width: 767px) {
-  .vision-mission-item {
-    flex-direction: column; /* Mengubah arah flex menjadi kolom pada perangkat kecil */
-    align-items: center; /* Menyelaraskan item ke tengah */
-  }
-
-  .vision-mission-item .image {
-    margin-right: 0; /* Menghapus margin pada perangkat kecil */
-    margin-bottom: 10px; /* Menambah jarak bawah */
-  }
-}
-
-/* Responsivitas */
-@media (max-width: 767px) {
-  .vision-mission-item {
-    flex-direction: column; /* Mengubah arah flex menjadi kolom pada perangkat kecil */
-    align-items: center; /* Menyelaraskan item ke tengah */
-  }
-
-  .vision-mission-item .image {
-    margin-left: 0; /* Menghapus margin pada perangkat kecil */
-    margin-top: 10px; /* Menambah jarak atas */
-  }
-}
-
 /*PRESTASI*/
 .achievement-item {
   border: none;
@@ -1593,14 +1561,6 @@ body {
 
 .achievement-subtitle {
   color: gray;
-}
-
-/* Untuk memastikan responsivitas */
-@media (max-width: 767px) {
-  .achievement-item {
-    padding: 15px; /* Menambah padding untuk perangkat kecil */
-    margin-bottom: 20px; /* Mengurangi jarak bawah untuk perangkat kecil */
-  }
 }
 
 .progress {
