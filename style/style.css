@@ -7,56 +7,74 @@ body {
   margin-bottom: 5rem;
 }
 
-.whatsapp-float {
-  position: fixed;
-  width: 57px;
-  height: 47px; /* Ubah height agar sama dengan width */
-  bottom: 20px;
-  right: 20px;
-  background-color: #25d366;
-  color: #fff;
-  border-radius: 50px;
-  text-align: center;
-  font-size: 30px;
-  box-shadow: 2px 2px 3px #999;
-  z-index: 11000;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: transform 0.3s ease; /* Tambahkan transisi */
-  text-decoration: none;
+/* ====================================================================================================
+============ RESPONSIVE MENU FOR HEADER NAVBAR | ALL PAGES ============================================
+==================================================================================================== */
+
+/* Hide dropdown initially */
+.dropdown-menu {
+  display: none;
+  list-style-type: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #f9f9f9;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  padding: 0;
+  margin: 0;
 }
 
-.whatsapp-float:hover {
-  transform: scale(1.1); /* Efek membesar */
+/* Show dropdown on hover */
+.dropdown:hover .dropdown-menu {
+  display: block;
 }
 
-.image-box {
-  height: 100%; /* Membuat tinggi gambar sesuai dengan kotak */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
 }
 
-.image-container {
-  overflow: hidden; /* Memotong bagian gambar yang tidak sesuai */
+/* Additional styling for responsive */
+.menuToggle input[type="checkbox"] {
+  display: none;
+}
+
+/* Mengatur menuToggle untuk tersembunyi pada tampilan desktop */
+.menuToggle {
+  display: none;
+}
+
+/* ====================================================================================================
+============ HERO SECTION - VIDEO | index.html ========================================================
+==================================================================================================== */
+
+/* Hero section */
+#hero {
   position: relative;
-}
-.image-container img {
-  width: 100%;
-  height: 300px;
-  object-fit: cover; /* Mengisi kotak dengan gambar tanpa mengubah rasio aspek */
+  width: 100vw;
+  height: 100vh; /* Full viewport height */
+  overflow: hidden; /* Hide overflow */
 }
 
-.logo-image {
-  width: 13rem;
-  max-width: 100%;
-  height: auto;
+/* Video styling */
+#hero-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  object-fit: cover; /* Ensures the video covers the container */
 }
 
-.custom-footer {
-  border-top-width: 1px;
-  border-top-style: solid; /* Add this to define the border style */
-  border-color: rgb(229, 231, 235);
-  opacity: 1;
-}
+/* ====================================================================================================
+============ TENTANG KAMI | index.html ================================================================
+==================================================================================================== */
 
 .section-title {
   margin-bottom: 40px;
@@ -66,6 +84,103 @@ body {
 .intro-text {
   font-size: 20px;
 }
+
+/* ====================================================================================================
+============ PRODUK SECTION | index.html ==============================================================
+==================================================================================================== */
+
+.produk-box {
+  position: relative;
+  overflow: hidden;
+  height: 600px; /* Height of the box */
+  background-color: #f8f9fa;
+}
+
+.produk-box img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.produk-box:hover img {
+  transform: scale(1.1);
+}
+
+.produk-box:hover .overlay {
+  opacity: 1;
+}
+
+.text-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.custom-btn-detail {
+  margin-left: 1rem; /* Adjust spacing between text and button as needed */
+}
+
+.text {
+  color: white;
+  font-size: 24px;
+  margin: 0;
+  line-height: 1; /* Ensure no extra space between lines */
+  padding: 0; /* Remove any padding */
+  position: absolute;
+  margin-top: 0;
+  margin-bottom: 0;
+  bottom: 0px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.natureland {
+  font-weight: bold;
+}
+
+.kiano,
+.village {
+  font-weight: bold;
+  top: 0;
+}
+
+/* ====================================================================================================
+============ PRODUK SECTION, CONTACT SECTION | index.html =============================================
+==================================================================================================== */
+
+.overlay {
+  position: relative;
+  top: 50%;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ====================================================================================================
+============ FASILITAS SECTION, BERITA SECTION | index.html ===========================================
+====== TIPE RUMAH SECTION, FASILITAS SECTION, BERITA SECTION, CONTACT SECTION | PERUMAHAN PAGES =======
+============ FASILITAS SECTION | TIPE RUMAH PAGES =====================================================
+============ PENGHARGAAN & PENCAPAIAN | about.html ====================================================
+==================================================================================================== */
+
+.custom-heading {
+  font-weight: bold;
+  text-align: start;
+  font-weight: bold;
+}
+
+/* ====================================================================================================
+============ BERITA SECTION | index.html, PERUMAHAN PAGES =============================================
+==================================================================================================== */
 
 .custom-col {
   padding-right: 15px;
@@ -84,10 +199,6 @@ body {
   border-radius: 15px;
   height: 450px;
   object-fit: cover;
-}
-
-.custom-heading {
-  font-weight: bold;
 }
 
 .custom-paragraph {
@@ -128,6 +239,51 @@ body {
   object-fit: cover;
 }
 
+/* ====================================================================================================
+============ FLOATING WHATSAPP | ALL PAGES ============================================================
+==================================================================================================== */
+
+.whatsapp-float {
+  position: fixed;
+  width: 57px;
+  height: 47px; /* Ubah height agar sama dengan width */
+  bottom: 20px;
+  right: 20px;
+  background-color: #25d366;
+  color: #fff;
+  border-radius: 50px;
+  text-align: center;
+  font-size: 30px;
+  box-shadow: 2px 2px 3px #999;
+  z-index: 11000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease; /* Tambahkan transisi */
+  text-decoration: none;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1); /* Efek membesar */
+}
+
+/* ====================================================================================================
+============ FOOTER | ALL PAGES =======================================================================
+==================================================================================================== */
+
+.logo-image {
+  width: 13rem;
+  max-width: 100%;
+  height: auto;
+}
+
+.custom-footer {
+  border-top-width: 1px;
+  border-top-style: solid; /* Add this to define the border style */
+  border-color: rgb(229, 231, 235);
+  opacity: 1;
+}
+
 .social-link {
   color: #555;
 }
@@ -149,41 +305,10 @@ body {
   color: #555;
 }
 
-/* Hide dropdown initially */
-.dropdown-menu {
-  display: none;
-  list-style-type: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background-color: #f9f9f9;
-  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-  padding: 0;
-  margin: 0;
-}
+/* ====================================================================================================
+============ IKLAN POPUP | index.html =================================================================
+==================================================================================================== */
 
-/* Show dropdown on hover */
-.dropdown:hover .dropdown-menu {
-  display: block;
-}
-
-.visually-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  padding: 0;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  border: 0;
-}
-
-/* Additional styling for responsive */
-.menuToggle input[type="checkbox"] {
-  display: none;
-}
-
-/* Popup Iklan */
 .popup-container {
   display: none; /* Awalnya popup disembunyikan */
   justify-content: center;
@@ -295,23 +420,9 @@ body {
   display: block;
 }
 
-/* Hero section */
-#hero {
-  position: relative;
-  width: 100vw;
-  height: 100vh; /* Full viewport height */
-  overflow: hidden; /* Hide overflow */
-}
-
-/* Video styling */
-#hero-video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  object-fit: cover; /* Ensures the video covers the container */
-}
+/* ====================================================================================================
+============ TIPE RUMAH SECTION | TIPE RUMAH PAGES ====================================================
+==================================================================================================== */
 
 .image-container {
   width: 100%;
@@ -323,92 +434,9 @@ body {
   clip-path: inset(0 round 15px); /* Apply rounded corners with clip-path */
 }
 
-#hero-image {
-  width: 100%;
-  height: 100%; /* Ensure the image covers the container */
-  object-fit: cover;
-}
-
-.produk-section {
-  padding-top: 40px;
-  padding-bottom: 40px;
-}
-
-.produk-box {
-  position: relative;
-  overflow: hidden;
-  height: 600px; /* Height of the box */
-  background-color: #f8f9fa;
-}
-
-.produk-box img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.5s ease;
-}
-
-.produk-box:hover img {
-  transform: scale(1.1);
-}
-
-.overlay {
-  position: relative;
-  top: 50%;
-  background-color: rgba(0, 0, 0, 0.5);
-  opacity: 0;
-  transition: opacity 0.5s ease;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.produk-box:hover .overlay {
-  opacity: 1;
-}
-
-.text-wrapper {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.custom-btn-detail {
-  margin-left: 1rem; /* Adjust spacing between text and button as needed */
-}
-
-.ms-2 {
-  margin-left: 0.5rem; /* Adjust spacing between text and button as needed */
-}
-
-.text {
-  color: white;
-  font-size: 24px;
-  margin: 0;
-  line-height: 1; /* Ensure no extra space between lines */
-  padding: 0; /* Remove any padding */
-  position: absolute;
-  margin-top: 0;
-  margin-bottom: 0;
-  bottom: 0px;
-  left: 0;
-  width: 100%;
-  text-align: center;
-  box-sizing: border-box;
-}
-
-.natureland {
-  font-weight: bold;
-}
-
-.kiano,
-.village {
-  font-weight: bold;
-  top: 0;
-}
+/* ====================================================================================================
+============ VISI & MISI | about.html =================================================================
+==================================================================================================== */
 
 #vision-mission .image img {
   height: 100%; /* Atur tinggi gambar ke 100% dari tinggi div .image */
@@ -421,23 +449,46 @@ body {
   margin-right: 30px;
 }
 
+/* ====================================================================================================
+============ HERO SECTION - TEKS | about.html =================================================================
+==================================================================================================== */
+
 #hero-text {
   text-align: center;
   position: relative;
-  margin-top: 100px; /* Adjust this value based on your header's height */
+  margin-top: 80px;
+  padding: 0 20px;
 }
 
 #hero-text h1 {
-  font-size: clamp(
-    2rem,
-    10vw,
-    8.3rem
-  ); /* This allows the font size to scale within a range */
+  font-size: clamp(4rem, 8.5vw, 10rem); /* Slightly reduced values */
   font-weight: bold;
   color: black;
-  white-space: nowrap; /* Prevents wrapping to the next line */
-  overflow: hidden; /* Ensures no overflow */
-  text-align: center; /* Centers the text horizontally */
+  white-space: normal; /* Allows wrapping if necessary */
+  overflow: hidden;
+  text-align: center;
+  max-width: 100%; /* Ensures the text doesn't overflow horizontally */
+  word-wrap: break-word;
+  margin: 0 auto; /* Centers the text container */
+}
+
+/* Media queries for finer control on specific screen sizes */
+@media (max-width: 1024px) {
+  #hero-text h1 {
+    font-size: clamp(3.2rem, 7.5vw, 8.5rem); /* Reduced for medium screens */
+  }
+}
+
+@media (max-width: 768px) {
+  #hero-text h1 {
+    font-size: clamp(2.8rem, 6.5vw, 7rem); /* Adjusted for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  #hero-text h1 {
+    font-size: clamp(2.3rem, 5.5vw, 6rem); /* Slightly smaller for very small screens */
+  }
 }
 
 /* Hero section */
@@ -1210,11 +1261,6 @@ body {
 
 .custom-button:hover {
   background-color: #0056b3; /* Warna background saat hover (lebih gelap) */
-}
-
-.custom-heading {
-  text-align: start;
-  font-weight: bold;
 }
 
 .main-content {
