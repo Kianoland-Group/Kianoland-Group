@@ -420,6 +420,27 @@ body {
   display: block;
 }
 
+.btn-promo {
+  background-color: #ef3340;
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background-color 0.3s ease;
+  text-decoration: none; /* Removes underline */
+  width: 100%;
+}
+
+.btn-promo:hover {
+  background-color: #e74c3c;
+}
+
+.btn-promo:active {
+  transform: scale(0.98); /* Shrinks slightly on click */
+}
+
 /* ====================================================================================================
 ============ TIPE RUMAH SECTION | TIPE RUMAH PAGES ====================================================
 ==================================================================================================== */
