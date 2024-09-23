@@ -76,9 +76,9 @@
                             </ul>
                         </li>
                         <li><a href="about.html">About</a></li>
-                        <li><a href="#section_contact">Contact</a></li>
+                        <li><a href="#section_contact" id="contactLink">Contact</a></li>
                     </ul>
-                </div>                
+                </div>
             </nav>
         </div>
     </header>
@@ -87,6 +87,9 @@
         window.addEventListener('scroll', function() {
             const header = document.querySelector('header');
             header.classList.toggle('scrolled', window.scrollY > 0);
+        });
+        document.getElementById("contactLink").addEventListener("click", function() {
+            document.getElementById("menuCheckbox").checked = false;
         });
     </script>
         
@@ -404,29 +407,13 @@
                     <input type="email" id="email" name="email" placeholder="Email" autocomplete="email" required>
                     <input type="text" id="no-handphone" name="no-handphone" placeholder="No Handphone" required>
                     <!-- Button Dapatkan Segera -->
-                    <button class="btn-promo" onclick="showWhatsAppOptions()">Dapatkan Segera</button>
-
-                    <div id="whatsapp-options" style="display:none;">
-                        <p>Pilih nomor WhatsApp:</p>
-                        <button onclick="openWhatsApp('6285282592945')">Admin 1</button>
-                        <button onclick="openWhatsApp('628111611724')">Admin 2</button>
-                    </div>
+                    <a href="https://wa.me/62XXXXXXXXXX?text=Halo,%20saya%20tertarik%20dengan%20Promo%20Kemerdekaan!" target="_blank" class="btn-promo">Dapatkan Segera</a>
                 </form>                
             </div>
         </div>
     </div>
 
     <script>
-        function showWhatsAppOptions() {
-            document.getElementById('whatsapp-options').style.display = 'block';
-        }
-
-        function openWhatsApp(number) {
-            let message = encodeURIComponent("Halo, saya tertarik dengan Promo Kemerdekaan!");
-            let url = `https://wa.me/${number}?text=${message}`;
-            window.open(url, '_blank');
-        }
-
         // Fungsi untuk menutup popup
         document.addEventListener('click', function(event) {
             const popupContainer = document.getElementById('popup');

@@ -76,9 +76,9 @@
                             </ul>
                         </li>
                         <li><a href="about.html">About</a></li>
-                        <li><a href="#section_contact">Contact</a></li>
+                        <li><a href="#contact" id="contactLink">Contact</a></li>
                     </ul>
-                </div>  
+                </div>
             </nav>
         </div>
     </header>
@@ -87,6 +87,9 @@
         window.addEventListener('scroll', function() {
             const header = document.querySelector('header');
             header.classList.toggle('scrolled', window.scrollY > 0);
+        });
+        document.getElementById("contactLink").addEventListener("click", function() {
+            document.getElementById("menuCheckbox").checked = false;
         });
     </script>
 
