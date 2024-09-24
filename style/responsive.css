@@ -621,7 +621,6 @@
 }
 
 @media (max-width: 992px) {
-
   .more-text {
     font-size: 45px !important; /* Kurangi ukuran font lebih kecil untuk layar 992px ke bawah */
     letter-spacing: -2px !important; /* Sesuaikan jarak antar huruf */
@@ -636,6 +635,12 @@
   #info-boxes .flex-grow-1 {
     flex: 0 0 43%; /* Rumah Tipe lebih kecil (40% lebar kolom) */
     max-width: 43%;
+  }
+
+  /* Spesifikasi Hunian box tetap 100% width */
+  #info-boxes .spesifikasi-hunian {
+    flex: 0 0 100%;
+    max-width: 100%;
   }
 
   /* Kurangi jarak antar box */
@@ -658,5 +663,127 @@
   .more-text {
     font-size: 65px; /* Kurangi ukuran font untuk layar lebih kecil */
     letter-spacing: -5px; /* Sesuaikan jarak antar huruf */
+  }
+}
+
+/* Media Query untuk layar dengan lebar 767px atau lebih kecil */
+@media (max-width: 768px) {
+  .more-text {
+    font-size: 55px !important; /* Ukuran font yang lebih besar untuk layar 767px ke bawah */
+    letter-spacing: -2px !important; /* Sesuaikan jarak antar huruf */
+  }
+
+  /* Fasilitas box tetap 100% width */
+  #info-boxes .col-md-4 {
+    flex: 0 0 100%; /* Fasilitas box 100% lebar */
+    max-width: 100%;
+  }
+
+  /* Atur Rumah Tipe dan Booking box bersebelahan tanpa gap */
+  #info-boxes .flex-grow-1 {
+    flex: 0 0 100% !important; /* Set to 100% width */
+    max-width: 100% !important; /* Ensure no max width limit */
+    margin: 0; /* Remove margin */
+    padding: 0; /* Remove padding */
+  }
+
+  #info-boxes .col-md-12 {
+    flex: 0 0 100%; /* 100% width */
+    max-width: 100%;
+    margin: 0; /* Remove all margins */
+    padding: 0; /* Remove padding */
+    margin-left: 0; /* Remove left margin */
+  }
+
+  .info-box {
+    margin: 0; /* Ensure no margin on the info box */
+    padding: 0; /* Remove padding if needed */
+  }
+
+  #info-boxes .row {
+    margin: 0; /* Remove row margin */
+    gap: 0; /* Remove gaps */
+  }
+
+  #info-boxes > div > div:nth-child(1) > div.col-md-4.mb-4 {
+    margin-bottom: 0 !important;
+  }
+
+  #info-boxes > div > div:nth-child(1) > div.ms-4.flex-grow-1 {
+    margin-left: 0 !important;
+    width: auto !important;
+  }
+
+  #info-boxes > div > div:nth-child(1) > div.ms-4.flex-grow-1 > div > div.col-md-12.mb-4 > div {
+    margin-bottom: 0 !important;
+  }
+
+  #info-boxes > div > div:nth-child(2) > div {
+    margin-bottom: 0 !important;
+  }
+
+  .custom-heading-type {
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  #info-boxes > div {
+    margin: 0 20px; /* Adjust the value as needed */
+  }
+}
+
+@media screen and (max-width: 413px) {
+  #info-boxes > div {
+    margin: 0; /* Adjust the value as needed */
+  }
+}
+
+.more-image {
+  position: relative;
+  display: inline-block;
+}
+
+.darkened-image {
+  width: 100%;
+  height: auto;
+  filter: brightness(50%); /* Untuk membuat gambar lebih gelap */
+}
+
+.more-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 95px; /* Ukuran font default */
+  color: white;
+  font-family: "Poppins", sans-serif;
+  letter-spacing: -10px; /* Mengurangi jarak antar huruf */
+  max-width: 376px; /* Lebar maksimum 376px */
+  width: 100%; /* Lebar responsif */
+  text-align: center; /* Pusatkan teks */
+}
+
+/* Media Query untuk layar dengan lebar 1199px atau lebih kecil */
+@media (max-width: 1199px) {
+  .more-text {
+    font-size: 65px; /* Ukuran font untuk layar 1199px ke bawah */
+    letter-spacing: -5px; /* Sesuaikan jarak antar huruf */
+  }
+}
+
+/* Media Query untuk layar dengan lebar 992px atau lebih kecil */
+@media (max-width: 992px) {
+  .more-text {
+    font-size: 45px; /* Ukuran font untuk layar 992px ke bawah */
+    letter-spacing: -2px; /* Sesuaikan jarak antar huruf */
+  }
+}
+
+/* Media Query untuk layar dengan lebar 767px atau lebih kecil */
+@media (max-width: 767px) {
+  .more-text {
+    font-size: 55px; /* Ukuran font yang lebih besar untuk layar 767px ke bawah */
+    letter-spacing: -2px; /* Sesuaikan jarak antar huruf */
   }
 }

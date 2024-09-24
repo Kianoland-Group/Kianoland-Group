@@ -172,7 +172,7 @@ body {
 ============ PENGHARGAAN & PENCAPAIAN | about.html ====================================================
 ==================================================================================================== */
 
-.custom-heading {
+.custom-heading, .custom-heading-type {
   font-weight: bold;
   text-align: start;
   font-weight: bold;
@@ -972,6 +972,18 @@ body {
   color: white;
   font-family: "Poppins", sans-serif;
   letter-spacing: -10px; /* Mengurangi jarak antar huruf */
+}
+
+.image-container {
+  position: relative;
+}
+
+.darkened-image {
+  transition: opacity 0.3s ease;
+}
+
+.image-container:hover .darkened-image {
+  opacity: 0.5; /* Sesuaikan nilai sesuai kebutuhan */
 }
 
 .fasilitas-type {
