@@ -321,11 +321,11 @@
                     <form id="contactForm">
                         <div class="mb-3">
                             <label for="name" class="form-label">Name</label>
-                            <input type="text" class="form-control" id="name" autocomplete="name" required>
+                            <input type="text" class="form-control" id="name" required autocomplete="name">
                         </div>
                         <div class="mb-3">
                             <label for="email" class="form-label">Email</label>
-                            <input type="email" class="form-control" id="email" autocomplete="email" required>
+                            <input type="email" class="form-control" id="email" required autocomplete="email">
                         </div>
                         <div class="mb-3">
                             <label for="message" class="form-label">Message</label>
@@ -350,6 +350,32 @@
             </div>
         </div>
     </section>
+
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Mencegah form untuk submit secara default
+        
+            // Ambil nilai input dari form
+            var name = document.getElementById('name').value;
+            var email = document.getElementById('email').value;
+            var message = document.getElementById('message').value;
+        
+            // Teks custom di baris pertama
+            var customMessage = "Saya berminat booking di Natureland Kiano 3\n\n";
+            
+            // Format pesan yang akan dikirim ke WhatsApp
+            var whatsappMessage = `${customMessage}Name: ${name}\nEmail: ${email}\nMessage: ${message}`;
+        
+            // Nomor WhatsApp tujuan (ganti dengan nomor tujuan)
+            var phoneNumber = '6285282592945'; // Format internasional tanpa tanda plus (+)
+        
+            // Buat URL untuk mengirim pesan ke WhatsApp
+            var whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(whatsappMessage)}`;
+        
+            // Arahkan pengguna ke URL WhatsApp
+            window.open(whatsappURL, '_blank');
+        });
+        </script>
 
 <!-- =================================================================================================================================================================================================
 ============ FLOATING WHATSAPP =======================================================================================================================================================================
