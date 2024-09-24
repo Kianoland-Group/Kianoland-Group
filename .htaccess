@@ -4,3 +4,12 @@ RewriteEngine On
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME}.html -f
 RewriteRule ^([^\.]+)$ $1.html [NC,L]
+
+# Mengatur redirect untuk katalog_sushi.html
+RewriteRule ^katalog_sushi$ katalog_sushi.html [NC,L]
+
+# Mengatur redirect untuk list_sushi.html
+RewriteRule ^list_sushi$ list_sushi.html [NC,L]
+
+# Mengatur redirect untuk add_sushi.html
+RewriteRule ^add_sushi$ add_sushi.html [NC,L]
