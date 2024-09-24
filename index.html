@@ -403,16 +403,37 @@
             <div class="popup-content">
                 <h2 class="py-4">Dapatkan Promo Kemerdekaan Hanya Booking 500 Ribu!</h2>
                 <p>Isi formulir di bawah ini untuk informasi promo Kemerdekaan dan kami akan segera menghubungi anda kembali.</p>
-                <form>
+                <form id="promoForm">
                     <input type="text" id="nama-lengkap" name="nama-lengkap" placeholder="Nama Lengkap" required>
                     <input type="email" id="email" name="email" placeholder="Email" autocomplete="email" required>
                     <input type="text" id="no-handphone" name="no-handphone" placeholder="No Handphone" required>
                     <!-- Button Dapatkan Segera -->
-                    <a href="https://wa.me/6285282592945?text=Halo,%20saya%20tertarik%20dengan%20Promo%20Kemerdekaan!" target="_blank" class="btn-promo">Dapatkan Segera</a>
-                </form>                
+                    <a id="wa-link" href="https://wa.me/6285282592945" target="_blank" class="btn-promo">Dapatkan Segera</a>
+                </form>               
             </div>
         </div>
     </div>
+
+    <script>
+        document.getElementById('wa-link').addEventListener('click', function(event) {
+            // Ambil nilai input dari form
+            var namaLengkap = document.getElementById('nama-lengkap').value;
+            var email = document.getElementById('email').value;
+            var noHandphone = document.getElementById('no-handphone').value;
+        
+            // Teks pesan WhatsApp sesuai permintaan
+            var customMessage = `Halo, saya tertarik dengan Promo Kemerdekaan!\n\nNama Lengkap: ${namaLengkap}\nEmail: ${email}\nNo Handphone: ${noHandphone}`;
+        
+            // Nomor WhatsApp tujuan
+            var phoneNumber = '6285282592945'; // Ganti dengan nomor yang sesuai
+        
+            // Buat URL WhatsApp
+            var whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(customMessage)}`;
+        
+            // Ganti href link dengan URL WhatsApp yang sudah disesuaikan
+            this.href = whatsappURL;
+        });
+    </script>
 
     <script>
         // Fungsi untuk menutup popup
