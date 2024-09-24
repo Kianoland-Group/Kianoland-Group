@@ -619,3 +619,44 @@
     padding: 3px 8px !important; /* Mengurangi padding tombol */
   }
 }
+
+@media (max-width: 992px) {
+
+  .more-text {
+    font-size: 45px !important; /* Kurangi ukuran font lebih kecil untuk layar 992px ke bawah */
+    letter-spacing: -2px !important; /* Sesuaikan jarak antar huruf */
+  }
+
+  /* Atur ulang lebar box untuk screen dengan lebar 991px atau lebih kecil */
+  #info-boxes .col-md-4 {
+    flex: 0 0 48%; /* Fasilitas dan Rumah Tipe menempati 48% lebar kolom */
+    max-width: 48%;
+  }
+
+  #info-boxes .flex-grow-1 {
+    flex: 0 0 43%; /* Rumah Tipe lebih kecil (40% lebar kolom) */
+    max-width: 43%;
+  }
+
+  /* Kurangi jarak antar box */
+  #info-boxes .ms-4 .row .col-md-12 {
+    margin-bottom: 8px; /* Kurangi margin bawah antar box */
+  }
+
+  /* Pastikan Booking Box berada di bawah Rumah Tipe */
+  #info-boxes .ms-4 .row {
+    flex-direction: column;
+  }
+
+  #info-boxes .ms-4 .row .col-md-12:last-child {
+    margin-top: 8px; /* Kurangi jarak antara box Rumah Tipe dan Booking */
+  }
+}
+
+/* Media Query untuk layar dengan lebar 1199px atau lebih kecil */
+@media (max-width: 1200px) {
+  .more-text {
+    font-size: 65px; /* Kurangi ukuran font untuk layar lebih kecil */
+    letter-spacing: -5px; /* Sesuaikan jarak antar huruf */
+  }
+}
