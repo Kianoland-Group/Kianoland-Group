@@ -1333,3 +1333,23 @@ body {
   height: 5px;
   background-color: #e9ecef;
 }
+
+.custom-button {
+  height: 60px;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 0px;
+  text-decoration: none; /* Menghilangkan underline */
+  color: white; /* Warna teks */
+  font-size: 20px; /* Ukuran font */
+  background-color: #007bff; /* Warna background */
+  box-sizing: border-box; /* Memastikan padding dihitung dalam ukuran tombol */
+  transition: background-color 0.3s ease; /* Menambahkan animasi untuk perubahan warna background */
+}
+
+.custom-button:hover {
+  background-color: #0056b3; /* Warna background saat hover (lebih gelap) */
+}
