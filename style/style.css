@@ -1319,7 +1319,7 @@ body {
   height: auto; /* Maintain aspect ratio */
   aspect-ratio: 1 / 1; /* Force the aspect ratio to be 1:1 */
   object-fit: cover; /* Crop the image to fill the space */
-  border-radius: 15px;
+  border-radius: 15px; /* Default border radius for non-mobile screens */
 }
 
 .close-modal {
@@ -1328,7 +1328,7 @@ body {
   padding: 10px; /* Memberi ruang di sekitar ikon agar bulatannya lebih besar */
   transition: background-color 0.3s ease; /* Animasi transisi saat hover */
   border-radius: 50%; /* Membuat background bulat */
-  margin-left: 2rem;
+  margin-left: 2rem; /* Default margin-left */
 }
 
 .close-modal:hover {
@@ -1345,4 +1345,15 @@ body {
 
 .hover-dark:hover {
   filter: brightness(0.8); /* Membuat gambar lebih gelap saat hover */
+}
+
+/* Media Query for Mobile Screens */
+@media (max-width: 576px) {
+  .img-square {
+    border-radius: 5px; /* Mengurangi border-radius pada layar kecil */
+  }
+
+  .close-modal {
+    margin-left: 0; /* Menghilangkan margin kiri pada layar kecil */
+  }
 }
