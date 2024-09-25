@@ -41,3 +41,12 @@ document.addEventListener('DOMContentLoaded', function() {
         progressBar.style.width = scrollPercentage + '%';
     });
 });
+
+const supportWrapper = document.querySelector('.support-wrapper');
+const items = [...document.querySelectorAll('.support-item')];
+
+// Duplikat elemen untuk memastikan loop yang mulus
+items.forEach(item => {
+  const clone = item.cloneNode(true);
+  supportWrapper.appendChild(clone);
+});

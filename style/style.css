@@ -1259,6 +1259,7 @@ body {
   object-fit: contain; /* Menjaga rasio gambar */
 }
 
+
 @keyframes scroll {
   0% {
     transform: translateX(0);
@@ -1266,296 +1267,6 @@ body {
   100% {
     transform: translateX(-100%);
   }
-}
-
-/* Jarak Antar Section Umum */
-.section-gap {
-  margin-top: 20px; /* Jarak di atas section */
-  margin-bottom: -10px; /* Jarak di bawah section */
-}
-
-/* Jarak Antar Section Spesifik */
-#hero {
-  margin-bottom: 20px; /* Jarak bawah khusus untuk section Hero */
-}
-
-#gallery {
-  margin-top: 20px; /* Jarak atas khusus untuk section Galeri */
-  margin-bottom: 20px; /* Jarak bawah khusus untuk section Galeri */
-}
-
-.akad-img {
-  border-radius: 15px;
-}
-
-.font-weight-medium {
-  font-weight: 500;
-}
-
-.custom-button {
-  height: 60px;
-  border-radius: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 0 0px;
-  text-decoration: none; /* Menghilangkan underline */
-  color: white; /* Warna teks */
-  font-size: 20px; /* Ukuran font */
-  background-color: #007bff; /* Warna background */
-  box-sizing: border-box; /* Memastikan padding dihitung dalam ukuran tombol */
-  transition: background-color 0.3s ease; /* Menambahkan animasi untuk perubahan warna background */
-}
-
-.custom-button:hover {
-  background-color: #0056b3; /* Warna background saat hover (lebih gelap) */
-}
-
-.main-content {
-  margin-top: 80px; /* Ubah sesuai kebutuhan */
-}
-
-/* Media Queries untuk perangkat mobile */
-@media (max-width: 768px) {
-  .navbar-nav {
-    text-align: center;
-    flex-direction: column;
-  }
-
-  /* CSS untuk Perumahan Section */
-  @media (max-width: 768px) {
-    .section-gap .container {
-      padding-left: 15px;
-      padding-right: 15px;
-    }
-  }
-}
-
-/* hide scrollbar */
-::-webkit-scrollbar {
-  width: 1px;
-  height: 1px;
-}
-
-::-webkit-scrollbar-button {
-  width: 1px;
-  height: 1px;
-}
-
-/* Apply styles specifically to the .animasi class */
-.animasi {
-  overflow: hidden;
-  height: 100vh;
-}
-
-.animasi .horizontal-scroll-wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100vh;
-  transform: rotate(-90deg) translate3d(0, -100vh, 0);
-  transform-origin: right top;
-  overflow-y: auto;
-  overflow-x: hidden;
-  padding: 0;
-  height: 100vw;
-  perspective: 1px;
-  transform-style: preserve-3d;
-  padding-bottom: 10rem;
-}
-
-.animasi .img-wrapper {
-  transform: rotate(90deg);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 40vh;
-  transform-origin: 50% 50%;
-  transform: rotate(90deg) translateZ(0.1px) scale(0.9) translateX(0px)
-    translateY(-3vh);
-  transition: 1s;
-}
-
-.animasi .img-wrapper:hover {
-  min-height: 65vh;
-}
-
-.animasi .slower {
-  transform: rotate(90deg) translateZ(-0.2px) scale(1.1) translateX(0%)
-    translateY(-10vh);
-}
-
-.animasi .slower1 {
-  transform: rotate(90deg) translateZ(-0.25px) scale(1.05) translateX(0%)
-    translateY(8vh);
-}
-
-.animasi .slower2 {
-  transform: rotate(90deg) translateZ(-0.3px) scale(1.3) translateX(0%)
-    translateY(2vh);
-}
-
-.animasi .slower-down {
-  transform: rotate(90deg) translateZ(-0.2px) scale(1.1) translateX(0%)
-    translateY(16vh);
-}
-
-.animasi .faster {
-  transform: rotate(90deg) translateZ(0.15px) scale(0.8) translateX(0%)
-    translateY(14vh);
-}
-
-.animasi .faster1 {
-  transform: rotate(90deg) translateZ(0.05px) scale(0.8) translateX(0%)
-    translateY(10vh);
-}
-
-.animasi .fastest {
-  transform: rotate(90deg) translateZ(0.22px) scale(0.7) translateX(-10vh)
-    translateY(-15vh);
-}
-
-.animasi .vertical {
-  transform: rotate(90deg) translateZ(-0.15px) scale(1.15) translateX(0%)
-    translateY(0%);
-}
-
-.animasi .last {
-  transform: rotate(90deg) translateZ(-0.2px) scale(1.1) translateX(25vh)
-    translateY(-8vh);
-}
-
-.animasi .scroll-info,
-.animasi header {
-  position: absolute;
-  left: 1rem;
-}
-
-.animasi .scroll-info {
-  top: 1rem;
-}
-
-.animasi a {
-  color: inherit;
-  font-weight: 500;
-}
-
-.animasi h1 {
-  font-weight: 300;
-  font-size: 1rem;
-}
-
-.animasi .img-wrapper a {
-  overflow: hidden;
-  display: block;
-  padding: 1vh;
-  background: #efecdb94;
-  box-shadow: 0 10px 20px #5f5f5f;
-}
-
-.animasi img {
-  max-width: 45vh;
-  max-height: 50vh;
-  transition: 0.5s;
-  vertical-align: top;
-  filter: contrast(120%) brightness(90%) saturate(110%) hue-rotate(-20deg);
-}
-
-.animasi a:hover img {
-  filter: none;
-}
-
-.animasi p {
-  margin: 0;
-}
-
-.animasi .scroll-info {
-  display: flex;
-  align-items: center;
-}
-
-.animasi .icon svg {
-  width: 50px;
-  fill: currentcolor;
-}
-
-.animasi .col-md-12 {
-  margin-bottom: 10px; /* Kurangi jarak antara teks dan gambar */
-}
-
-.animasi .vertical-scroll-wrapper {
-  margin-top: -20px; /* Mengangkat gambar sedikit ke atas */
-}
-
-.animasi .img-wrapper {
-  margin-bottom: 20px;
-}
-
-/*update prestasi*/
-
-.prestasi-section {
-  height: 100vh;
-  overflow: hidden;
-}
-
-.skw-pages {
-  height: 100%;
-  position: relative;
-}
-
-.skw-page {
-  position: absolute;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  transform: translateY(100%);
-  opacity: 0;
-  transition: transform 1s ease, opacity 1s ease;
-}
-
-.skw-page.active {
-  transform: translateY(0);
-  opacity: 1;
-}
-
-.skw-page__half {
-  width: 50%;
-  overflow: hidden;
-  position: relative;
-}
-
-.skw-page__skewed {
-  transform: skewY(-5deg);
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.skw-page__content {
-  transform: skewY(5deg);
-  text-align: center;
-  width: 80%;
-}
-
-.skw-page__heading {
-  font-size: 3rem;
-  margin-bottom: 20px;
-}
-
-.skw-page__description {
-  font-size: 1.5rem;
-}
-
-.skw-page__link {
-  color: #3498db;
-  text-decoration: none;
-}
-
-.skw-page__link:hover {
-  text-decoration: underline;
 }
 
 /*VISI DAN MISI*/
@@ -1621,4 +1332,21 @@ body {
 .progress {
   height: 5px;
   background-color: #e9ecef;
+}
+
+.document-img {
+  width: 100%;
+  height: auto;
+  border: 16px solid white; /* Border lebih tebal */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Efek bayangan */
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.document-img:hover {
+  transform: scale(1.05); /* Zoom saat di-hover */
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.5); /* Bayangan lebih besar saat di-hover */
+}
+
+.doc-container {
+  padding: 40px 0;
 }
