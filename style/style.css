@@ -1353,3 +1353,7 @@ body {
 .custom-button:hover {
   background-color: #0056b3; /* Warna background saat hover (lebih gelap) */
 }
+
+#hero-text, #vision-mission {
+  margin-bottom: 0;
+}
