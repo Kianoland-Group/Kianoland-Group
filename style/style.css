@@ -1357,3 +1357,11 @@ body {
 #hero-text, #vision-mission {
   margin-bottom: 0;
 }
+
+.img-square {
+  width: 100%; /* Ensure the image takes full width of the column */
+  height: auto; /* Maintain aspect ratio */
+  aspect-ratio: 1 / 1; /* Force the aspect ratio to be 1:1 */
+  object-fit: cover; /* Crop the image to fill the space */
+  border-radius: 15px;
+}
