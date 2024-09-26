@@ -1357,3 +1357,28 @@ body {
     margin-left: 0; /* Menghilangkan margin kiri pada layar kecil */
   }
 }
+
+.fullscreen-modal {
+  display: none; /* Hidden by default */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9); /* Black background with opacity */
+  justify-content: center;
+  align-items: center;
+  z-index: 1050; /* Ensure it is above other content */
+}
+.fullscreen-modal img {
+  max-width: 90%;
+  max-height: 90%;
+}
+.close-fullscreen {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  color: white;
+  font-size: 30px;
+  cursor: pointer;
+}
