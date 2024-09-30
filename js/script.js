@@ -1,3 +1,21 @@
+document.addEventListener("DOMContentLoaded", function() {
+    const url = "https://www.kianolandgroup.com"; // Ganti dengan URL yang valid
+    fetch(url)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok ' + response.statusText);
+            }
+            return response.json();
+        })
+        .then(data => {
+            console.log(data); // Proses data yang diterima
+            document.getElementById('output').textContent = JSON.stringify(data, null, 2);
+        })
+        .catch(error => {
+            console.error('There was a problem with the fetch operation:', error);
+        });
+});
+
 document.getElementById('produkDropdown').addEventListener('click', function (event) {
     event.preventDefault();  // Prevent the default anchor action
     const dropdownMenu = document.querySelector('.dropdown-menu');
