@@ -7,6 +7,10 @@ body {
   margin-bottom: 5rem;
 }
 
+html, body {
+  overflow-x: hidden;
+}
+
 /* ====================================================================================================
 ============ RESPONSIVE MENU FOR HEADER NAVBAR | ALL PAGES ============================================
 ==================================================================================================== */
@@ -1314,6 +1318,11 @@ body {
   margin-bottom: 0;
 }
 
+/* Hides the scrollbar when the modal is open */
+body.modal-open, html.modal-open {
+  overflow: hidden;
+}
+
 .img-square {
   width: 100%; /* Ensure the image takes full width of the column */
   height: auto; /* Maintain aspect ratio */
@@ -1358,27 +1367,100 @@ body {
   }
 }
 
-.fullscreen-modal {
-  display: none; /* Hidden by default */
-  position: fixed;
-  top: 0;
-  left: 0;
+.img-square {
   width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.9); /* Black background with opacity */
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.hover-dark:hover {
+  filter: brightness(80%);
+}
+
+.modal-body-fullscreen {
+  display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 1050; /* Ensure it is above other content */
+  height: 100vh; /* Full viewport height */
+  overflow: hidden !important; /* Prevent scrollbars */
+  background-color: black;
 }
-.fullscreen-modal img {
-  max-width: 90%;
-  max-height: 90%;
+
+.modal-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  max-width: 100vh; /* Maintain square shape */
+  max-height: 100vh; /* Ensure it doesn't exceed viewport */
 }
-.close-fullscreen {
-  position: absolute;
-  top: 20px;
-  right: 30px;
-  color: white;
-  font-size: 30px;
-  cursor: pointer;
+
+/* Prevent scrolling on body when modal is open */
+body.modal-open {
+  overflow: hidden; /* Prevent body scroll when modal is open */
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+  .modal-box {
+    max-width: 90vh;
+    max-height: 90vh;
+  }
+}
+
+@media (max-width: 991px) {
+  .modal-box {
+    max-width: 80vh;
+    max-height: 80vh;
+  }
+}
+
+@media (max-width: 767px) {
+  .modal-box {
+    max-width: 70vh;
+    max-height: 70vh;
+  }
+}
+
+@media (max-width: 575px) {
+  .modal-box {
+    max-width: 60vh;
+    max-height: 60vh;
+  }
+}
+
+.modal-box img {
+  object-fit: cover; /* Cover the entire box */
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.close-fullscreen, .close {
+  position: absolute; 
+  top: 20px; 
+  left: 2rem; 
+  background: none;
+  border: none; 
+  cursor: pointer; 
+  font-size: 2rem;
+} 
+
+body.modal-open {
+  overflow: hidden;
+}
+
+#prevBtn, #nextBtn {
+  border-radius: 50%; /* Makes the button circular */
+  width: 50px; /* Set a fixed width */
+  height: 50px; /* Set a fixed height */
+  background-color: black; /* Dark background color */
+  display: flex; /* Centers the icon */
+  align-items: center; /* Centers the icon vertically */
+  justify-content: center; /* Centers the icon horizontally */
+  color: #e5e7eb;; /* Set icon color to white */
+  border: none; /* Remove border */
+  font-size: 1.2rem;
+  margin: 1.5rem;
 }
