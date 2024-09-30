@@ -111,17 +111,17 @@
             <div class="row row-cols-2 row-cols-sm-2 row-cols-md-4 g-4">
                 <div class="col">
                     <div class="card image-container square-image">
-                        <img src="../assets/kiano_1/cibarusah.jpeg" class="card-img-top" alt="Cibarusah">
+                        <img src="../assets/kiano_1/cibarusah.jpeg" class="card-img-top hover-dark" alt="Cibarusah" onclick="openModal('../assets/kiano_1/cibarusah.jpeg')">
                     </div>
                 </div>
                 <div class="col">
                     <div class="card image-container square-image">
-                        <img src="../assets/produk/kiano_3.jpeg" class="card-img-top" alt="Natureland Kiano 3">
+                        <img src="../assets/produk/kiano_3.jpeg" class="card-img-top hover-dark" alt="Natureland Kiano 3" onclick="openModal('../assets/produk/kiano_3.jpeg')">
                     </div>
                 </div>
                 <div class="col">
                     <div class="card image-container square-image">
-                        <img src="../assets/hero/background_about.jpg" class="card-img-top" alt="Tentang Natureland">
+                        <img src="../assets/hero/background_about.jpg" class="card-img-top hover-dark" alt="Tentang Natureland" onclick="openModal('../assets/hero/background_about.jpg')">
                     </div>
                 </div>
                 <!-- Image Card -->
@@ -145,33 +145,32 @@
                 <div class="modal-body">
                     <div class="container">
                         <div class="row">
-                            <!-- Responsive 3x3 Image Grid -->
                             <div class="col-6 col-md-4 mb-4">
-                                <img src="../assets/kiano_1/cibarusah.jpeg" class="img-fluid img-square hover-dark" alt="Image 1">
+                                <img src="../assets/kiano_1/cibarusah.jpeg" class="img-fluid img-square hover-dark" alt="Cibarusah" onclick="openModal('../assets/kiano_1/cibarusah.jpeg')">
                             </div>
                             <div class="col-6 col-md-4 mb-4">
-                                <img src="../assets/produk/kiano_3.jpeg" class="img-fluid img-square hover-dark" alt="Image 2">
+                                <img src="../assets/produk/kiano_3.jpeg" class="img-fluid img-square hover-dark" alt="Natureland Kiano 3" onclick="openModal('../assets/produk/kiano_3.jpeg')">
                             </div>
                             <div class="col-6 col-md-4 mb-4">
-                                <img src="../assets/hero/background_about.jpg" class="img-fluid img-square hover-dark" alt="Image 3">
+                                <img src="../assets/hero/background_about.jpg" class="img-fluid img-square hover-dark" alt="Tentang Natureland" onclick="openModal('../assets/hero/background_about.jpg')">
                             </div>
                             <div class="col-6 col-md-4 mb-4">
-                                <img src="../assets/kiano_1/1_1 - Photo.jpg" class="img-fluid img-square hover-dark" alt="Image 4">
+                                <img src="../assets/kiano_1/1_1 - Photo.jpg" class="img-fluid img-square hover-dark" alt="Image 4" onclick="openModal('../assets/kiano_1/1_1 - Photo.jpg')">
                             </div>
                             <div class="col-6 col-md-4 mb-4">
-                                <img src="../assets/kiano_1/cibarusah.jpeg" class="img-fluid img-square hover-dark" alt="Image 1">
+                                <img src="../assets/kiano_1/cibarusah.jpeg" class="img-fluid img-square hover-dark" alt="Image 5" onclick="openModal('../assets/kiano_1/cibarusah.jpeg')">
                             </div>
                             <div class="col-6 col-md-4 mb-4">
-                                <img src="../assets/produk/kiano_3.jpeg" class="img-fluid img-square hover-dark" alt="Image 2">
+                                <img src="../assets/produk/kiano_3.jpeg" class="img-fluid img-square hover-dark" alt="Image 6" onclick="openModal('../assets/produk/kiano_3.jpeg')">
                             </div>
                             <div class="col-6 col-md-4 mb-4">
-                                <img src="../assets/hero/background_about.jpg" class="img-fluid img-square hover-dark" alt="Image 3">
+                                <img src="../assets/hero/background_about.jpg" class="img-fluid img-square hover-dark" alt="Image 7" onclick="openModal('../assets/hero/background_about.jpg')">
                             </div>
                             <div class="col-6 col-md-4 mb-4">
-                                <img src="../assets/kiano_1/1_1 - Photo.jpg" class="img-fluid img-square hover-dark" alt="Image 4">
+                                <img src="../assets/kiano_1/1_1 - Photo.jpg" class="img-fluid img-square hover-dark" alt="Image 8" onclick="openModal('../assets/kiano_1/1_1 - Photo.jpg')">
                             </div>
                             <div class="col-6 col-md-4 mb-4">
-                                <img src="../assets/kiano_1/cibarusah.jpeg" class="img-fluid img-square hover-dark" alt="Image 1">
+                                <img src="../assets/kiano_1/cibarusah.jpeg" class="img-fluid img-square hover-dark" alt="Image 9" onclick="openModal('../assets/kiano_1/cibarusah.jpeg')">
                             </div>
                         </div>
                     </div>
@@ -184,12 +183,103 @@
         document.addEventListener("DOMContentLoaded", function() {
             const closeModalIcon = document.querySelector('.close-modal');
             const modal = new bootstrap.Modal(document.getElementById('imageModal'));
-    
+
             closeModalIcon.addEventListener('click', function() {
                 modal.hide();
             });
         });
-    </script>   
+        // Event listener untuk menyembunyikan scrollbar saat modal terbuka
+        document.getElementById('imageModal').addEventListener('show.bs.modal', function () {
+            document.body.style.overflow = 'hidden';
+            document.documentElement.style.overflow = 'hidden';
+        });
+
+        // Event listener untuk mengembalikan scrollbar saat modal ditutup
+        document.getElementById('imageModal').addEventListener('hidden.bs.modal', function () {
+            document.body.style.overflow = '';
+            document.documentElement.style.overflow = '';
+        });
+    </script>    
+
+    <!-- Modal for Full Screen Image -->
+    <div class="modal" id="fullImageModal" tabindex="-1" aria-labelledby="fullImageModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-fullscreen">
+            <div class="modal-content" style="background-color: black;">
+                <div class="modal-body-fullscreen p-0">
+                    <button type="button" class="close close-fullscreen" data-bs-dismiss="modal" aria-label="Close">
+                        <i class="fa-solid fa-xmark" style="color: #e5e7eb;"></i>
+                    </button>
+                    <button id="prevBtn" class="btn position-absolute top-50 start-0 translate-middle-y" onclick="prevImage()">
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </button>
+                    <button id="nextBtn" class="btn position-absolute top-50 end-0 translate-middle-y" onclick="nextImage()">
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </button>
+                    <div class="modal-box">
+                        <img id="modalImage" src="" class="img-fluid" alt="Full Screen Image">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let currentImageIndex = 0;
+        const images = [];
+
+        function openModal(imageSrc) {
+            // Set the image source in the modal
+            document.getElementById('modalImage').src = imageSrc;
+
+            // Update the current image index
+            currentImageIndex = images.indexOf(imageSrc);
+
+            // Show the full-screen modal instantly
+            const fullImageModal = new bootstrap.Modal(document.getElementById('fullImageModal'));
+            fullImageModal.show();
+
+            // Add class to body to prevent scrolling
+            document.body.classList.add('modal-open');
+        }
+
+        document.getElementById('fullImageModal').addEventListener('hidden.bs.modal', function () {
+            // Remove class from body when modal is hidden
+            document.body.classList.remove('modal-open');
+        });
+
+        function prevImage() {
+            currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+            document.getElementById('modalImage').src = images[currentImageIndex];
+        }
+
+        function nextImage() {
+            currentImageIndex = (currentImageIndex + 1) % images.length;
+            document.getElementById('modalImage').src = images[currentImageIndex];
+        }
+
+        // Set images array with the source URLs from your images
+        function setImagesArray() {
+            images.push(
+                '../assets/kiano_1/cibarusah.jpeg',
+                '../assets/produk/kiano_3.jpeg',
+                '../assets/hero/background_about.jpg',
+                '../assets/kiano_1/1_1 - Photo.jpg'
+                // Add more images as needed
+            );
+        }
+
+        // Call this function once when the document is loaded
+        document.addEventListener("DOMContentLoaded", function() {
+            setImagesArray();
+            const closeModalIcon = document.querySelector('.close-modal');
+            const modal = new bootstrap.Modal(document.getElementById('imageModal'));
+
+            closeModalIcon.addEventListener('click', function() {
+                modal.hide();
+            });
+        });
+    </script>
+
 <!-- =================================================================================================================================================================================================
 ============ INFORMASI SECTION =======================================================================================================================================================================
 ================================================================================================================================================================================================== -->

@@ -1342,7 +1342,6 @@ body.modal-open, html.modal-open {
 
 .close-modal:hover {
   background-color: rgba(0, 0, 0, 0.1); /* Latar belakang bulat agak gelap saat hover */
-  color: white;
 }
 
 .modal-header {
@@ -1363,8 +1362,12 @@ body.modal-open, html.modal-open {
     border-radius: 5px; /* Mengurangi border-radius pada layar kecil */
   }
 
-  .close-modal, .close-fullscreen {
+  .close-modal {
     margin-left: 0; /* Menghilangkan margin kiri pada layar kecil */
+  }
+
+  .close-fullscreen, .close {
+    left: 1rem !important;
   }
 }
 
@@ -1467,26 +1470,5 @@ body.modal-open {
 }
 
 #prevBtn:hover, #nextBtn:hover {
-  background-color: rgba(0, 0, 0, 0.1); /* Latar belakang bulat agak gelap saat hover */
   color: white;
-}
-
-.image-preview-container {
-  margin-top: 20px;
-  padding: 10px;
-}
-
-.image-thumbnail {
-  margin: 0 10px;
-  cursor: pointer;
-}
-
-.image-thumbnail img {
-  max-width: 100px;
-  border: 2px solid #e5e7eb;
-  transition: transform 0.3s ease;
-}
-
-.image-thumbnail img:hover {
-  transform: scale(1.1);
 }
