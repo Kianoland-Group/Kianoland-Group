@@ -1229,6 +1229,7 @@ html, body {
 }
 
 /*VISI DAN MISI*/
+
 .vision-mission-item {
   border: none;
   display: flex;
@@ -1316,3 +1317,136 @@ html, body {
   margin-bottom: 0;
 }
 
+/* Hides the scrollbar when the modal is open */
+body.modal-open, html.modal-open {
+  overflow: hidden;
+}
+
+.img-square {
+  width: 100%; /* Ensure the image takes full width of the column */
+  height: auto; /* Maintain aspect ratio */
+  aspect-ratio: 1 / 1; /* Force the aspect ratio to be 1:1 */
+  object-fit: cover; /* Crop the image to fill the space */
+  border-radius: 15px; /* Default border radius for non-mobile screens */
+}
+
+.close-modal {
+  font-size: 1.5rem; /* Ukuran ikon */
+  cursor: pointer;
+  padding: 10px; /* Memberi ruang di sekitar ikon agar bulatannya lebih besar */
+  transition: background-color 0.3s ease; /* Animasi transisi saat hover */
+  border-radius: 50%; /* Membuat background bulat */
+  margin-left: 2rem; /* Default margin-left */
+}
+
+.close-modal:hover {
+  background-color: rgba(0, 0, 0, 0.1); /* Latar belakang bulat agak gelap saat hover */
+}
+
+.modal-header {
+  border: none;
+}
+
+.hover-dark {
+  transition: all 0.3s ease; /* Menambahkan transisi yang halus */
+}
+
+.hover-dark:hover {
+  filter: brightness(0.8); /* Membuat gambar lebih gelap saat hover */
+}
+
+/* Media Query for Mobile Screens */
+@media (max-width: 576px) {
+  .img-square {
+    border-radius: 5px; /* Mengurangi border-radius pada layar kecil */
+  }
+
+  .close-modal {
+    margin-left: 0; /* Menghilangkan margin kiri pada layar kecil */
+  }
+
+  .close-fullscreen, .close {
+    left: 1rem !important;
+  }
+}
+
+.img-square {
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.hover-dark:hover {
+  filter: brightness(80%);
+}
+
+.modal-body-fullscreen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full viewport height */
+  overflow: hidden !important; /* Prevent scrollbars */
+  background-color: black;
+}
+
+.modal-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vh; /* Ubah lebar agar sesuai dengan tinggi */
+  max-width: 100vw; /* Batas lebar maksimum agar tidak melebihi viewport */
+  aspect-ratio: 1; /* Pastikan rasio tetap persegi */
+}
+
+/* Prevent scrolling on body when modal is open */
+body.modal-open {
+  overflow: hidden;
+}
+
+/* Responsive adjustments */
+@media (max-width: 575px) {
+  .modal-box {
+    width: 100vw; /* Tetapkan lebar 100% dari lebar viewport */
+    height: 100vw; /* Tetapkan tinggi agar sama dengan lebar untuk menjaga rasio persegi */
+    max-height: 100vh; /* Pastikan tinggi tidak melebihi viewport */
+  }
+}
+
+.modal-box img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.close-fullscreen, .close {
+  position: absolute; 
+  top: 20px; 
+  left: 2rem; 
+  background: none;
+  border: none; 
+  cursor: pointer; 
+  font-size: 2rem;
+} 
+
+body.modal-open {
+  overflow: hidden;
+}
+
+#prevBtn, #nextBtn {
+  border-radius: 50%; /* Makes the button circular */
+  width: 50px; /* Set a fixed width */
+  height: 50px; /* Set a fixed height */
+  background-color: black; /* Dark background color */
+  display: flex; /* Centers the icon */
+  align-items: center; /* Centers the icon vertically */
+  justify-content: center; /* Centers the icon horizontally */
+  color: #e5e7eb;; /* Set icon color to white */
+  border: none; /* Remove border */
+  font-size: 1.2rem;
+  margin: 1.5rem;
+}
+
+#prevBtn:hover, #nextBtn:hover {
+  color: white;
+}

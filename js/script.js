@@ -1,3 +1,12 @@
+window.addEventListener('load', function() {
+    if (window.location.hash) {
+        var element = document.querySelector(window.location.hash);
+        if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+        }
+    }
+});
+
 document.getElementById('produkDropdown').addEventListener('click', function (event) {
     event.preventDefault();  // Prevent the default anchor action
     const dropdownMenu = document.querySelector('.dropdown-menu');
