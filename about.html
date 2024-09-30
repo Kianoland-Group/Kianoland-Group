@@ -17,8 +17,28 @@
     <link rel="stylesheet" href="style/responsive.css">
     <link rel="stylesheet" href="style/responsive-header-kiano.css">
     <link rel="stylesheet" href="style/header-kiano.css">
+    <style>
+        #content {
+            display: none; /* Sembunyikan konten hingga JavaScript diaktifkan */
+        }
+    </style>
+    <script>
+        // Ini akan dijalankan jika JavaScript diaktifkan
+        window.onload = function() {
+            document.getElementById('content').style.display = 'block';
+        };
+    </script>
 </head>
-<body>
+<body id="content">
+
+    <noscript>
+        <meta http-equiv="refresh" content="0; url=aktifkan-javascript.html">
+        <style>
+            #content {
+                display: none; /* Pastikan konten tetap tersembunyi */
+            }
+        </style>
+    </noscript>
 
 <!-- =================================================================================================================================================================================================
 ============ HEADER NAVBAR ===========================================================================================================================================================================

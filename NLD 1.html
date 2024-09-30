@@ -17,13 +17,27 @@
      <link rel="stylesheet" href="style/responsive.css">
      <link rel="stylesheet" href="style/responsive-header-kiano.css">
      <link rel="stylesheet" href="style/header-kiano.css">
+     <style>
+        #content {
+            display: none; /* Sembunyikan konten hingga JavaScript diaktifkan */
+        }
+    </style>
+    <script>
+        // Ini akan dijalankan jika JavaScript diaktifkan
+        window.onload = function() {
+            document.getElementById('content').style.display = 'block';
+        };
+    </script>
 </head>
-<body>
+<body id="content">
 
     <noscript>
-        <div class="alert alert-danger" style="text-align: center; padding: 20px;">
-            <strong>JavaScript tidak diaktifkan!</strong> Untuk pengalaman terbaik, harap aktifkan JavaScript di pengaturan browser Anda.
-        </div>
+        <meta http-equiv="refresh" content="0; url=aktifkan-javascript.html">
+        <style>
+            #content {
+                display: none; /* Pastikan konten tetap tersembunyi */
+            }
+        </style>
     </noscript>
 
 <!-- =================================================================================================================================================================================================
