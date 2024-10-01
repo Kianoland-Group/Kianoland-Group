@@ -162,6 +162,32 @@
     </section>
 
 <!-- =================================================================================================================================================================================================
+============ DOWNLOAD BROSUR =========================================================================================================================================================================
+================================================================================================================================================================================================== --> 
+
+    <section class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6 text-center">
+                <a href="https://www.kianolandgroup.com/assets/gjv/Brosur-Green-Jonggol-Village.pdf" download class="custom-button-gjv">Download Browsur</a>
+            </div>
+        </div>
+    </section>   
+
+    <script>
+        document.querySelector('.custom-button-gjv').addEventListener('click', function(event) {
+            event.preventDefault(); // Mencegah default behavior
+            const pdfUrl = 'https://www.kianolandgroup.com/assets/gjv/Brosur-Green-Jonggol-Village.pdf';
+            
+            const a = document.createElement('a');
+            a.href = pdfUrl;
+            a.download = 'Brosur-Green-Jonggol-Village.pdf'; // Nama file saat diunduh
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+        });
+    </script>    
+
+<!-- =================================================================================================================================================================================================
 ============ FASILITAS SECTION =======================================================================================================================================================================
 ================================================================================================================================================================================================== -->
 

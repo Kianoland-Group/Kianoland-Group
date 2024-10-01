@@ -485,7 +485,7 @@ html, body {
 }
 
 /* ====================================================================================================
-============ HERO SECTION - TEKS | about.html =================================================================
+============ HERO SECTION - TEKS | about.html =========================================================
 ==================================================================================================== */
 
 #hero-text {
@@ -1313,6 +1313,26 @@ html, body {
   background-color: #0056b3; /* Warna background saat hover (lebih gelap) */
 }
 
+.custom-button-gjv {
+  height: 60px;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 0px;
+  text-decoration: none; /* Menghilangkan underline */
+  color: white; /* Warna teks */
+  font-size: 20px; /* Ukuran font */
+  background-color: #65A50F; /* Warna background */
+  box-sizing: border-box; /* Memastikan padding dihitung dalam ukuran tombol */
+  transition: background-color 0.3s ease; /* Menambahkan animasi untuk perubahan warna background */
+}
+
+.custom-button-gjv:hover {
+  background-color: #558c0d; /* Warna background saat hover (lebih gelap) */
+}
+
 #hero-text, #vision-mission {
   margin-bottom: 0;
 }
@@ -1399,6 +1419,11 @@ body.modal-open, html.modal-open {
   aspect-ratio: 1; /* Pastikan rasio tetap persegi */
 }
 
+/* Prevent scrolling on body when modal is open */
+body.modal-open {
+  overflow: hidden;
+}
+
 /* Responsive adjustments */
 @media (max-width: 575px) {
   .modal-box {
@@ -1423,6 +1448,10 @@ body.modal-open, html.modal-open {
   cursor: pointer; 
   font-size: 2rem;
 } 
+
+body.modal-open {
+  overflow: hidden;
+}
 
 #prevBtn, #nextBtn {
   border-radius: 50%; /* Makes the button circular */
