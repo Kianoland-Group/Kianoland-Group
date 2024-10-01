@@ -787,3 +787,9 @@
     letter-spacing: -2px; /* Sesuaikan jarak antar huruf */
   }
 }
+
+@media screen and (max-width: 768px) {
+  #contact {
+    margin-bottom: 0;
+  }
+}
