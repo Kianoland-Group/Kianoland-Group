@@ -200,14 +200,6 @@
     </div>
 
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const closeModalIcon = document.querySelector('.close-modal');
-            const modal = new bootstrap.Modal(document.getElementById('imageModal'));
-
-            closeModalIcon.addEventListener('click', function() {
-                modal.hide();
-            });
-        });
         // Event listener untuk menyembunyikan scrollbar saat modal terbuka
         document.getElementById('imageModal').addEventListener('show.bs.modal', function () {
             document.body.style.overflow = 'hidden';

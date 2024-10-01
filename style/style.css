@@ -1399,11 +1399,6 @@ body.modal-open, html.modal-open {
   aspect-ratio: 1; /* Pastikan rasio tetap persegi */
 }
 
-/* Prevent scrolling on body when modal is open */
-body.modal-open {
-  overflow: hidden;
-}
-
 /* Responsive adjustments */
 @media (max-width: 575px) {
   .modal-box {
@@ -1428,10 +1423,6 @@ body.modal-open {
   cursor: pointer; 
   font-size: 2rem;
 } 
-
-body.modal-open {
-  overflow: hidden;
-}
 
 #prevBtn, #nextBtn {
   border-radius: 50%; /* Makes the button circular */
