@@ -1470,3 +1470,21 @@ body.modal-open {
 #prevBtn:hover, #nextBtn:hover {
   color: white;
 }
+
+.image-container-dokumentasi {
+  width: 100%;
+  padding-top: 60%; /* Mengurangi tinggi kotak persegi menjadi lebih kecil */
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 15px; /* Memberikan jarak antara gambar dan teks */
+}
+
+.image-container-dokumentasi img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Membuat gambar memenuhi kotak persegi */
+  object-position: center;
+}
