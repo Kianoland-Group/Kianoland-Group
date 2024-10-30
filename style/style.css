@@ -425,7 +425,7 @@ html, body {
 }
 
 .btn-promo {
-  background-color: #ef3340;
+  background-color: #065091;
   color: white;
   padding: 10px 20px;
   font-size: 16px;
@@ -438,7 +438,7 @@ html, body {
 }
 
 .btn-promo:hover {
-  background-color: #e74c3c;
+  background-color: #043a6b;
 }
 
 .btn-promo:active {
