@@ -386,7 +386,7 @@ html, body {
 .popup-content form button {
   width: 100%;
   padding: 12px;
-  background-color: #ef3340;
+  background-color: #065091;
   color: white;
   border: none;
   border-radius: 0;
@@ -396,7 +396,7 @@ html, body {
 }
 
 .popup-content form button:hover {
-  background-color: #cc2b36;
+  background-color: #043a6b;
 }
 
 /* Tombol close di pojok kanan atas */
