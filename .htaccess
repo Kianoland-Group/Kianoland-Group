@@ -14,6 +14,48 @@ RewriteRule ^index$ /index.html [NC,L]
 # Redirect untuk halaman js-function
 RewriteRule ^js-function/([a-zA-Z0-9\-]+)$ /js-function/$1.html [L]
 
+# Redirect untuk natureland-kiano-1 ke natureland-kiano-1.html
+RewriteRule ^natureland-kiano-1$ /natureland-kiano-1.html [NC,L]
+
+# Redirect untuk natureland-kiano-2 ke natureland-kiano-2.html
+RewriteRule ^natureland-kiano-2$ /natureland-kiano-2.html [NC,L]
+
+# Redirect untuk halaman natureland-kiano-3 ke natureland-kiano-3.html
+RewriteRule ^natureland-kiano-3$ /natureland-kiano-3.html [NC,L]
+
+# Redirect untuk halaman green-jonggol-village ke green-jonggol-village.html
+RewriteRule ^green-jonggol-village$ /green-jonggol-village.html [NC,L]
+
+# Redirect untuk halaman natureland-kiano-1
+RewriteRule ^natureland-kiano-1/([a-zA-Z0-9\-]+)$ /natureland-kiano-1/$1.html [L]
+
+# Redirect untuk halaman lain (contoh: rumah-70-75)
+RewriteRule ^rumah-70-75$ /natureland-kiano-1/rumah-70-75.html [NC,L]
+
+# Redirect untuk halaman natureland-kiano-2
+RewriteRule ^natureland-kiano-2/([a-zA-Z0-9\-]+)$ /natureland-kiano-2/$1.html [L]
+
+# Redirect untuk halaman lain (contoh: rumah-40-60)
+RewriteRule ^rumah-40-60$ /natureland-kiano-2/rumah-40-60.html [NC,L]
+
+# Redirect untuk halaman lain (contoh: rumah-70-75)
+RewriteRule ^rumah-70-75$ /natureland-kiano-2/rumah-70-75.html [NC,L]
+
+# Redirect untuk halaman natureland-kiano-3
+RewriteRule ^natureland-kiano-3/([a-zA-Z0-9\-]+)$ /natureland-kiano-3/$1.html [L]
+
+# Redirect untuk halaman lain (contoh: rumah-1-5-lantai-40-60)
+RewriteRule ^rumah-40-60$ /natureland-kiano-3/rumah-1-5-lantai-40-60.html [NC,L]
+
+# Redirect untuk halaman lain (contoh: rumah-2-lantai-40-60)
+RewriteRule ^rumah-40-60$ /natureland-kiano-3/rumah-2-lantai-40-60.html [NC,L]
+
+# Redirect untuk halaman lain (contoh: rumah-40-60)
+RewriteRule ^rumah-40-60$ /natureland-kiano-3/rumah-40-60.html [NC,L]
+
+# Redirect untuk about ke about.html
+RewriteRule ^about$ /about.html [NC,L]
+
 # Redirect untuk halaman lain (contoh: en)
 RewriteRule ^en$ /js-function/en.html [NC,L]
 
