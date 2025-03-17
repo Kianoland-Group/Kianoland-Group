@@ -1,9 +1,40 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Kianoland Group</title>
+    <meta name="description" content="Kianoland Group - Natureland Kiano menawarkan hunian termurah dan strategis di Bekasi, Bogor, dan Jakarta. Temukan rumah subsidi, komersil, elit, dan minimalis dengan cicilan terjangkau.">
+    <meta name="author" content="PT. Kiano Karya Cemerlang">
+    <meta name="robots" content="index, follow">
+
+    <!-- Removed Meta Keywords (not used by search engines) -->
+
+    <!-- Open Graph (Facebook, WhatsApp, LinkedIn, dll.) -->
+    <meta property="og:title" content="Kinaoland Group">
+    <meta property="og:description" content="Kianoland Group - Natureland Kiano menawarkan hunian termurah dan strategis di Bekasi, Bogor, dan Jakarta. Temukan rumah subsidi, komersil, elit, dan minimalis dengan cicilan terjangkau.">
+    <meta property="og:video" content="https://player.vimeo.com/video/1058011928">
+    <meta property="og:video:type" content="text/html">
+    <meta property="og:video:width" content="1280">
+    <meta property="og:video:height" content="720">    
+    <meta property="og:url" content="https://www.kianolandgroup.com">
+    <meta property="og:type" content="website"> <!-- Jika fokusnya bukan video, gunakan "website" -->
+    <script src="js/meta-update.js" defer></script>
+    <meta property="fb:app_id" content="610374431801792">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="player">
+    <meta name="twitter:title" content="Kinaoland Group">
+    <meta name="twitter:description" content="Kianoland Group - Natureland Kiano menawarkan hunian termurah dan strategis di Bekasi, Bogor, dan Jakarta. Temukan rumah subsidi, komersil, elit, dan minimalis dengan cicilan terjangkau.">
+    <meta name="twitter:player" content="https://player.vimeo.com/video/1058011928">
+    <meta name="twitter:player:width" content="1280">
+    <meta name="twitter:player:height" content="720">
+    
+    <!-- Theme Color (Mobile Browser) -->
+    <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+
     <!-- Favicon -->
     <link rel="icon" href="assets/favicon/Kianoland Group.ico" type="image/x-icon">
     <!-- Bootstrap CSS -->
@@ -18,33 +49,19 @@
     <link rel="stylesheet" href="css/responsive.css">
     <link rel="stylesheet" href="css/responsive-header-natureland-kiano.css">
     <link rel="stylesheet" href="css/header-index.css">
-    <style>
-        #content {
-            display: none; /* Sembunyikan konten hingga JavaScript diaktifkan */
-        }
-    </style>
-    <script>
-        // Ini akan dijalankan jika JavaScript diaktifkan
-        window.onload = function() {
-            document.getElementById('content').style.display = 'block';
-        };
-    </script>
-</head>
-<body id="content">
 
+    <script src="js/session-storage.js" defer></script>
+    <script src="js/schema.js" defer></script>
+    <script src="js/gtm-loader.js" defer></script>
+    <script src="js/gtag-loader.js" defer></script>
     <noscript>
         <meta http-equiv="refresh" content="0; url=js-function/id">
-        <style>
-            #content {
-                display: none; /* Pastikan konten tetap tersembunyi */
-            }
-        </style>
     </noscript>
-
+</head>
+<body id="content">
 <!-- =================================================================================================================================================================================================
 ============ HEADER NAVBAR ===========================================================================================================================================================================
 ================================================================================================================================================================================================== -->
-
      <header class="py-3 fixed-top header-transparent">
         <div class="container">
             <nav class="navbar navbar-expand-lg navbar-light">
@@ -117,7 +134,6 @@
 <!-- =================================================================================================================================================================================================
 ============ HERO SECTION - VIDEO ====================================================================================================================================================================
 ================================================================================================================================================================================================== -->
-    
     <section id="hero">
         <video id="hero-video" muted loop>
             <source src="" data-src="assets/video/1.mp4" type="video/mp4">
@@ -155,7 +171,6 @@
 <!-- =================================================================================================================================================================================================
 ============ TENTANG KAMI ============================================================================================================================================================================
 ================================================================================================================================================================================================== -->
-
     <section id="about" class="section-gap">
         <div class="container">
             <div class="row">
@@ -170,7 +185,6 @@
 <!-- =================================================================================================================================================================================================
 ============ PRODUK SECTION ==========================================================================================================================================================================
 ================================================================================================================================================================================================== -->
-    
      <section id="produk" class="section-gap">
         <div class="container">
             <div class="row g-0 justify-content-center">
@@ -229,7 +243,6 @@
             </div>
         </div>
     </section>
-        
 <!-- =================================================================================================================================================================================================
 ============ FASILITAS SECTION =======================================================================================================================================================================
 ================================================================================================================================================================================================== -->
@@ -259,7 +272,6 @@
 <!-- =================================================================================================================================================================================================
 ============ BERITA SECTION ==========================================================================================================================================================================
 ================================================================================================================================================================================================== -->
-
     <section id="news" class="section-gap">
         <div class="container">
             <div class="heading-container d-flex justify-content-between align-items-center">
@@ -315,7 +327,6 @@
 <!-- =================================================================================================================================================================================================
 ============ CONTACT SECTION =========================================================================================================================================================================
 ================================================================================================================================================================================================== -->
-    
     <section id="section_contact" class="contact_wrap js-scrollOn on">
         <div class="overlay"></div> <!-- Added for semi-transparent overlay -->
         <div class="container_inner container py-5">
@@ -340,19 +351,11 @@
         </div>      
     </section>
 
-<!-- =================================================================================================================================================================================================
-============ FLOATING WHATSAPP =======================================================================================================================================================================
-================================================================================================================================================================================================== -->
-    
-    <a href="https://wa.me/628111611724?text=Halo%20ka,%20saya%20berminat!%0A%0ASaya%20dengan,%0A%0ANama:%0AEmail:%0AAlamat:" 
-        class="whatsapp-float" target="_blank" rel="noopener" aria-label="Contact us on WhatsApp">
-        <i class="fab fa-whatsapp"></i>
-    </a>
+    <div id="whatsapp-button"></div>
     
 <!-- =================================================================================================================================================================================================
 ============ FOOTER ==================================================================================================================================================================================
 ================================================================================================================================================================================================== -->
-
     <footer class="footer py-5 custom-footer">
         <div class="container">
             <div class="row">
@@ -434,7 +437,6 @@
 <!-- =================================================================================================================================================================================================
 ============ IKLAN POPUP =============================================================================================================================================================================
 ================================================================================================================================================================================================== -->
-
     <div class="popup-container" id="popup">
         <!-- Box 1 dengan gambar -->
         <div class="popup-box">
@@ -519,7 +521,6 @@
 <!-- =================================================================================================================================================================================================
 ============ CUSTOM JS FOR SMOOTH SCROLLING ==========================================================================================================================================================
 ================================================================================================================================================================================================== -->
-
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const smoothScroll = (event) => {
@@ -538,5 +539,6 @@
     </script>
 
     <script src="js/script.js"></script>
+    <script src="js/template.js"></script>
 </body>
 </html>
