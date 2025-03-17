@@ -3,9 +3,6 @@ RewriteEngine On
 # Redirect root ke index.html
 RewriteRule ^$ /index.html [NC,L]
 
-# Pastikan semua file dalam folder js bisa diakses langsung
-RewriteRule ^js/(.*)$ js/$1 [L]
-
 # Menghilangkan ekstensi .html dari URL
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME}.html -f
