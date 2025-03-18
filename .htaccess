@@ -1,5 +1,7 @@
 RewriteEngine On
 
+RewriteCond %{REQUEST_URI} !^/template/
+
 # Redirect root ke index.html
 RewriteRule ^$ /index.html [NC,L]
 
