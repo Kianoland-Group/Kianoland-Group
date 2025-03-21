@@ -51,11 +51,16 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-const supportWrapper = document.querySelector('.support-wrapper');
-const items = [...document.querySelectorAll('.support-item')];
-
-// Duplikat elemen untuk memastikan loop yang mulus
-items.forEach(item => {
-  const clone = item.cloneNode(true);
-  supportWrapper.appendChild(clone);
+document.addEventListener('DOMContentLoaded', () => {
+    const lazyImages = document.querySelectorAll('img[loading="lazy"]');
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const img = entry.target;
+                img.src = img.dataset.src;
+                observer.unobserve(img);
+            }
+        });
+    });
+    lazyImages.forEach(img => observer.observe(img));
 });
