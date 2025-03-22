@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Allow: /sitemap.xml
+
+Sitemap: www.kianolandgroup.com/sitemap.xml
