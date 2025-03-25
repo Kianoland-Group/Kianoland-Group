@@ -142,17 +142,11 @@
                     "@type": "QuantitativeValue",
                     "minValue": "P30D",
                     "maxValue": "P60D",
-                    "description": "Proses serah terima kunci membutuhkan waktu 30-60 hari setelah akad kredit/skrining KPR selesai"
-                },
-                "handlingTime": {
-                    "@type": "QuantitativeValue",
-                    "minValue": "P3D",
-                    "maxValue": "P7D",
-                    "description": "Waktu verifikasi administrasi booking: 3-7 hari kerja"
+                    "description": "Proses persiapan dokumen legal dan sertifikasi: 30-60 hari setelah akad kredit disetujui"
                 },
                 "deliveryTime": {
                     "@type": "ShippingDeliveryTime",
-                    "description": "Serah terima kunci dilakukan maksimal 7 hari setelah proses transit selesai",
+                    "description": "Serah terima kunci dilakukan dalam 7 hari kerja setelah proses transit selesai",
                     "businessDays": {
                         "@type": "OpeningHoursSpecification",
                         "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
@@ -161,7 +155,7 @@
                 "shippingDestination": {
                     "@type": "DefinedRegion",
                     "addressCountry": "ID",
-                    "description": "Properti siap huni di lokasi yang sudah ditentukan (tidak ada pengiriman fisik)"
+                    "description": "Properti siap huni di lokasi yang telah ditentukan (tidak ada pengiriman fisik)"
                 }
             },
             "hasMerchantReturnPolicy": {
