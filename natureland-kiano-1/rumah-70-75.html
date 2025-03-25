@@ -138,14 +138,22 @@
                     "value": "0",
                     "currency": "IDR"
                 },
+                "transitTime": {
+                    "@type": "QuantitativeValue",
+                    "minValue": "P30D",
+                    "maxValue": "P60D",
+                    "description": "Proses serah terima kunci membutuhkan waktu 30-60 hari setelah akad kredit/skrining KPR selesai"
+                },
+                "handlingTime": {
+                    "@type": "QuantitativeValue",
+                    "minValue": "P3D",
+                    "maxValue": "P7D",
+                    "description": "Waktu verifikasi administrasi booking: 3-7 hari kerja"
+                },
                 "shippingDestination": {
                     "@type": "DefinedRegion",
                     "addressCountry": "ID",
-                    "description": "Properti siap huni di lokasi yang sudah ditentukan. Tidak ada biaya pengiriman fisik."
-                },
-                "deliveryTime": {
-                    "@type": "ShippingDeliveryTime",
-                    "description": "Proses serah terima kunci dilakukan setelah akad kredit/skrining lengkap."
+                    "description": "Properti siap huni di lokasi yang sudah ditentukan (tidak ada pengiriman fisik)"
                 }
             },
             "hasMerchantReturnPolicy": {
