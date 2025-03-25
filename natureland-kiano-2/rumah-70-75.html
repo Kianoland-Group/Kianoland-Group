@@ -150,6 +150,14 @@
                     "maxValue": "P7D",
                     "description": "Waktu verifikasi administrasi booking: 3-7 hari kerja"
                 },
+                "deliveryTime": {
+                    "@type": "ShippingDeliveryTime",
+                    "description": "Serah terima kunci dilakukan maksimal 7 hari setelah proses transit selesai",
+                    "businessDays": {
+                        "@type": "OpeningHoursSpecification",
+                        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
+                    }
+                },
                 "shippingDestination": {
                     "@type": "DefinedRegion",
                     "addressCountry": "ID",
