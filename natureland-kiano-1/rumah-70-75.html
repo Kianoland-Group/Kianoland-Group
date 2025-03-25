@@ -130,7 +130,33 @@
             "eligibleRegion": {
                 "@type": "AdministrativeArea",
                 "name": "Bogor"
-            }
+            },
+            "shippingDetails": {
+                "@type": "OfferShippingDetails",
+                "shippingRate": {
+                    "@type": "MonetaryAmount",
+                    "value": "0",
+                    "currency": "IDR"
+                },
+                "shippingDestination": {
+                    "@type": "DefinedRegion",
+                    "addressCountry": "ID",
+                    "description": "Properti siap huni di lokasi yang sudah ditentukan. Tidak ada biaya pengiriman fisik."
+                },
+                "deliveryTime": {
+                    "@type": "ShippingDeliveryTime",
+                    "description": "Proses serah terima kunci dilakukan setelah akad kredit/skrining lengkap."
+                }
+            },
+            "hasMerchantReturnPolicy": {
+                "@type": "MerchantReturnPolicy",
+                "applicableCountry": "ID",
+                "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+                "merchantReturnDays": 14,
+                "returnMethod": "https://schema.org/ReturnByMail",
+                "returnFees": "https://schema.org/FreeReturn",
+                "description": "Pembatalan booking dengan pengembalian dana 100% jika gagal verifikasi KPR. Berlaku 14 hari setelah booking."
+            },
         },
         "location": {
             "@type": "Place",

@@ -140,32 +140,23 @@
                 },
                 "shippingDestination": {
                     "@type": "DefinedRegion",
-                    "addressCountry": "ID"
+                    "addressCountry": "ID",
+                    "description": "Properti siap huni di lokasi yang sudah ditentukan. Tidak ada biaya pengiriman fisik."
                 },
                 "deliveryTime": {
                     "@type": "ShippingDeliveryTime",
-                    "handlingTime": {
-                        "@type": "QuantitativeValue",
-                        "minValue": "1",
-                        "maxValue": "3",
-                        "unitCode": "DAY"
-                    },
-                    "transitTime": {
-                        "@type": "QuantitativeValue",
-                        "minValue": "1",
-                        "maxValue": "5",
-                        "unitCode": "DAY"
-                    }
+                    "description": "Proses serah terima kunci dilakukan setelah akad kredit/skrining lengkap."
                 }
             },
             "hasMerchantReturnPolicy": {
                 "@type": "MerchantReturnPolicy",
                 "applicableCountry": "ID",
                 "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
-                "merchantReturnDays": 30,
+                "merchantReturnDays": 14,
                 "returnMethod": "https://schema.org/ReturnByMail",
-                "returnFees": "https://schema.org/FreeReturn"
-            }
+                "returnFees": "https://schema.org/FreeReturn",
+                "description": "Pembatalan booking dengan pengembalian dana 100% jika gagal verifikasi KPR. Berlaku 14 hari setelah booking."
+            },
         },
         "location": {
             "@type": "Place",
