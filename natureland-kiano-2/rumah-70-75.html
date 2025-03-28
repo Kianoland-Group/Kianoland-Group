@@ -151,8 +151,16 @@
                         "@type": "OpeningHoursSpecification",
                         "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
                     },
-                    "transitTime": "P7D",
-                    "handlingTime": "P3D"
+                    "transitTime": {
+                        "@type": "QuantitativeValue",
+                        "value": 7,
+                        "unitCode": "DAY"
+                    },
+                    "handlingTime": {
+                        "@type": "QuantitativeValue",
+                        "value": 3,
+                        "unitCode": "DAY"
+                    }
                 },
                 "shippingDestination": {
                     "@type": "DefinedRegion",
