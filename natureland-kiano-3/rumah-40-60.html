@@ -150,7 +150,27 @@
                     "businessDays": {
                         "@type": "OpeningHoursSpecification",
                         "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
+                    },
+                    "transitTime": {
+                        "@type": "QuantitativeValue",
+                        "value": 30,
+                        "unitCode": "DAY",
+                        "minValue": 30,
+                        "maxValue": 60,
+                        "description": "Proses sertifikasi SHM: 30-60 hari kerja"
+                    },
+                    "handlingTime": {
+                        "@type": "QuantitativeValue",
+                        "value": 5,
+                        "unitCode": "DAY",
+                        "minValue": 5,
+                        "maxValue": 5
                     }
+                },
+                "shippingDestination": {
+                    "@type": "DefinedRegion",
+                    "addressCountry": "ID",
+                    "description": "Properti siap huni di lokasi yang telah ditentukan (tidak ada pengiriman fisik)"
                 }
             },
             "hasMerchantReturnPolicy": {
