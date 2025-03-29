@@ -44,6 +44,10 @@ const schemaData = {
         "https://tiktok.com/@naturelandkiano",
         "https://instagram.com/kianolandgroup"
     ],
+    "award": [
+        "Penghargaan Hunian Terbaik 2024",
+        "Penghargaan Inovasi Desain Properti 2023"
+    ],
     "hasOfferCatalog": {
         "@type": "OfferCatalog",
         "name": "Produk Perumahan Kianoland",
@@ -313,30 +317,44 @@ const schemaData = {
             }
         ]
     },
-    "additionalProperty": [
+    "partner": [
         {
-            "@type": "PropertyValue",
-            "name": "Kolam Renang",
-            "value": "Tersedia"
+            "@type": "Organization",
+            "name": "Bank BTN",
+            "url": "https://www.btn.co.id",
+            "logo": "https://www.kianolandgroup.com/assets/support/Logo%20Bank%20BTN.png"
         },
         {
-            "@type": "PropertyValue",
-            "name": "Jogging Track",
-            "value": "1.2 km"
+            "@type": "Organization",
+            "name": "Bank BTN Syariah",
+            "url": "https://www.btn.co.id",
+            "logo": "https://www.kianolandgroup.com/assets/support/Logo%20Bank%20BTN%20Syariah.png"
         },
         {
-            "@type": "PropertyValue",
-            "name": "Club House",
-            "value": "Tersedia"
+            "@type": "Organization",
+            "name": "Bank Syariah Indonesia (BSI)",
+            "url": "https://www.bankbsi.co.id",
+            "logo": "https://www.kianolandgroup.com/assets/support/Logo%20Bank%20BSI.png"
         },
         {
-            "@type": "PropertyValue",
-            "name": "Taman Bermain",
-            "value": "Tersedia"
+            "@type": "Organization",
+            "name": "Bank Mandiri",
+            "url": "https://www.bankmandiri.co.id",
+            "logo": "https://www.kianolandgroup.com/assets/support/Logo%20Bank%20Mandiri.png"
+        },
+        {
+            "@type": "Organization",
+            "name": "Bank Artha Graha International",
+            "url": "https://www.arthagraha.com",
+            "logo": "https://www.kianolandgroup.com/assets/support/Logo%20Bank%20Artha%20Graha.png"
         }
-    ]
+    ],
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://www.kianolandgroup.com/about"
+    }
 };
-  
+
 // Sisipkan ke dalam HTML secara otomatis
 const script = document.createElement("script");
 script.type = "application/ld+json";
