@@ -6,6 +6,9 @@ const schemaData = {
     "url": "https://www.kianolandgroup.com",
     "logo": "https://www.kianolandgroup.com/assets/Kianoland%20Group.png",
     "description": "4 Property terbaik di lokasi strategis.",
+    "telephone": "+62 811-1611-724",
+    "priceRange": "Rp 1.000.000 - Rp 465.000.000",
+    "image": "https://kianolandgroup.com/assets/natureland-kiano-3/6.jpg", 
     "foundingDate": "2016",
     "founder": {
         "@type": "Person",
