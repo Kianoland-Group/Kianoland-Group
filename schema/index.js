@@ -1,11 +1,11 @@
 const schemaData = {
     "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "PT. Kiano Karya Cemerlang",
-    "alternateName": "Kianoland Group",
+    "@type": "RealEstateAgent",
+    "name": "Kianoland Group",
+    "alternateName": "PT. Kiano Karya Cemerlang",
     "url": "https://www.kianolandgroup.com",
     "logo": "https://www.kianolandgroup.com/assets/Kianoland%20Group.png",
-    "description": "Pengembang properti terpercaya dengan fokus pada hunian terjangkau dan berkelanjutan",
+    "description": "4 Property terbaik di lokasi strategis.",
     "foundingDate": "2016",
     "founder": {
         "@type": "Person",
