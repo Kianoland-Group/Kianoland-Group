@@ -44,6 +44,46 @@ const schemaData = {
         "https://tiktok.com/@naturelandkiano",
         "https://instagram.com/kianolandgroup"
     ],
+    "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://www.kianolandgroup.com/search?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+    },
+    "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Natureland Kiano 1",
+            "item": "https://www.kianolandgroup.com/natureland-kiano-1"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Natureland Kiano 2",
+            "item": "https://www.kianolandgroup.com/natureland-kiano-2"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Natureland Kiano 3",
+            "item": "https://www.kianolandgroup.com/natureland-kiano-3"
+          },
+          {
+            "@type": "ListItem",
+            "position": 4,
+            "name": "Green Jonggol Village",
+            "item": "https://www.kianolandgroup.com/green-jonggol-village"
+          },
+          {
+            "@type": "ListItem",
+            "position": 5,
+            "name": "About",
+            "item": "https://www.kianolandgroup.com/about"
+          }
+        ]
+    },
     "hasOfferCatalog": {
         "@type": "OfferCatalog",
         "name": "Produk Perumahan Kianoland",
@@ -334,7 +374,36 @@ const schemaData = {
             "name": "Taman Bermain",
             "value": "Tersedia"
         }
-    ]
+    ],
+    "mainEntity": {
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Bagaimana cara membeli rumah di Kianoland Group?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Anda dapat membeli rumah dengan menghubungi kami melalui WhatsApp atau email, lalu mengikuti proses KPR atau pembayaran tunai."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Apakah tersedia cicilan tanpa DP?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Ya, kami menyediakan cicilan tanpa DP untuk beberapa proyek tertentu. Silakan hubungi admin untuk informasi lebih lanjut."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Apakah rumah bisa dibeli secara tunai?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Tentu, kami menerima pembayaran tunai dengan potongan harga spesial."
+                }
+            }
+        ]
+    }
 };
   
 // Sisipkan ke dalam HTML secara otomatis
