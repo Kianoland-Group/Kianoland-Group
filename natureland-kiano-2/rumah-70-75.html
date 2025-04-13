@@ -229,20 +229,6 @@
         </div>
     </div>
 
-    <script>
-        // Event listener untuk menyembunyikan scrollbar saat modal terbuka
-        document.getElementById('imageModal').addEventListener('show.bs.modal', function () {
-            document.body.style.overflow = 'hidden';
-            document.documentElement.style.overflow = 'hidden';
-        });
-
-        // Event listener untuk mengembalikan scrollbar saat modal ditutup
-        document.getElementById('imageModal').addEventListener('hidden.bs.modal', function () {
-            document.body.style.overflow = '';
-            document.documentElement.style.overflow = '';
-        });
-    </script>    
-
     <!-- Modal for Full Screen Image -->
     <div class="modal" id="fullImageModal" tabindex="-1" aria-labelledby="fullImageModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-fullscreen">
@@ -264,63 +250,6 @@
             </div>
         </div>
     </div>
-
-    <script>
-        let currentImageIndex = 0;
-        const images = [];
-
-        function openModal(imageSrc) {
-            // Set the image source in the modal
-            document.getElementById('modalImage').src = imageSrc;
-
-            // Update the current image index
-            currentImageIndex = images.indexOf(imageSrc);
-
-            // Show the full-screen modal instantly
-            const fullImageModal = new bootstrap.Modal(document.getElementById('fullImageModal'));
-            fullImageModal.show();
-
-            // Add class to body to prevent scrolling
-            document.body.classList.add('modal-open');
-        }
-
-        document.getElementById('fullImageModal').addEventListener('hidden.bs.modal', function () {
-            // Remove class from body when modal is hidden
-            document.body.classList.remove('modal-open');
-        });
-
-        function prevImage() {
-            currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
-            document.getElementById('modalImage').src = images[currentImageIndex];
-        }
-
-        function nextImage() {
-            currentImageIndex = (currentImageIndex + 1) % images.length;
-            document.getElementById('modalImage').src = images[currentImageIndex];
-        }
-
-        // Set images array with the source URLs from your images
-        function setImagesArray() {
-            images.push(
-                '../assets/natureland-kiano-1/Cibarusah.jpeg',
-                '../assets/produk/Natureland Kiano 3.jpeg',
-                '../assets/hero/Background About.jpg',
-                '../assets/natureland-kiano-1/1_1 - Photo.jpg'
-                // Add more images as needed
-            );
-        }
-
-        // Call this function once when the document is loaded
-        document.addEventListener("DOMContentLoaded", function() {
-            setImagesArray();
-            const closeModalIcon = document.querySelector('.close-modal');
-            const modal = new bootstrap.Modal(document.getElementById('imageModal'));
-
-            closeModalIcon.addEventListener('click', function() {
-                modal.hide();
-            });
-        });
-    </script>
 
 <!-- =================================================================================================================================================================================================
 ============ INFORMASI SECTION =======================================================================================================================================================================

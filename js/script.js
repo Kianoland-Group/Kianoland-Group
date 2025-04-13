@@ -77,6 +77,142 @@ document.addEventListener('DOMContentLoaded', function () {
     setTimeout(updateProgressBar, 100); // Delay to ensure content is loaded
 });
 
+let currentImageIndex = 0;
+const images = [];
+
+function openModal(imageSrc) {
+    document.getElementById('modalImage').src = imageSrc;
+    currentImageIndex = images.indexOf(imageSrc);
+
+    const fullImageModal = new bootstrap.Modal(document.getElementById('fullImageModal'));
+    fullImageModal.show();
+
+    document.body.classList.add('modal-open');
+}
+
+document.getElementById('fullImageModal').addEventListener('hidden.bs.modal', function () {
+    document.body.classList.remove('modal-open');
+});
+
+function prevImage() {
+    currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+    document.getElementById('modalImage').src = images[currentImageIndex];
+}
+
+function nextImage() {
+    currentImageIndex = (currentImageIndex + 1) % images.length;
+    document.getElementById('modalImage').src = images[currentImageIndex];
+}
+
+function setImagesArray() {
+    const currentPage = window.location.pathname;
+
+    if (currentPage.includes('/green-jonggol-village/rumah-30-60.html')) {
+        images.push(
+            '../assets/natureland-kiano-1/Cibarusah.jpeg',
+            '../assets/produk/Natureland Kiano 3.jpeg',
+            '../assets/hero/Background About.jpg',
+            '../assets/natureland-kiano-1/1_1 - Photo.jpg'
+        );
+    } else if (currentPage.includes('/natureland-kiano-1/rumah-70-75.html')) {
+        images.push(
+            '../assets/natureland-kiano-1/Cibarusah.jpeg',
+            '../assets/produk/Natureland Kiano 3.jpeg',
+            '../assets/natureland-kiano-3/Rumah 2 Lantai/4_4 - Photo.jpg',
+            '../assets/natureland-kiano-1/1_1 - Photo.jpg'
+        );
+    } else if (currentPage.includes('/natureland-kiano-2/rumah-40-60.html')) {
+        images.push(
+            '../assets/natureland-kiano-1/Cibarusah.jpeg',
+            '../assets/produk/Natureland Kiano 3.jpeg',
+            '../assets/hero/Background About.jpg',
+            '../assets/natureland-kiano-1/1_1 - Photo.jpg'
+        );
+    } else if (currentPage.includes('/natureland-kiano-2/rumah-70-75.html')) {
+        images.push(
+            '../assets/natureland-kiano-1/Cibarusah.jpeg',
+            '../assets/produk/Natureland Kiano 3.jpeg',
+            '../assets/hero/Background About.jpg',
+            '../assets/natureland-kiano-1/1_1 - Photo.jpg'
+        );
+    } else if (currentPage.includes('/natureland-kiano-3/rumah-1-5-lantai-40-60.html')) {
+        images.push(
+            '../assets/natureland-kiano-3/Rumah 1,5 Lantai/1_11 - Photo.jpg',
+            '../assets/natureland-kiano-3/Rumah 1,5 Lantai/1_12 - Photo.jpg',
+            '../assets/natureland-kiano-3/Rumah 1,5 Lantai/1_13 - Photo.jpg',
+            '../assets/natureland-kiano-3/Rumah 1,5 Lantai/1_18 - Photo.jpg',
+            '../assets/natureland-kiano-3/Rumah 1,5 Lantai/2_1 - Photo.jpg'
+        );
+    } else if (currentPage.includes('/natureland-kiano-3/rumah-2-lantai-40-60.html')) {
+        images.push(
+            '../assets/natureland-kiano-3/Rumah 2 Lantai/4_2 - Photo.jpg',
+            '../assets/natureland-kiano-3/Rumah 2 Lantai/4_4 - Photo.jpg',
+            '../assets/natureland-kiano-3/Rumah 2 Lantai/4_5 - Photo.jpg',
+            '../assets/natureland-kiano-3/Rumah 2 Lantai/4_8 - Photo.jpg'
+        );
+    } else if (currentPage.includes('/natureland-kiano-3/rumah-40-60.html')) {
+        images.push(
+            '../assets/natureland-kiano-3/Rumah 40-60/1.jpg',
+            '../assets/natureland-kiano-3/Rumah 40-60/2.jpg',
+            '../assets/natureland-kiano-3/Rumah 40-60/3.jpg',
+            '../assets/natureland-kiano-3/Rumah 40-60/4.jpg'
+        );
+    }
+}
+
+document.addEventListener("DOMContentLoaded", setImagesArray);
+
+// Event listener untuk menyembunyikan scrollbar saat modal terbuka
+document.getElementById('imageModal').addEventListener('show.bs.modal', function () {
+    document.body.style.overflow = 'hidden';
+    document.documentElement.style.overflow = 'hidden';
+});
+
+// Event listener untuk mengembalikan scrollbar saat modal ditutup
+document.getElementById('imageModal').addEventListener('hidden.bs.modal', function () {
+    document.body.style.overflow = '';
+    document.documentElement.style.overflow = '';
+});
+
+/// ===============================================================================================================================================================================================
+/// ============ DOWNLOAD BROSUR ==================================================================================================================================================================
+/// ===============================================================================================================================================================================================
+// Ambil nama file HTML saat ini
+var currentPage = window.location.pathname.split('/').pop();
+
+// Seleksi tombol
+var button = document.querySelector('.custom-button');
+
+// Tentukan URL PDF dan nama file berdasarkan halaman
+var pdfUrl, downloadFileName;
+switch (currentPage) {
+    case 'natureland-kiano-3.html':
+        pdfUrl = 'https://www.kianolandgroup.com/assets/natureland-kiano-3/Brosur-Cibarusah.pdf';
+        downloadFileName = 'Brosur-Cibarusah.pdf';
+        break;
+    case 'green-jonggol-village.html':
+        pdfUrl = 'https://www.kianolandgroup.com/assets/green-jonggol-village/Brosur-Green-Jonggol-Village.pdf';
+        downloadFileName = 'Brosur-Green-Jonggol-Village.pdf';
+        break;
+    default:
+        pdfUrl = null;
+        alert('Brosur tidak tersedia untuk halaman ini.');
+}
+
+// Tambahkan event listener jika PDF tersedia
+if (pdfUrl) {
+    button.addEventListener('click', function (event) {
+        event.preventDefault(); // Mencegah default behavior
+
+        const a = document.createElement('a');
+        a.href = pdfUrl;
+        a.download = downloadFileName; // Nama file saat diunduh
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+    });
+}
+
 /// ===============================================================================================================================================================================================
 /// ============ FASILITAS SECTION ================================================================================================================================================================
 /// ===============================================================================================================================================================================================
@@ -105,6 +241,105 @@ document.addEventListener('DOMContentLoaded', () => {
     const totalWidth = Array.from(supportItems).reduce((acc, item) => acc + item.offsetWidth, 0);
 
     supportWrapper.style.width = `${totalWidth * 2}px`; // Membuat lebar dua kali lipat dari total item
+});
+
+/// ===============================================================================================================================================================================================
+/// ============ IKLAN POPUP ======================================================================================================================================================================
+/// ===============================================================================================================================================================================================
+document.getElementById('wa-link').addEventListener('click', function(event) {
+    // Ambil nilai input dari form
+    var namaLengkap = document.getElementById('nama-lengkap').value;
+    var email = document.getElementById('email').value;
+    var noHandphone = document.getElementById('no-handphone').value;
+
+    // Teks pesan WhatsApp sesuai permintaan
+    var customMessage = `Halo, saya tertarik dengan Promo Booking 1 Juta!\n\nNama Lengkap: ${namaLengkap}\nEmail: ${email}\nNo Handphone: ${noHandphone}`;
+
+    // Nomor WhatsApp tujuan
+    var phoneNumber = '6285282592945'; // Ganti dengan nomor yang sesuai
+
+    // Buat URL WhatsApp
+    var whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(customMessage)}`;
+
+    // Ganti href link dengan URL WhatsApp yang sudah disesuaikan
+    this.href = whatsappURL;
+});
+
+// Fungsi untuk menutup popup
+document.addEventListener('click', function(event) {
+    const popupContainer = document.getElementById('popup');
+    const popupBoxes = document.querySelectorAll('.popup-box');
+
+    // Periksa apakah klik terjadi di luar popup-box
+    let clickedOutside = true;
+    popupBoxes.forEach(box => {
+        if (box.contains(event.target)) {
+            clickedOutside = false;
+        }
+    });
+
+    if (clickedOutside) {
+        // Sembunyikan popup jika klik di luar
+        popupContainer.style.display = 'none';
+    }
+});
+document.addEventListener("DOMContentLoaded", function() {
+    setTimeout(function() {
+        console.log('Menampilkan modal'); // Cek apakah ini muncul di konsol
+        document.getElementById("popup").style.display = "flex";
+    }, 10000); // 10000 milliseconds = 10 seconds
+});
+// Fungsi untuk menutup popup saat tombol close di-click
+document.querySelectorAll('.dialog-close-button-1, .dialog-close-button-2').forEach(function(button) {
+    button.onclick = function() {
+        document.getElementById("popup").style.display = "none"; // Sembunyikan popup
+    };
+});
+
+/// ===============================================================================================================================================================================================
+/// ============ CONTACT SECTION ==================================================================================================================================================================
+/// ===============================================================================================================================================================================================
+document.getElementById('contactForm').addEventListener('submit', function (event) {
+    event.preventDefault();
+
+    // Ambil nama file HTML dari URL
+    var currentPage = window.location.pathname.split('/').pop();
+
+    // Tentukan teks custom berdasarkan halaman
+    var customMessage;
+    switch (currentPage) {
+        case 'green-jonggol-village.html':
+            customMessage = "Saya berminat booking di Green Jonggol Village\n\n";
+            break;
+        case 'natureland-kiano-1.html':
+            customMessage = "Saya berminat booking di Natureland Kiano 1\n\n";
+            break;
+        case 'natureland-kiano-2.html':
+            customMessage = "Saya berminat booking di Natureland Kiano 2\n\n";
+            break;
+        case 'natureland-kiano-3.html':
+            customMessage = "Saya berminat booking di Natureland Kiano 3\n\n";
+            break;
+        default:
+            customMessage = "Saya berminat booking di lokasi yang tidak dikenal\n\n";
+    }
+
+    // Ambil nilai input dari form
+    var name = document.getElementById('name').value;
+    var email = document.getElementById('email').value;
+    var message = document.getElementById('message').value;
+
+    // Format pesan untuk WhatsApp
+    var whatsappMessage = `${customMessage}Name: ${name}\nEmail: ${email}\nMessage: ${message}`;
+
+    // Nomor WhatsApp tujuan
+    var phoneNumber = '6285282592945';
+
+    // Buat URL untuk WhatsApp
+    var whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(whatsappMessage)}`;
+
+    // Arahkan ke WhatsApp
+    window.open(whatsappURL, '_blank');
 });
 
 /// ===============================================================================================================================================================================================

@@ -395,40 +395,7 @@
             this.href = whatsappURL;
         });
     </script>
-
-    <script>
-        // Fungsi untuk menutup popup
-        document.addEventListener('click', function(event) {
-            const popupContainer = document.getElementById('popup');
-            const popupBoxes = document.querySelectorAll('.popup-box');
-
-            // Periksa apakah klik terjadi di luar popup-box
-            let clickedOutside = true;
-            popupBoxes.forEach(box => {
-                if (box.contains(event.target)) {
-                    clickedOutside = false;
-                }
-            });
-
-            if (clickedOutside) {
-                // Sembunyikan popup jika klik di luar
-                popupContainer.style.display = 'none';
-            }
-        });
-        document.addEventListener("DOMContentLoaded", function() {
-            setTimeout(function() {
-                console.log('Menampilkan modal'); // Cek apakah ini muncul di konsol
-                document.getElementById("popup").style.display = "flex";
-            }, 10000); // 10000 milliseconds = 10 seconds
-        });
-        // Fungsi untuk menutup popup saat tombol close di-click
-        document.querySelectorAll('.dialog-close-button-1, .dialog-close-button-2').forEach(function(button) {
-            button.onclick = function() {
-                document.getElementById("popup").style.display = "none"; // Sembunyikan popup
-            };
-        });
-    </script>
-
+    
     <script src="js/script.js" defer></script>
     <script src="js/template.js" defer></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>

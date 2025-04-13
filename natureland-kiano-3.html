@@ -242,20 +242,6 @@
         </div>
     </section>   
 
-    <script>
-        document.querySelector('.custom-button').addEventListener('click', function(event) {
-            event.preventDefault(); // Mencegah default behavior
-            const pdfUrl = 'https://www.kianolandgroup.com/assets/natureland-kiano-3/Brosur-Cibarusah.pdf';
-            
-            const a = document.createElement('a');
-            a.href = pdfUrl;
-            a.download = 'Brosur-Cibarusah.pdf'; // Nama file saat diunduh
-            document.body.appendChild(a);
-            a.click();
-            document.body.removeChild(a);
-        });
-    </script>       
-
 <!-- =================================================================================================================================================================================================
 ============ FASILITAS SECTION =======================================================================================================================================================================
 ================================================================================================================================================================================================== -->
@@ -424,32 +410,6 @@
             </div>
         </div>
     </section>
-
-    <script>
-        document.getElementById('contactForm').addEventListener('submit', function(event) {
-            event.preventDefault(); // Mencegah form untuk submit secara default
-        
-            // Ambil nilai input dari form
-            var name = document.getElementById('name').value;
-            var email = document.getElementById('email').value;
-            var message = document.getElementById('message').value;
-        
-            // Teks custom di baris pertama
-            var customMessage = "Saya berminat booking di Natureland Kiano 3\n\n";
-            
-            // Format pesan yang akan dikirim ke WhatsApp
-            var whatsappMessage = `${customMessage}Name: ${name}\nEmail: ${email}\nMessage: ${message}`;
-        
-            // Nomor WhatsApp tujuan (ganti dengan nomor tujuan)
-            var phoneNumber = '6285282592945'; // Format internasional tanpa tanda plus (+)
-        
-            // Buat URL untuk mengirim pesan ke WhatsApp
-            var whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(whatsappMessage)}`;
-        
-            // Arahkan pengguna ke URL WhatsApp
-            window.open(whatsappURL, '_blank');
-        });
-    </script>
 
     <div id="whatsapp-button"></div>
     <div id="footer-placeholder"></div>
