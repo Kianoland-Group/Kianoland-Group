@@ -1,5 +1,12 @@
 /*
-  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://www.kianolandgroup.com; font-src 'self' https://fonts.gstatic.com; frame-src https://player.vimeo.com
+  Content-Security-Policy:
+    default-src 'self';
+    script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://stackpath.bootstrapcdn.com https://www.googletagmanager.com;
+    style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com https://fonts.googleapis.com;
+    img-src 'self' data: https://www.kianolandgroup.com https://vumbnail.com https://maps.googleapis.com;
+    font-src 'self' https://fonts.gstatic.com;
+    frame-src https://player.vimeo.com https://www.google.com;
+    connect-src 'self' https://www.google-analytics.com;
   X-Frame-Options: SAMEORIGIN
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin
