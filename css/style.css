@@ -325,6 +325,13 @@ html, body {
   left: 0;
   width: 100vw; /* Full lebar layar */
   background: rgba(0, 0, 0, 0.5); /* Background semi-transparent */
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.popup-container.show-popup {
+  opacity: 1;
+  display: flex;
 }
 
 .popup-box {

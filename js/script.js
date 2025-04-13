@@ -283,11 +283,24 @@ document.addEventListener('click', function(event) {
         popupContainer.style.display = 'none';
     }
 });
+// Perbaiki dengan menambahkan pengecekan elemen
 document.addEventListener("DOMContentLoaded", function() {
-    setTimeout(function() {
-        console.log('Menampilkan modal'); // Cek apakah ini muncul di konsol
-        document.getElementById("popup").style.display = "flex";
-    }, 10000); // 10000 milliseconds = 10 seconds
+    const popup = document.getElementById("popup");
+    
+    if(popup) {
+        setTimeout(function() {
+            console.log('Menampilkan popup');
+            popup.style.display = "flex";
+            
+            // Tambahkan class untuk trigger animasi
+            setTimeout(() => {
+                popup.classList.add('show-popup');
+            }, 100);
+            
+        }, 10000);
+    } else {
+        console.error('Element popup tidak ditemukan');
+    }
 });
 // Fungsi untuk menutup popup saat tombol close di-click
 document.querySelectorAll('.dialog-close-button-1, .dialog-close-button-2').forEach(function(button) {
@@ -359,3 +372,5 @@ document.addEventListener('DOMContentLoaded', function() {
         anchor.addEventListener('click', smoothScroll);
     });
 });
+
+document.getElementById("current-year").textContent = new Date().getFullYear();
