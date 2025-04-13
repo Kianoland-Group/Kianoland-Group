@@ -373,27 +373,6 @@
             </div>
         </div>
     </div>
-
-    <script>
-        document.getElementById('wa-link').addEventListener('click', function(event) {
-            // Ambil nilai input dari form
-            var namaLengkap = document.getElementById('nama-lengkap').value;
-            var email = document.getElementById('email').value;
-            var noHandphone = document.getElementById('no-handphone').value;
-        
-            // Teks pesan WhatsApp sesuai permintaan
-            var customMessage = `Halo, saya tertarik dengan Promo Booking 1 Juta!\n\nNama Lengkap: ${namaLengkap}\nEmail: ${email}\nNo Handphone: ${noHandphone}`;
-        
-            // Nomor WhatsApp tujuan
-            var phoneNumber = '6285282592945'; // Ganti dengan nomor yang sesuai
-        
-            // Buat URL WhatsApp
-            var whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(customMessage)}`;
-        
-            // Ganti href link dengan URL WhatsApp yang sudah disesuaikan
-            this.href = whatsappURL;
-        });
-    </script>
     
     <script src="js/script.js" defer></script>
     <script src="js/template.js" defer></script>
