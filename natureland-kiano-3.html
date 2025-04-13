@@ -68,6 +68,10 @@
     <link rel="stylesheet" href="css/responsive-header-natureland-kiano.css">
     <link rel="stylesheet" href="css/header-natureland-kiano.css">
     <link rel="stylesheet" href="css/responsive-progressbar-natureland-kiano-3.css">
+
+    <script src="js/session-storage.js" defer></script>
+    <script src="js/gtm-loader.js" defer></script>
+    <script src="js/gtag-loader.js" defer></script>
     <noscript>
         <meta http-equiv="refresh" content="0; url=js-function/id">
     </noscript>
@@ -136,16 +140,6 @@
             </nav>
         </div>
     </header>
-
-    <script>
-        window.addEventListener('scroll', function() {
-            const header = document.querySelector('header');
-            header.classList.toggle('scrolled', window.scrollY > 0);
-        });
-        document.getElementById("contactLink").addEventListener("click", function() {
-            document.getElementById("menuCheckbox").checked = false;
-        });
-    </script>
 
 <!-- =================================================================================================================================================================================================
 ============ HERO SECTION - GAMBAR ===================================================================================================================================================================
@@ -459,31 +453,9 @@
 
     <div id="whatsapp-button"></div>
     <div id="footer-placeholder"></div>
-
-<!-- =================================================================================================================================================================================================
-============ CUSTOM JS FOR SMOOTH SCROLLING ==========================================================================================================================================================
-================================================================================================================================================================================================== -->
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const smoothScroll = (event) => {
-                event.preventDefault();
-                const targetId = event.currentTarget.getAttribute('href');
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    targetElement.scrollIntoView({ behavior: 'smooth' });
-                }
-            };
-
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', smoothScroll);
-            });
-        });
-    </script> 
     
-    <script src="js/script.js"></script>
-    <script src="js/template.js"></script>
-    <!-- Bootstrap JS -->
+    <script src="js/script.js" defer></script>
+    <script src="js/template.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
 </body>
