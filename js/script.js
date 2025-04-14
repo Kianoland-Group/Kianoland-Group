@@ -1,54 +1,93 @@
-window.addEventListener('load', function() {
+document.addEventListener("DOMContentLoaded", function () {
+    // Smooth Scroll jika ada hash di URL
     if (window.location.hash) {
-        var element = document.querySelector(window.location.hash);
+        const element = document.querySelector(window.location.hash);
         if (element) {
-            element.scrollIntoView({ behavior: 'smooth' });
+            element.scrollIntoView({ behavior: "smooth" });
         }
     }
-});
 
-/// ===============================================================================================================================================================================================
-/// ============ HEADER NAVBAR (Responsive Menu) ==================================================================================================================================================
-/// ===============================================================================================================================================================================================
-document.getElementById('produkDropdown').addEventListener('click', function (event) {
-    event.preventDefault();  // Prevent the default anchor action
-    const dropdownMenu = document.querySelector('.dropdown-menu');
-    dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
-});
+    // HEADER NAVBAR (Responsive Menu)
+    const produkDropdown = document.getElementById("produkDropdown");
+    if (produkDropdown) {
+        produkDropdown.addEventListener("click", function (event) {
+            event.preventDefault();
+            const dropdownMenu = document.querySelector(".dropdown-menu");
+            if (dropdownMenu) {
+                dropdownMenu.style.display = dropdownMenu.style.display === "block" ? "none" : "block";
+            }
+        });
+    }
 
-window.addEventListener('scroll', function() {
-    const header = document.querySelector('header');
-    header.classList.toggle('scrolled', window.scrollY > 0);
-});
-document.getElementById("contactLink").addEventListener("click", function() {
-    document.getElementById("menuCheckbox").checked = false;
-});
+    window.addEventListener("scroll", function () {
+        const header = document.querySelector("header");
+        if (header) {
+            header.classList.toggle("scrolled", window.scrollY > 0);
+        }
+    });
 
-/// ===============================================================================================================================================================================================
-/// ============ HERO SECTION - VIDEO =============================================================================================================================================================
-/// ===============================================================================================================================================================================================
-document.addEventListener("DOMContentLoaded", function () {
-    var video = document.getElementById("hero-video");
-    var source = video.querySelector("source");
+    const contactLink = document.getElementById("contactLink");
+    if (contactLink) {
+        contactLink.addEventListener("click", function () {
+            const menuCheckbox = document.getElementById("menuCheckbox");
+            if (menuCheckbox) {
+                menuCheckbox.checked = false;
+            }
+        });
+    }
 
-    if ("IntersectionObserver" in window) {
-        var observer = new IntersectionObserver(function (entries) {
-            entries.forEach(function (entry) {
-                if (entry.isIntersecting) {
-                    source.src = source.dataset.src;
-                    video.load();
-                    video.play();
-                    observer.unobserve(video); // stop observing after load
-                }
+    // HERO SECTION - Video Lazy Loading
+    const video = document.getElementById("hero-video");
+    if (video) {
+        const source = video.querySelector("source");
+
+        if ("IntersectionObserver" in window) {
+            const observer = new IntersectionObserver(function (entries) {
+                entries.forEach(function (entry) {
+                    if (entry.isIntersecting) {
+                        source.src = source.dataset.src;
+                        video.load();
+                        video.play();
+                        observer.unobserve(video);
+                    }
+                });
             });
+
+            observer.observe(video);
+        } else {
+            // Fallback jika IntersectionObserver tidak didukung
+            source.src = source.dataset.src;
+            video.load();
+            video.play();
+        }
+    }
+
+    // IKLAN POPUP
+    const popup = document.getElementById("popup");
+    if (popup) {
+        setTimeout(function () {
+            console.log("Menampilkan popup");
+            popup.style.display = "flex";
+
+            // Tambahkan class untuk trigger animasi
+            setTimeout(() => {
+                popup.classList.add("show-popup");
+            }, 100);
+        }, 10000);
+
+        // Tutup popup saat tombol close di-click
+        document.querySelectorAll(".dialog-close-button-1, .dialog-close-button-2").forEach(function (button) {
+            button.onclick = function () {
+                popup.style.display = "none";
+            };
         });
 
-        observer.observe(video);
-    } else {
-        // Fallback if IntersectionObserver is not supported
-        source.src = source.dataset.src;
-        video.load();
-        video.play();
+        // Sembunyikan popup jika klik di luar area
+        document.addEventListener("click", function (event) {
+            if (!popup.contains(event.target)) {
+                popup.style.display = "none";
+            }
+        });
     }
 });
 
@@ -263,50 +302,6 @@ document.getElementById('wa-link').addEventListener('click', function(event) {
 
     // Ganti href link dengan URL WhatsApp yang sudah disesuaikan
     this.href = whatsappURL;
-});
-
-// Fungsi untuk menutup popup
-document.addEventListener('click', function(event) {
-    const popupContainer = document.getElementById('popup');
-    const popupBoxes = document.querySelectorAll('.popup-box');
-
-    // Periksa apakah klik terjadi di luar popup-box
-    let clickedOutside = true;
-    popupBoxes.forEach(box => {
-        if (box.contains(event.target)) {
-            clickedOutside = false;
-        }
-    });
-
-    if (clickedOutside) {
-        // Sembunyikan popup jika klik di luar
-        popupContainer.style.display = 'none';
-    }
-});
-// Perbaiki dengan menambahkan pengecekan elemen
-document.addEventListener("DOMContentLoaded", function() {
-    const popup = document.getElementById("popup");
-    
-    if(popup) {
-        setTimeout(function() {
-            console.log('Menampilkan popup');
-            popup.style.display = "flex";
-            
-            // Tambahkan class untuk trigger animasi
-            setTimeout(() => {
-                popup.classList.add('show-popup');
-            }, 100);
-            
-        }, 10000);
-    } else {
-        console.error('Element popup tidak ditemukan');
-    }
-});
-// Fungsi untuk menutup popup saat tombol close di-click
-document.querySelectorAll('.dialog-close-button-1, .dialog-close-button-2').forEach(function(button) {
-    button.onclick = function() {
-        document.getElementById("popup").style.display = "none"; // Sembunyikan popup
-    };
 });
 
 /// ===============================================================================================================================================================================================
