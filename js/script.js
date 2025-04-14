@@ -92,6 +92,44 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 /// ===============================================================================================================================================================================================
+/// ============ IKLAN POPUP ======================================================================================================================================================================
+/// ===============================================================================================================================================================================================
+document.addEventListener('DOMContentLoaded', function () {
+    const waLink = document.getElementById('wa-link');
+
+    if (waLink) {
+        waLink.addEventListener('click', function (event) {
+            const namaLengkap = document.getElementById('nama-lengkap');
+            const email = document.getElementById('email');
+            const noHandphone = document.getElementById('no-handphone');
+
+            // Validasi elemen form
+            if (!namaLengkap || !email || !noHandphone) {
+                console.error('Form input tidak ditemukan.');
+                return;
+            }
+
+            // Validasi input kosong
+            if (!namaLengkap.value || !email.value || !noHandphone.value) {
+                alert('Harap isi semua field sebelum melanjutkan.');
+                event.preventDefault();
+                return;
+            }
+
+            // Buat pesan WhatsApp
+            const customMessage = `Halo, saya tertarik dengan Promo Booking 1 Juta!\n\nNama Lengkap: ${namaLengkap.value}\nEmail: ${email.value}\nNo Handphone: ${noHandphone.value}`;
+            const phoneNumber = '6285282592945';
+            const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(customMessage)}`;
+
+            // Update href
+            this.href = whatsappURL;
+        });
+    } else {
+        console.error("Elemen dengan ID 'wa-link' tidak ditemukan.");
+    }
+});
+
+/// ===============================================================================================================================================================================================
 /// ============ TIPE RUMAH SECTION ===============================================================================================================================================================
 /// ===============================================================================================================================================================================================
 document.addEventListener('DOMContentLoaded', function () {
@@ -280,44 +318,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const totalWidth = Array.from(supportItems).reduce((acc, item) => acc + item.offsetWidth, 0);
 
     supportWrapper.style.width = `${totalWidth * 2}px`; // Membuat lebar dua kali lipat dari total item
-});
-
-/// ===============================================================================================================================================================================================
-/// ============ IKLAN POPUP ======================================================================================================================================================================
-/// ===============================================================================================================================================================================================
-document.addEventListener('DOMContentLoaded', function () {
-    const waLink = document.getElementById('wa-link');
-
-    if (waLink) {
-        waLink.addEventListener('click', function (event) {
-            // Ambil elemen input
-            const namaLengkap = document.getElementById('nama-lengkap');
-            const email = document.getElementById('email');
-            const noHandphone = document.getElementById('no-handphone');
-
-            if (!namaLengkap || !email || !noHandphone) {
-                console.error('Form input tidak lengkap.');
-                return;
-            }
-
-            // Validasi input
-            if (!namaLengkap.value || !email.value || !noHandphone.value) {
-                alert('Harap isi semua field sebelum melanjutkan.');
-                event.preventDefault();
-                return;
-            }
-
-            // Buat pesan WhatsApp
-            const customMessage = `Halo, saya tertarik dengan Promo Booking 1 Juta!\n\nNama Lengkap: ${namaLengkap.value}\nEmail: ${email.value}\nNo Handphone: ${noHandphone.value}`;
-            const phoneNumber = '6285282592945'; // Ganti dengan nomor WhatsApp tujuan
-            const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(customMessage)}`;
-
-            // Update href
-            this.href = whatsappURL;
-        });
-    } else {
-        console.error("Elemen dengan ID 'wa-link' tidak ditemukan.");
-    }
 });
 
 /// ===============================================================================================================================================================================================
