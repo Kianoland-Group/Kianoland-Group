@@ -285,23 +285,39 @@ document.addEventListener('DOMContentLoaded', () => {
 /// ===============================================================================================================================================================================================
 /// ============ IKLAN POPUP ======================================================================================================================================================================
 /// ===============================================================================================================================================================================================
-document.getElementById('wa-link').addEventListener('click', function(event) {
-    // Ambil nilai input dari form
-    var namaLengkap = document.getElementById('nama-lengkap').value;
-    var email = document.getElementById('email').value;
-    var noHandphone = document.getElementById('no-handphone').value;
+document.addEventListener('DOMContentLoaded', function () {
+    const waLink = document.getElementById('wa-link');
 
-    // Teks pesan WhatsApp sesuai permintaan
-    var customMessage = `Halo, saya tertarik dengan Promo Booking 1 Juta!\n\nNama Lengkap: ${namaLengkap}\nEmail: ${email}\nNo Handphone: ${noHandphone}`;
+    if (waLink) {
+        waLink.addEventListener('click', function (event) {
+            // Ambil elemen input
+            const namaLengkap = document.getElementById('nama-lengkap');
+            const email = document.getElementById('email');
+            const noHandphone = document.getElementById('no-handphone');
 
-    // Nomor WhatsApp tujuan
-    var phoneNumber = '6285282592945'; // Ganti dengan nomor yang sesuai
+            if (!namaLengkap || !email || !noHandphone) {
+                console.error('Form input tidak lengkap.');
+                return;
+            }
 
-    // Buat URL WhatsApp
-    var whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(customMessage)}`;
+            // Validasi input
+            if (!namaLengkap.value || !email.value || !noHandphone.value) {
+                alert('Harap isi semua field sebelum melanjutkan.');
+                event.preventDefault();
+                return;
+            }
 
-    // Ganti href link dengan URL WhatsApp yang sudah disesuaikan
-    this.href = whatsappURL;
+            // Buat pesan WhatsApp
+            const customMessage = `Halo, saya tertarik dengan Promo Booking 1 Juta!\n\nNama Lengkap: ${namaLengkap.value}\nEmail: ${email.value}\nNo Handphone: ${noHandphone.value}`;
+            const phoneNumber = '6285282592945'; // Ganti dengan nomor WhatsApp tujuan
+            const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(customMessage)}`;
+
+            // Update href
+            this.href = whatsappURL;
+        });
+    } else {
+        console.error("Elemen dengan ID 'wa-link' tidak ditemukan.");
+    }
 });
 
 /// ===============================================================================================================================================================================================
