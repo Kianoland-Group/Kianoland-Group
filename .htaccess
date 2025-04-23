@@ -1,90 +1,46 @@
-RewriteEngine On
+<IfModule mod_rewrite.c>
+    RewriteEngine On
 
-# Redirect root ke index.html
-RewriteRule ^$ /index.html [NC,L]
+    # Redirect HTTP ke HTTPS
+    RewriteCond %{HTTPS} off
+    RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
-# Menghilangkan ekstensi .html dari URL
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{REQUEST_FILENAME}.html -f
-RewriteRule ^([^\.]+)$ /$1.html [NC,L]
+    # Redirect root ke index.html
+    RewriteRule ^$ /index.html [NC,L]
 
-# Redirect untuk /index ke /index.html
-RewriteRule ^index$ /index.html [NC,L]
+    # Menghilangkan ekstensi .html
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME}.html -f
+    RewriteRule ^([^\.]+)$ $1.html [NC,L]
 
-# Redirect untuk halaman js-function
-RewriteRule ^js-function/([a-zA-Z0-9\-]+)$ /js-function/$1.html [L]
+    # Redirect untuk halaman spesifik
+    RewriteRule ^index$ /index.html [NC,L]
+    RewriteRule ^natureland-kiano-1$ /natureland-kiano-1.html [NC,L]
+    RewriteRule ^natureland-kiano-2$ /natureland-kiano-2.html [NC,L]
+    RewriteRule ^natureland-kiano-3$ /natureland-kiano-3.html [NC,L]
+    RewriteRule ^green-jonggol-village$ /green-jonggol-village.html [NC,L]
+    RewriteRule ^about$ /about.html [NC,L]
 
-# Redirect untuk natureland-kiano-1 ke natureland-kiano-1.html
-RewriteRule ^natureland-kiano-1$ /natureland-kiano-1.html [NC,L]
+    # Redirect untuk sub-halaman (contoh: natureland-kiano-1/rumah-70-75)
+    RewriteRule ^natureland-kiano-1/([a-zA-Z0-9\-]+)$ /natureland-kiano-1/$1.html [L]
+    RewriteRule ^natureland-kiano-2/([a-zA-Z0-9\-]+)$ /natureland-kiano-2/$1.html [L]
+    RewriteRule ^natureland-kiano-3/([a-zA-Z0-9\-]+)$ /natureland-kiano-3/$1.html [L]
 
-# Redirect untuk natureland-kiano-2 ke natureland-kiano-2.html
-RewriteRule ^natureland-kiano-2$ /natureland-kiano-2.html [NC,L]
+    # Redirect untuk halaman bahasa (contoh: /en, /id)
+    RewriteRule ^(en|es|fr|id|jp|kr|pl|pt|ru|zh)$ /js-function/$1.html [NC,L]
+</IfModule>
 
-# Redirect untuk halaman natureland-kiano-3 ke natureland-kiano-3.html
-RewriteRule ^natureland-kiano-3$ /natureland-kiano-3.html [NC,L]
+# Security Headers (WAJIB setelah redirect HTTPS)
+<IfModule mod_headers.c>
+    # Content Security Policy (CSP)
+    Header set Content-Security-Policy "default-src 'self'; script-src 'self' https://cdn.jsdelivr.net https://www.googletagmanager.com 'unsafe-inline'; style-src 'self' https://cdn.jsdelivr.net https://fonts.googleapis.com https://cdnjs.cloudflare.com 'unsafe-inline'; img-src 'self' data: https://www.kianolandgroup.com https://vumbnail.com https://maps.gstatic.com https://www.googletagmanager.com; font-src 'self' https://fonts.gstatic.com; frame-src https://player.vimeo.com https://www.google.com; connect-src 'self' https://www.google-analytics.com;"
 
-# Redirect untuk halaman green-jonggol-village ke green-jonggol-village.html
-RewriteRule ^green-jonggol-village$ /green-jonggol-village.html [NC,L]
-
-# Redirect untuk halaman natureland-kiano-1
-RewriteRule ^natureland-kiano-1/([a-zA-Z0-9\-]+)$ /natureland-kiano-1/$1.html [L]
-
-# Redirect untuk halaman lain (contoh: rumah-70-75)
-RewriteRule ^rumah-70-75$ /natureland-kiano-1/rumah-70-75.html [NC,L]
-
-# Redirect untuk halaman natureland-kiano-2
-RewriteRule ^natureland-kiano-2/([a-zA-Z0-9\-]+)$ /natureland-kiano-2/$1.html [L]
-
-# Redirect untuk halaman lain (contoh: rumah-40-60)
-RewriteRule ^rumah-40-60$ /natureland-kiano-2/rumah-40-60.html [NC,L]
-
-# Redirect untuk halaman lain (contoh: rumah-70-75)
-RewriteRule ^rumah-70-75$ /natureland-kiano-2/rumah-70-75.html [NC,L]
-
-# Redirect untuk halaman natureland-kiano-3
-RewriteRule ^natureland-kiano-3/([a-zA-Z0-9\-]+)$ /natureland-kiano-3/$1.html [L]
-
-# Redirect untuk halaman lain (contoh: rumah-1-5-lantai-40-60)
-RewriteRule ^rumah-40-60$ /natureland-kiano-3/rumah-1-5-lantai-40-60.html [NC,L]
-
-# Redirect untuk halaman lain (contoh: rumah-2-lantai-40-60)
-RewriteRule ^rumah-40-60$ /natureland-kiano-3/rumah-2-lantai-40-60.html [NC,L]
-
-# Redirect untuk halaman lain (contoh: rumah-40-60)
-RewriteRule ^rumah-40-60$ /natureland-kiano-3/rumah-40-60.html [NC,L]
-
-# Redirect untuk about ke about.html
-RewriteRule ^about$ /about.html [NC,L]
-
-# Redirect untuk halaman lain (contoh: en)
-RewriteRule ^en$ /js-function/en.html [NC,L]
-
-# Redirect untuk halaman lain (contoh: es)
-RewriteRule ^es$ /js-function/es.html [NC,L]
-
-# Redirect untuk halaman lain (contoh: fr)
-RewriteRule ^fr$ /js-function/fr.html [NC,L]
-
-# Redirect untuk halaman lain (contoh: id)
-RewriteRule ^id$ /js-function/id.html [NC,L]
-
-# Redirect untuk halaman lain (contoh: jp)
-RewriteRule ^jp$ /js-function/jp.html [NC,L]
-
-# Redirect untuk halaman lain (contoh: kr)
-RewriteRule ^kr$ /js-function/kr.html [NC,L]
-
-# Redirect untuk halaman lain (contoh: pl)
-RewriteRule ^pl$ /js-function/pl.html [NC,L]
-
-# Redirect untuk halaman lain (contoh: pt)
-RewriteRule ^pt$ /js-function/pt.html [NC,L]
-
-# Redirect untuk halaman lain (contoh: ru)
-RewriteRule ^ru$ /js-function/ru.html [NC,L]
-
-# Redirect untuk halaman lain (contoh: zh)
-RewriteRule ^zh$ /js-function/zh.html [NC,L]
+    # Header Keamanan Lainnya
+    Header set X-Frame-Options "SAMEORIGIN"
+    Header set X-Content-Type-Options "nosniff"
+    Header set Referrer-Policy "strict-origin-when-cross-origin"
+    Header set Permissions-Policy "geolocation=(), microphone=(), camera=(), fullscreen=(self)"
+</IfModule>
 
 # Aktifkan kompresi Gzip
 <IfModule mod_deflate.c>
@@ -159,22 +115,6 @@ RewriteRule ^zh$ /js-function/zh.html [NC,L]
 
   # File HTML
   ExpiresByType text/html "access plus 1 day"
-</IfModule>
-
-# Aktifkan RewriteEngine untuk redirect HTTPS
-<IfModule mod_rewrite.c>
-    RewriteEngine On
-    RewriteCond %{HTTPS} off
-    RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
-</IfModule>
-
-# Security Headers
-<IfModule mod_headers.c>
-    Header set Content-Security-Policy "default-src 'self'; script-src 'self' https://cdn.jsdelivr.net https://www.googletagmanager.com 'unsafe-inline'; style-src 'self' https://cdn.jsdelivr.net https://fonts.googleapis.com https://cdnjs.cloudflare.com 'unsafe-inline'; img-src 'self' data: https://www.kianolandgroup.com https://vumbnail.com https://maps.gstatic.com; font-src 'self' https://fonts.gstatic.com; frame-src https://player.vimeo.com https://www.google.com; connect-src 'self' https://www.google-analytics.com;"
-    Header set X-Frame-Options "SAMEORIGIN"
-    Header set X-Content-Type-Options "nosniff"
-    Header set Referrer-Policy "strict-origin-when-cross-origin"
-    Header set Permissions-Policy "geolocation=(), microphone=(), camera=(), fullscreen=(self)"
 </IfModule>
 
 # Blokir Akses ke File Sensitif
