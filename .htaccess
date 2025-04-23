@@ -161,15 +161,15 @@ RewriteRule ^zh$ /js-function/zh.html [NC,L]
   ExpiresByType text/html "access plus 1 day"
 </IfModule>
 
-# Redirect HTTPS
+# Aktifkan RewriteEngine untuk redirect HTTPS
 <IfModule mod_rewrite.c>
     RewriteEngine On
     RewriteCond %{HTTPS} off
     RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 </IfModule>
 
+# Security Headers
 <IfModule mod_headers.c>
-    # Security Headers
     Header set Content-Security-Policy "default-src 'self'; script-src 'self' https://cdn.jsdelivr.net https://www.googletagmanager.com 'unsafe-inline'; style-src 'self' https://cdn.jsdelivr.net https://fonts.googleapis.com https://cdnjs.cloudflare.com 'unsafe-inline'; img-src 'self' data: https://www.kianolandgroup.com https://vumbnail.com https://maps.gstatic.com; font-src 'self' https://fonts.gstatic.com; frame-src https://player.vimeo.com https://www.google.com; connect-src 'self' https://www.google-analytics.com;"
     Header set X-Frame-Options "SAMEORIGIN"
     Header set X-Content-Type-Options "nosniff"
@@ -182,11 +182,3 @@ RewriteRule ^zh$ /js-function/zh.html [NC,L]
   Order allow,deny
   Deny from all
 </FilesMatch>
-
-<IfModule mod_headers.c>
-  Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'nonce-random123'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://www.kianolandgroup.com; font-src 'self' https://fonts.gstatic.com; frame-src https://player.vimeo.com"
-  Header always set X-Frame-Options "SAMEORIGIN"
-  Header always set X-Content-Type-Options "nosniff"
-  Header always set Referrer-Policy "strict-origin-when-cross-origin"
-  Header always set Permissions-Policy "geolocation=(), microphone=(), camera=(), fullscreen=(self)"
-</IfModule>
