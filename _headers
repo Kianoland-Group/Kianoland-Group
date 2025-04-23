@@ -1,8 +1,0 @@
-Content-Security-Policy:
-default-src 'self';
-script-src 'self' https://cdn.jsdelivr.net https://www.googletagmanager.com https://maps.googleapis.com;
-style-src 'self' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com https://fonts.googleapis.com;
-img-src 'self' data: https://www.kianolandgroup.com https://maps.gstatic.com;
-font-src 'self' https://fonts.gstatic.com;
-frame-src https://www.google.com;
-connect-src 'self' https://www.google-analytics.com;
