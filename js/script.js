@@ -138,6 +138,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const responsiveProgressBar = document.getElementById('responsiveProgressBar');
 
     function updateProgressBar() {
+        if (!responsiveProgressBar || !progressBar || !scrollContainer) return;
+
         if (responsiveProgressBar.style.display !== 'none') {
             const scrollLeft = scrollContainer.scrollLeft;
             const scrollWidth = scrollContainer.scrollWidth;
@@ -302,16 +304,14 @@ document.addEventListener('DOMContentLoaded', function() {
     const scrollContainer = document.getElementById('scrollContainerKiano');
     const progressBar = document.getElementById('scrollProgressBarKiano');
 
-    scrollContainer.addEventListener('scroll', function() {
-        // Total scrollable width
-        const scrollWidth = scrollContainer.scrollWidth - scrollContainer.clientWidth;
-        // Current scroll position
-        const scrollLeft = scrollContainer.scrollLeft;
-        // Calculate the scroll percentage
-        const scrollPercentage = (scrollLeft / scrollWidth) * 100;
-        // Set progress bar width
-        progressBar.style.width = scrollPercentage + '%';
-    });
+    if (scrollContainer && progressBar) {
+        scrollContainer.addEventListener('scroll', function() {
+            const scrollWidth = scrollContainer.scrollWidth - scrollContainer.clientWidth;
+            const scrollLeft = scrollContainer.scrollLeft;
+            const scrollPercentage = (scrollLeft / scrollWidth) * 100;
+            progressBar.style.width = scrollPercentage + '%';
+        });
+    }
 });
 
 /// ===============================================================================================================================================================================================
