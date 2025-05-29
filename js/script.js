@@ -247,16 +247,18 @@ function setImagesArray() {
 document.addEventListener("DOMContentLoaded", setImagesArray);
 
 // Event listener untuk menyembunyikan scrollbar saat modal terbuka
-document.getElementById('imageModal').addEventListener('show.bs.modal', function () {
-    document.body.style.overflow = 'hidden';
-    document.documentElement.style.overflow = 'hidden';
-});
+const imageModal = document.getElementById('imageModal');
+if (imageModal) {
+    imageModal.addEventListener('show.bs.modal', function () {
+        document.body.style.overflow = 'hidden';
+        document.documentElement.style.overflow = 'hidden';
+    });
 
-// Event listener untuk mengembalikan scrollbar saat modal ditutup
-document.getElementById('imageModal').addEventListener('hidden.bs.modal', function () {
-    document.body.style.overflow = '';
-    document.documentElement.style.overflow = '';
-});
+    imageModal.addEventListener('hidden.bs.modal', function () {
+        document.body.style.overflow = '';
+        document.documentElement.style.overflow = '';
+    });
+}
 
 /// ===============================================================================================================================================================================================
 /// ============ DOWNLOAD BROSUR ==================================================================================================================================================================
