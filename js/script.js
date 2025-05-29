@@ -357,7 +357,7 @@ document.getElementById('contactForm').addEventListener('submit', function (even
     var whatsappMessage = `${customMessage}Name: ${name}\nEmail: ${email}\nMessage: ${message}`;
 
     // Nomor WhatsApp tujuan
-    var phoneNumber = '6285282592945';
+    var phoneNumber = '6285775381495';
 
     // Buat URL untuk WhatsApp
     var whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(whatsappMessage)}`;
