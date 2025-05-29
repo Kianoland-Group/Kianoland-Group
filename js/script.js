@@ -149,7 +149,9 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-    scrollContainer.addEventListener('scroll', updateProgressBar);
+    if (scrollContainer) {
+        scrollContainer.addEventListener('scroll', updateProgressBar);
+    }
 
     setTimeout(updateProgressBar, 100); // Delay to ensure content is loaded
 });
@@ -167,9 +169,12 @@ function openModal(imageSrc) {
     document.body.classList.add('modal-open');
 }
 
-document.getElementById('fullImageModal').addEventListener('hidden.bs.modal', function () {
-    document.body.classList.remove('modal-open');
-});
+const modalElement = document.getElementById('fullImageModal');
+if (modalElement) {
+    modalElement.addEventListener('hidden.bs.modal', function () {
+        document.body.classList.remove('modal-open');
+    });
+}
 
 function prevImage() {
     currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
