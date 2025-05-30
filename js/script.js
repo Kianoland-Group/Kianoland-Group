@@ -16,7 +16,6 @@ document.addEventListener("DOMContentLoaded", function () {
     initSupportSection();
     initContactForm();
     initSmoothScrolling();
-    init();
     
     // Set current year in footer
     const currentYearElement = document.getElementById("current-year");

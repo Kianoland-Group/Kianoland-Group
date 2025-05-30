@@ -3,11 +3,23 @@ function loadTemplate(id, localPath, hostingPath) {
   const filePath = isLocalhost ? localPath : hostingPath;
 
   fetch(filePath)
-    .then(response => response.text())
+    .then(response => {
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      return response.text();
+    })
     .then(data => {
       document.getElementById(id).innerHTML = data;
+      // Re-initialize chat bubble after template loads
+      if (id === 'chattbot') {
+        initChatBubble();
+      }
     })
-    .catch(error => console.error(`Fetch Error (${filePath}):`, error));
+    .catch(error => {
+      console.error(`Fetch Error (${filePath}):`, error);
+      // You might want to create default content here if the fetch fails
+    });
 }
 
 // Load Footer & WhatsApp Button
