@@ -13,4 +13,4 @@ function loadTemplate(id, localPath, hostingPath) {
 // Load Footer & WhatsApp Button
 loadTemplate('footer-placeholder', '/Kianoland-Group/template/footer.html', '../template/footer.html');
 loadTemplate('whatsapp-button', '/Kianoland-Group/template/whatsapp-button.html', '../template/whatsapp-button.html');
-
+loadTemplate('chattbot', '/Kianoland-Group/template/chattbot.html', '../template/chattbot.html');
