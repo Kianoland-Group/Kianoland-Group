@@ -1496,7 +1496,7 @@ body.modal-open {
   object-position: center;
 }
 
-/* CSS untuk mengatur jarak antara chatbot dan whatsapp */
+/* CSS untuk Tooltip Chat Bubble */
 #chatbot-container {
   position: fixed;
   bottom: 100px;
@@ -1505,6 +1505,7 @@ body.modal-open {
 }
 
 .chat-bubble {
+  position: relative;
   width: 60px;
   height: 60px;
   background-color: #0071C8;
@@ -1514,22 +1515,43 @@ body.modal-open {
   align-items: center;
   cursor: pointer;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  transition: all 0.3s ease;
-  /* Ensure these properties are set */
-  position: relative;
-  transform: translateZ(0); /* Force hardware acceleration */
 }
 
-.chat-bubble:hover {
-  transform: scale(1.1);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
-  background-color: #0060a8; /* Slightly darker on hover */
+/* Tooltip yang akan muncul saat hover */
+.chat-tooltip {
+  position: absolute;
+  top: -50px;
+  left: -180px;
+  width: 160px;
+  padding: 10px;
+  background-color: white;
+  color: #333;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  font-size: 14px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.chat-tooltip::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  right: 20px;
+  border-width: 10px 10px 0;
+  border-style: solid;
+  border-color: white transparent transparent;
+}
+
+.chat-bubble:hover .chat-tooltip {
+  opacity: 1;
+  visibility: visible;
 }
 
 .chat-icon {
   color: white;
   font-size: 24px;
-  pointer-events: none; /* Prevent icon from interfering with hover */
 }
 
 /* Chat Box Styles */
@@ -1657,6 +1679,12 @@ body.modal-open {
   .chat-box {
     width: 280px;
     bottom: 70px;
+  }
+
+  .chat-tooltip {
+    left: -150px;
+    width: 140px;
+    font-size: 12px;
   }
 
   .whatsapp-float {
