@@ -1559,22 +1559,26 @@ body.modal-open {
   position: fixed;
   bottom: 80px;
   right: 30px;
-  width: 400px; /* Lebar disesuaikan agar tidak terlalu lebar */
-  max-height: 70vh; /* Tinggi mengikuti viewport */
+  width: 380px;
+  height: auto; /* Ubah ke auto */
+  max-height: 70vh;
   background-color: white;
-  border-radius: 12px 12px 0 0; /* Radius hanya di atas */
+  border-radius: 12px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
   display: none;
   z-index: 10000;
   overflow: hidden;
-  transform-origin: bottom right;
-  animation: fadeIn 0.3s ease;
+  padding-bottom: 0; /* Pastikan tidak ada padding bawah */
 }
 
 .chat-body {
   padding: 20px;
-  height: calc(600px - 140px); /* Disesuaikan dengan tinggi baru */
-  max-height: none; /* Menghilangkan max-height sebelumnya */
+  height: auto;
+  min-height: 200px;
+  max-height: calc(70vh - 60px); /* Sesuaikan dengan header */
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
   overflow-y: auto;
 }
 
@@ -1654,8 +1658,8 @@ body.modal-open {
 }
 
 .options-container {
-  margin-top: 15px;
-  padding-bottom: 15px; /* Padding bawah untuk jarak */
+  margin-top: auto; /* Ini akan mendorong container ke bawah */
+  padding-bottom: 15px;
 }
 
 .options-title {
