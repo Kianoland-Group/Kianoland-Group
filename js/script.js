@@ -189,6 +189,10 @@ function initImageModal() {
 
     function setImagesArray() {
         const currentPage = window.location.pathname;
+        console.log('Detected page:', currentPage); // Debug which page is detected
+        
+        // Clear array first
+        images.length = 0;
 
         if (currentPage.includes('/green-jonggol-village/rumah-30-60.html')) {
             images.push(
@@ -255,12 +259,16 @@ function initImageModal() {
 
     function prevImage() {
         currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
-        document.getElementById('modalImage').src = images[currentImageIndex];
+        const newSrc = images[currentImageIndex];
+        console.log('Loading previous image:', newSrc); // Debug
+        document.getElementById('modalImage').src = newSrc;
     }
 
     function nextImage() {
         currentImageIndex = (currentImageIndex + 1) % images.length;
-        document.getElementById('modalImage').src = images[currentImageIndex];
+        const newSrc = images[currentImageIndex];
+        console.log('Loading next image:', newSrc); // Debug
+        document.getElementById('modalImage').src = newSrc;
     }
 
     // Initialize
@@ -291,6 +299,7 @@ function initImageModal() {
     window.openModal = openModal;
     window.prevImage = prevImage;
     window.nextImage = nextImage;
+    console.log('Loaded images:', images); // Verify the array is populated
 }
 
 // ============ DOWNLOAD BROSUR ================================================================================================================================================================
