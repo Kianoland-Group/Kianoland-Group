@@ -1501,7 +1501,7 @@ body.modal-open {
   position: fixed;
   bottom: 100px;
   right: 30px;
-  z-index: 10000;
+  z-index: 9999; /* Pastikan lebih tinggi dari elemen lain */
 }
 
 .chat-bubble {
@@ -1556,14 +1556,15 @@ body.modal-open {
 
 /* Chat Box Styles */
 .chat-box {
-  position: absolute;
+  position: fixed; /* Ganti dari absolute ke fixed */
   bottom: 80px;
-  right: 0;
+  right: 30px;
   width: 320px;
   background-color: white;
   border-radius: 12px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
   display: none;
+  z-index: 10000; /* Lebih tinggi dari container */
   overflow: hidden;
   transform-origin: bottom right;
   animation: fadeIn 0.3s ease;

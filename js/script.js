@@ -466,47 +466,48 @@ function initSmoothScrolling() {
 
 // ============ CHAT BUBBLE ===============================================================================================================================================================
 function initChatBubble() {
-    const chatBubble = document.getElementById('chat-bubble');
-    const chatBox = document.getElementById('chat-box');
-    const closeBtn = document.querySelector('.chat-close-btn');
+  const chatBubble = document.getElementById('chat-bubble');
+  const chatBox = document.getElementById('chat-box');
+  const closeBtn = document.querySelector('.chat-close-btn');
+  
+  if (chatBubble && chatBox && closeBtn) {
+    // Debugging
+    console.log('Element found:', {chatBubble, chatBox, closeBtn});
     
-    if (chatBubble && chatBox && closeBtn) {
-        // Toggle chat box
-        chatBubble.addEventListener('click', function(e) {
-            e.stopPropagation();
-            chatBox.style.display = chatBox.style.display === 'none' ? 'block' : 'none';
-        });
+    chatBubble.addEventListener('click', function(e) {
+      e.stopPropagation();
+      console.log('Bubble clicked! Current display:', chatBox.style.display);
+      chatBox.style.display = chatBox.style.display === 'block' ? 'none' : 'block';
+    });
+    
+    closeBtn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      chatBox.style.display = 'none';
+    });
+    
+    const optionButtons = document.querySelectorAll('.option-btn');
+    optionButtons.forEach(button => {
+      button.addEventListener('click', function(e) {
+        e.stopPropagation();
+        const optionText = this.textContent.trim();
+        let message = '';
         
-        // Close chat box
-        closeBtn.addEventListener('click', function(e) {
-            e.stopPropagation();
-            chatBox.style.display = 'none';
-        });
+        if (optionText.includes('kirimkan Brosur')) {
+          message = 'Halo, saya ingin mendapatkan brosur dan pricelist untuk Kianoland Group.';
+        } else if (optionText.includes('berbicara dengan Sales')) {
+          message = 'Halo, saya ingin berbicara dengan sales representative Kianoland Group.';
+        } else if (optionText.includes('Estate Management')) {
+          message = 'Halo, saya penghuni Kianoland dan ingin bertanya ke Estate Management.';
+        }
         
-        // Option button click handlers
-        const optionButtons = document.querySelectorAll('.option-btn');
-        optionButtons.forEach(button => {
-            button.addEventListener('click', function(e) {
-                e.stopPropagation();
-                const optionText = this.textContent.trim();
-                let message = '';
-                
-                if (optionText.includes('kirimkan Brosur')) {
-                    message = 'Halo, saya ingin mendapatkan brosur dan pricelist untuk Kianoland Group.';
-                } else if (optionText.includes('berbicara dengan Sales')) {
-                    message = 'Halo, saya ingin berbicara dengan sales representative Kianoland Group.';
-                } else if (optionText.includes('Estate Management')) {
-                    message = 'Halo, saya penghuni Kianoland dan ingin bertanya ke Estate Management.';
-                }
-                
-                window.open(`https://wa.me/628111611724?text=${encodeURIComponent(message)}`, '_blank');
-            });
-        });
-    }
-}
-
-// Add this to your initialization function
-function init() {
-  // ... other initializations
-  initChatBubble();
+        window.open(`https://wa.me/628111611724?text=${encodeURIComponent(message)}`, '_blank');
+      });
+    });
+  } else {
+    console.error('Elements not found:', {
+      chatBubble: !!chatBubble,
+      chatBox: !!chatBox, 
+      closeBtn: !!closeBtn
+    });
+  }
 }
