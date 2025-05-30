@@ -1556,18 +1556,25 @@ body.modal-open {
 
 /* Chat Box Styles */
 .chat-box {
-  position: fixed; /* Ganti dari absolute ke fixed */
+  position: fixed;
   bottom: 80px;
   right: 30px;
-  width: 320px;
+  width: 380px; /* Diubah dari 320px menjadi 380px (lebih lebar) */
+  height: 500px; /* Menambahkan height untuk mengontrol tinggi keseluruhan */
   background-color: white;
   border-radius: 12px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
   display: none;
-  z-index: 10000; /* Lebih tinggi dari container */
+  z-index: 10000;
   overflow: hidden;
   transform-origin: bottom right;
   animation: fadeIn 0.3s ease;
+}
+
+.chat-body {
+  padding: 15px;
+  height: calc(500px - 120px); /* Menyesuaikan tinggi body dengan tinggi total dikurangi header dan padding */
+  overflow-y: auto;
 }
 
 @keyframes fadeIn {
@@ -1678,8 +1685,12 @@ body.modal-open {
   }
   
   .chat-box {
-    width: 280px;
-    bottom: 70px;
+    width: 320px; /* Tetap lebih lebar dari sebelumnya (280px) */
+    height: 450px;
+  }
+  
+  .chat-body {
+    height: calc(450px - 120px);
   }
 
   .chat-tooltip {
