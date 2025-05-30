@@ -189,40 +189,55 @@ function initImageModal() {
 
     function setImagesArray() {
         const currentPage = window.location.pathname;
-        console.log('Detected page:', currentPage); // Debug which page is detected
+        console.log('Current page path:', currentPage); // Debug path
         
         // Clear array first
         images.length = 0;
 
-        if (currentPage.includes('/green-jonggol-village/rumah-30-60.html')) {
+        // Check for each page condition (more flexible matching)
+        if (currentPage.includes('green-jonggol-village/rumah-30-60') || 
+            currentPage.endsWith('green-jonggol-village/rumah-30-60.html')) {
+            console.log('Loading images for Green Jonggol Village - Rumah 30/60');
             images.push(
                 '../assets/natureland-kiano-1/Cibarusah.jpeg',
                 '../assets/produk/Natureland Kiano 3.jpeg',
                 '../assets/hero/Background About.jpg',
                 '../assets/natureland-kiano-1/1_1 - Photo.jpg'
             );
-        } else if (currentPage.includes('/natureland-kiano-1/rumah-70-75.html')) {
+        } 
+        else if (currentPage.includes('natureland-kiano-1/rumah-70-75') || 
+                currentPage.endsWith('natureland-kiano-1/rumah-70-75.html')) {
+            console.log('Loading images for Natureland Kiano 1 - Rumah 70/75');
             images.push(
                 '../assets/natureland-kiano-1/Cibarusah.jpeg',
                 '../assets/produk/Natureland Kiano 3.jpeg',
                 '../assets/natureland-kiano-3/Rumah 2 Lantai/4_4 - Photo.jpg',
                 '../assets/natureland-kiano-1/1_1 - Photo.jpg'
             );
-        } else if (currentPage.includes('/natureland-kiano-2/rumah-40-60.html')) {
+        }
+        else if (currentPage.includes('natureland-kiano-2/rumah-40-60') || 
+                currentPage.endsWith('natureland-kiano-2/rumah-40-60.html')) {
+            console.log('Loading images for Natureland Kiano 2 - Rumah 40/60');
             images.push(
                 '../assets/natureland-kiano-1/Cibarusah.jpeg',
                 '../assets/produk/Natureland Kiano 3.jpeg',
                 '../assets/hero/Background About.jpg',
                 '../assets/natureland-kiano-1/1_1 - Photo.jpg'
             );
-        } else if (currentPage.includes('/natureland-kiano-2/rumah-70-75.html')) {
+        }
+        else if (currentPage.includes('natureland-kiano-2/rumah-70-75') || 
+                currentPage.endsWith('natureland-kiano-2/rumah-70-75.html')) {
+            console.log('Loading images for Natureland Kiano 2 - Rumah 70/75');
             images.push(
                 '../assets/natureland-kiano-1/Cibarusah.jpeg',
                 '../assets/produk/Natureland Kiano 3.jpeg',
                 '../assets/hero/Background About.jpg',
                 '../assets/natureland-kiano-1/1_1 - Photo.jpg'
             );
-        } else if (currentPage.includes('/natureland-kiano-3/rumah-1-5-lantai-40-60.html')) {
+        }
+        else if (currentPage.includes('natureland-kiano-3/rumah-1-5-lantai-40-60') || 
+                currentPage.endsWith('natureland-kiano-3/rumah-1-5-lantai-40-60.html')) {
+            console.log('Loading images for Natureland Kiano 3 - Rumah 1.5 Lantai 40/60');
             images.push(
                 '../assets/natureland-kiano-3/Rumah 1,5 Lantai/1_11 - Photo.jpg',
                 '../assets/natureland-kiano-3/Rumah 1,5 Lantai/1_12 - Photo.jpg',
@@ -230,14 +245,20 @@ function initImageModal() {
                 '../assets/natureland-kiano-3/Rumah 1,5 Lantai/1_18 - Photo.jpg',
                 '../assets/natureland-kiano-3/Rumah 1,5 Lantai/2_1 - Photo.jpg'
             );
-        } else if (currentPage.includes('/natureland-kiano-3/rumah-2-lantai-40-60.html')) {
+        }
+        else if (currentPage.includes('natureland-kiano-3/rumah-2-lantai-40-60') || 
+                currentPage.endsWith('natureland-kiano-3/rumah-2-lantai-40-60.html')) {
+            console.log('Loading images for Natureland Kiano 3 - Rumah 2 Lantai 40/60');
             images.push(
                 '../assets/natureland-kiano-3/Rumah 2 Lantai/4_2 - Photo.jpg',
                 '../assets/natureland-kiano-3/Rumah 2 Lantai/4_4 - Photo.jpg',
                 '../assets/natureland-kiano-3/Rumah 2 Lantai/4_5 - Photo.jpg',
                 '../assets/natureland-kiano-3/Rumah 2 Lantai/4_8 - Photo.jpg'
             );
-        } else if (currentPage.includes('/natureland-kiano-3/rumah-40-60.html')) {
+        }
+        else if (currentPage.includes('natureland-kiano-3/rumah-40-60') || 
+                currentPage.endsWith('natureland-kiano-3/rumah-40-60.html')) {
+            console.log('Loading images for Natureland Kiano 3 - Rumah 40/60');
             images.push(
                 '../assets/natureland-kiano-3/Rumah 40-60/1.jpg',
                 '../assets/natureland-kiano-3/Rumah 40-60/2.jpg',
@@ -245,29 +266,51 @@ function initImageModal() {
                 '../assets/natureland-kiano-3/Rumah 40-60/4.jpg'
             );
         }
+        
+        console.log('Images loaded:', images); // Debug loaded images
     }
 
     function openModal(imageSrc) {
-        document.getElementById('modalImage').src = imageSrc;
+        if (!imageSrc) {
+            console.error('Trying to open modal with undefined image source');
+            return;
+        }
+        
+        // Find the index of the clicked image
         currentImageIndex = images.indexOf(imageSrc);
+        if (currentImageIndex === -1) {
+            console.error('Image not found in images array:', imageSrc);
+            return;
+        }
+        
+        console.log('Opening modal with image:', imageSrc);
+        document.getElementById('modalImage').src = imageSrc;
 
         const fullImageModal = new bootstrap.Modal(document.getElementById('fullImageModal'));
         fullImageModal.show();
-
-        document.body.classList.add('modal-open');
     }
 
     function prevImage() {
+        if (images.length === 0) {
+            console.error('No images available for navigation');
+            return;
+        }
+        
         currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
         const newSrc = images[currentImageIndex];
-        console.log('Loading previous image:', newSrc); // Debug
+        console.log('Showing previous image:', newSrc);
         document.getElementById('modalImage').src = newSrc;
     }
 
     function nextImage() {
+        if (images.length === 0) {
+            console.error('No images available for navigation');
+            return;
+        }
+        
         currentImageIndex = (currentImageIndex + 1) % images.length;
         const newSrc = images[currentImageIndex];
-        console.log('Loading next image:', newSrc); // Debug
+        console.log('Showing next image:', newSrc);
         document.getElementById('modalImage').src = newSrc;
     }
 
@@ -277,29 +320,15 @@ function initImageModal() {
     // Set up event listeners
     const modalElement = document.getElementById('fullImageModal');
     if (modalElement) {
-        modalElement.addEventListener('hidden.bs.modal', function () {
+        modalElement.addEventListener('hidden.bs.modal', function() {
             document.body.classList.remove('modal-open');
         });
     }
 
-    const imageModal = document.getElementById('imageModal');
-    if (imageModal) {
-        imageModal.addEventListener('show.bs.modal', function () {
-            document.body.style.overflow = 'hidden';
-            document.documentElement.style.overflow = 'hidden';
-        });
-
-        imageModal.addEventListener('hidden.bs.modal', function () {
-            document.body.style.overflow = '';
-            document.documentElement.style.overflow = '';
-        });
-    }
-
-    // Make openModal function available globally
+    // Make functions available globally
     window.openModal = openModal;
     window.prevImage = prevImage;
     window.nextImage = nextImage;
-    console.log('Loaded images:', images); // Verify the array is populated
 }
 
 // ============ DOWNLOAD BROSUR ================================================================================================================================================================
