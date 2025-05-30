@@ -1499,8 +1499,8 @@ body.modal-open {
 /* CSS untuk mengatur jarak antara chatbot dan whatsapp */
 #chatbot-container {
   position: fixed;
-  bottom: 100px; /* Atur posisi vertikal */
-  right: 30px;   /* Atur posisi horizontal */
+  bottom: 100px;
+  right: 30px;
   z-index: 10000;
 }
 
@@ -1515,16 +1515,21 @@ body.modal-open {
   cursor: pointer;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   transition: all 0.3s ease;
+  /* Ensure these properties are set */
+  position: relative;
+  transform: translateZ(0); /* Force hardware acceleration */
 }
 
 .chat-bubble:hover {
   transform: scale(1.1);
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+  background-color: #0060a8; /* Slightly darker on hover */
 }
 
 .chat-icon {
   color: white;
   font-size: 24px;
+  pointer-events: none; /* Prevent icon from interfering with hover */
 }
 
 /* Chat Box Styles */
