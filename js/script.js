@@ -15,6 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
     initSupportSection();
     initContactForm();
     initSmoothScrolling();
+    init();
     
     // Set current year in footer
     const currentYearElement = document.getElementById("current-year");
@@ -462,40 +463,48 @@ function initSmoothScrolling() {
     });
 }
 
-document.addEventListener('DOMContentLoaded', function() {
+// ============ CHAT BUBBLE ===============================================================================================================================================================
+function initChatBubble() {
   const chatBubble = document.getElementById('chat-bubble');
   const chatBox = document.getElementById('chat-box');
   const closeBtn = document.querySelector('.chat-close-btn');
   
-  // Toggle chat box
-  chatBubble.addEventListener('click', function() {
-    chatBox.style.display = chatBox.style.display === 'block' ? 'none' : 'block';
-  });
-  
-  // Close chat box
-  closeBtn.addEventListener('click', function() {
-    chatBox.style.display = 'none';
-  });
-  
-  // Option button click handlers
-  const optionButtons = document.querySelectorAll('.option-btn');
-  optionButtons.forEach(button => {
-    button.addEventListener('click', function() {
-      // Here you can add functionality for each option
-      // For example, redirect to WhatsApp with different messages
-      const optionText = this.textContent.trim();
-      let message = '';
-      
-      if (optionText.includes('kirimkan Brosur')) {
-        message = 'Halo, saya ingin mendapatkan brosur dan pricelist untuk Kianoland Group.';
-      } else if (optionText.includes('berbicara dengan Sales')) {
-        message = 'Halo, saya ingin berbicara dengan sales representative Kianoland Group.';
-      } else if (optionText.includes('Estate Management')) {
-        message = 'Halo, saya penghuni Kianoland dan ingin bertanya ke Estate Management.';
-      }
-      
-      // Open WhatsApp with the message
-      window.open(`https://wa.me/628111611724?text=${encodeURIComponent(message)}`, '_blank');
+  // Only proceed if all elements exist
+  if (chatBubble && chatBox && closeBtn) {
+    // Toggle chat box
+    chatBubble.addEventListener('click', function() {
+      chatBox.style.display = chatBox.style.display === 'block' ? 'none' : 'block';
     });
-  });
-});
+    
+    // Close chat box
+    closeBtn.addEventListener('click', function() {
+      chatBox.style.display = 'none';
+    });
+    
+    // Option button click handlers
+    const optionButtons = document.querySelectorAll('.option-btn');
+    optionButtons.forEach(button => {
+      button.addEventListener('click', function() {
+        const optionText = this.textContent.trim();
+        let message = '';
+        
+        if (optionText.includes('kirimkan Brosur')) {
+          message = 'Halo, saya ingin mendapatkan brosur dan pricelist untuk Kianoland Group.';
+        } else if (optionText.includes('berbicara dengan Sales')) {
+          message = 'Halo, saya ingin berbicara dengan sales representative Kianoland Group.';
+        } else if (optionText.includes('Estate Management')) {
+          message = 'Halo, saya penghuni Kianoland dan ingin bertanya ke Estate Management.';
+        }
+        
+        // Open WhatsApp with the message
+        window.open(`https://wa.me/628111611724?text=${encodeURIComponent(message)}`, '_blank');
+      });
+    });
+  }
+}
+
+// Add this to your initialization function
+function init() {
+  // ... other initializations
+  initChatBubble();
+}
