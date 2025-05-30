@@ -1559,10 +1559,10 @@ body.modal-open {
   position: fixed;
   bottom: 80px;
   right: 30px;
-  width: 500px; /* Lebar diperbesar (sebelumnya 320px/380px) */
-  height: 600px; /* Tinggi diperbesar (sebelumnya 400px/500px) */
+  width: 400px; /* Lebar disesuaikan agar tidak terlalu lebar */
+  max-height: 70vh; /* Tinggi mengikuti viewport */
   background-color: white;
-  border-radius: 12px;
+  border-radius: 12px 12px 0 0; /* Radius hanya di atas */
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
   display: none;
   z-index: 10000;
@@ -1592,10 +1592,12 @@ body.modal-open {
 .chat-header {
   background-color: #0071C8;
   color: white;
-  padding: 20px; /* Padding header diperbesar */
+  padding: 15px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
+  z-index: 2;
 }
 
 .chat-title h5 {
@@ -1621,8 +1623,17 @@ body.modal-open {
 
 .chat-body {
   padding: 15px;
-  max-height: 400px;
+  height: auto;
+  min-height: 300px; /* Minimum height */
+  max-height: calc(70vh - 60px); /* Disesuaikan dengan header */
   overflow-y: auto;
+  background-color: white; /* Pastikan background solid */
+}
+
+/* Menghilangkan ruang putih di bawah */
+.chat-body::after {
+  content: '';
+  display: none; /* Nonaktifkan pseudo-element jika ada */
 }
 
 .chat-message {
@@ -1643,7 +1654,8 @@ body.modal-open {
 }
 
 .options-container {
-  margin-top: 20px;
+  margin-top: 15px;
+  padding-bottom: 15px; /* Padding bawah untuk jarak */
 }
 
 .options-title {
@@ -1687,14 +1699,14 @@ body.modal-open {
   }
   
   .chat-box {
-    width: 90vw; /* Lebar menyesuaikan layar mobile */
-    height: 70vh; /* Tinggi menyesuaikan viewport */
+    width: 90vw;
     right: 5vw;
-    bottom: 100px;
+    bottom: 70px;
+    max-height: 80vh; /* Lebih tinggi di mobile */
   }
   
   .chat-body {
-    height: calc(70vh - 120px);
+    max-height: calc(80vh - 60px);
   }
 
   .chat-tooltip {
