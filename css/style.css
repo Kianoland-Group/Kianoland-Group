@@ -1673,27 +1673,33 @@ body.modal-open {
   display: flex;
   gap: 10px;
   padding: 15px;
-  align-items: center; /* agar sejajar */
+  align-items: center;
   border-top: 1px solid #e0e0e0;
   background-color: #fff;
   border-radius: 0 0 12px 12px;
+  height: 80px; /* Tinggi tetap */
 }
 
 .message-input-group {
   flex: 1;
+  height: 100%;
+  display: flex;
+  align-items: center;
 }
 
 .message-input-group textarea {
-  height: 44px; /* Set tinggi tetap */
-  min-height: 44px;
-  max-height: 44px;
+  height: 44px !important;
+  min-height: 44px !important;
+  max-height: 44px !important;
   padding: 10px 15px;
   border: 1px solid #ccc;
   border-radius: 12px;
-  resize: none; /* Nonaktifkan resize agar tinggi tetap */
+  resize: none;
   font-size: 14px;
   box-sizing: border-box;
   width: 100%;
+  margin: 0;
+  line-height: 1.5;
 }
 
 .message-input-group textarea:focus {
@@ -1706,14 +1712,15 @@ body.modal-open {
   background-color: #007bff;
   color: white;
   border: none;
-  border-radius: 12px; /* Sama dengan radius textarea */
+  border-radius: 12px;
   font-size: 14px;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  height: auto; /* Penting: jangan 100% */
+  height: 44px; /* Sama dengan tinggi textarea */
   white-space: nowrap;
+  margin: 0;
 }
 
 .send-message-btn:hover {
@@ -1775,24 +1782,21 @@ body.modal-open {
   }
 
   .message-form-container {
-    padding: 15px;
-    height: 140px; /* Tinggi form diperbaiki */
-    display: flex;
-    flex-direction: column;
+    height: auto;
+    padding: 10px;
+    flex-direction: row;
+    align-items: center;
   }
-
+  
   .message-input-group textarea {
-    min-height: 60px; /* Tinggi textarea diperkecil */
-    max-height: 80px; /* Batas maksimal tinggi textarea */
-    font-size: 14px;
-    padding: 10px;
-    margin-bottom: 8px;
+    height: 40px !important;
+    min-height: 40px !important;
+    max-height: 40px !important;
   }
-
+  
   .send-message-btn {
-    padding: 10px;
-    font-size: 14px;
-    height: auto; /* Tinggi tombol otomatis */
+    height: 40px;
+    padding: 10px 15px;
   }
 
   /* Sembunyikan tooltip di mobile */
