@@ -471,164 +471,83 @@ function initChatBubble() {
   const sendBtn = document.getElementById('send-message-btn');
   const userMessage = document.getElementById('user-message');
   
-    if (chatBubble && chatBox && closeBtn && sendBtn && userMessage) {
-      
+  // Fungsi untuk menambahkan timestamp
+  const addTimestamps = () => {
+    document.querySelectorAll('.message-time').forEach(el => {
+      if (!el.textContent) {
+        el.textContent = getCurrentTime();
+      }
+    });
+  };
+
+  // Fungsi format waktu
+  const getCurrentTime = () => {
+    const now = new Date();
+    let hours = now.getHours();
+    const minutes = now.getMinutes().toString().padStart(2, '0');
+    const ampm = hours >= 12 ? 'PM' : 'AM';
+    hours = hours % 12;
+    hours = hours ? hours : 12;
+    return `${hours}:${minutes} ${ampm}`;
+  };
+
+  if (chatBubble && chatBox && closeBtn && sendBtn && userMessage) {
+    // Tambahkan timestamp saat pertama kali load
+    addTimestamps();
+    
     chatBox.style.display = 'none';
-  
-    chatBubble.addEventListener('click', function(e) {
-        e.stopPropagation();
-        console.log('Bubble clicked! Current display:', chatBox.style.display);
-        
-        // Toggle display dengan memeriksa apakah sudah flex atau belum
-        if (chatBox.style.display === 'flex') {
-            chatBox.style.display = 'none';
-        } else {
-        chatBox.style.display = 'flex';
-        }
+    
+    chatBubble.addEventListener('click', function() {
+      chatBox.style.display = chatBox.style.display === 'flex' ? 'none' : 'flex';
     });
     
-    closeBtn.addEventListener('click', function(e) {
-      e.stopPropagation();
+    closeBtn.addEventListener('click', function() {
       chatBox.style.display = 'none';
     });
     
     // Fungsi untuk mengirim pesan
-    sendBtn.addEventListener('click', function(e) {
-      e.stopPropagation();
+    const sendMessage = () => {
       const message = userMessage.value.trim();
       
       if (message) {
-        // Tampilkan pesan pengguna
-        const userMessageDiv = document.createElement('div');
-        userMessageDiv.className = 'chat-message user-message';
-        userMessageDiv.innerHTML = `
+        const newMsg = document.createElement('div');
+        newMsg.className = 'message user-message';
+        newMsg.innerHTML = `
           <div class="message-content">
             <p>${message}</p>
+            <span class="message-time"></span>
           </div>
         `;
-        document.querySelector('.chat-body').appendChild(userMessageDiv);
         
-        // Kosongkan input
+        document.querySelector('.chat-body').appendChild(newMsg);
         userMessage.value = '';
+        addTimestamps();
         
-        // Beri balasan otomatis
+        // Balasan bot
         setTimeout(() => {
           const botResponse = document.createElement('div');
-          botResponse.className = 'chat-message bot-message';
+          botResponse.className = 'message bot-message';
           botResponse.innerHTML = `
             <div class="message-content">
               <p>Terima kasih atas pesan Anda. Sales kami akan segera menghubungi Anda.</p>
+              <span class="message-time"></span>
             </div>
           `;
           document.querySelector('.chat-body').appendChild(botResponse);
+          addTimestamps();
           
           // Scroll ke bawah
           chatBox.querySelector('.chat-body').scrollTop = chatBox.querySelector('.chat-body').scrollHeight;
         }, 1000);
-        
-        // Scroll ke bawah
-        chatBox.querySelector('.chat-body').scrollTop = chatBox.querySelector('.chat-body').scrollHeight;
       }
-    });
+    };
     
-    // Mengirim pesan dengan Enter
+    sendBtn.addEventListener('click', sendMessage);
     userMessage.addEventListener('keypress', function(e) {
       if (e.key === 'Enter' && !e.shiftKey) {
         e.preventDefault();
-        sendBtn.click();
+        sendMessage();
       }
     });
   }
 }
-
-// Fungsi format waktu
-function getCurrentTime() {
-  const now = new Date();
-  let hours = now.getHours();
-  const minutes = now.getMinutes().toString().padStart(2, '0');
-  const ampm = hours >= 12 ? 'PM' : 'AM';
-  
-  hours = hours % 12;
-  hours = hours ? hours : 12; // Jam 0 menjadi 12
-  
-  return `${hours}:${minutes} ${ampm}`;
-}
-
-// Fungsi untuk menambahkan timestamp ke semua message
-function addTimestamps() {
-  document.querySelectorAll('.message-time').forEach(el => {
-    if (!el.textContent) {
-      el.textContent = getCurrentTime();
-    }
-  });
-}
-
-// Panggil saat inisialisasi chat
-addTimestamps();
-
-// Contoh untuk message baru (saat user mengirim pesan)
-function sendMessage() {
-  const userInput = document.getElementById('user-message');
-  if (userInput.value.trim() === '') return;
-
-  // Buat elemen message baru
-  const newMsg = document.createElement('div');
-  newMsg.className = 'message user-message';
-  newMsg.innerHTML = `
-    <div class="message-content">
-      <p>${userInput.value}</p>
-      <span class="message-time"></span>
-    </div>
-  `;
-
-  // Tambahkan ke chat body
-  document.querySelector('.chat-body').appendChild(newMsg);
-  
-  // Scroll ke bawah
-  const chatBody = document.querySelector('.chat-body');
-  chatBody.scrollTop = chatBody.scrollHeight;
-  
-  // Kosongkan input
-  userInput.value = '';
-  
-  // Tambahkan timestamp
-  addTimestamps();
-  
-  // Beri jeda lalu buat reply bot
-  setTimeout(botReply, 1000);
-}
-
-// Contoh reply bot
-function botReply() {
-  const replies = [
-    "Terima kasih atas pesan Anda. Sales kami akan segera menghubungi Anda.",
-    "Ada lagi yang bisa saya bantu?",
-    "Informasi tambahan apa yang Anda butuhkan?"
-  ];
-  
-  const randomReply = replies[Math.floor(Math.random() * replies.length)];
-  
-  const newMsg = document.createElement('div');
-  newMsg.className = 'message bot-message';
-  newMsg.innerHTML = `
-    <div class="message-content">
-      <p>${randomReply}</p>
-      <span class="message-time"></span>
-    </div>
-  `;
-
-  document.querySelector('.chat-body').appendChild(newMsg);
-  document.querySelector('.chat-body').scrollTop = document.querySelector('.chat-body').scrollHeight;
-  addTimestamps();
-}
-
-// Event listener untuk tombol kirim
-document.getElementById('send-message-btn').addEventListener('click', sendMessage);
-
-// Juga bisa kirim dengan Enter
-document.getElementById('user-message').addEventListener('keypress', function(e) {
-  if (e.key === 'Enter' && !e.shiftKey) {
-    e.preventDefault();
-    sendMessage();
-  }
-});
