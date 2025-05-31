@@ -1662,26 +1662,43 @@ body.modal-open {
   max-width: 80%; /* Lebar maksimum gelembung */
 }
 
-/* Untuk pesan user (jika ada) */
-.user-message .message-content {
-  background: #007bff;
-  color: white;
-  border-radius: 18px 18px 4px 18px;
+.user-message {
   max-width: 80%;
-  margin-left: auto; /* Rata kanan untuk pesan user */
+  padding: 12px 16px; /* Tambahkan padding yang cukup */
+  background-color: #007bff;
+  color: white;
+  border-radius: 18px 18px 4px 18px; /* Sudut melengkung yang konsisten */
+  margin-left: auto; /* Rata kanan */
+  margin-bottom: 15px; /* Jarak dengan pesan berikutnya */
+  word-wrap: break-word; /* Memastikan teks panjang tidak keluar */
+  line-height: 1.4; /* Spasi antar baris */
+  position: relative;
 }
 
-.user-message {
-  background: #007bff;
-  color: white;
-  align-self: flex-end;
-  border-top-right-radius: 0;
+/* Untuk textarea input pengguna */
+#user-message {
+  padding: 12px 16px;
+  border-radius: 12px;
+  border: 1px solid #ccc;
+  resize: none;
+  font-size: 14px;
+  line-height: 1.4;
+  min-height: 44px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Jika ada class khusus untuk konten pesan pengguna */
+.user-message .message-content {
+  padding: 0; /* Reset padding jika ada */
+  margin: 0; /* Reset margin jika ada */
+  background: transparent; /* Hapus background ganda */
 }
 
 /* Atur padding dan margin untuk konten pesan */
 .message-content {
   padding: 12px 16px; /* Menambah padding dalam gelembung */
-  margin-bottom: 5px; /* Jarak antara teks dan waktu */
+  margin-bottom: 10px; /* Jarak antara teks dan waktu */
   line-height: 1.4; /* Spasi antar baris teks */
 }
 
