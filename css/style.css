@@ -1579,7 +1579,6 @@ body.modal-open {
   padding: 25px !important; /* Ruang dalam lebih besar */
   display: flex;
   flex-direction: column;
-  gap: 6px !important;
   overflow-y: auto;
   flex-grow: 1;
 }
@@ -1646,7 +1645,6 @@ body.modal-open {
   max-width: 80%;
   padding: 8px 12px;
   border-radius: 7.5px;
-  margin-bottom: 15px; /* Menambah jarak bawah antar gelembung */
   position: relative;
 }
 
