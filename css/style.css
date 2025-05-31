@@ -1676,14 +1676,14 @@ body.modal-open {
 }
 
 .message-input-group textarea {
-  width: 100%;
+  height: 44px; /* Set tinggi tetap */
   min-height: 44px;
-  padding: 12px 15px;
+  max-height: 44px;
+  padding: 10px 15px;
   border: 1px solid #ccc;
   border-radius: 12px;
-  resize: none;
+  resize: none; /* Nonaktifkan resize agar tinggi tetap */
   font-size: 14px;
-  font-family: inherit;
   box-sizing: border-box;
 }
 
