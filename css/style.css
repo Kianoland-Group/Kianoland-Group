@@ -1662,12 +1662,14 @@ body.modal-open {
   max-width: 80%; /* Lebar maksimum gelembung */
 }
 
-/* Perbaikan untuk user message */
+/* Perbaikan untuk user message dengan teks pendek */
 .user-message {
   max-width: 80%;
   margin-left: auto;
   margin-bottom: 15px;
-  padding: 0; /* Hapus padding di parent */
+  padding: 0;
+  display: flex;
+  justify-content: flex-end; /* Ini yang membuat pesan pendek maju ke kanan */
 }
 
 .user-message .message-content {
@@ -1676,7 +1678,7 @@ body.modal-open {
   border-radius: 18px 18px 4px 18px;
   padding: 12px 16px;
   display: inline-block;
-  max-width: 100%;
+  max-width: fit-content; /* Ukuran menyesuaikan konten */
   word-wrap: break-word;
   line-height: 1.4;
 }
@@ -1688,6 +1690,7 @@ body.modal-open {
   height: auto !important; /* Biarkan tinggi menyesuaikan konten */
   padding: 12px 16px;
   line-height: 1.4;
+  overflow: hidden;
 }
 
 /* Atur padding dan margin untuk konten pesan */
