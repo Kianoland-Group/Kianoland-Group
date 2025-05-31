@@ -1646,7 +1646,7 @@ body.modal-open {
   max-width: 80%;
   padding: 8px 12px;
   border-radius: 7.5px;
-  margin-bottom: 10px;
+  margin-bottom: 15px; /* Menambah jarak bawah antar gelembung */
   position: relative;
 }
 
@@ -1654,11 +1654,21 @@ body.modal-open {
   align-self: flex-start;
 }
 
+/* Untuk pesan bot */
 .bot-message .message-content {
   background: #E6E6E6;
   color: #333;
-  align-self: flex-start;
-  border-radius: 20px 20px 20px 0;
+  border-radius: 18px 18px 18px 4px; /* Sudut yang lebih melengkung */
+  max-width: 80%; /* Lebar maksimum gelembung */
+}
+
+/* Untuk pesan user (jika ada) */
+.user-message .message-content {
+  background: #007bff;
+  color: white;
+  border-radius: 18px 18px 4px 18px;
+  max-width: 80%;
+  margin-left: auto; /* Rata kanan untuk pesan user */
 }
 
 .user-message {
@@ -1668,12 +1678,20 @@ body.modal-open {
   border-top-right-radius: 0;
 }
 
+/* Atur padding dan margin untuk konten pesan */
+.message-content {
+  padding: 12px 16px; /* Menambah padding dalam gelembung */
+  margin-bottom: 5px; /* Jarak antara teks dan waktu */
+  line-height: 1.4; /* Spasi antar baris teks */
+}
+
+/* Atur tampilan waktu */
 .message-time {
+  font-size: 11px; /* Ukuran font waktu */
+  color: #666; /* Warna waktu */
+  margin-top: 4px; /* Jarak atas dari teks */
   display: block;
-  font-size: 12px;
-  color: #888;
-  margin-top: 5px;
-  text-align: right;
+  text-align: right; /* Rata kanan untuk waktu */
 }
 
 /* Form input message */
