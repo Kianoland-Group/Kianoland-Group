@@ -1579,9 +1579,18 @@ body.modal-open {
   padding: 25px !important; /* Ruang dalam lebih besar */
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 6px !important;
   overflow-y: auto;
-  flex: 1;
+  flex-grow: 1;
+}
+
+.chat-body {
+  padding: 15px;
+  height: auto;
+  min-height: 300px; /* Minimum height */
+  max-height: calc(70vh - 60px); /* Disesuaikan dengan header */
+  overflow-y: auto;
+  background-color: #f0f2f5 /* Pastikan background solid */
 }
 
 @keyframes fadeIn {
@@ -1627,24 +1636,18 @@ body.modal-open {
   padding: 5px;
 }
 
-.chat-body {
-  padding: 15px;
-  height: auto;
-  min-height: 300px; /* Minimum height */
-  max-height: calc(70vh - 60px); /* Disesuaikan dengan header */
-  overflow-y: auto;
-  background-color: #f0f2f5 /* Pastikan background solid */
-}
-
 /* Menghilangkan ruang putih di bawah */
 .chat-body::after {
   content: '';
   display: none; /* Nonaktifkan pseudo-element jika ada */
 }
 
-.chat-message {
-  margin-bottom: 0px; /* Jarak antar pesan diperlebar */
+.message {
   max-width: 80%;
+  padding: 8px 12px;
+  border-radius: 7.5px;
+  margin-bottom: 10px;
+  position: relative;
 }
 
 .bot-message {
@@ -1652,12 +1655,17 @@ body.modal-open {
 }
 
 .bot-message .message-content {
-  background-color: #f1f1f1;
+  background: #E6E6E6;
   color: #333;
-  padding: 15px 20px;
-  border-radius: 18px 18px 18px 4px;
-  font-size: 16px !important; /* Ukuran font lebih besar */
-  line-height: 1.6 !important; /* Jarak antar baris lebih lega */
+  align-self: flex-start;
+  border-radius: 20px 20px 20px 0;
+}
+
+.user-message {
+  background: #007bff;
+  color: white;
+  align-self: flex-end;
+  border-top-right-radius: 0;
 }
 
 /* Form input message */
