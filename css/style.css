@@ -1559,17 +1559,16 @@ body.modal-open {
   position: fixed;
   bottom: 15px;
   right: 30px;
-  width: 500px !important;
-  height: 650px !important;
-  max-height: 94vh !important;
+  width: 500px;
+  height: 650px;
+  max-height: 94vh;
   background-color: white;
   border-radius: 12px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
-  display: none; /* TAMBAHKAN INI! */
+  display: none; /* Pastikan defaultnya hidden */
   flex-direction: column;
   z-index: 10000;
   overflow: hidden;
-  padding-bottom: 0;
 }
 
 .chat-body {
@@ -1797,7 +1796,7 @@ body.modal-open {
     max-height: none !important;
     border-radius: 0;
     z-index: 10001;
-    display: flex !important;
+    display: none; /* Tetap hidden secara default */
     flex-direction: column;
   }
 
@@ -1818,6 +1817,7 @@ body.modal-open {
   .chat-close-btn {
     font-size: 20px; /* Ukuran tombol close diperbesar */
     padding: 5px;
+    z-index: 10002; /* Pastikan tombol close di atas semua elemen */
   }
 
   .chat-body {
