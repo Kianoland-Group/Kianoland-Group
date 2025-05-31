@@ -1557,7 +1557,7 @@ body.modal-open {
 /* Chat Box Styles */
 .chat-box {
   position: fixed;
-  bottom: 80px;
+  bottom: 15px;
   right: 30px;
   width: 500px !important; /* Lebar diperbesar */
   height: 650px !important;
@@ -1728,39 +1728,61 @@ body.modal-open {
     height: 100vh !important;
     max-height: none !important;
     border-radius: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 10001; /* Lebih tinggi dari elemen lain */
+    z-index: 10001;
   }
 
   .chat-header {
-    padding: 20px 15px; /* Padding lebih besar */
+    padding: 15px;
+    height: 60px; /* Tinggi header diperbaiki */
+  }
+
+  .chat-title h5 {
+    font-size: 18px; /* Ukuran font diperbesar */
+  }
+
+  .chat-title p {
+    font-size: 12px;
+  }
+
+  .chat-close-btn {
+    font-size: 20px; /* Ukuran tombol close diperbesar */
+    padding: 5px;
   }
 
   .chat-body {
-    height: calc(100vh - 60px - 100px) !important; 
-    /* 60px header + 100px form input */
-    min-height: auto !important;
-    max-height: none !important;
-    padding: 20px !important;
-    flex: 1; /* Mengisi sisa ruang vertikal */
+    padding: 15px !important;
+    height: calc(100vh - 60px - 140px) !important; /* Disesuaikan dengan tinggi header dan form */
+    min-height: auto;
+    max-height: none;
+    overflow-y: auto;
   }
 
   .message-form-container {
     padding: 15px;
+    height: 140px; /* Tinggi form diperbaiki */
+    display: flex;
+    flex-direction: column;
   }
 
-  /* Perbaikan untuk close button */
-  .chat-close-btn {
-    font-size: 24px;
+  .message-input-group textarea {
+    min-height: 60px; /* Tinggi textarea diperkecil */
+    max-height: 80px; /* Batas maksimal tinggi textarea */
+    font-size: 14px;
     padding: 10px;
+    margin-bottom: 8px;
+  }
+
+  .send-message-btn {
+    padding: 10px;
+    font-size: 14px;
+    height: auto; /* Tinggi tombol otomatis */
   }
 
   /* Sembunyikan tooltip di mobile */
   .chat-tooltip {
     display: none !important;
   }
-
+  
   .whatsapp-float {
     bottom: 20px;
     right: 15px;
