@@ -1560,8 +1560,8 @@ body.modal-open {
   bottom: 80px;
   right: 30px;
   width: 500px !important; /* Lebar diperbesar */
-  height: 600px !important; /* Tinggi diperbesar */
-  max-height: 80vh !important; /* Maksimal tinggi viewport */
+  height: 650px !important;
+  max-height: 94vh !important;
   background-color: white;
   border-radius: 12px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
@@ -1721,22 +1721,44 @@ body.modal-open {
   }
   
   .chat-box {
-    width: 95vw !important;
-    right: 5vw;
-    bottom: 70px;
-    height: 85vh !important;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
     max-height: none !important;
-  }
-  
-  .chat-body {
-    height: calc(85vh - 60px) !important;
-    max-height: calc(80vh - 60px);
+    border-radius: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 10001; /* Lebih tinggi dari elemen lain */
   }
 
+  .chat-header {
+    padding: 20px 15px; /* Padding lebih besar */
+  }
+
+  .chat-body {
+    height: calc(100vh - 60px - 100px) !important; 
+    /* 60px header + 100px form input */
+    min-height: auto !important;
+    max-height: none !important;
+    padding: 20px !important;
+    flex: 1; /* Mengisi sisa ruang vertikal */
+  }
+
+  .message-form-container {
+    padding: 15px;
+  }
+
+  /* Perbaikan untuk close button */
+  .chat-close-btn {
+    font-size: 24px;
+    padding: 10px;
+  }
+
+  /* Sembunyikan tooltip di mobile */
   .chat-tooltip {
-    left: -150px;
-    width: 140px;
-    font-size: 12px;
+    display: none !important;
   }
 
   .whatsapp-float {
