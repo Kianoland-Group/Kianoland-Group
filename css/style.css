@@ -1833,7 +1833,7 @@ body.modal-open {
 
   .message-form-container {
     position: fixed !important;
-    bottom: 60px !important; /* Adjust this value based on your navigation height */
+    bottom: 30px !important; /* Adjust this value based on your navigation height */
     left: 0 !important;
     right: 0 !important;
     width: 100% !important;
