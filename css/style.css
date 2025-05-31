@@ -1565,7 +1565,8 @@ body.modal-open {
   background-color: white;
   border-radius: 12px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
-  display: none;
+  display: flex;
+  flex-direction: column;
   z-index: 10000;
   overflow: hidden;
   padding-bottom: 0; /* Pastikan tidak ada padding bawah */
@@ -1580,6 +1581,7 @@ body.modal-open {
   flex-direction: column;
   gap: 15px;
   overflow-y: auto;
+  flex: 1;
 }
 
 @keyframes fadeIn {
@@ -1660,10 +1662,9 @@ body.modal-open {
 
 /* Form input message */
 .message-form-container {
-  margin-top: 20px;
   padding: 15px;
   background-color: #f8f9fa;
-  border-radius: 10px;
+  border-top: 1px solid #e9ecef;
 }
 
 .message-input-group textarea {
