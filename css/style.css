@@ -1641,7 +1641,7 @@ body.modal-open {
 }
 
 .chat-message {
-  margin-bottom: 20px; /* Jarak antar pesan diperlebar */
+  margin-bottom: 0px; /* Jarak antar pesan diperlebar */
   max-width: 80%;
 }
 
