@@ -1559,9 +1559,9 @@ body.modal-open {
   position: fixed;
   bottom: 80px;
   right: 30px;
-  width: 380px;
-  height: auto; /* Ubah ke auto */
-  max-height: 70vh;
+  width: 500px !important; /* Lebar diperbesar */
+  height: 600px !important; /* Tinggi diperbesar */
+  max-height: 80vh !important; /* Maksimal tinggi viewport */
   background-color: white;
   border-radius: 12px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
@@ -1572,10 +1572,10 @@ body.modal-open {
 }
 
 .chat-body {
-  padding: 20px;
-  height: auto;
-  min-height: 200px;
-  max-height: calc(70vh - 60px); /* Sesuaikan dengan header */
+  height: 500px !important; /* Tinggi konten diperbesar */
+  min-height: auto !important;
+  max-height: none !important;
+  padding: 25px !important; /* Ruang dalam lebih besar */
   display: flex;
   flex-direction: column;
   gap: 15px;
@@ -1654,7 +1654,8 @@ body.modal-open {
   color: #333;
   padding: 15px 20px;
   border-radius: 18px 18px 18px 4px;
-  font-size: 15px; /* Ukuran font sedikit diperbesar */
+  font-size: 16px !important; /* Ukuran font lebih besar */
+  line-height: 1.6 !important; /* Jarak antar baris lebih lega */
 }
 
 .options-container {
@@ -1663,10 +1664,10 @@ body.modal-open {
 }
 
 .options-title {
-  font-size: 12px;
+  font-size: 14px !important;
   color: #666;
   text-align: center;
-  margin-bottom: 10px;
+  margin-bottom: 15px !important;
   text-transform: uppercase;
   letter-spacing: 1px;
 }
@@ -1674,15 +1675,15 @@ body.modal-open {
 .option-btn {
   display: block;
   width: 100%;
-  padding: 12px 20px; /* Tombol opsi lebih besar */
-  margin-bottom: 12px;
+  padding: 15px 25px !important; /* Tombol lebih besar */
+  margin-bottom: 15px !important; /* Jarak antar tombol lebih besar */
   background-color: #f5f5f5;
   border: none;
   border-radius: 8px;
   text-align: left;
   cursor: pointer;
   transition: all 0.2s ease;
-  font-size: 15px;
+  font-size: 16px !important;
 }
 
 .option-btn:hover {
@@ -1703,13 +1704,15 @@ body.modal-open {
   }
   
   .chat-box {
-    width: 90vw;
+    width: 95vw !important;
     right: 5vw;
     bottom: 70px;
-    max-height: 80vh; /* Lebih tinggi di mobile */
+    height: 85vh !important;
+    max-height: none !important;
   }
   
   .chat-body {
+    height: calc(85vh - 60px) !important;
     max-height: calc(80vh - 60px);
   }
 
