@@ -540,3 +540,95 @@ function initChatBubble() {
     });
   }
 }
+
+// Fungsi format waktu
+function getCurrentTime() {
+  const now = new Date();
+  let hours = now.getHours();
+  const minutes = now.getMinutes().toString().padStart(2, '0');
+  const ampm = hours >= 12 ? 'PM' : 'AM';
+  
+  hours = hours % 12;
+  hours = hours ? hours : 12; // Jam 0 menjadi 12
+  
+  return `${hours}:${minutes} ${ampm}`;
+}
+
+// Fungsi untuk menambahkan timestamp ke semua message
+function addTimestamps() {
+  document.querySelectorAll('.message-time').forEach(el => {
+    if (!el.textContent) {
+      el.textContent = getCurrentTime();
+    }
+  });
+}
+
+// Panggil saat inisialisasi chat
+addTimestamps();
+
+// Contoh untuk message baru (saat user mengirim pesan)
+function sendMessage() {
+  const userInput = document.getElementById('user-message');
+  if (userInput.value.trim() === '') return;
+
+  // Buat elemen message baru
+  const newMsg = document.createElement('div');
+  newMsg.className = 'message user-message';
+  newMsg.innerHTML = `
+    <div class="message-content">
+      <p>${userInput.value}</p>
+      <span class="message-time"></span>
+    </div>
+  `;
+
+  // Tambahkan ke chat body
+  document.querySelector('.chat-body').appendChild(newMsg);
+  
+  // Scroll ke bawah
+  const chatBody = document.querySelector('.chat-body');
+  chatBody.scrollTop = chatBody.scrollHeight;
+  
+  // Kosongkan input
+  userInput.value = '';
+  
+  // Tambahkan timestamp
+  addTimestamps();
+  
+  // Beri jeda lalu buat reply bot
+  setTimeout(botReply, 1000);
+}
+
+// Contoh reply bot
+function botReply() {
+  const replies = [
+    "Terima kasih atas pesan Anda. Sales kami akan segera menghubungi Anda.",
+    "Ada lagi yang bisa saya bantu?",
+    "Informasi tambahan apa yang Anda butuhkan?"
+  ];
+  
+  const randomReply = replies[Math.floor(Math.random() * replies.length)];
+  
+  const newMsg = document.createElement('div');
+  newMsg.className = 'message bot-message';
+  newMsg.innerHTML = `
+    <div class="message-content">
+      <p>${randomReply}</p>
+      <span class="message-time"></span>
+    </div>
+  `;
+
+  document.querySelector('.chat-body').appendChild(newMsg);
+  document.querySelector('.chat-body').scrollTop = document.querySelector('.chat-body').scrollHeight;
+  addTimestamps();
+}
+
+// Event listener untuk tombol kirim
+document.getElementById('send-message-btn').addEventListener('click', sendMessage);
+
+// Juga bisa kirim dengan Enter
+document.getElementById('user-message').addEventListener('keypress', function(e) {
+  if (e.key === 'Enter' && !e.shiftKey) {
+    e.preventDefault();
+    sendMessage();
+  }
+});

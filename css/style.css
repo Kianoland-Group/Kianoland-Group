@@ -1658,7 +1658,9 @@ body.modal-open {
 .bot-message .message-content {
   background: #E6E6E6;
   color: #333;
-  border-radius: 18px 18px 18px 4px; /* Sudut yang lebih melengkung */
+  border-radius: 18px 18px 18px 4px;
+  padding: 12px 16px;
+  display: inline-block;
   max-width: 80%; /* Lebar maksimum gelembung */
 }
 
@@ -1673,6 +1675,7 @@ body.modal-open {
   word-wrap: break-word; /* Memastikan teks panjang tidak keluar */
   line-height: 1.4; /* Spasi antar baris */
   position: relative;
+  align-self: flex-end;
 }
 
 /* Untuk textarea input pengguna */
@@ -1686,13 +1689,17 @@ body.modal-open {
   min-height: 44px;
   width: 100%;
   box-sizing: border-box;
+  height: 44px !important; /* Tinggi tetap */
+  overflow: hidden !important; /* Selalu sembunyikan scroll */
 }
 
 /* Jika ada class khusus untuk konten pesan pengguna */
 .user-message .message-content {
-  padding: 0; /* Reset padding jika ada */
-  margin: 0; /* Reset margin jika ada */
-  background: transparent; /* Hapus background ganda */
+  background: #007bff;
+  color: white;
+  border-radius: 18px 18px 4px 18px;
+  padding: 12px 16px;
+  display: inline-block;
 }
 
 /* Atur padding dan margin untuk konten pesan */
@@ -1704,11 +1711,15 @@ body.modal-open {
 
 /* Atur tampilan waktu */
 .message-time {
-  font-size: 11px; /* Ukuran font waktu */
-  color: #666; /* Warna waktu */
-  margin-top: 4px; /* Jarak atas dari teks */
   display: block;
-  text-align: right; /* Rata kanan untuk waktu */
+  font-size: 11px;
+  color: #666;
+  margin-top: 4px;
+  text-align: right;
+}
+
+.user-message .message-time {
+  color: rgba(255,255,255,0.7);
 }
 
 /* Form input message */
