@@ -1665,9 +1665,9 @@ body.modal-open {
   display: flex;
   gap: 10px;
   padding: 15px;
-  background-color: #fff;
+  align-items: center; /* agar sejajar */
   border-top: 1px solid #e0e0e0;
-  align-items: stretch; /* pastikan semua elemen sama tinggi */
+  background-color: #fff;
   border-radius: 0 0 12px 12px;
 }
 
@@ -1677,9 +1677,10 @@ body.modal-open {
 
 .message-input-group textarea {
   width: 100%;
+  min-height: 44px;
   padding: 12px 15px;
   border: 1px solid #ccc;
-  border-radius: 25px; /* Membulatkan penuh */
+  border-radius: 12px;
   resize: none;
   font-size: 14px;
   font-family: inherit;
@@ -1692,16 +1693,17 @@ body.modal-open {
 }
 
 .send-message-btn {
+  padding: 12px 20px;
   background-color: #007bff;
   color: white;
   border: none;
-  border-radius: 8px;
+  border-radius: 12px; /* Sama dengan radius textarea */
   font-size: 14px;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0 20px;
+  height: auto; /* Penting: jangan 100% */
   white-space: nowrap;
 }
 
