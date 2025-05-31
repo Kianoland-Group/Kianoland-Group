@@ -1,3 +1,31 @@
+// ============ KEYBOARD DETECTION FOR CHAT ====================================================================================================================================================
+function initKeyboardDetection() {
+  const chatBox = document.getElementById('chat-box');
+  const formContainer = document.querySelector('.message-form-container');
+  const userMessage = document.getElementById('user-message');
+  
+  if (userMessage && formContainer) {
+    userMessage.addEventListener('focus', function() {
+      // For mobile devices
+      if (window.innerWidth <= 576) {
+        document.body.classList.add('keyboard-open');
+        setTimeout(() => {
+          // Scroll to bottom of chat
+          const chatBody = document.querySelector('.chat-body');
+          if (chatBody) {
+            chatBody.scrollTop = chatBody.scrollHeight;
+          }
+        }, 300);
+      }
+    });
+    
+    userMessage.addEventListener('blur', function() {
+      document.body.classList.remove('keyboard-open');
+    });
+  }
+}
+
+// ============ INITIALIZE WHEN DOM LOADED =====================================================================================================================================================
 'use strict';
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -7,15 +35,16 @@ document.addEventListener("DOMContentLoaded", function () {
     initHeader();
     initHeroVideo();
     initPopup();
-    initChatBubble(); // Tambahkan ini
+    initChatBubble();
     initWhatsAppLink();
     initTypeSection();
-    initImageModal(); // Add this line
+    initImageModal();
     initDownloadBrochure();
     initFacilities();
     initSupportSection();
     initContactForm();
     initSmoothScrolling();
+    initKeyboardDetection(); // Tambahkan ini
     
     // Set current year in footer
     const currentYearElement = document.getElementById("current-year");
