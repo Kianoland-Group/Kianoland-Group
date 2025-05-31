@@ -1559,17 +1559,17 @@ body.modal-open {
   position: fixed;
   bottom: 15px;
   right: 30px;
-  width: 500px !important; /* Lebar diperbesar */
+  width: 500px !important;
   height: 650px !important;
   max-height: 94vh !important;
   background-color: white;
   border-radius: 12px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
-  display: flex;
+  display: none; /* TAMBAHKAN INI! */
   flex-direction: column;
   z-index: 10000;
   overflow: hidden;
-  padding-bottom: 0; /* Pastikan tidak ada padding bawah */
+  padding-bottom: 0;
 }
 
 .chat-body {
@@ -1729,6 +1729,7 @@ body.modal-open {
     max-height: none !important;
     border-radius: 0;
     z-index: 10001;
+    display: none; /* Pastikan ini tetap ada */
   }
 
   .chat-header {

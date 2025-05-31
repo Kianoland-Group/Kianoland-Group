@@ -471,12 +471,20 @@ function initChatBubble() {
   const sendBtn = document.getElementById('send-message-btn');
   const userMessage = document.getElementById('user-message');
   
-  if (chatBubble && chatBox && closeBtn && sendBtn && userMessage) {
-    
+    if (chatBubble && chatBox && closeBtn && sendBtn && userMessage) {
+      
+    chatBox.style.display = 'none';
+  
     chatBubble.addEventListener('click', function(e) {
-      e.stopPropagation();
-      console.log('Bubble clicked! Current display:', chatBox.style.display);
-      chatBox.style.display = chatBox.style.display === 'block' ? 'none' : 'block';
+        e.stopPropagation();
+        console.log('Bubble clicked! Current display:', chatBox.style.display);
+        
+        // Toggle display dengan memeriksa apakah sudah flex atau belum
+        if (chatBox.style.display === 'flex') {
+            chatBox.style.display = 'none';
+        } else {
+        chatBox.style.display = 'flex';
+        }
     });
     
     closeBtn.addEventListener('click', function(e) {
