@@ -1662,20 +1662,23 @@ body.modal-open {
 
 /* Form input message */
 .message-form-container {
+  display: flex;
+  gap: 10px;
   padding: 15px;
-  background-color: #f8f9fa;
-  border-top: 1px solid #e9ecef;
+  background-color: #fff;
+  border-top: 1px solid #e0e0e0;
+  align-items: center;
+  border-radius: 0 0 12px 12px; /* Membulatkan bagian bawah */
 }
 
 .message-input-group textarea {
   width: 100%;
   padding: 12px 15px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
+  border: 1px solid #ccc;
+  border-radius: 25px; /* Membulatkan penuh */
   resize: none;
   font-size: 14px;
-  min-height: 80px;
-  margin-bottom: 10px;
+  font-family: inherit;
   box-sizing: border-box;
 }
 
@@ -1685,23 +1688,21 @@ body.modal-open {
 }
 
 .send-message-btn {
-  width: 100%;
-  padding: 12px;
-  background-color: #0071C8;
+  padding: 12px 20px;
+  background-color: #007bff; /* Biru terang */
   color: white;
   border: none;
   border-radius: 8px;
-  font-size: 16px;
+  font-size: 14px;
   cursor: pointer;
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
-  transition: background-color 0.3s ease;
 }
 
 .send-message-btn:hover {
-  background-color: #005fa3;
+  background-color: #0069d9;
 }
 
 .send-message-btn:active {
