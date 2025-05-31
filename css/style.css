@@ -1668,6 +1668,14 @@ body.modal-open {
   border-top-right-radius: 0;
 }
 
+.message-time {
+  display: block;
+  font-size: 12px;
+  color: #888;
+  margin-top: 5px;
+  text-align: right;
+}
+
 /* Form input message */
 .message-form-container {
   display: flex;
