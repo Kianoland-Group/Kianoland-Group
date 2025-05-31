@@ -29,23 +29,21 @@
       <div class="chat-message bot-message">
         <div class="message-content">
           <p>Selamat datang di Kianoland Group! Saya virtual assistant yang siap membantu Anda! 😊</p>
-          <p>Apakah Anda ingin kami kirimkan Brosur dan Pricelist promo unitnya?</p>
+          <p>Silakan tanyakan apa saja mengenai properti kami.</p>
         </div>
       </div>
       
-      <div class="options-container">
-        <p class="options-title">CHOOSE AN OPTION</p>
-        
-        <button class="option-btn">
-          Tentu, kirimkan Brosur dan Pricelist-nya
-        </button>
-        
-        <button class="option-btn">
-          Halo, saya mau berbicara dengan Sales dulu
-        </button>
-        
-        <button class="option-btn">
-          Saya penghuni mau bertanya ke Estate Management
+      <!-- Form untuk mengirim pesan -->
+      <div class="message-form-container">
+        <div class="message-input-group">
+          <textarea 
+            id="user-message" 
+            placeholder="Tanyakan tentang properti..." 
+            rows="3"></textarea>
+        </div>
+        <button id="send-message-btn" class="send-message-btn">
+          Kirim
+          <i class="fas fa-paper-plane"></i>
         </button>
       </div>
     </div>

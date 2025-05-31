@@ -468,10 +468,10 @@ function initChatBubble() {
   const chatBubble = document.getElementById('chat-bubble');
   const chatBox = document.getElementById('chat-box');
   const closeBtn = document.querySelector('.chat-close-btn');
+  const sendBtn = document.getElementById('send-message-btn');
+  const userMessage = document.getElementById('user-message');
   
-  if (chatBubble && chatBox && closeBtn) {
-    // Debugging
-    console.log('Element found:', {chatBubble, chatBox, closeBtn});
+  if (chatBubble && chatBox && closeBtn && sendBtn && userMessage) {
     
     chatBubble.addEventListener('click', function(e) {
       e.stopPropagation();
@@ -484,29 +484,51 @@ function initChatBubble() {
       chatBox.style.display = 'none';
     });
     
-    const optionButtons = document.querySelectorAll('.option-btn');
-    optionButtons.forEach(button => {
-      button.addEventListener('click', function(e) {
-        e.stopPropagation();
-        const optionText = this.textContent.trim();
-        let message = '';
+    // Fungsi untuk mengirim pesan
+    sendBtn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      const message = userMessage.value.trim();
+      
+      if (message) {
+        // Tampilkan pesan pengguna
+        const userMessageDiv = document.createElement('div');
+        userMessageDiv.className = 'chat-message user-message';
+        userMessageDiv.innerHTML = `
+          <div class="message-content">
+            <p>${message}</p>
+          </div>
+        `;
+        document.querySelector('.chat-body').appendChild(userMessageDiv);
         
-        if (optionText.includes('kirimkan Brosur')) {
-          message = 'Halo, saya ingin mendapatkan brosur dan pricelist untuk Kianoland Group.';
-        } else if (optionText.includes('berbicara dengan Sales')) {
-          message = 'Halo, saya ingin berbicara dengan sales representative Kianoland Group.';
-        } else if (optionText.includes('Estate Management')) {
-          message = 'Halo, saya penghuni Kianoland dan ingin bertanya ke Estate Management.';
-        }
+        // Kosongkan input
+        userMessage.value = '';
         
-        window.open(`https://wa.me/628111611724?text=${encodeURIComponent(message)}`, '_blank');
-      });
+        // Beri balasan otomatis
+        setTimeout(() => {
+          const botResponse = document.createElement('div');
+          botResponse.className = 'chat-message bot-message';
+          botResponse.innerHTML = `
+            <div class="message-content">
+              <p>Terima kasih atas pesan Anda. Sales kami akan segera menghubungi Anda.</p>
+            </div>
+          `;
+          document.querySelector('.chat-body').appendChild(botResponse);
+          
+          // Scroll ke bawah
+          chatBox.querySelector('.chat-body').scrollTop = chatBox.querySelector('.chat-body').scrollHeight;
+        }, 1000);
+        
+        // Scroll ke bawah
+        chatBox.querySelector('.chat-body').scrollTop = chatBox.querySelector('.chat-body').scrollHeight;
+      }
     });
-  } else {
-    console.error('Elements not found:', {
-      chatBubble: !!chatBubble,
-      chatBox: !!chatBox, 
-      closeBtn: !!closeBtn
+    
+    // Mengirim pesan dengan Enter
+    userMessage.addEventListener('keypress', function(e) {
+      if (e.key === 'Enter' && !e.shiftKey) {
+        e.preventDefault();
+        sendBtn.click();
+      }
     });
   }
 }
