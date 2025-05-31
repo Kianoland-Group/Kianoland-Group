@@ -1797,12 +1797,14 @@ body.modal-open {
     max-height: none !important;
     border-radius: 0;
     z-index: 10001;
-    display: none; /* Pastikan ini tetap ada */
+    display: flex !important;
+    flex-direction: column;
   }
 
   .chat-header {
     padding: 15px;
-    height: 60px; /* Tinggi header diperbaiki */
+    height: 60px;
+    flex-shrink: 0; /* Pastikan header tidak menyusut */
   }
 
   .chat-title h5 {
@@ -1819,26 +1821,33 @@ body.modal-open {
   }
 
   .chat-body {
+    flex: 1; /* Ambil sisa ruang yang tersedia */
     padding: 15px !important;
-    height: calc(100vh - 60px - 140px) !important; /* Disesuaikan dengan tinggi header dan form */
-    min-height: auto;
-    max-height: none;
+    height: auto !important;
+    min-height: auto !important;
+    max-height: none !important;
     overflow-y: auto;
   }
 
   .message-form-container {
-    height: auto;
+    position: relative; /* Ubah dari absolute ke relative */
+    width: 100%;
     padding: 10px;
-    flex-direction: row;
-    align-items: center;
+    flex-shrink: 0; /* Pastikan form tidak menyusut */
+    background: white;
+    border-top: 1px solid #e0e0e0;
   }
   
+  .message-input-group {
+    flex: 1;
+  }
+
   .message-input-group textarea {
     height: 40px !important;
     min-height: 40px !important;
     max-height: 40px !important;
   }
-  
+
   .send-message-btn {
     height: 40px;
     padding: 10px 15px;
