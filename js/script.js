@@ -506,40 +506,65 @@ function initChatBubble() {
     });
     
     // Fungsi untuk mengirim pesan
-    const sendMessage = () => {
-      const message = userMessage.value.trim();
-      
-      if (message) {
-        const newMsg = document.createElement('div');
-        newMsg.className = 'message user-message';
-        newMsg.innerHTML = `
-          <div class="message-content">
-            <p>${message}</p>
-            <span class="message-time"></span>
-          </div>
-        `;
+    const sendMessage = async () => {
+        const message = userMessage.value.trim();
         
-        document.querySelector('.chat-body').appendChild(newMsg);
-        userMessage.value = '';
-        addTimestamps();
-        
-        // Balasan bot
-        setTimeout(() => {
-          const botResponse = document.createElement('div');
-          botResponse.className = 'message bot-message';
-          botResponse.innerHTML = `
+        if (message) {
+            // Tambahkan pesan pengguna
+            const newMsg = document.createElement('div');
+            newMsg.className = 'message user-message';
+            newMsg.innerHTML = `
             <div class="message-content">
-              <p>Terima kasih atas pesan Anda. Sales kami akan segera menghubungi Anda.</p>
-              <span class="message-time"></span>
+                <p>${message}</p>
+                <span class="message-time"></span>
             </div>
-          `;
-          document.querySelector('.chat-body').appendChild(botResponse);
-          addTimestamps();
-          
-          // Scroll ke bawah
-          chatBox.querySelector('.chat-body').scrollTop = chatBox.querySelector('.chat-body').scrollHeight;
-        }, 1000);
-      }
+            `;
+            
+            document.querySelector('.chat-body').appendChild(newMsg);
+            userMessage.value = '';
+            addTimestamps();
+            
+            try {
+            // Kirim ke backend FastAPI
+            const response = await fetch('https://79c8-157-15-46-172.ngrok-free.app/chat', {
+                method: 'POST',
+                headers: {
+                'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ user_input: message })
+            });
+            
+            const data = await response.json();
+            
+            // Tambahkan balasan bot
+            const botResponse = document.createElement('div');
+            botResponse.className = 'message bot-message';
+            botResponse.innerHTML = `
+                <div class="message-content">
+                <p>${data.response.formatted}</p>
+                <span class="message-time"></span>
+                </div>
+            `;
+            document.querySelector('.chat-body').appendChild(botResponse);
+            
+            } catch (error) {
+            console.error('Error:', error);
+            // Fallback response jika API error
+            const botResponse = document.createElement('div');
+            botResponse.className = 'message bot-message';
+            botResponse.innerHTML = `
+                <div class="message-content">
+                <p>Maaf, terjadi kesalahan. Silakan coba lagi nanti.</p>
+                <span class="message-time"></span>
+                </div>
+            `;
+            document.querySelector('.chat-body').appendChild(botResponse);
+            }
+            
+            addTimestamps();
+            // Scroll ke bawah
+            chatBox.querySelector('.chat-body').scrollTop = chatBox.querySelector('.chat-body').scrollHeight;
+        }
     };
     
     sendBtn.addEventListener('click', sendMessage);
