@@ -1662,42 +1662,32 @@ body.modal-open {
   max-width: 80%; /* Lebar maksimum gelembung */
 }
 
+/* Perbaikan untuk user message */
 .user-message {
   max-width: 80%;
-  padding: 12px 16px; /* Tambahkan padding yang cukup */
-  background-color: #007bff;
-  color: white;
-  border-radius: 18px 18px 4px 18px; /* Sudut melengkung yang konsisten */
-  margin-left: auto; /* Rata kanan */
-  margin-bottom: 15px; /* Jarak dengan pesan berikutnya */
-  word-wrap: break-word; /* Memastikan teks panjang tidak keluar */
-  line-height: 1.4; /* Spasi antar baris */
-  position: relative;
-  align-self: flex-end;
+  margin-left: auto;
+  margin-bottom: 15px;
+  padding: 0; /* Hapus padding di parent */
 }
 
-/* Untuk textarea input pengguna */
-#user-message {
-  padding: 12px 16px;
-  border-radius: 12px;
-  border: 1px solid #ccc;
-  resize: none;
-  font-size: 14px;
-  line-height: 1.4;
-  min-height: 44px;
-  width: 100%;
-  box-sizing: border-box;
-  height: 44px !important; /* Tinggi tetap */
-  overflow: hidden !important; /* Selalu sembunyikan scroll */
-}
-
-/* Jika ada class khusus untuk konten pesan pengguna */
 .user-message .message-content {
-  background: #007bff;
+  background-color: #007bff;
   color: white;
   border-radius: 18px 18px 4px 18px;
   padding: 12px 16px;
   display: inline-block;
+  max-width: 100%;
+  word-wrap: break-word;
+  line-height: 1.4;
+}
+
+/* Perbaikan untuk textarea input */
+#user-message {
+  min-height: 44px;
+  max-height: 120px; /* Berikan batas maksimum */
+  height: auto !important; /* Biarkan tinggi menyesuaikan konten */
+  padding: 12px 16px;
+  line-height: 1.4;
 }
 
 /* Atur padding dan margin untuk konten pesan */
