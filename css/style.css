@@ -1776,3 +1776,34 @@ body.modal-open {
 .send-message-btn:active {
   transform: scale(0.98);
 }
+
+.status-indicator {
+    font-size: 12px;
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 10px;
+}
+
+.status-indicator.online {
+    background-color: #28a745;
+    color: white;
+}
+
+.status-indicator.offline {
+    background-color: #dc3545;
+    color: white;
+}
+
+.status-indicator:before {
+    content: "•";
+    margin-right: 5px;
+    font-size: 16px;
+}
+
+.status-indicator.online:before {
+    color: #28a745;
+}
+
+.status-indicator.offline:before {
+    color: #dc3545;
+}
