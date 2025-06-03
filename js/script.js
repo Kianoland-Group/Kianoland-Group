@@ -176,7 +176,7 @@ function initWhatsAppLink() {
 
             // Buat pesan WhatsApp
             const customMessage = `Halo, saya tertarik dengan Promo Booking 1 Juta!\n\nNama Lengkap: ${namaLengkap.value}\nEmail: ${email.value}\nNo Handphone: ${noHandphone.value}`;
-            const phoneNumber = '6285282592945';
+            const phoneNumber = '628111611724';
             const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(customMessage)}`;
 
             // Update href
@@ -465,7 +465,7 @@ function initContactForm() {
             var whatsappMessage = `${customMessage}Name: ${name}\nEmail: ${email}\nMessage: ${message}`;
 
             // Nomor WhatsApp tujuan
-            var phoneNumber = '6285775381495';
+            var phoneNumber = '628111611724';
 
             // Buat URL untuk WhatsApp
             var whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(whatsappMessage)}`;
