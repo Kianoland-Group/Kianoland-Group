@@ -1,2 +1,16 @@
 <?php
-header("Content-Security-Policy: default-src 'self'; script-src 'self' https://cdn.jsdelivr.net https://www.googletagmanager.com 'unsafe-inline'; style-src 'self' https://cdn.jsdelivr.net https://fonts.googleapis.com https://cdnjs.cloudflare.com 'unsafe-inline'; img-src 'self' data: https://www.kianolandgroup.com https://vumbnail.com https://maps.gstatic.com https://www.googletagmanager.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; frame-src https://player.vimeo.com https://www.google.com; connect-src 'self' https://www.google-analytics.com;");
+// Menambahkan header Content-Security-Policy untuk font dan sumber lainnya
+header("Content-Security-Policy: 
+    default-src 'self'; 
+    font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; 
+    style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; 
+    script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com;
+    img-src 'self' data:; 
+    connect-src 'self'; 
+    frame-src 'none'; 
+    object-src 'none'; 
+    upgrade-insecure-requests;
+");
+
+// Menambahkan header tambahan untuk mengontrol cache, jika diperlukan
+header("Cache-Control: no-store, no-cache, must-revalidate, proxy-revalidate");
