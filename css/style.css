@@ -1679,7 +1679,7 @@ body.modal-open {
   border-radius: 18px 18px 4px 18px;
   padding: 12px 16px;
   display: inline-block;
-  max-width: fit-content; /* Ukuran menyesuaikan konten */
+  max-width: 90%; /* Ukuran menyesuaikan konten */
   word-wrap: break-word;
   line-height: 1.4;
 }
