@@ -1643,7 +1643,7 @@ body.modal-open {
 }
 
 .message {
-  max-width: 80%;
+  max-width: 90%;
   padding: 0px 12px;
   border-radius: 7.5px;
   position: relative;
