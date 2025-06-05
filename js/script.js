@@ -568,9 +568,10 @@ function initChatBubble() {
             // Tambahkan balasan bot
             const botResponse = document.createElement('div');
             botResponse.className = 'message bot-message';
+            const formattedText = data.response.formatted.replace(/\n/g, '<br>');
             botResponse.innerHTML = `
                 <div class="message-content">
-                <p>${data.response.formatted}</p>
+                <p>${formattedText}</p>
                 <span class="message-time"></span>
                 </div>
             `;
