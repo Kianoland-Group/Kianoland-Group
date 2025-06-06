@@ -1674,9 +1674,11 @@ body.modal-open {
 }
 
 .message.user-message {
-  max-width: 90%;
-  min-width: 60px;
+  max-width: 100% !important;
+  min-width: auto !important;
+  width: auto !important;
   align-self: flex-end;
+  margin-bottom: 10px;
 }
 
 .chat-body .message.user-message {
@@ -1687,9 +1689,15 @@ body.modal-open {
 
 /* Perbaikan untuk user message */
 .user-message .message-content {
-  max-width: fit-content; /* Ubah dari 90% */
-  min-width: 40px; /* Tambahkan min-width */
-  white-space: normal; /* Pastikan normal */
+  background: #007bff;
+  color: white;
+  border-radius: 18px 18px 4px 18px;
+  padding: 12px 16px;
+  display: inline-block;
+  max-width: 90%;
+  word-break: break-word;
+  line-height: 1.4;
+  white-space: normal;
 }
 
 .chat-body .message.user-message .message-content {
@@ -1721,6 +1729,8 @@ body.modal-open {
   padding: 12px 16px; /* Menambah padding dalam gelembung */
   margin-bottom: 10px; /* Jarak antara teks dan waktu */
   line-height: 1.4; /* Spasi antar baris teks */
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 /* Atur tampilan waktu */
