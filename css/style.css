@@ -1678,9 +1678,21 @@ body.modal-open {
 }
 
 .message.user-message {
-  max-width: 90%;
+  max-width: 70%;
   min-width: 60px;
   align-self: flex-end;
+}
+
+.chat-body .message.user-message .message-content {
+  display: inline-block;
+  max-width: 70%;
+  min-width: 60px; /* Mencegah terlalu sempit */
+  word-break: break-word;
+  white-space: normal;
+  padding: 10px 14px;
+  border-radius: 12px;
+  background-color: #007bff;
+  color: white;
 }
 
 .user-message .message-content {
