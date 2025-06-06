@@ -1642,6 +1642,10 @@ body.modal-open {
   display: none; /* Nonaktifkan pseudo-element jika ada */
 }
 
+.chat-body .message {
+  margin-bottom: 16px; /* Atur jarak antar message */
+}
+
 .message {
   max-width: 90%;
   padding: 0px 12px;
