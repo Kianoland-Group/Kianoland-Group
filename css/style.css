@@ -1707,7 +1707,7 @@ body.modal-open {
 }
 
 .message.user-message .message-content {
-  max-width: 90% !important;
+  max-width: 80% !important;
   min-width: 80px !important;
   word-break: break-word !important;
   white-space: normal !important;
