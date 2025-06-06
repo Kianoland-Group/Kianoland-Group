@@ -1694,8 +1694,8 @@ body.modal-open {
   color: white;
   padding: 10px 14px;
   border-radius: 18px 18px 4px 18px;
-  max-width: 90%;
-  min-width: 80px; /* Kompatibel di semua browser */
+  max-width: 80%;
+  min-width: 0;
   word-break: break-word;
   white-space: normal;
   line-height: 1.4;
