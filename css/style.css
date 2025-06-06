@@ -1678,7 +1678,7 @@ body.modal-open {
 }
 
 .message.user-message {
-  max-width: 70%;
+  max-width: 90%;
   min-width: 60px;
   align-self: flex-end;
 }
@@ -1694,7 +1694,7 @@ body.modal-open {
   color: white;
   padding: 10px 14px;
   border-radius: 18px 18px 4px 18px;
-  max-width: 80%;
+  max-width: 90%;
   min-width: 80px; /* Kompatibel di semua browser */
   word-break: break-word;
   white-space: normal;
