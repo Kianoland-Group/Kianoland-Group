@@ -1675,8 +1675,9 @@ body.modal-open {
 }
 
 .message.user-message {
-  align-self: flex-end;
-  max-width: 85%;
+  max-width: 100% !important;
+  width: auto !important;
+  align-items: flex-end;
   margin-bottom: 10px;
 }
 
@@ -1692,11 +1693,12 @@ body.modal-open {
   color: white;
   border-radius: 18px 18px 4px 18px;
   padding: 12px 16px;
-  display: block;
-  max-width: 90%;
+  display: inline-block !important; /* Ubah dari block ke inline-block */
+  max-width: none !important; /* Hapus batas maksimum lebar */
+  width: auto !important; /* Lebar menyesuaikan konten */
   word-break: break-word;
   line-height: 1.4;
-  white-space: normal;
+  white-space: nowrap !important; /* Cegah wrap untuk teks pendek */
 }
 
 .chat-body .message.user-message .message-content {
