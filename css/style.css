@@ -1667,15 +1667,6 @@ body.modal-open {
   max-width: 90%; /* Lebar maksimum gelembung */
 }
 
-.chat-body .message.user-message .message-content {
-  display: inline-block;
-  max-width: 90%; /* atau bisa coba 80% */
-  word-break: break-word;
-  white-space: normal;
-  padding: 10px 14px;
-  border-radius: 12px;
-}
-
 /* Perbaikan untuk user message dengan teks pendek */
 .user-message {
   max-width: 90%;
@@ -1684,6 +1675,12 @@ body.modal-open {
   padding: 0;
   display: flex;
   justify-content: flex-end; /* Ini yang membuat pesan pendek maju ke kanan */
+}
+
+.message.user-message {
+  max-width: 90%;
+  min-width: 60px;
+  align-self: flex-end;
 }
 
 .user-message .message-content {
