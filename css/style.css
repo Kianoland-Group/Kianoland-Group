@@ -1688,39 +1688,27 @@ body.modal-open {
   display: flex;
 }
 
-.chat-body .message.user-message .message-content {
-  display: inline-block;
-  background-color: #007bff;
-  color: white;
-  padding: 10px 14px;
-  border-radius: 18px 18px 4px 18px;
-  max-width: fit-content;
-  max-width: -webkit-max-content; /* untuk Safari dan Samsung Internet */
-  max-width: 80%;
-  word-break: break-word;
-  white-space: normal;
-  line-height: 1.4;
+/* Perbaikan untuk user message */
+.user-message .message-content {
+  max-width: fit-content; /* Ubah dari 90% */
+  min-width: 40px; /* Tambahkan min-width */
+  white-space: normal; /* Pastikan normal */
 }
 
-.user-message .message-content {
-  background-color: #007bff;
-  color: white;
-  border-radius: 18px 18px 4px 18px;
-  padding: 12px 16px;
-  display: inline-block;
-  max-width: 90%; /* Ukuran menyesuaikan konten */
-  word-wrap: break-word;
-  line-height: 1.4;
+.chat-body .message.user-message .message-content {
+  max-width: fit-content; /* Ubah dari 80% */
+  word-break: normal; /* Ubah dari break-word */
 }
 
 /* Perbaikan untuk textarea input */
 #user-message {
-  min-height: 44px;
-  max-height: 120px; /* Berikan batas maksimum */
-  height: auto !important; /* Biarkan tinggi menyesuaikan konten */
-  padding: 12px 16px;
-  line-height: 1.4;
-  overflow: hidden;
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  resize: none; /* Menghindari textarea membesar */
+  box-sizing: border-box;
 }
 
 /* Atur padding dan margin untuk konten pesan */
@@ -1747,19 +1735,13 @@ body.modal-open {
 .message-form-container {
   display: flex;
   gap: 10px;
-  padding: 15px;
-  align-items: center;
+  padding: 10px;
   border-top: 1px solid #e0e0e0;
-  background-color: #fff;
-  border-radius: 0 0 12px 12px;
-  height: 80px; /* Tinggi tetap */
+  background: #fff;
 }
 
 .message-input-group {
-  flex: 1;
-  height: 100%;
-  display: flex;
-  align-items: center;
+  flex-grow: 1;
 }
 
 .message-input-group textarea {

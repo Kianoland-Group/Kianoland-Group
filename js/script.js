@@ -544,7 +544,7 @@ function initChatBubble() {
             newMsg.className = 'message user-message';
             newMsg.innerHTML = `
             <div class="message-content">
-                <p>${message}</p>
+                <p style="display: inline-block;">${message}</p> <!-- Tambahkan inline-block -->
                 <span class="message-time"></span>
             </div>
             `;
