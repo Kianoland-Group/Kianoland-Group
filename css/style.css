@@ -1669,12 +1669,12 @@ body.modal-open {
 
 /* Perbaikan untuk user message dengan teks pendek */
 .user-message {
-  max-width: 90%;
+  display: flex !important;
+  justify-content: flex-end;
   margin-left: auto;
   margin-bottom: 15px;
+  max-width: 90%;
   padding: 0;
-  display: flex;
-  justify-content: flex-end; /* Ini yang membuat pesan pendek maju ke kanan */
 }
 
 .message.user-message {
@@ -1698,6 +1698,18 @@ body.modal-open {
 .chat-body .message.user-message .message-content {
   max-width: fit-content; /* Ubah dari 80% */
   word-break: normal; /* Ubah dari break-word */
+}
+
+.message.user-message .message-content {
+  background-color: #007bff !important; /* Warna background */
+  color: white !important; /* Warna teks */
+  border-radius: 18px 18px 4px 18px;
+  padding: 12px 16px;
+  display: inline-block;
+  max-width: fit-content;
+  min-width: 40px;
+  word-break: normal;
+  white-space: normal;
 }
 
 /* Perbaikan untuk textarea input */
