@@ -1643,7 +1643,7 @@ body.modal-open {
 }
 
 .chat-body .message {
-  margin-bottom: 16px; /* Atur jarak antar message */
+  margin-bottom: 6px;
 }
 
 .message {
