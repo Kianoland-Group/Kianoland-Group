@@ -1670,12 +1670,12 @@ body.modal-open {
 
 /* Perbaikan untuk user message dengan teks pendek */
 .user-message {
-  max-width: 100% !important;
+  max-width: 90% !important;
   width: auto !important;
 }
 
 .message.user-message {
-  max-width: 100% !important;
+  max-width: 90% !important;
   width: auto !important;
   align-items: flex-end;
   margin-bottom: 10px;
