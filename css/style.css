@@ -1683,16 +1683,22 @@ body.modal-open {
   align-self: flex-end;
 }
 
+.chat-body .message.user-message {
+  align-self: flex-end;
+  display: flex;
+}
+
 .chat-body .message.user-message .message-content {
   display: inline-block;
-  max-width: 70%;
-  min-width: 60px; /* Mencegah terlalu sempit */
-  word-break: break-word;
-  white-space: normal;
-  padding: 10px 14px;
-  border-radius: 12px;
   background-color: #007bff;
   color: white;
+  padding: 10px 14px;
+  border-radius: 18px 18px 4px 18px;
+  max-width: 80%;
+  min-width: 80px; /* Kompatibel di semua browser */
+  word-break: break-word;
+  white-space: normal;
+  line-height: 1.4;
 }
 
 .user-message .message-content {
