@@ -30,16 +30,21 @@
     RewriteRule ^(en|es|fr|id|jp|kr|pl|pt|ru|zh)$ /js-function/$1.html [NC,L]
 </IfModule>
 
-# Security Headers (WAJIB setelah redirect HTTPS)
-<IfModule mod_headers.c>
-    Header set Content-Security-Policy "default-src 'self'; 
-        script-src 'self' https://cdn.jsdelivr.net https://www.googletagmanager.com 'unsafe-inline' 'unsafe-eval'; 
-        style-src 'self' https://cdn.jsdelivr.net https://fonts.googleapis.com https://cdnjs.cloudflare.com 'unsafe-inline'; 
-        img-src 'self' data: https://*.kianolandgroup.com https://vumbnail.com https://maps.gstatic.com https://www.googletagmanager.com; 
-        font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com https://cdn.jsdelivr.net data:; 
-        frame-src https://player.vimeo.com https://www.google.com; 
-        connect-src 'self' https://www.google-analytics.com https://79c8-157-15-46-172.ngrok-free.app;"
-</IfModule>
+<ifModule mod_headers.c>
+# HAPUS HEADER CSP YANG MUNGKIN SUDAH ADA DARI SERVER
+Header unset Content-Security-Policy
+
+# ATUR HEADER CSP KUSTOM YANG LENGKAP
+Header set Content-Security-Policy "\
+    default-src 'self'; \
+    script-src-elem 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://www.googletagmanager.com; \
+    style-src-elem 'self' https://cdn.jsdelivr.net https://fonts.googleapis.com https://cdnjs.cloudflare.com; \
+    style-src-attr 'self' 'unsafe-inline'; \
+    font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com data:; \
+    img-src 'self' data: https://www.kianolandgroup.com https://vumbnail.com https://maps.gstatic.com https://www.googletagmanager.com; \
+    frame-src 'self' https://player.vimeo.com https://www.google.com; \
+    connect-src 'self' https://www.google-analytics.com https://*.ngrok-free.app;"
+</ifModule>
 
 # Aktifkan kompresi Gzip
 <IfModule mod_deflate.c>

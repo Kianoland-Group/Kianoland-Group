@@ -430,7 +430,9 @@ function initSupportSection() {
 // ============ CONTACT FORM ===================================================================================================================================================================
 function initContactForm() {
     const contactForm = document.getElementById('contactForm');
-    if (contactForm) {
+
+    // Tambahkan pengecekan ini
+    if (contactForm) { 
         contactForm.addEventListener('submit', function (event) {
             event.preventDefault();
 
