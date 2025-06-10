@@ -31,10 +31,6 @@
 </IfModule>
 
 <IfModule mod_headers.c>
-    # 1. Aturan Content Security Policy (CSP)
-    Header unset Content-Security-Policy
-    Header set Content-Security-Policy "default-src 'self'; script-src-elem 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://www.googletagmanager.com; style-src-elem 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://fonts.googleapis.com https://cdnjs.cloudflare.com; style-src-attr 'self' 'unsafe-inline'; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com data:; img-src 'self' data: https://www.kianolandgroup.com https://vumbnail.com https://maps.gstatic.com https://www.googletagmanager.com; frame-src 'self' https://player.vimeo.com https://www.google.com; connect-src 'self' https://www.google-analytics.com https://*.ngrok-free.app;"
-
     # 2. Aturan Cache-Control
     # Cache gambar untuk 1 tahun
     <FilesMatch "\.(jpg|jpeg|png|gif|webp|svg|ico)$">
