@@ -31,14 +31,14 @@
 </IfModule>
 
 <ifModule mod_headers.c>
-# HAPUS HEADER CSP YANG MUNGKIN SUDAH ADA DARI SERVER
-Header unset Content-Security-Policy
+    # Baris ini mencoba menghapus aturan CSP default dari server
+    Header unset Content-Security-Policy
 
-# ATUR HEADER CSP KUSTOM YANG LENGKAP
-Header set Content-Security-Policy "\
+    # Ini adalah 'daftar tamu' baru yang kita berikan
+    Header set Content-Security-Policy "\
     default-src 'self'; \
     script-src-elem 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://www.googletagmanager.com; \
-    style-src-elem 'self' https://cdn.jsdelivr.net https://fonts.googleapis.com https://cdnjs.cloudflare.com; \
+    style-src-elem 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://fonts.googleapis.com https://cdnjs.cloudflare.com; \
     style-src-attr 'self' 'unsafe-inline'; \
     font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com data:; \
     img-src 'self' data: https://www.kianolandgroup.com https://vumbnail.com https://maps.gstatic.com https://www.googletagmanager.com; \
