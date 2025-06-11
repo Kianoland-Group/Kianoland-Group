@@ -347,11 +347,29 @@ function initImageModal() {
     // Initialize
     setImagesArray();
 
-    // Set up event listeners
+    // Set up event listeners for modal
     const modalElement = document.getElementById('fullImageModal');
+    const chatBubble = document.getElementById('chat-bubble');
+    const whatsappButton = document.querySelector('.whatsapp-float');
+
     if (modalElement) {
-        modalElement.addEventListener('hidden.bs.modal', function() {
+        modalElement.addEventListener('show.bs.modal', function () {
+            if (chatBubble) {
+                chatBubble.style.display = 'none';
+            }
+            if (whatsappButton) {
+                whatsappButton.style.display = 'none';
+            }
+        });
+
+        modalElement.addEventListener('hidden.bs.modal', function () {
             document.body.classList.remove('modal-open');
+            if (chatBubble) {
+                chatBubble.style.display = 'flex';
+            }
+            if (whatsappButton) {
+                whatsappButton.style.display = 'flex';
+            }
         });
     }
 
@@ -360,6 +378,7 @@ function initImageModal() {
     window.prevImage = prevImage;
     window.nextImage = nextImage;
 }
+
 
 // ============ DOWNLOAD BROSUR ================================================================================================================================================================
 function initDownloadBrochure() {
