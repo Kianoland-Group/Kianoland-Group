@@ -347,30 +347,47 @@ function initImageModal() {
     // Initialize
     setImagesArray();
 
-    // Set up event listeners for modal
-    const modalElement = document.getElementById('fullImageModal');
-    const chatBubble = document.getElementById('chat-bubble');
-    const whatsappButton = document.querySelector('.whatsapp-float');
+    // Handler untuk menyembunyikan/menampilkan tombol
+    const handleModalShow = () => {
+        // Cari elemen setiap kali modal akan ditampilkan untuk mengatasi timing issue
+        const chatBubble = document.getElementById('chat-bubble');
+        const whatsappButton = document.querySelector('.whatsapp-float');
+        if (chatBubble) {
+            chatBubble.classList.add('hidden-by-modal');
+        }
+        if (whatsappButton) {
+            whatsappButton.classList.add('hidden-by-modal');
+        }
+    };
 
-    if (modalElement) {
-        modalElement.addEventListener('show.bs.modal', function () {
-            if (chatBubble) {
-                chatBubble.classList.add('hidden-by-modal');
-            }
-            if (whatsappButton) {
-                whatsappButton.classList.add('hidden-by-modal');
-            }
-        });
+    const handleModalHide = () => {
+        const chatBubble = document.getElementById('chat-bubble');
+        const whatsappButton = document.querySelector('.whatsapp-float');
+        if (chatBubble) {
+            chatBubble.classList.remove('hidden-by-modal');
+        }
+        if (whatsappButton) {
+            whatsappButton.classList.remove('hidden-by-modal');
+        }
+    };
 
-        modalElement.addEventListener('hidden.bs.modal', function () {
+    // Ambil elemen untuk kedua modal
+    const fullImageModalElement = document.getElementById('fullImageModal');
+    const imageGridModalElement = document.getElementById('imageModal');
+
+    // Tambahkan event listener ke modal single-image
+    if (fullImageModalElement) {
+        fullImageModalElement.addEventListener('show.bs.modal', handleModalShow);
+        fullImageModalElement.addEventListener('hidden.bs.modal', () => {
             document.body.classList.remove('modal-open');
-            if (chatBubble) {
-                chatBubble.classList.remove('hidden-by-modal');
-            }
-            if (whatsappButton) {
-                whatsappButton.classList.remove('hidden-by-modal');
-            }
+            handleModalHide();
         });
+    }
+
+    // Tambahkan event listener ke modal grid-image
+    if (imageGridModalElement) {
+        imageGridModalElement.addEventListener('show.bs.modal', handleModalShow);
+        imageGridModalElement.addEventListener('hidden.bs.modal', handleModalHide);
     }
 
     // Make functions available globally
