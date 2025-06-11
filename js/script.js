@@ -403,10 +403,10 @@ function initDownloadBrochure() {
         const currentPath = window.location.pathname;
 
         if (currentPath.includes('natureland-kiano-3')) {
-            pdfUrl = 'https://www.kianolandgroup.com/assets/natureland-kiano-3/Brosur-Cibarusah.pdf';
+            pdfUrl = '/assets/brosur/Brosur-Cibarusah.pdf'; // Path relatif
             downloadFileName = 'Brosur-Natureland-Kiano-3.pdf';
         } else if (currentPath.includes('green-jonggol-village')) {
-            pdfUrl = 'https://www.kianolandgroup.com/assets/green-jonggol-village/Brosur-Green-Jonggol-Village.pdf';
+            pdfUrl = '/assets/brosur/Brosur-Green-Jonggol-Village.pdf'; // Path relatif
             downloadFileName = 'Brosur-Green-Jonggol-Village.pdf';
         } else {
             pdfUrl = null;
