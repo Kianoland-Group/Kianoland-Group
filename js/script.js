@@ -219,15 +219,10 @@ function initImageModal() {
 
     function setImagesArray() {
         const currentPage = window.location.pathname;
-        console.log('Current page path:', currentPage); // Debug path
         
-        // Clear array first
         images.length = 0;
 
-        // Check for each page condition (more flexible matching)
-        if (currentPage.includes('green-jonggol-village/rumah-30-60') || 
-            currentPage.endsWith('green-jonggol-village/rumah-30-60.html')) {
-            console.log('Loading images for Green Jonggol Village - Rumah 30/60');
+        if (currentPage.includes('green-jonggol-village/rumah-30-60')) {
             images.push(
                 '../assets/natureland-kiano-1/Cibarusah.jpeg',
                 '../assets/produk/Natureland Kiano 3.jpeg',
@@ -235,9 +230,7 @@ function initImageModal() {
                 '../assets/natureland-kiano-1/1_1 - Photo.jpg'
             );
         } 
-        else if (currentPage.includes('natureland-kiano-1/rumah-70-75') || 
-                currentPage.endsWith('natureland-kiano-1/rumah-70-75.html')) {
-            console.log('Loading images for Natureland Kiano 1 - Rumah 70/75');
+        else if (currentPage.includes('natureland-kiano-1/rumah-70-75')) {
             images.push(
                 '../assets/natureland-kiano-1/Cibarusah.jpeg',
                 '../assets/produk/Natureland Kiano 3.jpeg',
@@ -245,9 +238,7 @@ function initImageModal() {
                 '../assets/natureland-kiano-1/1_1 - Photo.jpg'
             );
         }
-        else if (currentPage.includes('natureland-kiano-2/rumah-40-60') || 
-                currentPage.endsWith('natureland-kiano-2/rumah-40-60.html')) {
-            console.log('Loading images for Natureland Kiano 2 - Rumah 40/60');
+        else if (currentPage.includes('natureland-kiano-2/rumah-40-60')) {
             images.push(
                 '../assets/natureland-kiano-1/Cibarusah.jpeg',
                 '../assets/produk/Natureland Kiano 3.jpeg',
@@ -255,9 +246,7 @@ function initImageModal() {
                 '../assets/natureland-kiano-1/1_1 - Photo.jpg'
             );
         }
-        else if (currentPage.includes('natureland-kiano-2/rumah-70-75') || 
-                currentPage.endsWith('natureland-kiano-2/rumah-70-75.html')) {
-            console.log('Loading images for Natureland Kiano 2 - Rumah 70/75');
+        else if (currentPage.includes('natureland-kiano-2/rumah-70-75')) {
             images.push(
                 '../assets/natureland-kiano-1/Cibarusah.jpeg',
                 '../assets/produk/Natureland Kiano 3.jpeg',
@@ -265,9 +254,7 @@ function initImageModal() {
                 '../assets/natureland-kiano-1/1_1 - Photo.jpg'
             );
         }
-        else if (currentPage.includes('natureland-kiano-3/rumah-1-5-lantai-40-60') || 
-                currentPage.endsWith('natureland-kiano-3/rumah-1-5-lantai-40-60.html')) {
-            console.log('Loading images for Natureland Kiano 3 - Rumah 1.5 Lantai 40/60');
+        else if (currentPage.includes('natureland-kiano-3/rumah-1-5-lantai-40-60')) {
             images.push(
                 '../assets/natureland-kiano-3/Rumah 1,5 Lantai/1_11 - Photo.jpg',
                 '../assets/natureland-kiano-3/Rumah 1,5 Lantai/1_12 - Photo.jpg',
@@ -276,9 +263,7 @@ function initImageModal() {
                 '../assets/natureland-kiano-3/Rumah 1,5 Lantai/2_1 - Photo.jpg'
             );
         }
-        else if (currentPage.includes('natureland-kiano-3/rumah-2-lantai-40-60') || 
-                currentPage.endsWith('natureland-kiano-3/rumah-2-lantai-40-60.html')) {
-            console.log('Loading images for Natureland Kiano 3 - Rumah 2 Lantai 40/60');
+        else if (currentPage.includes('natureland-kiano-3/rumah-2-lantai-40-60')) {
             images.push(
                 '../assets/natureland-kiano-3/Rumah 2 Lantai/4_2 - Photo.jpg',
                 '../assets/natureland-kiano-3/Rumah 2 Lantai/4_4 - Photo.jpg',
@@ -286,9 +271,7 @@ function initImageModal() {
                 '../assets/natureland-kiano-3/Rumah 2 Lantai/4_8 - Photo.jpg'
             );
         }
-        else if (currentPage.includes('natureland-kiano-3/rumah-40-60') || 
-                currentPage.endsWith('natureland-kiano-3/rumah-40-60.html')) {
-            console.log('Loading images for Natureland Kiano 3 - Rumah 40/60');
+        else if (currentPage.includes('natureland-kiano-3/rumah-40-60')) {
             images.push(
                 '../assets/natureland-kiano-3/Rumah 40-60/1.jpg',
                 '../assets/natureland-kiano-3/Rumah 40-60/2.jpg',
@@ -296,8 +279,6 @@ function initImageModal() {
                 '../assets/natureland-kiano-3/Rumah 40-60/4.jpg'
             );
         }
-        
-        console.log('Images loaded:', images); // Debug loaded images
     }
 
     function openModal(imageSrc) {
@@ -306,14 +287,12 @@ function initImageModal() {
             return;
         }
         
-        // Find the index of the clicked image
         currentImageIndex = images.indexOf(imageSrc);
         if (currentImageIndex === -1) {
             console.error('Image not found in images array:', imageSrc);
             return;
         }
         
-        console.log('Opening modal with image:', imageSrc);
         document.getElementById('modalImage').src = imageSrc;
 
         const fullImageModal = new bootstrap.Modal(document.getElementById('fullImageModal'));
@@ -321,35 +300,20 @@ function initImageModal() {
     }
 
     function prevImage() {
-        if (images.length === 0) {
-            console.error('No images available for navigation');
-            return;
-        }
-        
+        if (images.length === 0) return;
         currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
-        const newSrc = images[currentImageIndex];
-        console.log('Showing previous image:', newSrc);
-        document.getElementById('modalImage').src = newSrc;
+        document.getElementById('modalImage').src = images[currentImageIndex];
     }
 
     function nextImage() {
-        if (images.length === 0) {
-            console.error('No images available for navigation');
-            return;
-        }
-        
+        if (images.length === 0) return;
         currentImageIndex = (currentImageIndex + 1) % images.length;
-        const newSrc = images[currentImageIndex];
-        console.log('Showing next image:', newSrc);
-        document.getElementById('modalImage').src = newSrc;
+        document.getElementById('modalImage').src = images[currentImageIndex];
     }
 
-    // Initialize
     setImagesArray();
 
-    // Handler untuk menyembunyikan/menampilkan tombol
     const handleModalShow = () => {
-        // Cari elemen setiap kali modal akan ditampilkan untuk mengatasi timing issue
         const chatBubble = document.getElementById('chat-bubble');
         const whatsappButton = document.querySelector('.whatsapp-float');
         if (chatBubble) {
@@ -361,36 +325,35 @@ function initImageModal() {
     };
 
     const handleModalHide = () => {
-        const chatBubble = document.getElementById('chat-bubble');
-        const whatsappButton = document.querySelector('.whatsapp-float');
-        if (chatBubble) {
-            chatBubble.classList.remove('hidden-by-modal');
-        }
-        if (whatsappButton) {
-            whatsappButton.classList.remove('hidden-by-modal');
-        }
+        // Beri jeda sesaat agar Bootstrap selesai memperbarui class di body
+        setTimeout(() => {
+            // Hanya tampilkan kembali jika TIDAK ada modal lain yang terbuka
+            if (!document.body.classList.contains('modal-open')) {
+                const chatBubble = document.getElementById('chat-bubble');
+                const whatsappButton = document.querySelector('.whatsapp-float');
+                if (chatBubble) {
+                    chatBubble.classList.remove('hidden-by-modal');
+                }
+                if (whatsappButton) {
+                    whatsappButton.classList.remove('hidden-by-modal');
+                }
+            }
+        }, 150); // Jeda 150 milidetik
     };
 
-    // Ambil elemen untuk kedua modal
     const fullImageModalElement = document.getElementById('fullImageModal');
     const imageGridModalElement = document.getElementById('imageModal');
 
-    // Tambahkan event listener ke modal single-image
     if (fullImageModalElement) {
         fullImageModalElement.addEventListener('show.bs.modal', handleModalShow);
-        fullImageModalElement.addEventListener('hidden.bs.modal', () => {
-            document.body.classList.remove('modal-open');
-            handleModalHide();
-        });
+        fullImageModalElement.addEventListener('hidden.bs.modal', handleModalHide);
     }
 
-    // Tambahkan event listener ke modal grid-image
     if (imageGridModalElement) {
         imageGridModalElement.addEventListener('show.bs.modal', handleModalShow);
         imageGridModalElement.addEventListener('hidden.bs.modal', handleModalHide);
     }
 
-    // Make functions available globally
     window.openModal = openModal;
     window.prevImage = prevImage;
     window.nextImage = nextImage;
