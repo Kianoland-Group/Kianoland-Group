@@ -579,41 +579,66 @@ function initChatBubble() {
             addTimestamps();
             
             try {
-            // Kirim ke backend FastAPI
-            const response = await fetch('https://79c8-157-15-46-172.ngrok-free.app/chat', {
-                method: 'POST',
-                headers: {
-                'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ user_input: message })
-            });
-            
-            const data = await response.json();
-            
-            // Tambahkan balasan bot
-            const botResponse = document.createElement('div');
-            botResponse.className = 'message bot-message';
-            const formattedText = data.response.formatted.replace(/\n/g, '<br>');
-            botResponse.innerHTML = `
-                <div class="message-content">
-                <p>${formattedText}</p>
-                <span class="message-time"></span>
-                </div>
-            `;
-            document.querySelector('.chat-body').appendChild(botResponse);
-            
+                // Kirim ke backend FastAPI
+                const response = await fetch('https://79c8-157-15-46-172.ngrok-free.app/chat', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ user_input: message })
+                });
+
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+
+                const data = await response.json();
+                const botResponses = data.response.formatted;
+
+                // Fungsi kecil untuk membuat elemen pesan bot
+                const createBotMessageElement = (text) => {
+                    const botMessageElement = document.createElement('div');
+                    botMessageElement.className = 'message bot-message';
+                    const formattedText = text.replace(/\n/g, '<br>');
+                    botMessageElement.innerHTML = `
+                        <div class="message-content">
+                        <p>${formattedText}</p>
+                        <span class="message-time"></span>
+                        </div>
+                    `;
+                    document.querySelector('.chat-body').appendChild(botMessageElement);
+                };
+
+                if (Array.isArray(botResponses)) {
+                    // Jika respons adalah sebuah array/list
+                    botResponses.forEach((msg, index) => {
+                        // Beri jeda waktu untuk setiap pesan agar terasa alami
+                        setTimeout(() => {
+                            if (msg.trim()) {
+                                createBotMessageElement(msg.trim());
+                                addTimestamps(); // Panggil addTimestamps setelah setiap pesan
+                            }
+                        }, index * 1000); // Jeda 1 detik antar pesan
+                    });
+                } else {
+                    // Jika respons hanya pesan tunggal biasa
+                    createBotMessageElement(botResponses);
+                    addTimestamps();
+                }
+
             } catch (error) {
-            console.error('Error:', error);
-            // Fallback response jika API error
-            const botResponse = document.createElement('div');
-            botResponse.className = 'message bot-message';
-            botResponse.innerHTML = `
-                <div class="message-content">
-                <p>Maaf, terjadi kesalahan. Silakan coba lagi nanti.</p>
-                <span class="message-time"></span>
-                </div>
-            `;
-            document.querySelector('.chat-body').appendChild(botResponse);
+                console.error('Error:', error);
+                // Fallback response jika API error
+                const botResponse = document.createElement('div');
+                botResponse.className = 'message bot-message';
+                botResponse.innerHTML = `
+                    <div class="message-content">
+                    <p>Maaf, terjadi kesalahan. Silakan coba lagi nanti.</p>
+                    <span class="message-time"></span>
+                    </div>
+                `;
+                document.querySelector('.chat-body').appendChild(botResponse);
+                addTimestamps();
             }
             
             addTimestamps();
