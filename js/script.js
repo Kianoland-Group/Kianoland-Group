@@ -369,42 +369,41 @@ function initImageModal() {
 
 // ============ DOWNLOAD BROSUR ================================================================================================================================================================
 function initDownloadBrochure() {
-    // Ambil nama file HTML saat ini
-    var currentPage = window.location.pathname.split('/').pop();
-
-    // Seleksi tombol
-    var button = document.querySelector('.custom-button');
+    // Seleksi tombol dengan selector yang lebih fleksibel untuk kedua halaman
+    const button = document.querySelector('.custom-button, .custom-button-green-jonggol-village');
 
     if (button) {
-        // Tentukan URL PDF dan nama file berdasarkan halaman
-        var pdfUrl, downloadFileName;
-        switch (currentPage) {
-            case 'natureland-kiano-3.html':
-                pdfUrl = 'https://www.kianolandgroup.com/assets/natureland-kiano-3/Brosur-Cibarusah.pdf';
-                downloadFileName = 'Brosur-Cibarusah.pdf';
-                break;
-            case 'green-jonggol-village.html':
-                pdfUrl = 'https://www.kianolandgroup.com/assets/green-jonggol-village/Brosur-Green-Jonggol-Village.pdf';
-                downloadFileName = 'Brosur-Green-Jonggol-Village.pdf';
-                break;
-            default:
-                pdfUrl = null;
-                console.log('Brosur tidak tersedia untuk halaman ini.');
+        let pdfUrl, downloadFileName;
+        const currentPath = window.location.pathname;
+
+        // Tentukan URL PDF berdasarkan path URL yang lebih andal
+        if (currentPath.includes('natureland-kiano-3')) {
+            pdfUrl = 'https://www.kianolandgroup.com/assets/natureland-kiano-3/Brosur-Cibarusah.pdf';
+            downloadFileName = 'Brosur-Natureland-Kiano-3.pdf';
+        } else if (currentPath.includes('green-jonggol-village')) {
+            pdfUrl = 'https://www.kianolandgroup.com/assets/green-jonggol-village/Brosur-Green-Jonggol-Village.pdf';
+            downloadFileName = 'Brosur-Green-Jonggol-Village.pdf';
+        } else {
+            pdfUrl = null;
+            console.log('Brosur tidak tersedia untuk halaman ini.');
         }
 
-        // Tambahkan event listener jika PDF tersedia
+        // Tambahkan event listener jika URL PDF ditemukan
         if (pdfUrl) {
             button.addEventListener('click', function (event) {
-                event.preventDefault(); // Mencegah default behavior
+                event.preventDefault(); // Mencegah aksi default dari link
 
                 const a = document.createElement('a');
                 a.href = pdfUrl;
                 a.download = downloadFileName; // Nama file saat diunduh
                 document.body.appendChild(a);
-                a.click();
-                document.body.removeChild(a);
+                a.click(); // Simulasikan klik pada link untuk memulai unduhan
+                document.body.removeChild(a); // Hapus link setelah selesai
             });
         }
+    } else {
+        // Pesan ini akan muncul di console jika tombol tidak ditemukan
+        console.log('Tombol unduh brosur tidak ditemukan di halaman ini.');
     }
 }
 
