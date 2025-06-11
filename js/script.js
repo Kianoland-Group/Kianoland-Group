@@ -355,20 +355,20 @@ function initImageModal() {
     if (modalElement) {
         modalElement.addEventListener('show.bs.modal', function () {
             if (chatBubble) {
-                chatBubble.style.display = 'none';
+                chatBubble.classList.add('hidden-by-modal');
             }
             if (whatsappButton) {
-                whatsappButton.style.display = 'none';
+                whatsappButton.classList.add('hidden-by-modal');
             }
         });
 
         modalElement.addEventListener('hidden.bs.modal', function () {
             document.body.classList.remove('modal-open');
             if (chatBubble) {
-                chatBubble.style.display = 'flex';
+                chatBubble.classList.remove('hidden-by-modal');
             }
             if (whatsappButton) {
-                whatsappButton.style.display = 'flex';
+                whatsappButton.classList.remove('hidden-by-modal');
             }
         });
     }
@@ -378,7 +378,6 @@ function initImageModal() {
     window.prevImage = prevImage;
     window.nextImage = nextImage;
 }
-
 
 // ============ DOWNLOAD BROSUR ================================================================================================================================================================
 function initDownloadBrochure() {

@@ -1834,3 +1834,8 @@ body.modal-open {
 .status-indicator.offline:before {
     color: #dc3545;
 }
+
+/* Ditambahkan untuk menyembunyikan elemen saat modal aktif */
+.hidden-by-modal {
+  display: none !important;
+}
