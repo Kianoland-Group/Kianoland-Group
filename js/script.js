@@ -325,10 +325,18 @@ function initImageModal() {
     };
 
     const handleModalHide = () => {
-        // Beri jeda sesaat agar Bootstrap selesai memperbarui class di body
+        // Beri jeda sesaat untuk memastikan transisi Bootstrap selesai
         setTimeout(() => {
-            // Hanya tampilkan kembali jika TIDAK ada modal lain yang terbuka
-            if (!document.body.classList.contains('modal-open')) {
+            const fullImageModalElement = document.getElementById('fullImageModal');
+            const imageGridModalElement = document.getElementById('imageModal');
+
+            // Cek apakah salah satu dari modal galeri masih memiliki class 'show' (artinya masih aktif)
+            const isAnyModalVisible = 
+                (fullImageModalElement && fullImageModalElement.classList.contains('show')) || 
+                (imageGridModalElement && imageGridModalElement.classList.contains('show'));
+
+            // HANYA tampilkan kembali bubble jika SUDAH TIDAK ADA modal yang aktif
+            if (!isAnyModalVisible) {
                 const chatBubble = document.getElementById('chat-bubble');
                 const whatsappButton = document.querySelector('.whatsapp-float');
                 if (chatBubble) {
@@ -338,7 +346,7 @@ function initImageModal() {
                     whatsappButton.classList.remove('hidden-by-modal');
                 }
             }
-        }, 150); // Jeda 150 milidetik
+        }, 150);
     };
 
     const fullImageModalElement = document.getElementById('fullImageModal');
