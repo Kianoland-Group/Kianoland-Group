@@ -1503,7 +1503,7 @@ body.modal-open {
   position: fixed;
   bottom: 100px;
   right: 30px;
-  z-index: 9999; /* Pastikan lebih tinggi dari elemen lain */
+  z-index: 1000; /* Pastikan lebih tinggi dari elemen lain */
 }
 
 .chat-bubble {

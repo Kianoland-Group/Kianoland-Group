@@ -325,17 +325,14 @@ function initImageModal() {
     };
 
     const handleModalHide = () => {
-        // Beri jeda sesaat untuk memastikan transisi Bootstrap selesai
         setTimeout(() => {
             const fullImageModalElement = document.getElementById('fullImageModal');
             const imageGridModalElement = document.getElementById('imageModal');
 
-            // Cek apakah salah satu dari modal galeri masih memiliki class 'show' (artinya masih aktif)
             const isAnyModalVisible = 
                 (fullImageModalElement && fullImageModalElement.classList.contains('show')) || 
                 (imageGridModalElement && imageGridModalElement.classList.contains('show'));
 
-            // HANYA tampilkan kembali bubble jika SUDAH TIDAK ADA modal yang aktif
             if (!isAnyModalVisible) {
                 const chatBubble = document.getElementById('chat-bubble');
                 const whatsappButton = document.querySelector('.whatsapp-float');
@@ -367,16 +364,44 @@ function initImageModal() {
     window.nextImage = nextImage;
 }
 
-// ============ DOWNLOAD BROSUR ================================================================================================================================================================
+
+// ============ DOWNLOAD BROSUR (NEW & IMPROVED) ==========================================================================================================================================
+/**
+ * Asynchronously downloads a file by fetching it as a blob and creating a temporary link.
+ * @param {string} url - The URL of the file to download.
+ * @param {string} filename - The desired name for the downloaded file.
+ */
+async function downloadFileUsingFetch(url, filename) {
+    try {
+        const response = await fetch(url);
+        if (!response.ok) {
+            throw new Error(`Gagal mengunduh file: ${response.statusText}`);
+        }
+        const blob = await response.blob();
+        const blobUrl = window.URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.style.display = 'none';
+        a.href = blobUrl;
+        a.download = filename;
+        document.body.appendChild(a);
+        a.click();
+        window.URL.revokeObjectURL(blobUrl);
+        document.body.removeChild(a);
+    } catch (error) {
+        console.error('Proses unduh gagal:', error);
+        alert('Gagal mengunduh brosur. Silakan coba lagi atau hubungi kami.');
+        // Fallback: Buka di tab baru jika fetch gagal
+        window.open(url, '_blank');
+    }
+}
+
 function initDownloadBrochure() {
-    // Seleksi tombol dengan selector yang lebih fleksibel untuk kedua halaman
     const button = document.querySelector('.custom-button, .custom-button-green-jonggol-village');
 
     if (button) {
         let pdfUrl, downloadFileName;
         const currentPath = window.location.pathname;
 
-        // Tentukan URL PDF berdasarkan path URL yang lebih andal
         if (currentPath.includes('natureland-kiano-3')) {
             pdfUrl = 'https://www.kianolandgroup.com/assets/natureland-kiano-3/Brosur-Cibarusah.pdf';
             downloadFileName = 'Brosur-Natureland-Kiano-3.pdf';
@@ -385,27 +410,20 @@ function initDownloadBrochure() {
             downloadFileName = 'Brosur-Green-Jonggol-Village.pdf';
         } else {
             pdfUrl = null;
-            console.log('Brosur tidak tersedia untuk halaman ini.');
         }
 
-        // Tambahkan event listener jika URL PDF ditemukan
         if (pdfUrl) {
             button.addEventListener('click', function (event) {
-                event.preventDefault(); // Mencegah aksi default dari link
-
-                const a = document.createElement('a');
-                a.href = pdfUrl;
-                a.download = downloadFileName; // Nama file saat diunduh
-                document.body.appendChild(a);
-                a.click(); // Simulasikan klik pada link untuk memulai unduhan
-                document.body.removeChild(a); // Hapus link setelah selesai
+                event.preventDefault();
+                // Panggil fungsi unduh yang baru
+                downloadFileUsingFetch(pdfUrl, downloadFileName);
             });
         }
     } else {
-        // Pesan ini akan muncul di console jika tombol tidak ditemukan
         console.log('Tombol unduh brosur tidak ditemukan di halaman ini.');
     }
 }
+
 
 // ============ FASILITAS SECTION ==============================================================================================================================================================
 function initFacilities() {
