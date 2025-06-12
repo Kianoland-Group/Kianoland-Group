@@ -580,7 +580,7 @@ function initChatBubble() {
             
             try {
                 // Kirim ke backend FastAPI
-                const response = await fetch('https://79c8-157-15-46-172.ngrok-free.app/chat', {
+                const response = await fetch('kianoland-group-chattbot-ai-production.up.railway.app/chat', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
@@ -660,7 +660,7 @@ function initChatBubble() {
 // Fungsi untuk memeriksa status server
 async function checkServerStatus() {
     try {
-        const response = await fetch('https://79c8-157-15-46-172.ngrok-free.app/health');
+        const response = await fetch('kianoland-group-chattbot-ai-production.up.railway.app/health');
         if (response.ok) {
             updateStatusIndicator(true);
         } else {
