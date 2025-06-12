@@ -11,6 +11,14 @@ html, body {
   overflow-x: hidden;
 }
 
+.fixed-top {
+    position: fixed !important;
+    top: 0 !important;
+    right: 0 !important;
+    left: 0 !important;
+    z-index: 900 !important;
+}
+
 /* ====================================================================================================
 ============ RESPONSIVE MENU FOR HEADER NAVBAR | ALL PAGES ============================================
 ==================================================================================================== */
