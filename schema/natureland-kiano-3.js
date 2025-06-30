@@ -23,7 +23,7 @@ const schemaData = {
         {
             "@type": "ImageObject",
             "url": "https://www.kianolandgroup.com/assets/natureland-kiano-3/Rumah%202%20Lantai/4_2%20-%20Photo.jpg",
-            "description": "Rumah 2 lantai mewah dengan carport untuk 2 mobil"
+            "description": "Rumah 2 lantai mewah dengan carport luas"
         },
         {
             "@type": "ImageObject",
@@ -124,8 +124,8 @@ const schemaData = {
     "contactPoint": {
         "@type": "ContactPoint",
         "contactType": "Sales & Booking",
-        "telephone": "+6285282592945",
-        "whatsapp": "https://wa.me/6285282592945?text=Saya%20berminat%20booking%20di%20Natureland%20Kiano%203",
+        "telephone": "+628111611724",
+        "whatsapp": "https://wa.me/628111611724?text=Saya%20berminat%20booking%20di%20Natureland%20Kiano%203",
         "availableLanguage": ["Bahasa Indonesia", "English"],
         "areaServed": ["Jawa Barat", "Cibarusah", "Bekasi"],
         "hoursAvailable": {
@@ -185,7 +185,7 @@ const schemaData = {
         {
             "@type": "PropertyValue",
             "name": "Garasi",
-            "value": "Carport untuk 1-2 Mobil"
+            "value": "Carport luas"
         }
     ],
     "amenityFeature": [

@@ -3,27 +3,27 @@ const schemaData = {
     "@type": "Product",
     "@id": "https://www.kianolandgroup.com/natureland-kiano-1#product",
     "name": "Natureland Kiano 1",
-    "description": "Perumahan subsidi strategis di Cileungsi Bogor dengan sistem booking fee 1 juta",
+    "description": "Perumahan subsidi strategis di Cileungsi Bogor",
     "image": [
         {
             "@type": "ImageObject",
             "url": "https://www.kianolandgroup.com/assets/natureland-kiano-1/Cibarusah.jpeg",
-            "description": "Tampilan eksterior rumah tipe 70/75 dengan desain modern minimalis"
+            "description": "Tampilan eksterior rumah tipe 30/60 dengan desain modern minimalis"
         },
         {
             "@type": "ImageObject",
-            "url": "https://www.kianolandgroup.com/assets/natureland-kiano-1/Denah-70-75.jpg",
-            "description": "Denah rumah tipe 70/75 dengan tata ruang optimal"
+            "url": "https://www.kianolandgroup.com/assets/natureland-kiano-1/Denah-30-60.jpg",
+            "description": "Denah rumah tipe 30/60 dengan tata ruang optimal"
         },
         {
             "@type": "ImageObject",
-            "url": "https://www.kianolandgroup.com/assets/natureland-kiano-1/Interior-70-75.jpg",
-            "description": "Interior rumah tipe 70/75 dengan finishing premium"
+            "url": "https://www.kianolandgroup.com/assets/natureland-kiano-1/Interior-30-60.jpg",
+            "description": "Interior rumah tipe 30/60 dengan finishing premium"
         },
         {
             "@type": "ImageObject",
             "url": "https://www.kianolandgroup.com/assets/natureland-kiano-1/Rumah%20Sakit.jpg",
-            "description": "Akses mudah ke Rumah Sakit RSUD Cileungsi dalam jarak 3 km"
+            "description": "Akses mudah ke Rumah Sakit RSUD Cileungsi dalam jarak 800 m"
         },
         {
             "@type": "ImageObject",
@@ -42,26 +42,27 @@ const schemaData = {
         }
     ],
     "offers": {
-        "@type": "AggregateOffer",
-        "highPrice": "465000000",
-        "lowPrice": "465000000",
-        "priceCurrency": "IDR",
-        "availability": "https://schema.org/LimitedAvailability",
-        "offerCount": "1",
-        "offers": [
-            {
-                "@type": "Offer",
-                "url": "https://www.kianolandgroup.com/natureland-kiano-1/rumah-70-75",
-                "name": "Rumah Subsidi Tipe 70/75",
-                "price": "465000000",
-                "priceValidUntil": "2024-12-31",
-                "description": "Booking Fee Rp1.000.000 | Cicilan Rp1.800.000/bulan",
-                "downPayment": "1000000",
-                "loanTerm": "240",
-                "loanTermUnit": "Bulan",
-                "monthlyPayment": "1800000"
-            }
-        ]
+    "@type": "AggregateOffer",
+    "highPrice": "185000000",
+    "lowPrice": "185000000",
+    "priceCurrency": "IDR",
+    "availability": "https://schema.org/SoldOut",
+    "offerCount": "0",
+    "offers": [
+        {
+        "@type": "Offer",
+        "url": "https://www.kianolandgroup.com/natureland-kiano-1/rumah-30-60",
+        "name": "Rumah Subsidi Tipe 30/60",
+        "price": "185000000",
+        "priceValidUntil": "2024-12-31",
+        "description": "Booking Fee Rp1.000.000 | Cicilan Rp1.800.000/bulan",
+        "downPayment": "1000000",
+        "loanTerm": "240",
+        "loanTermUnit": "Bulan",
+        "monthlyPayment": "1800000",
+        "availability": "https://schema.org/SoldOut"
+        }
+    ]
     },
     "aggregateRating": {
         "@type": "AggregateRating",
@@ -95,8 +96,8 @@ const schemaData = {
     "contactPoint": {
         "@type": "ContactPoint",
         "contactType": "Sales & Booking",
-        "telephone": "+6285282592945",
-        "whatsapp": "https://wa.me/6285282592945?text=Saya%20berminat%20booking%20di%20Natureland%20Kiano%201",
+        "telephone": "+628111611724",
+        "whatsapp": "https://wa.me/628111611724?text=Saya%20berminat%20booking%20di%20Natureland%20Kiano%201",
         "availableLanguage": ["Bahasa Indonesia", "English"],
         "areaServed": ["Jawa Barat", "Cileungsi", "Bogor"],
         "hoursAvailable": {
@@ -107,7 +108,7 @@ const schemaData = {
         }
     },
     "sku": "NLK1-7075",
-    "floorSize": "70 m²",
+    "floorSize": "30 m²",
     "numberOfRooms": "3",
     "numberOfBedrooms": "2",
     "numberOfBathroomsTotal": "1",
@@ -130,28 +131,8 @@ const schemaData = {
     "additionalProperty": [
         {
             "@type": "PropertyValue",
-            "name": "Kolam Renang",
-            "value": "Tersedia"
-        },
-        {
-            "@type": "PropertyValue",
-            "name": "Jogging Track",
-            "value": "Tersedia"
-        },
-        {
-            "@type": "PropertyValue",
-            "name": "Club House",
-            "value": "Tersedia"
-        },
-        {
-            "@type": "PropertyValue",
             "name": "Material Bangunan",
             "value": "Bata Merah + Beton Bertulang"
-        },
-        {
-            "@type": "PropertyValue",
-            "name": "Garasi",
-            "value": "Carport untuk 2 Mobil"
         }
     ],
     "amenityFeature": [
@@ -163,7 +144,7 @@ const schemaData = {
         {
             "@type": "LocationFeatureSpecification",
             "name": "Rumah Sakit",
-            "value": "RSUD Cileungsi (3 km)"
+            "value": "RSUD Cileungsi (800 m)"
         },
         {
             "@type": "LocationFeatureSpecification",
@@ -174,11 +155,6 @@ const schemaData = {
             "@type": "LocationFeatureSpecification",
             "name": "Sekolah",
             "value": "SDN Jatisari 1 (500 m), SMP & SMA Cileungsi"
-        },
-        {
-            "@type": "LocationFeatureSpecification",
-            "name": "Fasilitas Keamanan",
-            "value": "One Gate System 24 Jam"
         }
     ],
     "mainEntityOfPage": {
