@@ -399,31 +399,42 @@ function initDownloadBrochure() {
     const button = document.querySelector('.custom-button, .custom-button-green-jonggol-village');
 
     if (button) {
-        let pdfUrl, downloadFileName;
+        let pdfUrls = [];
+        let downloadFileNames = [];
         const currentPath = window.location.pathname;
 
         if (currentPath.includes('natureland-kiano-3')) {
-            pdfUrl = '/assets/brosur/Brosur-Cibarusah.pdf'; // Path relatif
-            downloadFileName = 'Brosur-Natureland-Kiano-3.pdf';
+            pdfUrls = [
+                '/assets/brosur/Natureland-Kiano-3/BROSUR CIBARUSAH DEPAN.pdf',
+                '/assets/brosur/Natureland-Kiano-3/BROSUR CIBARUSAH BELAKANG.pdf'
+            ];
+            downloadFileNames = [
+                'Brosur-Natureland-Kiano-3-Depan.pdf',
+                'Brosur-Natureland-Kiano-3-Belakang.pdf'
+            ];
         } else if (currentPath.includes('green-jonggol-village')) {
-            pdfUrl = '/assets/brosur/Brosur-Green-Jonggol-Village.pdf'; // Path relatif
-            downloadFileName = 'Brosur-Green-Jonggol-Village.pdf';
-        } else {
-            pdfUrl = null;
+            pdfUrls = [
+                '/assets/brosur/Green-Jonggol-Village/brosur jonggol depan.pdf',
+                '/assets/brosur/Green-Jonggol-Village/Brosur jonggol Belakang.pdf'
+            ];
+            downloadFileNames = [
+                'Brosur-Green-Jonggol-Village-Depan.pdf',
+                'Brosur-Green-Jonggol-Village-Belakang.pdf'
+            ];
         }
 
-        if (pdfUrl) {
-            button.addEventListener('click', function (event) {
+        if (pdfUrls.length && downloadFileNames.length) {
+            button.addEventListener('click', async function (event) {
                 event.preventDefault();
-                // Panggil fungsi unduh yang baru
-                downloadFileUsingFetch(pdfUrl, downloadFileName);
+                for (let i = 0; i < pdfUrls.length; i++) {
+                    await downloadFileUsingFetch(pdfUrls[i], downloadFileNames[i]);
+                }
             });
         }
     } else {
         console.log('Tombol unduh brosur tidak ditemukan di halaman ini.');
     }
 }
-
 
 // ============ FASILITAS SECTION ==============================================================================================================================================================
 function initFacilities() {
