@@ -25,6 +25,18 @@ function initKeyboardDetection() {
   }
 }
 
+// ============ DENAH TOGGLE =============================================================================================================================================================
+function initDenahToggle() {
+    const button = document.getElementById("showDenahBtn");
+    const container = document.getElementById("denahContainer");
+
+    if (button && container) {
+        button.addEventListener("click", function () {
+            container.style.display = container.style.display === "none" || container.style.display === "" ? "block" : "none";
+        });
+    }
+}
+
 // ============ INITIALIZE WHEN DOM LOADED =====================================================================================================================================================
 'use strict';
 
@@ -44,7 +56,8 @@ document.addEventListener("DOMContentLoaded", function () {
     initSupportSection();
     initContactForm();
     initSmoothScrolling();
-    initKeyboardDetection(); // Tambahkan ini
+    initKeyboardDetection();
+    initDenahToggle();
     
     // Set current year in footer
     const currentYearElement = document.getElementById("current-year");
@@ -405,8 +418,8 @@ function initDownloadBrochure() {
 
         if (currentPath.includes('natureland-kiano-3')) {
             pdfUrls = [
-                '/assets/brosur/Natureland-Kiano-3/BROSUR CIBARUSAH DEPAN.pdf',
-                '/assets/brosur/Natureland-Kiano-3/BROSUR CIBARUSAH BELAKANG.pdf'
+                '/assets/brosur/natureland-kiano-3/BROSUR CIBARUSAH DEPAN.pdf',
+                '/assets/brosur/natureland-kiano-3/BROSUR CIBARUSAH BELAKANG.pdf'
             ];
             downloadFileNames = [
                 'Brosur-Natureland-Kiano-3-Depan.pdf',
@@ -414,8 +427,8 @@ function initDownloadBrochure() {
             ];
         } else if (currentPath.includes('green-jonggol-village')) {
             pdfUrls = [
-                '/assets/brosur/Green-Jonggol-Village/brosur jonggol depan.pdf',
-                '/assets/brosur/Green-Jonggol-Village/Brosur jonggol Belakang.pdf'
+                '/assets/brosur/green-jonggol-village/brosur jonggol depan.pdf',
+                '/assets/brosur/green-jonggol-village/Brosur jonggol Belakang.pdf'
             ];
             downloadFileNames = [
                 'Brosur-Green-Jonggol-Village-Depan.pdf',

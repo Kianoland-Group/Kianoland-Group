@@ -1847,3 +1847,16 @@ body.modal-open {
 .hidden-by-modal {
   display: none !important;
 }
+
+/* ===========================
+   DENAH RUMAH TOGGLE STYLE
+============================= */
+.denah-scroll-container {
+  display: none;
+  max-height: 800px;
+  overflow-y: auto;
+  border: 2px solid #ddd;
+  padding: 15px;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+}
