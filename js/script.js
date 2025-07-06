@@ -25,18 +25,6 @@ function initKeyboardDetection() {
   }
 }
 
-// ============ DENAH TOGGLE =============================================================================================================================================================
-function initDenahToggle() {
-    const button = document.getElementById("showDenahBtn");
-    const container = document.getElementById("denahContainer");
-
-    if (button && container) {
-        button.addEventListener("click", function () {
-            container.style.display = container.style.display === "none" || container.style.display === "" ? "block" : "none";
-        });
-    }
-}
-
 // ============ INITIALIZE WHEN DOM LOADED =====================================================================================================================================================
 'use strict';
 
@@ -57,7 +45,6 @@ document.addEventListener("DOMContentLoaded", function () {
     initContactForm();
     initSmoothScrolling();
     initKeyboardDetection();
-    initDenahToggle();
     
     // Set current year in footer
     const currentYearElement = document.getElementById("current-year");

@@ -1851,12 +1851,16 @@ body.modal-open {
 /* ===========================
    DENAH RUMAH TOGGLE STYLE
 ============================= */
-.denah-scroll-container {
+/* PDF Container yang bisa di-scroll */
+.pdf-scroll-container {
   display: none;
-  max-height: 800px;
+  max-height: 1300px;
   overflow-y: auto;
   border: 2px solid #ddd;
-  padding: 15px;
+  padding: 10px;
   border-radius: 10px;
   background-color: #f9f9f9;
+  gap: 20px;
+  display: flex;
+  flex-direction: column;
 }
