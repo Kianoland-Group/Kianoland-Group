@@ -160,105 +160,6 @@
             </div>
         </div>
     </section>  
-        
-<!-- =================================================================================================================================================================================================
-============ TIPE RUMAH SECTION ======================================================================================================================================================================
-================================================================================================================================================================================================== -->
-
-    <section class="py-3 section-gap">
-        <div class="container my-4">
-            <div class="row row-cols-2 row-cols-sm-2 row-cols-md-4 g-4">
-                <div class="col">
-                    <div class="card image-container square-image">
-                        <img src="../assets/natureland-kiano-1/Cibarusah.jpeg" class="card-img-top hover-dark" alt="Cibarusah" onclick="openModal('../assets/natureland-kiano-1/Cibarusah.jpeg')" loading="lazy">
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card image-container square-image">
-                        <img src="../assets/produk/Natureland Kiano 3.jpeg" class="card-img-top hover-dark" alt="Natureland Kiano 3" onclick="openModal('../assets/produk/Natureland Kiano 3.jpeg')" loading="lazy">
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card image-container square-image">
-                        <img src="../assets/hero/Background About.jpg" class="card-img-top hover-dark" alt="Tentang Natureland" onclick="openModal('../assets/hero/Background About.jpg')" loading="lazy">
-                    </div>
-                </div>
-                <!-- Image Card -->
-                <div class="col">
-                    <div class="card image-container square-image more-image" data-bs-toggle="modal" data-bs-target="#imageModal">
-                        <img src="../assets/natureland-kiano-1/1_1 - Photo.jpg" alt="Gambar 4" class="darkened-image" loading="lazy">
-                        <div class="more-text">+ 5</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Fullscreen Modal -->
-    <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-fullscreen">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <i class="fa-sharp-duotone fa-solid fa-arrow-left close-modal" data-bs-dismiss="modal" aria-label="Close"></i>
-                </div>
-                <div class="modal-body">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-6 col-md-4 mb-4">
-                                <img src="../assets/natureland-kiano-1/Cibarusah.jpeg" class="img-fluid img-square hover-dark" alt="Cibarusah" onclick="openModal('../assets/natureland-kiano-1/Cibarusah.jpeg')" loading="lazy">
-                            </div>
-                            <div class="col-6 col-md-4 mb-4">
-                                <img src="../assets/produk/Natureland Kiano 3.jpeg" class="img-fluid img-square hover-dark" alt="Natureland Kiano 3" onclick="openModal('../assets/produk/Natureland Kiano 3.jpeg')" loading="lazy">
-                            </div>
-                            <div class="col-6 col-md-4 mb-4">
-                                <img src="../assets/hero/Background About.jpg" class="img-fluid img-square hover-dark" alt="Tentang Natureland" onclick="openModal('../assets/hero/Background About.jpg')" loading="lazy">
-                            </div>
-                            <div class="col-6 col-md-4 mb-4">
-                                <img src="../assets/natureland-kiano-1/1_1 - Photo.jpg" class="img-fluid img-square hover-dark" alt="Image 4" onclick="openModal('../assets/natureland-kiano-1/1_1 - Photo.jpg')" loading="lazy">
-                            </div>
-                            <div class="col-6 col-md-4 mb-4">
-                                <img src="../assets/natureland-kiano-1/Cibarusah.jpeg" class="img-fluid img-square hover-dark" alt="Cibarusah" onclick="openModal('../assets/natureland-kiano-1/Cibarusah.jpeg')" loading="lazy">
-                            </div>
-                            <div class="col-6 col-md-4 mb-4">
-                                <img src="../assets/produk/Natureland Kiano 3.jpeg" class="img-fluid img-square hover-dark" alt="Natureland Kiano 3" onclick="openModal('../assets/produk/Natureland Kiano 3.jpeg')" loading="lazy">
-                            </div>
-                            <div class="col-6 col-md-4 mb-4">
-                                <img src="../assets/hero/Background About.jpg" class="img-fluid img-square hover-dark" alt="Tentang Natureland" onclick="openModal('../assets/hero/Background About.jpg')" loading="lazy">
-                            </div>
-                            <div class="col-6 col-md-4 mb-4">
-                                <img src="../assets/natureland-kiano-1/1_1 - Photo.jpg" class="img-fluid img-square hover-dark" alt="Image 4" onclick="openModal('../assets/natureland-kiano-1/1_1 - Photo.jpg')" loading="lazy">
-                            </div>
-                            <div class="col-6 col-md-4 mb-4">
-                                <img src="../assets/natureland-kiano-1/Cibarusah.jpeg" class="img-fluid img-square hover-dark" alt="Cibarusah" onclick="openModal('../assets/natureland-kiano-1/Cibarusah.jpeg')" loading="lazy">
-                            </div>
-                        </div>
-                    </div>
-                </div>                
-            </div>
-        </div>
-    </div>
-
-    <!-- Modal for Full Screen Image -->
-    <div class="modal" id="fullImageModal" tabindex="-1" aria-labelledby="fullImageModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-fullscreen">
-            <div class="modal-content" style="background-color: black;">
-                <div class="modal-body-fullscreen p-0">
-                    <button type="button" class="close close-fullscreen" data-bs-dismiss="modal" aria-label="Close">
-                        <i class="fa-solid fa-xmark" style="color: #e5e7eb;"></i>
-                    </button>
-                    <button id="prevBtn" class="btn position-absolute top-50 start-0 translate-middle-y" onclick="prevImage()">
-                        <i class="fa-solid fa-chevron-left"></i>
-                    </button>
-                    <button id="nextBtn" class="btn position-absolute top-50 end-0 translate-middle-y" onclick="nextImage()">
-                        <i class="fa-solid fa-chevron-right"></i>
-                    </button>
-                    <div class="modal-box">
-                        <img id="modalImage" src="" class="img-fluid" alt="Full Screen Image" loading="lazy">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 
 <!-- =================================================================================================================================================================================================
 ============ INFORMASI SECTION =======================================================================================================================================================================
@@ -274,14 +175,10 @@
                         <ul class="list-unstyled text-start">
                             <li>Taman Bermain</li>
                             <li>One Gate System</li>
-                            <li>Smart Door System</li>
-                            <li>Perkantoran Kiano</li>
-                            <li>Club House</li>
                             <li>Mushola</li>
                             <li>Sport Center</li>
-                            <li>Kolam Renang</li>
                             <li>Jogging Track</li>
-                            <li>5 Menit Akses Tol Sukaragam</li>
+                            <li>5 Menit Akses Tol Jatiwarna</li>
                         </ul>
                     </div>
                 </div>
@@ -301,7 +198,7 @@
                         </div>
                         <div class="col-md-12">
                             <div class="info-box p-4">
-                                <h4 class="text-start fw-bold">Rp. 465.000.000</h4>
+                                <h4 class="text-start fw-bold">Rp. 680.000.000</h4>
                                 <div class="text-center">
                                     <span class="custom-button soldout">SOLD OUT</span>
                                 </div>                                
@@ -347,31 +244,6 @@
         </div>
     </section>
 
-<!-- =================================================================================================================================================================================================
-============ FASILITAS SECTION =======================================================================================================================================================================
-================================================================================================================================================================================================== -->
-
-    <section id="fasilitas" class="mb-4 section-gap">
-        <div class="container">
-            <div class="row text-center mb-4">
-                <h2 class="custom-heading-type">FASILITAS</h2>
-            </div>
-            <div class="row text-center">
-                <div class="col-md-3 mb-4">
-                    <img src="../assets/fasilitas/Kolam Renang.jpg" class="img-fluid fasilitas-type" alt="Kolam Renang" loading="lazy">
-                </div>
-                <div class="col-md-3 mb-4">
-                    <img src="../assets/fasilitas/Hangout Area.jpg" class="img-fluid fasilitas-type" alt="Hangout Area" loading="lazy">
-                </div>
-                <div class="col-md-3 mb-4">
-                    <img src="../assets/fasilitas/Club House.jpg" class="img-fluid fasilitas-type" alt="Club House" loading="lazy">
-                </div>
-                <div class="col-md-3 mb-4">
-                    <img src="../assets/fasilitas/Kolam Renang.jpg" class="img-fluid fasilitas-type" alt="Kolam Renang" loading="lazy">
-                </div>
-            </div>
-        </div>
-    </section>
     <div id="chattbot"></div>
     <div id="whatsapp-button"></div>
     <div id="footer-placeholder"></div>
