@@ -460,12 +460,12 @@ html, body {
   transform: scale(0.98); /* Shrinks slightly on click */
 }
 
-/* Video di popup fit penuh kotaknya */
+/* khusus untuk video dalam popup */
 .popup-box video {
   width: 100%;
   height: 100%;
-  object-fit: cover;   /* isi penuh kotak */
-  background-color: #000; /* kalau ada sedikit gap tetap hitam */
+  object-fit: contain; /* biar full tapi tidak keluar box */
+  background-color: #000; /* area kosong hitam */
   display: block;
 }
 
