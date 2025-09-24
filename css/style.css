@@ -469,6 +469,50 @@ html, body {
   display: block;
 }
 
+/* Sembunyikan kontrol default */
+.popup-box video::-webkit-media-controls {
+  display: none !important;
+}
+
+.popup-box video::-moz-media-controls {
+  display: none !important;
+}
+
+/* Tampilkan kontrol ketika hover */
+.popup-box video:hover::-webkit-media-controls {
+  display: flex !important;
+}
+
+.popup-box video:hover::-moz-media-controls {
+  display: flex !important;
+}
+
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.video-loader {
+  display: none; /* default sembunyi */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 6px solid rgba(255, 255, 255, 0.3);
+  border-top: 6px solid #fff;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+  z-index: 10;
+}
+
+@keyframes spin {
+  0% { transform: translate(-50%, -50%) rotate(0deg); }
+  100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
 /* ====================================================================================================
 ============ TIPE RUMAH SECTION | TIPE RUMAH PAGES ====================================================
 ==================================================================================================== */

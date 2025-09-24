@@ -152,6 +152,23 @@ function initPopup() {
     }
 }
 
+document.addEventListener("DOMContentLoaded", function () {
+  const video = document.getElementById("popup-video");
+  const loader = document.getElementById("video-loader");
+
+  if (video) {
+    video.addEventListener("waiting", () => {
+      loader.style.display = "block"; // tampil saat buffering
+    });
+    video.addEventListener("playing", () => {
+      loader.style.display = "none"; // hilang saat main
+    });
+    video.addEventListener("canplay", () => {
+      loader.style.display = "none"; // hilang kalau sudah siap play
+    });
+  }
+});
+
 // ============ WHATSAPP LINK ==================================================================================================================================================================
 function initWhatsAppLink() {
     const waLink = document.getElementById('wa-link');

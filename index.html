@@ -357,9 +357,12 @@
             <div class="dialog-close-button-1">
                 <i class="fas fa-xmark"></i>
             </div>
-            <video src="assets/ads/Iklan.mp4" autoplay loop playsinline width="600">
-                Browser Anda tidak mendukung tag video.
-            </video>
+            <div class="video-wrapper">
+                <video id="popup-video" autoplay muted loop>
+                    <source src="assets/ads/Iklan.mp4" type="video/mp4">
+                </video>
+                <div class="video-loader" id="video-loader"></div>
+            </div>
         </div>
         <!-- Box 2 dengan teks dan form -->
         <div class="popup-box">
