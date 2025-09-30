@@ -441,7 +441,7 @@ html, body {
 }
 
 .dialog-close-button-1:hover {
-  color: #ff4444; /* merah saat hover */
+  color: #ddd; /* putih agak gelap saat hover */
 }
 
 .btn-promo {
