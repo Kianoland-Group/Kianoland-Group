@@ -143,9 +143,9 @@ function initPopup() {
             };
         });
 
-        // Sembunyikan popup jika klik di luar area
+        // Tutup popup hanya jika klik di luar kotak popup
         document.addEventListener("click", function (event) {
-            if (popup.contains(event.target)) {
+            if (popup.classList.contains("show-popup") && !event.target.closest(".popup-box")) {
                 popup.style.display = "none";
             }
         });
