@@ -414,29 +414,34 @@ html, body {
   background-color: #043a6b;
 }
 
-/* Tombol close di pojok kanan atas */
-.dialog-close-button-1,
+/* Tombol close untuk desktop */
 .dialog-close-button-2 {
   position: absolute;
-  top: 15px; /* Sesuaikan jarak dari atas */
-  right: 20px; /* Sesuaikan jarak dari kanan */
+  top: 15px;
+  right: 20px;
   cursor: pointer;
   font-size: 24px;
-  color: #333;
+  color: #333; /* warna default gelap */
+  z-index: 20;
 }
 
-.dialog-close-button-1:hover,
 .dialog-close-button-2:hover {
-  color: #065091; /* Warna berubah saat di-hover */
+  color: #065091; /* biru saat hover */
 }
 
-/* Tombol close pertama tampil default, kedua disembunyikan */
+/* Tombol close untuk responsive (warna putih) */
 .dialog-close-button-1 {
-  display: none;
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  cursor: pointer;
+  font-size: 24px;
+  color: #fff; /* putih untuk mobile */
+  z-index: 20;
 }
 
-.dialog-close-button-2 {
-  display: block;
+.dialog-close-button-1:hover {
+  color: #ff4444; /* merah saat hover */
 }
 
 .btn-promo {
