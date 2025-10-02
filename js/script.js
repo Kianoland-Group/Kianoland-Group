@@ -255,22 +255,6 @@ function initImageModal() {
                 '../assets/natureland-kiano-1/1_1 - Photo.jpg'
             );
         }
-        else if (currentPage.includes('natureland-kiano-2/rumah-40-60')) {
-            images.push(
-                '../assets/natureland-kiano-1/Cibarusah.jpeg',
-                '../assets/produk/Natureland Kiano 3.jpeg',
-                '../assets/hero/Background About.jpg',
-                '../assets/natureland-kiano-1/1_1 - Photo.jpg'
-            );
-        }
-        else if (currentPage.includes('natureland-kiano-2/rumah-70-75')) {
-            images.push(
-                '../assets/natureland-kiano-1/Cibarusah.jpeg',
-                '../assets/produk/Natureland Kiano 3.jpeg',
-                '../assets/hero/Background About.jpg',
-                '../assets/natureland-kiano-1/1_1 - Photo.jpg'
-            );
-        }
         else if (currentPage.includes('natureland-kiano-3/rumah-1-5-lantai-40-60')) {
             images.push(
                 '../assets/natureland-kiano-3/Rumah 1,5 Lantai/1_11 - Photo.jpg',
