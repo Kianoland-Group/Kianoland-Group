@@ -283,19 +283,17 @@ function initImageModal() {
     }
 
     function openModal(imageSrc) {
-        if (!imageSrc) {
-            console.error('Trying to open modal with undefined image source');
-            return;
-        }
+        if (!imageSrc) return;
+        
+        imageSrc = decodeURIComponent(imageSrc); // Fix spasi %20
         
         currentImageIndex = images.indexOf(imageSrc);
         if (currentImageIndex === -1) {
             console.error('Image not found in images array:', imageSrc);
             return;
         }
-        
-        document.getElementById('modalImage').src = imageSrc;
 
+        document.getElementById('modalImage').src = imageSrc;
         const fullImageModal = new bootstrap.Modal(document.getElementById('fullImageModal'));
         fullImageModal.show();
     }
