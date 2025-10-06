@@ -424,7 +424,7 @@ function initDownloadBrochure() {
         } else if (currentPath.includes('green-jonggol-village')) {
             pdfUrls = [
                 '/assets/brosur/green-jonggol-village/brosur jonggol depan.pdf',
-                '/assets/brosur/green-jonggol-village/Brosur jonggol Belakang.pdf'
+                '/assets/brosur/green-jonggol-village/Brosur jonggol Belakang UPDATE.pdf'
             ];
             downloadFileNames = [
                 'Brosur-Green-Jonggol-Village-Depan.pdf',
