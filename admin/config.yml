@@ -5,9 +5,17 @@ collections:
     create: true
     slug: "{{slug}}"
     fields:
-      - {
-          label: "Isi Artikel",
-          name: "body",
-          widget: "markdown",
-          editor_components: ["image"],
-        }
+      - { label: "Judul", name: "title", widget: "string" }
+      - { label: "Tanggal", name: "date", widget: "datetime" }
+      - { label: "Deskripsi Singkat", name: "summary", widget: "text" }
+      - { label: "Gambar Utama", name: "thumbnail", widget: "image" }
+      - { label: "Isi Artikel", name: "body", widget: "markdown" }
+
+  - name: "pages" # 🟢 ubah dari posts → pages
+    label: "Halaman Statis"
+    folder: "pages"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Judul Halaman", name: "title", widget: "string" }
+      - { label: "Isi Konten", name: "body", widget: "markdown" }
