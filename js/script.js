@@ -284,16 +284,19 @@ function initImageModal() {
 
     function openModal(imageSrc) {
         if (!imageSrc) return;
-        
-        imageSrc = decodeURIComponent(imageSrc); // Fix spasi %20
-        
-        currentImageIndex = images.indexOf(imageSrc);
+
+        // Hilangkan "../" di depan path, lalu decode URI
+        imageSrc = decodeURIComponent(imageSrc.replace(/^(\.\.\/)?/, ''));
+
+        // Cari berdasarkan nama file terakhir (misalnya "4.jpg")
+        currentImageIndex = images.findIndex(img => img.endsWith(imageSrc.split('/').pop()));
+
         if (currentImageIndex === -1) {
             console.error('Image not found in images array:', imageSrc);
             return;
         }
 
-        document.getElementById('modalImage').src = imageSrc;
+        document.getElementById('modalImage').src = images[currentImageIndex];
         const fullImageModal = new bootstrap.Modal(document.getElementById('fullImageModal'));
         fullImageModal.show();
     }
