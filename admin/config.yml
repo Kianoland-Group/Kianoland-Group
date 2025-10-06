@@ -1,5 +1,12 @@
+backend:
+  name: git-gateway
+  branch: master
+
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
 collections:
-  - name: "posts"
+  - name: "posts" # ✅ Koleksi untuk berita
     label: "Berita"
     folder: "blog/posts"
     create: true
@@ -11,11 +18,11 @@ collections:
       - { label: "Gambar Utama", name: "thumbnail", widget: "image" }
       - { label: "Isi Artikel", name: "body", widget: "markdown" }
 
-  - name: "pages" # 🟢 ubah dari posts → pages
+  - name: "pages" # ✅ Koleksi untuk halaman statis
     label: "Halaman Statis"
     folder: "pages"
     create: true
     slug: "{{slug}}"
     fields:
       - { label: "Judul Halaman", name: "title", widget: "string" }
-      - { label: "Isi Konten", name: "body", widget: "markdown" }
+      - { label: "Konten", name: "body", widget: "markdown" }
