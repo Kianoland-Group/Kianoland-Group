@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Admin Panel - Kianoland Group</title>
 
-    <!-- Nonaktifkan auto-init bawaan -->
+    <!-- Nonaktifkan auto-init Decap bawaan -->
     <script>
       window.CMS_MANUAL_INIT = true;
     </script>
@@ -16,43 +16,26 @@
     <!-- Decap CMS -->
     <script src="https://unpkg.com/decap-cms@3.0.0/dist/decap-cms.js"></script>
   </head>
-
   <body>
     <script>
+      // Aktifkan Netlify Identity login redirect
+      if (window.netlifyIdentity) {
+        window.netlifyIdentity.on("init", (user) => {
+          if (!user) {
+            window.netlifyIdentity.on("login", () => {
+              document.location.href = "/admin/";
+            });
+          }
+        });
+      }
+
+      // Jalankan CMS setelah siap
       document.addEventListener("DOMContentLoaded", function () {
-        // Tunggu Decap CMS siap
         if (typeof CMS === "undefined") {
-          console.error("❌ Decap CMS belum siap.");
+          console.error("❌ Decap CMS belum siap, tunggu sebentar...");
           return;
         }
 
-        // Tambahkan style preview
-        CMS.registerPreviewStyle("/admin/preview-style.css");
-
-        // Template React untuk preview
-        const PostPreview = ({ entry }) => {
-          const data = entry.getIn(["data"]).toJS();
-          const baseUrl = "https://kianolandgroup.com";
-          const imageSrc = data.thumbnail
-            ? (data.thumbnail.startsWith("blob:")
-                ? data.thumbnail
-                : baseUrl + data.thumbnail)
-            : "";
-
-          return h(
-            "div",
-            { className: "cms-preview" },
-            h("h1", null, data.title || ""),
-            h("p", null, data.summary || ""),
-            imageSrc ? h("img", { src: imageSrc, alt: data.title || "" }) : null,
-            h("div", { className: "content" }, data.body || "")
-          );
-        };
-
-        // Daftarkan preview template
-        CMS.registerPreviewTemplate("posts", PostPreview);
-
-        // Jalankan CMS
         CMS.init({
           config: {
             backend: { name: "git-gateway", branch: "master" },
@@ -76,18 +59,8 @@
             ],
           },
         });
-
-        // Redirect otomatis setelah login sukses
-        if (window.netlifyIdentity) {
-          window.netlifyIdentity.on("init", (user) => {
-            if (!user) {
-              window.netlifyIdentity.on("login", () => {
-                document.location.href = "/admin/";
-              });
-            }
-          });
-        }
       });
     </script>
+
   </body>
 </html>
