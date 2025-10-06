@@ -5,23 +5,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Admin Panel - Kianoland Group</title>
 
+    <!-- Nonaktifkan auto-init Decap bawaan -->
+    <script>
+      window.CMS_MANUAL_INIT = true;
+    </script>
+
     <!-- Netlify Identity -->
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 
-    <!-- Decap CMS (load async, tapi kita tunggu event onload) -->
-    <script
-      src="https://unpkg.com/decap-cms@3.0.0/dist/decap-cms.js"
-      onload="initDecapCMS()"
-    ></script>
+    <!-- Decap CMS -->
+    <script src="https://unpkg.com/decap-cms@3.0.0/dist/decap-cms.js"></script>
   </head>
   <body>
     <script>
-      function initDecapCMS() {
-        console.log("✅ Decap CMS berhasil dimuat, inisialisasi...");
+      // Jalankan setelah Decap siap
+      document.addEventListener("DOMContentLoaded", function () {
+        if (typeof CMS === "undefined") {
+          console.error("❌ Decap CMS belum siap, tunggu sebentar...");
+          return;
+        }
 
-        // Inisialisasi CMS dengan config.json
+        console.log("✅ Decap CMS siap, memuat config.json...");
+
         CMS.init({
-          config: "/admin/config.json",
+          config: {
+            backend: {
+              name: "git-gateway",
+              branch: "master",
+            },
+            media_folder: "images/uploads",
+            public_folder: "/images/uploads",
+            collections: [
+              {
+                name: "posts",
+                label: "Berita",
+                folder: "blog/posts",
+                create: true,
+                slug: "{{slug}}",
+                fields: [
+                  { label: "Judul", name: "title", widget: "string" },
+                  { label: "Tanggal", name: "date", widget: "datetime" },
+                  {
+                    label: "Deskripsi Singkat",
+                    name: "summary",
+                    widget: "text",
+                  },
+                  { label: "Gambar Utama", name: "thumbnail", widget: "image" },
+                  { label: "Isi Artikel", name: "body", widget: "markdown" },
+                ],
+              },
+            ],
+          },
         });
 
         // Redirect otomatis setelah login sukses
@@ -34,7 +68,7 @@
             }
           });
         }
-      }
+      });
     </script>
   </body>
 </html>
