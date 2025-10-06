@@ -285,10 +285,8 @@ function initImageModal() {
     function openModal(imageSrc) {
         if (!imageSrc) return;
 
-        // Hilangkan "../" di depan path, lalu decode URI
-        imageSrc = decodeURIComponent(imageSrc.replace(/^(\.\.\/)?/, ''));
+        imageSrc = decodeURIComponent(imageSrc); // JANGAN di-replace ../
 
-        // Cari berdasarkan nama file terakhir (misalnya "4.jpg")
         currentImageIndex = images.findIndex(img => img.endsWith(imageSrc.split('/').pop()));
 
         if (currentImageIndex === -1) {
