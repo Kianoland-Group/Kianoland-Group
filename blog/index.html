@@ -20,26 +20,11 @@
       overflow: hidden;
       transition: transform 0.2s;
     }
-    .post:hover {
-      transform: translateY(-4px);
-    }
-    .post img {
-      width: 100%;
-      height: 180px;
-      object-fit: cover;
-    }
-    .post-content {
-      padding: 1rem;
-    }
-    .post-content h2 {
-      font-size: 1.2rem;
-      color: #222;
-      margin: 0 0 0.5rem;
-    }
-    .post-content p {
-      color: #666;
-      font-size: 0.9rem;
-    }
+    .post:hover { transform: translateY(-4px); }
+    .post img { width: 100%; height: 180px; object-fit: cover; }
+    .post-content { padding: 1rem; }
+    .post-content h2 { font-size: 1.2rem; color: #222; margin: 0 0 0.5rem; }
+    .post-content p { color: #666; font-size: 0.9rem; }
   </style>
 </head>
 <body>
@@ -56,11 +41,25 @@
       const container = document.getElementById("postList");
 
       for (const post of posts) {
+        if (!post.name.endsWith(".md")) continue;
+
         const file = await fetch(post.download_url);
         const text = await file.text();
-        const title = text.match(/title:\s*"(.*?)"/)?.[1] || "Tanpa Judul";
-        const summary = text.match(/summary:\s*"(.*?)"/)?.[1] || "";
-        const thumbnail = text.match(/thumbnail:\s*"(.*?)"/)?.[1] || "";
+
+        // Ambil frontmatter YAML
+        const fmMatch = text.match(/---([\s\S]*?)---/);
+        const fmText = fmMatch ? fmMatch[1] : "";
+
+        // Ambil field title, summary, thumbnail
+        const getField = (name) => {
+          const regex = new RegExp(`${name}:\\s*([\\s\\S]*?)(\\n\\w+:|$)`, "i");
+          const match = fmText.match(regex);
+          return match ? match[1].trim().replace(/\n/g, " ") : "";
+        };
+
+        const title = getField("title") || "Tanpa Judul";
+        const summary = getField("summary") || "";
+        const thumbnail = getField("thumbnail") || "";
 
         const div = document.createElement("div");
         div.className = "post";
@@ -76,6 +75,7 @@
         container.appendChild(div);
       }
     }
+
     loadPosts();
   </script>
 </body>
