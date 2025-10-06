@@ -1,0 +1,10 @@
+{
+  "name": "kianoland",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "cd blog && npx @11ty/eleventy"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.0.0"
+  }
+}

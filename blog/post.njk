@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{ title }} | Kianoland Group</title>
+  <meta name="description" content="{{ summary }}">
+  <meta property="og:title" content="{{ title }}">
+  <meta property="og:description" content="{{ summary }}">
+  <meta property="og:image" content="{{ thumbnail }}">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <article style="max-width:800px;margin:auto;padding:2rem;">
+    <h1>{{ title }}</h1>
+    <p class="text-muted">{{ date | date("dd MMMM yyyy") }}</p>
+    <img src="{{ thumbnail }}" alt="{{ title }}" style="width:100%;border-radius:10px;margin-bottom:1rem;">
+    <div class="content">
+      {{ content | safe }}
+    </div>
+  </article>
+  <div class="text-center">
+    <a href="/blog/index.html">← Kembali ke Daftar Berita</a>
+  </div>
+</body>
+</html>
