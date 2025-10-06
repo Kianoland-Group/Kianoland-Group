@@ -18,21 +18,27 @@
   </head>
   <body>
     <script>
-      // Jalankan setelah Decap siap
+      // Aktifkan Netlify Identity login redirect
+      if (window.netlifyIdentity) {
+        window.netlifyIdentity.on("init", (user) => {
+          if (!user) {
+            window.netlifyIdentity.on("login", () => {
+              document.location.href = "/admin/";
+            });
+          }
+        });
+      }
+
+      // Jalankan CMS setelah siap
       document.addEventListener("DOMContentLoaded", function () {
         if (typeof CMS === "undefined") {
           console.error("❌ Decap CMS belum siap, tunggu sebentar...");
           return;
         }
 
-        console.log("✅ Decap CMS siap, memuat config.json...");
-
         CMS.init({
           config: {
-            backend: {
-              name: "git-gateway",
-              branch: "master",
-            },
+            backend: { name: "git-gateway", branch: "master" },
             media_folder: "images/uploads",
             public_folder: "/images/uploads",
             collections: [
@@ -45,11 +51,7 @@
                 fields: [
                   { label: "Judul", name: "title", widget: "string" },
                   { label: "Tanggal", name: "date", widget: "datetime" },
-                  {
-                    label: "Deskripsi Singkat",
-                    name: "summary",
-                    widget: "text",
-                  },
+                  { label: "Deskripsi Singkat", name: "summary", widget: "text" },
                   { label: "Gambar Utama", name: "thumbnail", widget: "image" },
                   { label: "Isi Artikel", name: "body", widget: "markdown" },
                 ],
@@ -57,18 +59,12 @@
             ],
           },
         });
-
-        // Redirect otomatis setelah login sukses
-        if (window.netlifyIdentity) {
-          window.netlifyIdentity.on("init", (user) => {
-            if (!user) {
-              window.netlifyIdentity.on("login", () => {
-                document.location.href = "/admin/";
-              });
-            }
-          });
-        }
       });
     </script>
+
+    <!-- 🧩 Pesan tambahan di bawah area login CMS -->
+    <p style="text-align:center; color:#888; font-size:14px; margin-top: 2rem;">
+      Belum punya akun? Minta admin untuk kirim ulang undangan jika link lama tidak berfungsi.
+    </p>
   </body>
 </html>
