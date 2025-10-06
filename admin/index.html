@@ -8,14 +8,22 @@
     <!-- Script Netlify Identity -->
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 
-    <!-- Script Decap CMS -->
+    <!-- Script Decap CMS (muat lebih dulu sebelum dijalankan) -->
     <script src="https://unpkg.com/decap-cms@3.0.0/dist/decap-cms.js"></script>
   </head>
   <body>
     <script>
       document.addEventListener("DOMContentLoaded", function () {
-        // Inisialisasi CMS
-        CMS.init();
+        // Tunggu CMS tersedia
+        if (typeof CMS === "undefined") {
+          console.error("Decap CMS belum siap!");
+          return;
+        }
+
+        // Paksa load config dari config.json (bukan config.yml)
+        CMS.init({
+          config: "/admin/config.json",
+        });
 
         // Redirect otomatis setelah login berhasil
         if (window.netlifyIdentity) {
