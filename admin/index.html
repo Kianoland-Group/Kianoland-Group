@@ -5,27 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Admin Panel - Kianoland Group</title>
 
-    <!-- Script Netlify Identity -->
+    <!-- Netlify Identity -->
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 
-    <!-- Script Decap CMS (muat lebih dulu sebelum dijalankan) -->
-    <script src="https://unpkg.com/decap-cms@3.0.0/dist/decap-cms.js"></script>
+    <!-- Decap CMS (load async, tapi kita tunggu event onload) -->
+    <script
+      src="https://unpkg.com/decap-cms@3.0.0/dist/decap-cms.js"
+      onload="initDecapCMS()"
+    ></script>
   </head>
   <body>
     <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        // Tunggu CMS tersedia
-        if (typeof CMS === "undefined") {
-          console.error("Decap CMS belum siap!");
-          return;
-        }
+      function initDecapCMS() {
+        console.log("✅ Decap CMS berhasil dimuat, inisialisasi...");
 
-        // Paksa load config dari config.json (bukan config.yml)
+        // Inisialisasi CMS dengan config.json
         CMS.init({
           config: "/admin/config.json",
         });
 
-        // Redirect otomatis setelah login berhasil
+        // Redirect otomatis setelah login sukses
         if (window.netlifyIdentity) {
           window.netlifyIdentity.on("init", (user) => {
             if (!user) {
@@ -35,7 +34,7 @@
             }
           });
         }
-      });
+      }
     </script>
   </body>
 </html>
