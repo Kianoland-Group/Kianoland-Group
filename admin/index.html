@@ -15,33 +15,34 @@
 
     <!-- Decap CMS -->
     <script src="https://unpkg.com/decap-cms@3.0.0/dist/decap-cms.js"></script>
-
-    <!-- Tambahkan style untuk preview CMS -->
-    <script>
-        CMS.registerPreviewStyle("/admin/preview-style.css");
-    </script>
-
   </head>
   <body>
     <script>
-      // Aktifkan Netlify Identity login redirect
-      if (window.netlifyIdentity) {
-        window.netlifyIdentity.on("init", (user) => {
-          if (!user) {
-            window.netlifyIdentity.on("login", () => {
-              document.location.href = "/admin/";
-            });
-          }
-        });
-      }
-
-      // Jalankan CMS setelah siap
+      // Jalankan setelah Decap CMS siap
       document.addEventListener("DOMContentLoaded", function () {
         if (typeof CMS === "undefined") {
           console.error("❌ Decap CMS belum siap, tunggu sebentar...");
           return;
         }
 
+        console.log("✅ Decap CMS siap, memuat konfigurasi...");
+
+        // === Tambahkan CSS dan template untuk preview ===
+        CMS.registerPreviewStyle("/admin/preview-style.css");
+
+        CMS.registerPreviewTemplate("posts", ({ entry }) => {
+          const data = entry.getIn(["data"]).toJS();
+          return `
+            <div class="cms-preview">
+              <h1>${data.title || ""}</h1>
+              <p>${data.summary || ""}</p>
+              <img src="${data.thumbnail || ""}" alt="${data.title || ""}">
+              <div class="content">${data.body || ""}</div>
+            </div>
+          `;
+        });
+
+        // === Inisialisasi konfigurasi CMS ===
         CMS.init({
           config: {
             backend: { name: "git-gateway", branch: "master" },
@@ -65,8 +66,18 @@
             ],
           },
         });
+
+        // Redirect otomatis setelah login sukses
+        if (window.netlifyIdentity) {
+          window.netlifyIdentity.on("init", (user) => {
+            if (!user) {
+              window.netlifyIdentity.on("login", () => {
+                document.location.href = "/admin/";
+              });
+            }
+          });
+        }
       });
     </script>
-
   </body>
 </html>
