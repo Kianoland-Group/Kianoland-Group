@@ -234,12 +234,10 @@ let images = [];
 let currentImageIndex = 0;
 
 function initImageModal() {
-    images = []; // reset isi array tiap halaman
 
     function setImagesArray() {
         const currentPage = window.location.pathname;
-        
-        images.length = 0;
+        images = []; // reset
 
         if (currentPage.includes('green-jonggol-village/rumah-30-60')) {
             images.push(
@@ -284,36 +282,36 @@ function initImageModal() {
         }
     }
 
-    function openModal(imageSrc) {
+    setImagesArray();
+
+    window.openModal = function(imageSrc) {
         if (!imageSrc) return;
 
-        imageSrc = decodeURIComponent(imageSrc); // JANGAN di-replace ../
+        imageSrc = decodeURIComponent(imageSrc);
 
         currentImageIndex = images.findIndex(img => img.endsWith(imageSrc.split('/').pop()));
 
         if (currentImageIndex === -1) {
-            console.error('Image not found in images array:', imageSrc);
+            console.error('Image not found in images array:', imageSrc, images);
             return;
         }
 
         document.getElementById('modalImage').src = images[currentImageIndex];
         const fullImageModal = new bootstrap.Modal(document.getElementById('fullImageModal'));
         fullImageModal.show();
-    }
+    };
 
-    function prevImage() {
+    window.prevImage = function() {
         if (images.length === 0) return;
         currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
         document.getElementById('modalImage').src = images[currentImageIndex];
-    }
+    };
 
-    function nextImage() {
+    window.nextImage = function() {
         if (images.length === 0) return;
         currentImageIndex = (currentImageIndex + 1) % images.length;
         document.getElementById('modalImage').src = images[currentImageIndex];
-    }
-
-    setImagesArray();
+    };
 
     const handleModalShow = () => {
         const chatBubble = document.getElementById('chat-bubble');
