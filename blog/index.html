@@ -1,49 +1,82 @@
 <!DOCTYPE html>
 <html lang="id">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Berita | Kianoland Group</title>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Berita | Kianoland Group</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    .post-list {
+      max-width: 900px;
+      margin: 2rem auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+    .post {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      overflow: hidden;
+      transition: transform 0.2s;
+    }
+    .post:hover {
+      transform: translateY(-4px);
+    }
+    .post img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+    .post-content {
+      padding: 1rem;
+    }
+    .post-content h2 {
+      font-size: 1.2rem;
+      color: #222;
+      margin: 0 0 0.5rem;
+    }
+    .post-content p {
+      color: #666;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <h1 style="text-align:center;">Berita Terbaru</h1>
+  <div class="post-list" id="postList"></div>
 
-    <!-- Bootstrap -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="../css/style.css" />
-  </head>
-  <body>
-    <div class="container py-5">
-      <h1 class="text-center mb-4">Berita Terbaru</h1>
+  <script>
+    // Ambil daftar artikel dari GitHub API
+    async function loadPosts() {
+      const repo = "Kianoland-Group/kianoland-Group"; // ganti sesuai nama repo kamu
+      const res = await fetch(`https://api.github.com/repos/${repo}/contents/blog/posts`);
+      const posts = await res.json();
 
-      <div id="blog-list" class="row gy-4"></div>
-    </div>
+      const container = document.getElementById("postList");
 
-    <script>
-      async function loadPosts() {
-        const response = await fetch("/blog/posts/index.json");
-        const posts = await response.json();
-        const container = document.getElementById("blog-list");
+      for (const post of posts) {
+        const file = await fetch(post.download_url);
+        const text = await file.text();
+        const title = text.match(/title:\s*"(.*?)"/)?.[1] || "Tanpa Judul";
+        const summary = text.match(/summary:\s*"(.*?)"/)?.[1] || "";
+        const thumbnail = text.match(/thumbnail:\s*"(.*?)"/)?.[1] || "";
 
-        posts.forEach((post) => {
-          const col = document.createElement("div");
-          col.classList.add("col-12", "col-md-6", "col-lg-4");
-
-          col.innerHTML = `
-            <div class="card h-100 shadow-sm border-0">
-              <img src="${post.thumbnail}" class="card-img-top" alt="${post.title}">
-              <div class="card-body">
-                <h5 class="card-title">${post.title}</h5>
-                <p class="card-text text-muted">${post.summary}</p>
-                <a href="/blog/posts/post.html?slug=${post.slug}" class="btn btn-primary">Baca Selengkapnya</a>
-              </div>
+        const div = document.createElement("div");
+        div.className = "post";
+        div.innerHTML = `
+          <a href="/blog/posts/${post.name.replace('.md', '.html')}">
+            <img src="${thumbnail}" alt="${title}">
+            <div class="post-content">
+              <h2>${title}</h2>
+              <p>${summary}</p>
             </div>
-          `;
-          container.appendChild(col);
-        });
+          </a>
+        `;
+        container.appendChild(div);
       }
-
-      loadPosts();
-    </script>
-  </body>
+    }
+    loadPosts();
+  </script>
+</body>
 </html>
