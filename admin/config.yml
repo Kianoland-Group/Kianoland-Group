@@ -1,0 +1,26 @@
+backend:
+  name: github
+  repo: Kianoland-Group/kianoland-Group
+  branch: master
+  base_url: https://kianolandgroup.com # ganti sesuai domain kamu
+
+media_folder: "images/uploads" # folder tempat upload gambar disimpan di repo
+public_folder: "/images/uploads" # path publik di web
+
+site_url: "https://kianolandgroup.com"
+display_url: "https://kianolandgroup.com"
+
+collections:
+  - name: "posts"
+    label: "Berita"
+    folder: "blog/posts"
+    create: true
+    slug: "{{slug}}"
+    extension: "json"
+    format: "json"
+    fields:
+      - { label: "Judul", name: "title", widget: "string" }
+      - { label: "Tanggal", name: "date", widget: "datetime" }
+      - { label: "Deskripsi Singkat", name: "summary", widget: "text" }
+      - { label: "Gambar Utama", name: "thumbnail", widget: "image" }
+      - { label: "Isi Artikel", name: "body", widget: "markdown" }
