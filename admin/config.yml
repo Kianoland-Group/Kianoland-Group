@@ -2,11 +2,8 @@ backend:
   name: git-gateway
   branch: master
 
-media_folder: "images/uploads" # folder tempat upload gambar disimpan di repo
-public_folder: "/images/uploads" # path publik di web
-
-site_url: "https://kianolandgroup.com"
-display_url: "https://kianolandgroup.com"
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
 
 collections:
   - name: "posts"
@@ -14,8 +11,6 @@ collections:
     folder: "blog/posts"
     create: true
     slug: "{{slug}}"
-    extension: "json"
-    format: "json"
     fields:
       - { label: "Judul", name: "title", widget: "string" }
       - { label: "Tanggal", name: "date", widget: "datetime" }
