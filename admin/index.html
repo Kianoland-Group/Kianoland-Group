@@ -5,26 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Admin Panel - Kianoland Group</title>
 
-    <!-- Script Netlify Identity (harus di-load sebelum Decap CMS) -->
+    <!-- Script Netlify Identity -->
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 
     <!-- Script Decap CMS -->
     <script src="https://unpkg.com/decap-cms@3.0.0/dist/decap-cms.js"></script>
   </head>
   <body>
-    <!-- Decap CMS otomatis menampilkan dashboard di sini -->
-
     <script>
-      // Redirect otomatis ke dashboard admin setelah login berhasil
-      if (window.netlifyIdentity) {
-        window.netlifyIdentity.on("init", (user) => {
-          if (!user) {
-            window.netlifyIdentity.on("login", () => {
-              document.location.href = "/admin/";
-            });
-          }
-        });
-      }
+      document.addEventListener("DOMContentLoaded", function () {
+        // Inisialisasi CMS
+        CMS.init();
+
+        // Redirect otomatis setelah login berhasil
+        if (window.netlifyIdentity) {
+          window.netlifyIdentity.on("init", (user) => {
+            if (!user) {
+              window.netlifyIdentity.on("login", () => {
+                document.location.href = "/admin/";
+              });
+            }
+          });
+        }
+      });
     </script>
   </body>
 </html>
