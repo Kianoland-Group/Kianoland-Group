@@ -1,8 +1,6 @@
 backend:
-  name: github
-  repo: Kianoland-Group/kianoland-Group
+  name: git-gateway
   branch: master
-  base_url: https://kianolandgroup.com # ganti sesuai domain kamu
 
 media_folder: "images/uploads" # folder tempat upload gambar disimpan di repo
 public_folder: "/images/uploads" # path publik di web
