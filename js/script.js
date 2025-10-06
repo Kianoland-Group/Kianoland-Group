@@ -254,7 +254,14 @@ function initImageModal() {
                 '../assets/green-jonggol-village/Rumah 36-72/1.jpeg',
                 '../assets/green-jonggol-village/Rumah 36-72/2.jpeg',
                 '../assets/green-jonggol-village/Rumah 36-72/3.jpeg',
-                '../assets/green-jonggol-village/Rumah 36-72/4.jpeg'
+                '../assets/green-jonggol-village/Rumah 36-72/4.jpeg',
+                '../assets/green-jonggol-village/Rumah 36-72/5.jpeg',
+                '../assets/green-jonggol-village/Rumah 36-72/6.jpeg',
+                '../assets/green-jonggol-village/Rumah 36-72/7.jpeg',
+                '../assets/green-jonggol-village/Rumah 36-72/8.jpeg',
+                '../assets/green-jonggol-village/Rumah 36-72/9.jpeg',
+                '../assets/green-jonggol-village/Rumah 36-72/10.jpeg',
+                '../assets/green-jonggol-village/Rumah 36-72/11.jpeg',
             );
         }
         else if (currentPage.includes('natureland-kiano-3/rumah-1-5-lantai-60-60')) {
