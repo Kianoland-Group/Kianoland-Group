@@ -230,9 +230,11 @@ function initTypeSection() {
 }
 
 // ============ IMAGE MODAL =================================================================================================================================================================
+let images = [];
+let currentImageIndex = 0;
+
 function initImageModal() {
-    let currentImageIndex = 0;
-    const images = [];
+    images = []; // reset isi array tiap halaman
 
     function setImagesArray() {
         const currentPage = window.location.pathname;
