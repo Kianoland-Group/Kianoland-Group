@@ -236,8 +236,9 @@ let currentImageIndex = 0;
 function initImageModal() {
 
     function setImagesArray() {
-        const currentPage = window.location.pathname;
-        images = []; // reset
+    const currentPage = window.location.pathname;
+    console.log("Current page:", currentPage); // 🔍 debug log
+    images = []; // reset
 
         if (currentPage.includes('green-jonggol-village/rumah-30-60')) {
             images.push(
@@ -272,7 +273,7 @@ function initImageModal() {
                 '../assets/natureland-kiano-3/Rumah 2 Lantai/4_8 - Photo.jpg'
             );
         }
-        else if (currentPage.includes('natureland-kiano-3/rumah-40-60')) {
+        else if (currentPage.includes('natureland-kiano-3/rumah-tipe-40-60')) {
             images.push(
                 '../assets/natureland-kiano-3/Rumah 40-60/1.jpg',
                 '../assets/natureland-kiano-3/Rumah 40-60/2.jpg',
