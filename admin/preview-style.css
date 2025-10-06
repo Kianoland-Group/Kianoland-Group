@@ -1,21 +1,23 @@
-/* Batas ukuran gambar di preview CMS */
-.cms-preview img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-  margin: 1rem auto;
-  border-radius: 10px;
-}
+/* === Styling untuk tampilan PREVIEW Decap CMS === */
 
-/* Agar konten tidak mepet ke pinggir */
-.cms-preview {
-  padding: 1.5rem;
+/* Pastikan semua konten tidak meluber */
+body {
+  padding: 1rem;
   box-sizing: border-box;
-  line-height: 1.6;
 }
 
-/* Supaya teks di preview rapi */
-.cms-preview p {
-  font-size: 16px;
+/* Atur ukuran gambar agar tidak raksasa di preview */
+img {
+  max-width: 100% !important;
+  height: auto !important;
+  display: block !important;
+  margin: 1rem auto !important;
+  border-radius: 8px !important;
+  object-fit: contain !important;
+}
+
+/* Supaya teks di preview lebih enak dibaca */
+p, h1, h2, h3 {
+  line-height: 1.6;
   color: #333;
 }

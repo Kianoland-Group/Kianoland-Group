@@ -1,0 +1,13 @@
+collections:
+  - name: "posts"
+    label: "Berita"
+    folder: "blog/posts"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {
+          label: "Isi Artikel",
+          name: "body",
+          widget: "markdown",
+          editor_components: ["image"],
+        }
