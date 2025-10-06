@@ -1,14 +1,13 @@
 /* === Styling untuk tampilan PREVIEW Decap CMS === */
 
-/* Pastikan semua konten tidak meluber */
 body {
   padding: 1rem;
   box-sizing: border-box;
 }
 
-/* Atur ukuran gambar agar tidak raksasa di preview */
+/* Atur ukuran gambar agar tidak terlalu besar */
 img {
-  max-width: 100% !important;
+  max-width: 80% !important;
   height: auto !important;
   display: block !important;
   margin: 1rem auto !important;
@@ -16,7 +15,13 @@ img {
   object-fit: contain !important;
 }
 
-/* Supaya teks di preview lebih enak dibaca */
+/* Teks dan layout */
+.cms-preview {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
 p, h1, h2, h3 {
   line-height: 1.6;
   color: #333;
