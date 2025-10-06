@@ -242,18 +242,19 @@ function initImageModal() {
 
         if (currentPage.includes('green-jonggol-village/rumah-30-60')) {
             images.push(
-                '../assets/natureland-kiano-1/Cibarusah.jpeg',
-                '../assets/produk/Natureland Kiano 3.jpeg',
-                '../assets/hero/Background About.jpg',
-                '../assets/natureland-kiano-1/1_1 - Photo.jpg'
+                '../assets/green-jonggol-village/Rumah 30-60/1.jpeg',
+                '../assets/green-jonggol-village/Rumah 30-60/2.jpeg',
+                '../assets/green-jonggol-village/Rumah 30-60/3.jpeg',
+                '../assets/green-jonggol-village/Rumah 30-60/4.jpeg',
+                '../assets/green-jonggol-village/Rumah 30-60/5.jpeg',
             );
         } 
-        else if (currentPage.includes('natureland-kiano-1/rumah-70-75')) {
+        else if (currentPage.includes('green-jonggol-village/rumah-36-72')) {
             images.push(
-                '../assets/natureland-kiano-1/Cibarusah.jpeg',
-                '../assets/produk/Natureland Kiano 3.jpeg',
-                '../assets/natureland-kiano-3/Rumah 2 Lantai/4_4 - Photo.jpg',
-                '../assets/natureland-kiano-1/1_1 - Photo.jpg'
+                '../assets/green-jonggol-village/Rumah 36-72/1.jpeg',
+                '../assets/green-jonggol-village/Rumah 36-72/2.jpeg',
+                '../assets/green-jonggol-village/Rumah 36-72/3.jpeg',
+                '../assets/green-jonggol-village/Rumah 36-72/4.jpeg'
             );
         }
         else if (currentPage.includes('natureland-kiano-3/rumah-1-5-lantai-60-60')) {
