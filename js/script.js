@@ -265,7 +265,7 @@ function initImageModal() {
                 '../assets/natureland-kiano-3/Rumah 1,5 Lantai/2_1 - Photo.jpg'
             );
         }
-        else if (currentPage.includes('natureland-kiano-3/rumah-2-lantai-40-60')) {
+        else if (currentPage.includes('natureland-kiano-3/rumah-2-lantai-80-60')) {
             images.push(
                 '../assets/natureland-kiano-3/Rumah 2 Lantai/4_2 - Photo.jpg',
                 '../assets/natureland-kiano-3/Rumah 2 Lantai/4_4 - Photo.jpg',
