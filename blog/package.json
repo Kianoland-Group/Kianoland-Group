@@ -2,10 +2,6 @@
   "name": "kianoland-blog",
   "version": "1.0.0",
   "type": "module",
-  "scripts": {
-    "build": "npx @11ty/eleventy",
-    "serve": "npx @11ty/eleventy --serve"
-  },
   "dependencies": {
     "@11ty/eleventy": "^3.0.0",
     "luxon": "^3.7.2"

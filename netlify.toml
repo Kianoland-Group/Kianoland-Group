@@ -1,8 +1,8 @@
 [build]
   command = "npm run build"
-  publish = "."   # deploy seluruh root (bukan hanya blog)
+  publish = "blog/_site"
 
-[[redirects]]
+[redirects]
   from = "/blog/*"
   to = "/blog/:splat"
   status = 200

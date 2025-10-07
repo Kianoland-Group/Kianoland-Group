@@ -2,6 +2,10 @@
   "name": "kianoland",
   "version": "1.0.0",
   "scripts": {
-    "build": "cd blog && npm install && npm run build"
+    "build": "npm run build:blog",
+    "build:blog": "npx @11ty/eleventy --input=blog --output=blog/_site"
+  },
+  "dependencies": {
+    "@11ty/eleventy": "^3.0.0"
   }
 }
