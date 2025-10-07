@@ -8,7 +8,6 @@ export default function (eleventyConfig) {
 
   // Salin folder statis ke root hasil build
   eleventyConfig.addPassthroughCopy({ "blog/images": "images" });
-  eleventyConfig.addPassthroughCopy({ "blog/css": "css" });
   eleventyConfig.addPassthroughCopy("css");
   eleventyConfig.addPassthroughCopy("js");
 
