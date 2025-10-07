@@ -1,19 +1,26 @@
+// blog/.eleventy.js
 import { DateTime } from "luxon";
 
-export default function(eleventyConfig) {
+export default function (eleventyConfig) {
+  // 🔹 Passthrough copy biar CSS & images bisa muncul
+  eleventyConfig.addPassthroughCopy("blog/css");
+  eleventyConfig.addPassthroughCopy("blog/images");
+
+  // 🔹 Tambahkan filter tanggal agar readableDate bisa digunakan
   eleventyConfig.addFilter("readableDate", (dateObj) => {
     return DateTime.fromJSDate(dateObj, { zone: "utc" }).toFormat("dd LLL yyyy");
   });
 
-  eleventyConfig.addPassthroughCopy("../css");
-  eleventyConfig.addPassthroughCopy("../images");
-  eleventyConfig.addPassthroughCopy("../admin");
-
+  // 🔹 Konfigurasi dasar Eleventy
   return {
     dir: {
-      input: ".",
+      input: "blog",
       includes: "_includes",
-      output: "_site"
-    }
+      data: "_data",
+      output: "blog/_site"
+    },
+    markdownTemplateEngine: "liquid",
+    htmlTemplateEngine: "njk",
+    dataTemplateEngine: "njk"
   };
 }
