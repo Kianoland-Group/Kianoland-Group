@@ -1,29 +1,21 @@
-const { DateTime } = require("luxon"); // ← tambahkan baris ini
+import { DateTime } from "luxon";
 
-module.exports = function(eleventyConfig) {
-  // 🔹 Tambah filter untuk format tanggal
-  eleventyConfig.addFilter("date", (dateObj, format = "dd MMMM yyyy") => {
-    // Format tanggal jadi bahasa Indonesia, contoh: 6 Oktober 2025
-    return DateTime.fromJSDate(dateObj, { zone: "utc" }).setLocale("id").toFormat(format);
+export default function (eleventyConfig) {
+  // Filter tanggal
+  eleventyConfig.addFilter("readableDate", (dateObj) => {
+    if (!dateObj) return "";
+    return DateTime.fromJSDate(dateObj, { zone: "utc" }).toFormat("dd LLL yyyy");
   });
 
-  // 🔹 Koleksi semua file .md di folder posts
-  eleventyConfig.addCollection("posts", (collection) => {
-    return collection.getFilteredByGlob("posts/*.md");
-  });
+  // ✅ Salin file dari luar folder blog ke hasil build
+  eleventyConfig.addPassthroughCopy({ "../css": "css" });
+  eleventyConfig.addPassthroughCopy({ "../images": "images" });
 
-  // 🔹 Salin folder gambar (opsional)
-  eleventyConfig.addPassthroughCopy("images");
-
-  // 🔹 Pengaturan struktur build
   return {
     dir: {
       input: ".",
-      output: "../blog-build",
       includes: "_includes",
+      output: "_site",
     },
-    templateFormats: ["md", "njk", "html"],
-    htmlTemplateEngine: "njk",
-    markdownTemplateEngine: "njk",
   };
-};
+}

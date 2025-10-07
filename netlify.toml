@@ -1,9 +1,6 @@
 [build]
-  publish = "."
-  command = "npm run build-blog"
-
-[context.production.environment]
-  NODE_VERSION = "18"
+  command = "npm run build"
+  publish = "."   # deploy seluruh root (bukan hanya blog)
 
 [[redirects]]
   from = "/blog/*"

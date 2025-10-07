@@ -1,0 +1,1931 @@
+body {
+  font-family: "Poppins", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+#about, #produk, #type, #fasilitas, #news {
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+}
+
+html, body {
+  overflow-x: hidden;
+}
+
+.fixed-top {
+    position: fixed !important;
+    top: 0 !important;
+    right: 0 !important;
+    left: 0 !important;
+    z-index: 900 !important;
+}
+
+/* ====================================================================================================
+============ RESPONSIVE MENU FOR HEADER NAVBAR | ALL PAGES ============================================
+==================================================================================================== */
+
+/* Hide dropdown initially */
+.dropdown-menu {
+  display: none;
+  list-style-type: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #f9f9f9;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  padding: 0;
+  margin: 0;
+}
+
+/* Show dropdown on hover */
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+/* Additional styling for responsive */
+.menuToggle input[type="checkbox"] {
+  display: none;
+}
+
+/* Mengatur menuToggle untuk tersembunyi pada tampilan desktop */
+.menuToggle {
+  display: none;
+}
+
+/* ====================================================================================================
+============ HERO SECTION - VIDEO | index.html ========================================================
+==================================================================================================== */
+
+/* Hero section */
+#hero {
+  position: relative;
+  width: 100vw;
+  height: 100vh; /* Full viewport height */
+  overflow: hidden; /* Hide overflow */
+}
+
+/* Video styling */
+#hero-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  object-fit: cover; /* Ensures the video covers the container */
+}
+
+/* ====================================================================================================
+============ TENTANG KAMI | index.html ================================================================
+==================================================================================================== */
+
+.section-title {
+  margin-bottom: 40px;
+  font-weight: 700;
+}
+
+.intro-text {
+  font-size: 20px;
+}
+
+/* ====================================================================================================
+============ PRODUK SECTION | index.html ==============================================================
+==================================================================================================== */
+
+.produk-box {
+  position: relative;
+  overflow: hidden;
+  height: 600px; /* Height of the box */
+  background-color: #f8f9fa;
+}
+
+.produk-box img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.produk-box:hover img {
+  transform: scale(1.1);
+}
+
+.produk-box:hover .overlay {
+  opacity: 1;
+}
+
+.text-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.custom-btn-detail {
+  margin-left: 1rem; /* Adjust spacing between text and button as needed */
+}
+
+.text {
+  color: white;
+  font-size: 24px;
+  margin: 0;
+  line-height: 1; /* Ensure no extra space between lines */
+  padding: 0; /* Remove any padding */
+  position: absolute;
+  margin-top: 0;
+  margin-bottom: 0;
+  bottom: 0px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.natureland {
+  font-weight: bold;
+}
+
+.kiano,
+.village {
+  font-weight: bold;
+  top: 0;
+}
+
+/* ====================================================================================================
+============ PRODUK SECTION, CONTACT SECTION | index.html =============================================
+==================================================================================================== */
+
+.overlay {
+  position: relative;
+  top: 50%;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ====================================================================================================
+============ FASILITAS SECTION, BERITA SECTION | index.html ===========================================
+====== TIPE RUMAH SECTION, FASILITAS SECTION, BERITA SECTION, CONTACT SECTION | PERUMAHAN PAGES =======
+============ FASILITAS SECTION | TIPE RUMAH PAGES =====================================================
+============ PENGHARGAAN & PENCAPAIAN | about.html ====================================================
+==================================================================================================== */
+
+.custom-heading, .custom-heading-type {
+  font-weight: bold;
+  text-align: start;
+  font-weight: bold;
+}
+
+/* ====================================================================================================
+============ BERITA SECTION | index.html, PERUMAHAN PAGES =============================================
+==================================================================================================== */
+
+.custom-col {
+  padding-right: 15px;
+}
+
+.custom-col-right {
+  padding-left: 15px;
+}
+
+.custom-main-news {
+  border: none;
+  border-radius: 15px;
+}
+
+.custom-image {
+  border-radius: 15px;
+  height: 450px;
+  object-fit: cover;
+}
+
+.custom-paragraph {
+  color: gray;
+  text-align: justify;
+}
+
+.custom-sub-news {
+  border: none;
+  display: flex;
+  border-radius: 15px;
+}
+
+.custom-content {
+  flex: 1;
+}
+
+.custom-sub-heading {
+  font-weight: bold;
+  font-size: larger;
+}
+
+.custom-small-paragraph {
+  color: gray;
+  font-size: x-small;
+  text-align: justify;
+}
+
+.custom-image-wrapper {
+  flex: 0 0 50%;
+  margin-left: 15px;
+}
+
+.custom-sub-image {
+  width: 100%;
+  height: 190px;
+  border-radius: 15px;
+  object-fit: cover;
+}
+
+/* ====================================================================================================
+============ FLOATING WHATSAPP | ALL PAGES ============================================================
+==================================================================================================== */
+
+.whatsapp-float {
+  position: fixed;
+  width: 57px;
+  height: 57px; /* Ubah height agar sama dengan width */
+  bottom: 30px;
+  right: 30px;
+  background-color: #25d366;
+  color: #fff;
+  border-radius: 50px;
+  text-align: center;
+  font-size: 30px;
+  box-shadow: 2px 2px 3px #999;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease; /* Tambahkan transisi */
+  text-decoration: none;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1); /* Efek membesar */
+}
+
+/* ====================================================================================================
+============ FOOTER | ALL PAGES =======================================================================
+==================================================================================================== */
+
+.logo-image {
+  width: 13rem;
+  max-width: 100%;
+  height: auto;
+}
+
+.custom-footer {
+  border-top-width: 1px;
+  border-top-style: solid; /* Add this to define the border style */
+  border-color: rgb(229, 231, 235);
+  opacity: 1;
+}
+
+.social-link {
+  color: #555;
+}
+
+.social-link:hover {
+  color: #333; /* Optional: Add hover effect */
+}
+
+.footer-section {
+  margin-top: 20px;
+}
+
+.footer-copyright {
+  color: #555;
+  font-weight: bold;
+}
+
+.text-color-555 {
+  color: #555;
+}
+
+/* ====================================================================================================
+============ IKLAN POPUP | index.html =================================================================
+==================================================================================================== */
+
+.popup-container {
+  display: none; /* Awalnya popup disembunyikan */
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: row;
+  z-index: 10000;
+  position: fixed; /* Fixed agar tetap berada di tengah saat scroll */
+  top: 0;
+  left: 0;
+  width: 100vw; /* Full lebar layar */
+  background: rgba(0, 0, 0, 0.5); /* Background semi-transparent */
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.popup-container.show-popup {
+  opacity: 1;
+  display: flex;
+}
+
+.popup-box {
+  background-color: #ffffff;
+  color: black;
+  width: 711px;
+  height: 711px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  margin: 0;
+  border-radius: 0;
+  position: relative; /* Untuk mengatur tombol close */
+}
+
+.popup-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0;
+}
+
+.popup-content {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.popup-content h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.popup-content p {
+  font-size: 16px;
+  margin-bottom: 30px;
+}
+
+.popup-content form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.popup-content form input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 0;
+}
+
+.popup-content form button {
+  width: 100%;
+  padding: 12px;
+  background-color: #065091;
+  color: white;
+  border: none;
+  border-radius: 0;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.popup-content form button:hover {
+  background-color: #043a6b;
+}
+
+/* Tombol close untuk desktop */
+.dialog-close-button-2 {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  cursor: pointer;
+  font-size: 24px;
+  color: #333; /* warna default gelap */
+  z-index: 20;
+}
+
+.dialog-close-button-2:hover {
+  color: #065091; /* biru saat hover */
+}
+
+/* Tombol close untuk responsive (warna putih) */
+.dialog-close-button-1 {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  cursor: pointer;
+  font-size: 24px;
+  color: #fff; /* putih untuk mobile */
+  z-index: 20;
+}
+
+.dialog-close-button-1:hover {
+  color: #ddd; /* putih agak gelap saat hover */
+}
+
+.btn-promo {
+  background-color: #065091;
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background-color 0.3s ease;
+  text-decoration: none; /* Removes underline */
+  width: 100%;
+}
+
+.btn-promo:hover {
+  background-color: #043a6b;
+}
+
+.btn-promo:active {
+  transform: scale(0.98); /* Shrinks slightly on click */
+}
+
+/* khusus untuk video dalam popup */
+.popup-box video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* biar full tapi tidak keluar box */
+  background-color: #000; /* area kosong hitam */
+  display: block;
+}
+
+/* Sembunyikan kontrol default */
+.popup-box video::-webkit-media-controls {
+  display: none !important;
+}
+
+.popup-box video::-moz-media-controls {
+  display: none !important;
+}
+
+/* Tampilkan kontrol ketika hover */
+.popup-box video:hover::-webkit-media-controls {
+  display: flex !important;
+}
+
+.popup-box video:hover::-moz-media-controls {
+  display: flex !important;
+}
+
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.video-loader {
+  display: none; /* default sembunyi */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 6px solid rgba(255, 255, 255, 0.3);
+  border-top: 6px solid #fff;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+  z-index: 10;
+}
+
+@keyframes spin {
+  0% { transform: translate(-50%, -50%) rotate(0deg); }
+  100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+/* ====================================================================================================
+============ TIPE RUMAH SECTION | TIPE RUMAH PAGES ====================================================
+==================================================================================================== */
+
+.card {
+  border: none;
+}
+
+.square-image {
+  position: relative;
+  width: 100%;
+  padding-top: 100%; /* Mempertahankan rasio 1:1 */
+  overflow: hidden;
+}
+
+.square-image img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Memastikan gambar memenuhi kotak tanpa distorsi */
+}
+
+/* ====================================================================================================
+============ VISI & MISI | about.html =================================================================
+==================================================================================================== */
+
+#vision-mission .image img {
+  height: 100%; /* Atur tinggi gambar ke 100% dari tinggi div .image */
+  object-fit: cover; /* Membuat gambar menyesuaikan div tanpa distorsi */
+  border-radius: 15px; /* Menjaga sudut gambar tetap melengkung */
+}
+
+#vision-mission .image {
+  height: 500px; /* Sesuaikan ketinggian ini sesuai kebutuhan */
+  margin-right: 30px;
+}
+
+/* ====================================================================================================
+============ HERO SECTION - TEKS | about.html =========================================================
+==================================================================================================== */
+
+#hero-text {
+  text-align: center;
+  position: relative;
+  margin-top: 80px;
+  padding: 0 20px;
+}
+
+#hero-text h1 {
+  font-size: clamp(4rem, 8.5vw, 10rem); /* Slightly reduced values */
+  font-weight: bold;
+  color: black;
+  white-space: normal; /* Allows wrapping if necessary */
+  overflow: hidden;
+  text-align: center;
+  max-width: 100%; /* Ensures the text doesn't overflow horizontally */
+  word-wrap: break-word;
+  margin: 0 auto; /* Centers the text container */
+}
+
+/* Media queries for finer control on specific screen sizes */
+@media (max-width: 1024px) {
+  #hero-text h1 {
+    font-size: clamp(3.2rem, 7.5vw, 8.5rem); /* Reduced for medium screens */
+  }
+}
+
+@media (max-width: 768px) {
+  #hero-text h1 {
+    font-size: clamp(2.8rem, 6.5vw, 7rem); /* Adjusted for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  #hero-text h1 {
+    font-size: clamp(2.3rem, 5.5vw, 6rem); /* Slightly smaller for very small screens */
+  }
+}
+
+/* Hero section */
+#hero-produk {
+  position: relative;
+  height: 100%;
+  overflow: hidden; /* Sembunyikan overflow */
+  margin: 1px auto 20px; /* Jarak dari atas (untuk header), auto untuk center, dan bawah untuk menghindari tabrakan */
+  padding: 0 20px; /* Menambahkan padding kiri dan kanan */
+  box-sizing: border-box; /* Menyertakan padding dan border dalam perhitungan lebar elemen */
+}
+
+.image-container-about {
+  width: 100%; /* Ubah lebar gambar menjadi 100% dari kontainer */
+  height: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  clip-path: inset(0 round 15px); /* Terapkan sudut membulat dengan clip-path */
+  padding-top: 0px; /* Menambahkan jarak di dalam kontainer gambar */
+}
+
+.image-container-produk {
+  width: 100%; /* Ubah lebar gambar menjadi 100% dari kontainer */
+  height: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  clip-path: inset(0 round 15px); /* Terapkan sudut membulat dengan clip-path */
+  padding-top: 80px; /* Menambahkan jarak di dalam kontainer gambar */
+}
+
+#hero-image-produk {
+  width: 100%; /* Pastikan gambar menutupi container */
+  height: 100%;
+  object-fit: cover;
+  margin-top: 10px; /* Atur nilai margin sesuai kebutuhan */
+  border-radius: 15px; /* Mengatur lengkungan pada sisi-sisi gambar */
+}
+
+.large-font {
+  font-size: 24px;
+}
+
+.rounded-image {
+  border-radius: 15px;
+  height: 300px;
+  width: 100%; /* Make the width responsive */
+  object-fit: cover; /* Ensures the image covers the area without distortion */
+}
+
+.btn-primary {
+  background-color: #0d6efd; /* Primary button color */
+  border-color: #0d6efd; /* Ensure border matches button color */
+}
+
+.feature-icon {
+  font-size: 2rem;
+  color: #0d6efd;
+}
+
+.logo {
+  height: 50px;
+  width: auto; /* Maintain aspect ratio */
+}
+
+/* Styling for Carousel Images */
+#propertyCarousel .carousel-item img {
+  width: 419px; /* Width of the image */
+  height: 312px; /* Height of the image */
+  object-fit: cover; /* Ensure the image covers the area without distortion */
+  margin: auto; /* Center align the image in the carousel item */
+}
+
+/* Add spacing between the heading and the carousel */
+#gallery h2 {
+  margin-bottom: 30px; /* Adjust the value as needed */
+}
+
+.section-gap {
+  margin-top: 40px; /* Jarak di atas section */
+  margin-bottom: 40px; /* Jarak di bawah section */
+}
+
+.contact_wrap .btn {
+  margin: 0;
+}
+
+.contact_wrap .button-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.contact_wrap .btn-primary {
+  background-color: #007bff; /* Adjust color as needed */
+  border-color: #007bff; /* Adjust color as needed */
+}
+
+.btn-contact {
+  position: relative;
+  display: inline-block;
+  margin: 15px;
+  padding: 15px 50px;
+  text-align: center;
+  font-size: 18px;
+  letter-spacing: 1px;
+  text-decoration: none;
+  color: #ffffff;
+  background: transparent;
+  cursor: pointer;
+  transition: ease-out 0.5s;
+  border: 2px solid #ffffff;
+  border-radius: 0px;
+  box-shadow: inset 0 0 0 0 #ffffff;
+}
+
+.btn-contact:hover {
+  color: rgb(0, 0, 0);
+  box-shadow: inset 0 -100px 0 0 #ffffff;
+}
+
+.btn-contact:active {
+  transform: scale(0.9);
+}
+
+/* Ensure the section takes up the full width and height */
+#section_contact {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Background image and blur effect */
+#section_contact {
+  position: relative;
+}
+
+#section_contact::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("../assets/Contact Us.jpg");
+  background-size: cover;
+  background-position: center;
+  filter: blur(1px);
+  z-index: -1;
+}
+
+/* Optional: Add a semi-transparent overlay */
+#section_contact .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(39, 64, 139, 0.6); /* Adjust color and opacity as needed */
+  z-index: 0; /* Ensure it's behind the content but above the background image */
+}
+
+.custom-line-height {
+  line-height: 1.6rem;
+}
+
+.footer {
+  background-color: #fff;
+  padding: 20px 0;
+  font-size: 16px; /* Set the desired font size */
+  color: #808080;
+}
+
+
+.footer ul li {
+  font-size: 16px; /* Ensure paragraphs and list items have the same font size */
+  color: #808080;
+}
+
+.footer a {
+  color: #808080;
+  text-decoration: none; /* Black text and no underline */
+}
+
+.footer a:hover {
+  text-decoration: underline; /* Underline on hover */
+}
+
+.social-icons .icon-box {
+  width: 40px; /* Width of the box */
+  height: 40px; /* Height of the box */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #e9ecef; /* Background color of the box */
+  border-radius: 5px; /* Rounded corners */
+  margin-right: 10px; /* Space between icon box and text */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Transition effects */
+}
+
+.social-icons .icon-box i {
+  font-size: 18px; /* Icon size */
+  color: #555; /* Icon color */
+}
+
+/* Facebook Hover */
+.social-icons .icon-box.facebook:hover {
+  background-color: #3b5998; /* Facebook blue background */
+}
+
+.social-icons .icon-box.facebook:hover i {
+  color: #fff; /* Icon turns white on hover */
+}
+
+/* TikTok Hover */
+.social-icons .icon-box.tiktok:hover {
+  background-color: #000; /* Black background */
+}
+
+.social-icons .icon-box.tiktok:hover i {
+  color: #fff; /* Icon turns white on hover */
+}
+
+/* Instagram Hover */
+.social-icons .icon-box.instagram:hover {
+  background-color: #f76c6c; /* Orange background */
+}
+
+.social-icons .icon-box.instagram:hover i {
+  color: #fff; /* Icon turns white on hover */
+}
+
+.scroll-container {
+  scroll-behavior: smooth;
+}
+
+.scroll-container {
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  display: flex;
+  gap: 1rem;
+  padding-bottom: 1rem;
+}
+
+/* Styling untuk bagian Fasilitas */
+.fasilitas-box {
+  position: relative;
+  overflow: hidden;
+  border-radius: 15px;
+  flex: 0 0 312px;
+  scroll-snap-align: start;
+}
+
+.fasilitas-box img {
+  width: 100%;
+  height: 400px; /* Set height to a fixed size */
+  object-fit: cover; /* Keep the image proportional */
+  transition: transform 0.3s ease-in-out;
+  filter: brightness(0.7); /* Make the image slightly darker */
+}
+
+.fasilitas-box:hover img {
+  transform: scale(1.1); /* Zoom effect on hover */
+}
+
+.fasilitas-box .text {
+  font-size: 1rem; /* Adjust size as needed */
+  line-height: 1.2; /* Adjust line height as needed */
+}
+
+.text-fasilitas {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  color: white;
+  text-align: center;
+  padding: 35px; /* Distance between text and box edge */
+  box-sizing: border-box;
+}
+
+.svg-wrapper {
+  position: absolute;
+  bottom: 70px; /* Adjust this value to control the vertical position of the SVG */
+  left: 50%;
+  transform: translateX(-50%);
+  margin-bottom: 10px; /* Space between the SVG and text */
+  display: flex;
+  justify-content: center;
+  width: 100%; /* Adjust this to control the SVG container width */
+  z-index: 10; /* Make sure the SVG is above the text */
+}
+
+.footer .align-items-start {
+  align-items: flex-start !important;
+}
+
+.social-icons a {
+  text-align: left !important;
+}
+
+.social-icons {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.contact_wrap {
+  background-image: linear-gradient(
+    rgba(82, 80, 80, 0.185),
+    rgba(95, 95, 95, 0.5)
+  );
+  background-size: cover;
+  background-position: center;
+  padding: 50px 0;
+  position: relative;
+}
+
+.title {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.contact_info a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.contact_info a:hover {
+  text-decoration: underline;
+}
+
+.info_box address {
+  font-size: 14px;
+  font-style: normal;
+  opacity: 0.7;
+}
+
+.point_wrap .office {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.point_wrap .office .point {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background: white;
+  border-radius: 50%;
+  margin-right: 10px;
+  position: relative;
+}
+
+.point_wrap .office .point i {
+  position: absolute;
+  width: 2px;
+  height: 40px;
+  background: white;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.line_long {
+  height: 60px !important; /* Customize line length */
+}
+
+.line_down {
+  height: 20px !important; /* Customize line length */
+}
+
+.name em {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.achievement-title {
+  font-size: medium;
+}
+
+.achievement-content {
+  text-align: justify;
+}
+
+.more-image {
+  position: relative;
+  display: inline-block;
+}
+
+.darkened-image {
+  width: 100%;
+  height: auto;
+  filter: brightness(50%); /* Untuk membuat gambar lebih gelap */
+}
+
+.more-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 95px;
+  color: white;
+  font-family: "Poppins", sans-serif;
+  letter-spacing: -10px; /* Mengurangi jarak antar huruf */
+}
+
+.image-container {
+  position: relative;
+}
+
+.darkened-image {
+  transition: opacity 0.3s ease;
+}
+
+.image-container:hover .darkened-image {
+  opacity: 0.5; /* Sesuaikan nilai sesuai kebutuhan */
+}
+
+.fasilitas-type {
+  border-radius: 15px;
+  object-fit: cover;
+  height: 240px; /* Atur sesuai kebutuhan */
+}
+
+@media (max-width: 768px) {
+  .point_wrap .office .name {
+    text-align: left;
+  }
+}
+
+/* CSS untuk Fasilitas Akad Section */
+@media (max-width: 576px) {
+  .fasilitas-box img {
+    height: auto; /* Atur tinggi gambar secara otomatis pada layar kecil */
+  }
+}
+
+.info-box {
+  text-align: center;
+}
+
+.d-flex {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem; /* Atur jarak antar elemen */
+}
+
+.ms-auto {
+  margin-left: auto !important; /* Ensures the button moves to the far right */
+}
+
+/* Mengatur border-radius pada gambar */
+.custom-img {
+  border-radius: 15px;
+  height: 400px !important; /* Sesuaikan tinggi gambar sesuai kebutuhan, tambahkan !important jika diperlukan */
+  object-fit: cover;
+}
+
+/* Jika ingin memastikan card tidak terpusat */
+.row {
+  justify-content: start; /* Mengatur posisi card ke kiri */
+}
+
+.gap-8 {
+  gap: 2rem;
+}
+.justify-between {
+  justify-content: space-between;
+}
+.flex-col {
+  flex-direction: column;
+}
+.flex {
+  display: flex;
+}
+.justify-between {
+  justify-content: space-between;
+}
+.w-full {
+  width: 100%;
+}
+.grid {
+  display: grid;
+}
+
+.product-box {
+  position: relative;
+  overflow: hidden;
+  height: 600px; /* Sesuaikan sesuai kebutuhan */
+  background-color: #f8f9fa;
+}
+
+.product-box img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.overlay-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.overlay-container .text-content {
+  color: white;
+  text-align: center;
+}
+
+.text {
+  color: white;
+  font-size: 24px;
+  margin: 0;
+}
+
+.title {
+  font-weight: bold; /* Make title text bold */
+}
+
+.subtitle {
+  font-weight: bold; /* Make subtitle text bold */
+}
+
+.custom-img {
+  height: 300px; /* Sesuaikan tinggi gambar sesuai kebutuhan */
+  object-fit: cover; /* Mengatur gambar agar tidak terdistorsi */
+}
+
+.heading-container {
+  display: flex;
+  justify-content: space-between; /* Memisahkan elemen <h2> dan <button> */
+  align-items: center; /* Vertikal align elemen */
+  font-size: 14px; /* Mengatur ukuran font */
+}
+
+.custom-btn {
+  margin-left: auto; /* Pastikan tombol berada di sebelah kanan */
+  padding: 10px 20px; /* Ukuran padding tombol */
+  background-color: #007bff; /* Warna tombol */
+  color: white; /* Warna teks tombol */
+  border: none; /* Hapus border */
+  border-radius: 4px; /* Buat sudut tombol membulat */
+  cursor: pointer; /* Tunjukkan pointer saat hover */
+}
+
+.custom-btn:hover {
+  background-color: #0056b3; /* Warna tombol saat hover */
+}
+
+.custom-btn-berita {
+  background-color: #0071c8; /* Warna background tombol */
+  color: white; /* Warna teks tombol */
+  border: none; /* Menghilangkan border default */
+  padding: 5px 10px; /* Mengatur padding tombol */
+  cursor: pointer; /* Menambahkan pointer saat hover */
+  border-radius: 50px; /* Membuat sudut tombol sedikit melengkung */
+  width: 160px;
+  height: 45px;
+  transition: background-color 0.3s; /* Menghapus animasi transform dan box-shadow */
+}
+
+.custom-btn-berita:hover {
+  background-color: #005a99; /* Mengubah warna background saat hover */
+}
+
+.custom-btn-berita i {
+  transition: transform 0.3s; /* Animasi hanya untuk panah */
+}
+
+.custom-btn-berita:hover i {
+  transform: translateX(5px); /* Menggerakkan panah ke kanan saat hover */
+}
+
+.google-map {
+  width: 100%;
+  height: 250px;
+  border: 0;
+}
+
+/* Style untuk kotak informasi */
+.info-box {
+  border: 2px solid #ddd;
+  border-radius: 15px;
+  background-color: white;
+}
+
+/* Style untuk teks dan elemen di dalam kotak informasi */
+.info-box h4 {
+  margin-bottom: 20px;
+}
+
+.info-box ul {
+  list-style: none;
+  padding: 0;
+}
+
+.info-box ul li {
+  margin-bottom: 10px;
+}
+
+/* Mengatur layout flexbox untuk bagian kotak informasi */
+#info-boxes {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#info-boxes .col-md-4 {
+  flex: 1;
+  margin-right: 20px;
+}
+
+#info-boxes .col-md-4:last-child {
+  margin-right: 0;
+}
+
+#info-boxes .row {
+  display: flex;
+  flex-direction: column;
+}
+
+#info-boxes .info-box {
+  margin-bottom: 20px;
+}
+
+/* Mengatur style tombol booking */
+.info-box .btn-primary {
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+
+.support-box {
+  width: 200px; /* Atur lebar kotak */
+  height: 150px; /* Atur tinggi kotak */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #ddd; /* Tambahkan border jika diperlukan */
+  border-radius: 10px; /* Sesuaikan dengan tampilan yang diinginkan */
+}
+
+.support-box img {
+  max-width: 100%; /* Atur lebar maksimum gambar agar sesuai dengan kotak */
+  max-height: 100%; /* Atur tinggi maksimum gambar agar sesuai dengan kotak */
+  object-fit: contain; /* Gambar akan diatur agar sesuai tanpa merusak proporsi */
+}
+
+/* Custom CSS for Support Section */
+.support-carousel {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.support-wrapper {
+  display: flex;
+  width: calc(200px * 10); /* Jumlah item * lebar setiap item */
+  animation: scroll 60s linear infinite;
+}
+
+.support-item {
+  min-width: 200px; /* Sesuaikan ukuran kotak di sini */
+  height: 100px; /* Sesuaikan tinggi kotak di sini */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px; /* Jarak di dalam kotak */
+  box-sizing: border-box;
+  border: none; /* Garis batas kotak */
+  margin: 0 5px; /* Jarak antar kotak */
+}
+
+.support-item img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain; /* Menjaga rasio gambar */
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+/*VISI DAN MISI*/
+
+.vision-mission-item {
+  border: none;
+  display: flex;
+  border-radius: 15px;
+  padding: 0px;
+  background-color: #ffffff; /* Warna latar belakang */
+  margin-bottom: 45px; /* Jarak bawah */
+}
+
+.vision-mission-item .image {
+  flex: 0 0 45%; /* Memperbesar area gambar */
+  margin-right: 30px; /* Jarak antara gambar dan teks */
+}
+
+.vision-mission-item .image img {
+  border-radius: 15px;
+  width: 100%; /* Mengisi area gambar */
+  height: 95%; /* Menjaga rasio aspek */
+}
+
+.vision-mission-item .content {
+  flex: 1;
+}
+
+.vision-mission-title {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.vision-mission-text {
+  color: #333; /* Warna teks */
+  margin-bottom: 20px;
+  text-align: justify;
+}
+
+/*PRESTASI*/
+.achievement-item {
+  border: none;
+  border-radius: 15px;
+  padding: 0px; /* Menambah padding di dalam item */
+  background-color: #ffffff; /* Tambahkan warna latar belakang jika diperlukan */
+  margin-bottom: 30px; /* Menambah jarak antara baris item */
+}
+
+.achievement-item img {
+  border-radius: 5px;
+  width: 100%; /* Pastikan gambar responsif */
+  height: auto;
+}
+
+.achievement-title {
+  font-weight: bold;
+}
+
+.achievement-subtitle {
+  color: gray;
+}
+
+.progress {
+  height: 5px;
+  background-color: #e9ecef;
+}
+
+.custom-button {
+  height: 60px;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 0px;
+  text-decoration: none; /* Menghilangkan underline */
+  color: white; /* Warna teks */
+  font-size: 20px; /* Ukuran font */
+  background-color: #007bff; /* Warna background */
+  box-sizing: border-box; /* Memastikan padding dihitung dalam ukuran tombol */
+  transition: background-color 0.3s ease; /* Menambahkan animasi untuk perubahan warna background */
+}
+
+.custom-button:hover {
+  background-color: #0056b3; /* Warna background saat hover (lebih gelap) */
+}
+
+.custom-button-green-jonggol-village {
+  height: 60px;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 0px;
+  text-decoration: none; /* Menghilangkan underline */
+  color: white; /* Warna teks */
+  font-size: 20px; /* Ukuran font */
+  background-color: #65A50F; /* Warna background */
+  box-sizing: border-box; /* Memastikan padding dihitung dalam ukuran tombol */
+  transition: background-color 0.3s ease; /* Menambahkan animasi untuk perubahan warna background */
+}
+
+.custom-button-green-jonggol-village:hover {
+  background-color: #558c0d; /* Warna background saat hover (lebih gelap) */
+}
+
+#hero-text, #vision-mission {
+  margin-bottom: 0;
+}
+
+/* Hides the scrollbar when the modal is open */
+body.modal-open, html.modal-open {
+  overflow: hidden;
+}
+
+.img-square {
+  width: 100%; /* Ensure the image takes full width of the column */
+  height: auto; /* Maintain aspect ratio */
+  aspect-ratio: 1 / 1; /* Force the aspect ratio to be 1:1 */
+  object-fit: cover; /* Crop the image to fill the space */
+  border-radius: 15px; /* Default border radius for non-mobile screens */
+}
+
+.close-modal {
+  font-size: 1.5rem; /* Ukuran ikon */
+  cursor: pointer;
+  padding: 10px; /* Memberi ruang di sekitar ikon agar bulatannya lebih besar */
+  transition: background-color 0.3s ease; /* Animasi transisi saat hover */
+  border-radius: 50%; /* Membuat background bulat */
+  margin-left: 2rem; /* Default margin-left */
+}
+
+.close-modal:hover {
+  background-color: rgba(0, 0, 0, 0.1); /* Latar belakang bulat agak gelap saat hover */
+}
+
+.modal-header {
+  border: none;
+}
+
+.hover-dark {
+  transition: all 0.3s ease; /* Menambahkan transisi yang halus */
+}
+
+.hover-dark:hover {
+  filter: brightness(0.8); /* Membuat gambar lebih gelap saat hover */
+}
+
+/* Media Query for Mobile Screens */
+@media (max-width: 576px) {
+  .img-square {
+    border-radius: 5px; /* Mengurangi border-radius pada layar kecil */
+  }
+
+  .close-modal {
+    margin-left: 0; /* Menghilangkan margin kiri pada layar kecil */
+  }
+
+  .close-fullscreen, .close {
+    left: 1rem !important;
+  }
+}
+
+.img-square {
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.hover-dark:hover {
+  filter: brightness(80%);
+}
+
+.modal-body-fullscreen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full viewport height */
+  overflow: hidden !important; /* Prevent scrollbars */
+  background-color: black;
+}
+
+.modal-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vh; /* Ubah lebar agar sesuai dengan tinggi */
+  max-width: 100vw; /* Batas lebar maksimum agar tidak melebihi viewport */
+  aspect-ratio: 1; /* Pastikan rasio tetap persegi */
+}
+
+/* Prevent scrolling on body when modal is open */
+body.modal-open {
+  overflow: hidden;
+}
+
+/* Responsive adjustments */
+@media (max-width: 575px) {
+  .modal-box {
+    width: 100vw; /* Tetapkan lebar 100% dari lebar viewport */
+    height: 100vw; /* Tetapkan tinggi agar sama dengan lebar untuk menjaga rasio persegi */
+    max-height: 100vh; /* Pastikan tinggi tidak melebihi viewport */
+  }
+}
+
+.modal-box img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.close-fullscreen, .close {
+  position: absolute; 
+  top: 20px; 
+  left: 2rem; 
+  background: none;
+  border: none; 
+  cursor: pointer; 
+  font-size: 2rem;
+} 
+
+body.modal-open {
+  overflow: hidden;
+}
+
+#prevBtn, #nextBtn {
+  border-radius: 50%; /* Makes the button circular */
+  width: 50px; /* Set a fixed width */
+  height: 50px; /* Set a fixed height */
+  background-color: black; /* Dark background color */
+  display: flex; /* Centers the icon */
+  align-items: center; /* Centers the icon vertically */
+  justify-content: center; /* Centers the icon horizontally */
+  color: #e5e7eb;; /* Set icon color to white */
+  border: none; /* Remove border */
+  font-size: 1.2rem;
+  margin: 1.5rem;
+}
+
+#prevBtn:hover, #nextBtn:hover {
+  color: white;
+}
+
+.image-container-dokumentasi {
+  width: 100%;
+  padding-top: 60%; /* Mengurangi tinggi kotak persegi menjadi lebih kecil */
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 15px; /* Memberikan jarak antara gambar dan teks */
+}
+
+.image-container-dokumentasi img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Membuat gambar memenuhi kotak persegi */
+  object-position: center;
+}
+
+/* ====================================================================================================
+============ CHATTBOT TEMPALTE ========================================================================
+==================================================================================================== */
+#chatbot-container {
+  position: fixed;
+  bottom: 100px;
+  right: 30px;
+  z-index: 1000; /* Pastikan lebih tinggi dari elemen lain */
+}
+
+.chat-bubble {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  background-color: #0071C8;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Tooltip yang akan muncul saat hover */
+.chat-tooltip {
+  position: absolute;
+  top: -50px;
+  left: -180px;
+  width: 160px;
+  padding: 10px;
+  background-color: white;
+  color: #333;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  font-size: 14px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.chat-tooltip::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  right: 20px;
+  border-width: 10px 10px 0;
+  border-style: solid;
+  border-color: white transparent transparent;
+}
+
+.chat-bubble:hover .chat-tooltip {
+  opacity: 1;
+  visibility: visible;
+}
+
+.chat-icon {
+  color: white;
+  font-size: 24px;
+}
+
+/* Chat Box Styles */
+.chat-box {
+  position: fixed;
+  bottom: 15px;
+  right: 30px;
+  width: 500px;
+  height: 650px;
+  max-height: 94vh;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  display: none; /* Pastikan defaultnya hidden */
+  flex-direction: column;
+  z-index: 10000;
+  overflow: hidden;
+}
+
+.chat-body {
+  height: 500px !important; /* Tinggi konten diperbesar */
+  min-height: auto !important;
+  max-height: none !important;
+  padding: 25px !important; /* Ruang dalam lebih besar */
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  flex-grow: 1;
+}
+
+.chat-body {
+  padding: 15px;
+  height: auto;
+  min-height: 300px; /* Minimum height */
+  max-height: calc(70vh - 60px); /* Disesuaikan dengan header */
+  overflow-y: auto;
+  background-color: #f0f2f5 /* Pastikan background solid */
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.chat-header {
+  background-color: #0071C8;
+  color: white;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+.chat-title h5 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.chat-title p {
+  margin: 2px 0 0;
+  font-size: 12px;
+  opacity: 0.8;
+}
+
+.chat-close-btn {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 5px;
+}
+
+/* Menghilangkan ruang putih di bawah */
+.chat-body::after {
+  content: '';
+  display: none; /* Nonaktifkan pseudo-element jika ada */
+}
+
+.chat-body .message {
+  margin-bottom: 6px;
+}
+
+.message {
+  max-width: 90%;
+  padding: 0px 12px;
+  border-radius: 7.5px;
+  position: relative;
+}
+
+.bot-message {
+  align-self: flex-start;
+}
+
+/* Untuk pesan bot */
+.bot-message .message-content {
+  background: #E6E6E6;
+  color: #333;
+  border-radius: 18px 18px 18px 4px;
+  padding: 12px 16px;
+  display: block;
+  max-width: 90%;
+  word-break: break-word;
+}
+
+/* Perbaikan untuk user message dengan teks pendek */
+.user-message {
+  max-width: 100% !important;
+  width: auto !important;
+}
+
+.message.user-message {
+  max-width: 100% !important;
+  width: auto !important;
+  align-items: flex-end;
+  margin-bottom: 10px;
+}
+
+.chat-body .message.user-message {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+/* Perbaikan untuk user message */
+.user-message .message-content {
+  background: #007bff;
+  color: white;
+  border-radius: 18px 18px 4px 18px;
+  padding: 12px 16px;
+  display: inline-block !important; /* Ubah dari block ke inline-block */
+  max-width: none !important; /* Hapus batas maksimum lebar */
+  width: auto !important; /* Lebar menyesuaikan konten */
+  word-break: break-word;
+  line-height: 1.4;
+  white-space: nowrap !important; /* Cegah wrap untuk teks pendek */
+}
+
+.chat-body .message.user-message .message-content {
+  max-width: 90%;
+  min-width: 60px;
+}
+
+.message.user-message .message-content {
+  max-width: 80% !important;
+  min-width: 80px !important;
+  word-break: break-word !important;
+  white-space: normal !important;
+  display: inline-block !important;
+}
+
+/* Perbaikan untuk textarea input */
+#user-message {
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  resize: none; /* Menghindari textarea membesar */
+  box-sizing: border-box;
+}
+
+/* Atur padding dan margin untuk konten pesan */
+.message-content {
+  padding: 12px 16px; /* Menambah padding dalam gelembung */
+  margin-bottom: 10px; /* Jarak antara teks dan waktu */
+  line-height: 1.4; /* Spasi antar baris teks */
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+/* Atur tampilan waktu */
+.message-time {
+  display: block;
+  font-size: 11px;
+  color: #666;
+  margin-top: 4px;
+  text-align: right;
+}
+
+.user-message .message-time {
+  color: rgba(255,255,255,0.7);
+}
+
+/* Form input message */
+.message-form-container {
+  display: flex;
+  gap: 10px;
+  padding: 10px;
+  border-top: 1px solid #e0e0e0;
+  background: #fff;
+}
+
+.message-input-group {
+  flex-grow: 1;
+}
+
+.message-input-group textarea {
+  height: 44px !important;
+  min-height: 44px !important;
+  max-height: 44px !important;
+  padding: 10px 15px;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  resize: none;
+  font-size: 14px;
+  box-sizing: border-box;
+  width: 100%;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.message-input-group textarea:focus {
+  outline: none;
+  border-color: #0071C8;
+}
+
+.send-message-btn {
+  padding: 12px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 14px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 44px; /* Sama dengan tinggi textarea */
+  white-space: nowrap;
+  margin: 0;
+}
+
+.send-message-btn:hover {
+  background-color: #0069d9;
+}
+
+.send-message-btn:active {
+  transform: scale(0.98);
+}
+
+.status-indicator {
+    font-size: 12px;
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 10px;
+}
+
+.status-indicator.online {
+    background-color: #28a745;
+    color: white;
+}
+
+.status-indicator.offline {
+    background-color: #dc3545;
+    color: white;
+}
+
+.status-indicator:before {
+    content: "•";
+    margin-right: 5px;
+    font-size: 16px;
+}
+
+.status-indicator.online:before {
+    color: #28a745;
+}
+
+.status-indicator.offline:before {
+    color: #dc3545;
+}
+
+/* Ditambahkan untuk menyembunyikan elemen saat modal aktif */
+.hidden-by-modal {
+  display: none !important;
+}
+
+/* ===========================
+   DENAH RUMAH TOGGLE STYLE
+============================= */
+/* PDF Container yang bisa di-scroll */
+.pdf-scroll-container {
+  display: none;
+  max-height: 1300px;
+  overflow-y: auto;
+  border: 2px solid #ddd;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+  gap: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.custom-button.soldout {
+  background-color: #6c757d; /* abu-abu */
+  pointer-events: none; /* tidak bisa diklik */
+  cursor: default;
+  opacity: 0.7;
+}

@@ -1,14 +1,15 @@
 ---
-title: Laris Manis, Kiano Land Group Sukses Kembangkan 4 Proyek Properti
+layout: post.njk
+title: "Laris Manis, Kiano Land Group Sukses Kembangkan 4 Proyek Properti"
 date: 2025-10-06T20:26:54.082Z
-summary: Direktur Utama PT. Kiano Karya Cemerlang  (Kiano Land Group) Afrikani
-  Indra mengatakan, keyakinan terhadap dampak resesi di sektor properti tidak
-  akan seburuk yang dikhawatirkan.
+summary: "Direktur Utama PT. Kiano Karya Cemerlang (Kiano Land Group) Afrikani Indra mengatakan, keyakinan terhadap dampak resesi di sektor properti tidak akan seburuk yang dikhawatirkan."
 thumbnail: /images/uploads/whatsapp-image-2025-06-03-at-16.02.56_15a84b6a.jpg
+tags: posts
 ---
-*“Sebenarnya tidak akan lebih parah dibandingkan dengan dampak pandemi selama dua tahun belakangan ini,”* jelas Afrikani Indra melalui siaran pers, di Marketing Gallery Natureland Kiano, Cileungsi, Bogor, Jawa Barat, Sabtu (24/12/2022).
 
-Ia menambahkan, hunian merupakan kebutuhan dasar bagi masyarakat yang masih belum memiliki rumah. *“Keberhasilan kami (Kiano Land) memenuhi tingginya permintaan kebutuhan perumahan, menjadi peluang pasar properti yang masih tetap dinamis dan resilient,”* kata Afrikani Indra.
+_“Sebenarnya tidak akan lebih parah dibandingkan dengan dampak pandemi selama dua tahun belakangan ini,”_ jelas Afrikani Indra melalui siaran pers, di Marketing Gallery Natureland Kiano, Cileungsi, Bogor, Jawa Barat, Sabtu (24/12/2022).
+
+Ia menambahkan, hunian merupakan kebutuhan dasar bagi masyarakat yang masih belum memiliki rumah. _“Keberhasilan kami (Kiano Land) memenuhi tingginya permintaan kebutuhan perumahan, menjadi peluang pasar properti yang masih tetap dinamis dan resilient,”_ kata Afrikani Indra.
 
 Menurutnya, tren harga properti menunjukkan kenaikan secara merata, termasuk dengan permintaan hunian di empat proyek yang dikembangkan Kiano Land Group.
 
@@ -16,7 +17,7 @@ Setelah sukses dengan proyek perdana bertajuk ‘Natureland Kiano’ tahap 1 dan
 
 Investasi properti yang ditawarkan berupa lahan Kavling Kiano tipe (30/60) di Kp. Parung Panjang, Cicadas, Gunung Putri bisa dimiliki melalui skema Kredit Pemilikan Rumah (KPR) mulai harga Rp.185 Juta atau bisa dicicil Rp.1 Jutaan per bulan dengan tenor 20 tahun.
 
-*“Selain lokasi dan kualitas bangunan, legalitas rumah yang sudah aman juga menjadi sangat penting bagi calon pembeli. Oleh karena itu, tidak heran banyak referal menjadi sangat dominan sebagai loyalitas konsumen kami. Yuk tunggu apalagi, jangan sampai kehabisan unit terbatas informasi selengkapnya bisa hubungi whatsapp official **0811-1611-724**,”* tambah Afrikani.
+_“Selain lokasi dan kualitas bangunan, legalitas rumah yang sudah aman juga menjadi sangat penting bagi calon pembeli. Oleh karena itu, tidak heran banyak referal menjadi sangat dominan sebagai loyalitas konsumen kami. Yuk tunggu apalagi, jangan sampai kehabisan unit terbatas informasi selengkapnya bisa hubungi whatsapp official **0811-1611-724**,”_ tambah Afrikani.
 
 Kemudahan yang ditawarkan Pengembang Kiano Land Group untuk memiliki kavling tersebut juga sangat mudah karena didukung oleh sejumlah bank pembiayaan terpercaya seperti Bank BTN Konvensional, BTN Syariah, Bank Syariah Indonesia (BSI), dan Bank Mandiri.
 

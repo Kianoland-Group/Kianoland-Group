@@ -37,27 +37,27 @@
         }
 
         CMS.init({
-          config: {
+        config: {
             backend: { name: "git-gateway", branch: "master" },
-            media_folder: "images/uploads",
-            public_folder: "/images/uploads",
+            media_folder: "images/uploads",   // ← lokasi di repository
+            public_folder: "/images/uploads", // ← lokasi URL publik di website
             collections: [
-              {
+            {
                 name: "posts",
                 label: "Berita",
-                folder: "blog/posts",
+                folder: "blog/posts",   // file markdown tetap di blog/posts
                 create: true,
                 slug: "{{slug}}",
                 fields: [
-                  { label: "Judul", name: "title", widget: "string" },
-                  { label: "Tanggal", name: "date", widget: "datetime" },
-                  { label: "Deskripsi Singkat", name: "summary", widget: "text" },
-                  { label: "Gambar Utama", name: "thumbnail", widget: "image" },
-                  { label: "Isi Artikel", name: "body", widget: "markdown" },
+                { label: "Judul", name: "title", widget: "string" },
+                { label: "Tanggal", name: "date", widget: "datetime" },
+                { label: "Deskripsi Singkat", name: "summary", widget: "text" },
+                { label: "Gambar Utama", name: "thumbnail", widget: "image" },
+                { label: "Isi Artikel", name: "body", widget: "markdown" },
                 ],
-              },
+            },
             ],
-          },
+        },
         });
       });
     </script>
