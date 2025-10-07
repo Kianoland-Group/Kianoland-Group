@@ -2,12 +2,7 @@
   command = "npm run build"
   publish = "."
 
-# Redirect agar /blog dan /blog/* diarahkan ke hasil build Eleventy
-[[redirects]]
-  from = "/blog"
-  to = "/blog/"
-  status = 301
-
+# Redirect agar semua /blog/* diarahkan ke hasil build Eleventy
 [[redirects]]
   from = "/blog/*"
   to = "/blog/_site/:splat"
@@ -19,7 +14,8 @@
   to = "/blog/_site/posts/:splat"
   status = 200
 
+# Redirect agar gambar bisa diakses langsung
 [[redirects]]
-from = "/images/uploads/*"
-to = "/blog/images/uploads/:splat"
-status = 200
+  from = "/images/uploads/*"
+  to = "/blog/images/uploads/:splat"
+  status = 200
