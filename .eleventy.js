@@ -1,27 +1,24 @@
-// blog/.eleventy.js
 import { DateTime } from "luxon";
 
+/** @type {import("@11ty/eleventy").UserConfig} */
 export default function (eleventyConfig) {
-  // 🔹 Tambahkan filter agar `readableDate` dikenali di build
+  // ✅ Tambahkan filter readableDate
   eleventyConfig.addFilter("readableDate", (dateObj) => {
     if (!dateObj) return "";
     return DateTime.fromJSDate(dateObj, { zone: "utc" }).toFormat("dd LLL yyyy");
   });
 
-  // 🔹 Copy folder CSS & images ke output (_site)
-  eleventyConfig.addPassthroughCopy("blog/css");
+  // ✅ Salin file statis
   eleventyConfig.addPassthroughCopy("blog/images");
+  eleventyConfig.addPassthroughCopy("blog/css");
 
-  // 🔹 Pengaturan direktori utama
+  // ✅ Konfigurasi folder input/output
   return {
     dir: {
       input: "blog",
       includes: "_includes",
-      data: "_data",
-      output: "blog/_site"
+      layouts: "_includes",
+      output: "blog/_site",
     },
-    markdownTemplateEngine: "njk",
-    htmlTemplateEngine: "njk",
-    dataTemplateEngine: "njk"
   };
 }

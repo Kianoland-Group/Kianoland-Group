@@ -1,12 +1,14 @@
 {
   "name": "kianoland",
   "version": "1.0.0",
+  "type": "module",
   "scripts": {
     "build": "npm run build:blog",
-    "build:blog": "npx @11ty/eleventy --input=blog --output=blog/_site"
+    "build:blog": "npx @11ty/eleventy --input=blog --output=blog/_site",
+    "serve": "npx @11ty/eleventy --serve --input=blog --output=blog/_site"
   },
   "dependencies": {
-    "@11ty/eleventy": "^3.0.0",
+    "@11ty/eleventy": "^3.1.2",
     "luxon": "^3.7.2"
   }
 }
