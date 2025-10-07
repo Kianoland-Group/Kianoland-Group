@@ -8,6 +8,7 @@ export default function (eleventyConfig) {
   });
 
   // ✅ Salin file dari luar folder blog ke hasil build
+  eleventyConfig.addPassthroughCopy("../admin");
   eleventyConfig.addPassthroughCopy({ "../css": "css" });
   eleventyConfig.addPassthroughCopy({ "../images": "images" });
 
