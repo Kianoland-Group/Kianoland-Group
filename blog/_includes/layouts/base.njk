@@ -10,6 +10,12 @@
   {% include "partials/header.njk" %}
 
   <main class="container mt-3 pt-5">
+
+    {# tampilkan thumbnail bila ada #}
+    {% if thumbnail %}
+      <img src="{{ thumbnail }}" alt="{{ title }}" class="img-fluid mb-4 rounded">
+    {% endif %}
+
     {{ content | safe }}
   </main>
 
