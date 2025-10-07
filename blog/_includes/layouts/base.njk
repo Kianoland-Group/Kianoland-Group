@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{ title }} | Kianoland Group</title>
+  {% include "partials/head-resources.njk" %}
+</head>
+<body>
+  {% include "partials/header.njk" %}
+
+  <main class="container mt-5 pt-5">
+    {{ content | safe }}
+  </main>
+
+  {% include "partials/footer.njk" %}
+  {% include "partials/scripts.njk" %}
+</body>
+</html>
