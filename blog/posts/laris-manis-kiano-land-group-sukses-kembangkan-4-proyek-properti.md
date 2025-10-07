@@ -1,5 +1,4 @@
 ---
-layout: post.njk
 title: "Laris Manis, Kiano Land Group Sukses Kembangkan 4 Proyek Properti"
 date: 2025-10-06T20:26:54.082Z
 summary: "Direktur Utama PT. Kiano Karya Cemerlang (Kiano Land Group) Afrikani Indra mengatakan, keyakinan terhadap dampak resesi di sektor properti tidak akan seburuk yang dikhawatirkan."
