@@ -16,8 +16,11 @@ export default function (eleventyConfig) {
     dir: {
       input: "blog",
       includes: "_includes",
-      layouts: "_includes",
-      output: ".", // hasil build langsung ke root project
+      layouts: "_includes/layouts",   // ✅ pastikan pointing ke folder layouts
+      output: ".", 
     },
+    markdownTemplateEngine: "njk",
+    htmlTemplateEngine: "njk",
+    dataTemplateEngine: "njk",
   };
 }
