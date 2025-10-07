@@ -2,7 +2,7 @@
   command = "npm run build"
   publish = "blog/_site"
 
-[redirects]
+[[redirects]]
   from = "/blog/*"
   to = "/blog/:splat"
   status = 200

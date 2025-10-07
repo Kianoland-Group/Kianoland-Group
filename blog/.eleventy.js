@@ -2,16 +2,17 @@
 import { DateTime } from "luxon";
 
 export default function (eleventyConfig) {
-  // 🔹 Passthrough copy biar CSS & images bisa muncul
-  eleventyConfig.addPassthroughCopy("blog/css");
-  eleventyConfig.addPassthroughCopy("blog/images");
-
-  // 🔹 Tambahkan filter tanggal agar readableDate bisa digunakan
+  // 🔹 Tambahkan filter agar `readableDate` dikenali di build
   eleventyConfig.addFilter("readableDate", (dateObj) => {
+    if (!dateObj) return "";
     return DateTime.fromJSDate(dateObj, { zone: "utc" }).toFormat("dd LLL yyyy");
   });
 
-  // 🔹 Konfigurasi dasar Eleventy
+  // 🔹 Copy folder CSS & images ke output (_site)
+  eleventyConfig.addPassthroughCopy("blog/css");
+  eleventyConfig.addPassthroughCopy("blog/images");
+
+  // 🔹 Pengaturan direktori utama
   return {
     dir: {
       input: "blog",
@@ -19,7 +20,7 @@ export default function (eleventyConfig) {
       data: "_data",
       output: "blog/_site"
     },
-    markdownTemplateEngine: "liquid",
+    markdownTemplateEngine: "njk",
     htmlTemplateEngine: "njk",
     dataTemplateEngine: "njk"
   };

@@ -6,6 +6,7 @@
     "build:blog": "npx @11ty/eleventy --input=blog --output=blog/_site"
   },
   "dependencies": {
-    "@11ty/eleventy": "^3.0.0"
+    "@11ty/eleventy": "^3.0.0",
+    "luxon": "^3.7.2"
   }
 }
