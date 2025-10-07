@@ -18,3 +18,8 @@
   from = "/posts/*"
   to = "/blog/_site/posts/:splat"
   status = 200
+
+[[redirects]]
+from = "/images/uploads/*"
+to = "/blog/images/uploads/:splat"
+status = 200
