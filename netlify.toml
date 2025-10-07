@@ -1,13 +1,18 @@
-# build untuk blog
 [build]
   command = "npm run build"
   publish = "."
 
-# custom build command untuk blog (opsional)
-[[plugins]]
-  package = "@netlify/plugin-functions-install-core"
+# === Redirection for blog subpath ===
+[[redirects]]
+  from = "/blog/*"
+  to = "/blog/_site/:splat"
+  status = 200
 
-# Redirect agar blog tetap jalan di /blog/
+[[redirects]]
+  from = "/blog"
+  to = "/blog/"
+  status = 301
+
 [[redirects]]
   from = "/blog/*"
   to = "/blog/_site/:splat"
