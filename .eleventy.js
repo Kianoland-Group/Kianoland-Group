@@ -18,7 +18,7 @@ export default function (eleventyConfig) {
       input: "blog",
       includes: "_includes",
       layouts: "_includes",
-      output: "blog/_site",
+      output: ".", // <-- output langsung ke root
     },
   };
 }
