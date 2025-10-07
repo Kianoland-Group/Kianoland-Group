@@ -19,7 +19,7 @@ module.exports = function(eleventyConfig) {
   return {
     dir: {
       input: ".",
-      output: "../_site/blog",
+      output: "../blog-build",
       includes: "_includes",
     },
     templateFormats: ["md", "njk", "html"],

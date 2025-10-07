@@ -1,3 +1,11 @@
 [build]
-  publish = "_site"
-  command = "cd blog && npx @11ty/eleventy"
+  publish = "."
+  command = "npm run build-blog"
+
+[context.production.environment]
+  NODE_VERSION = "18"
+
+[[redirects]]
+  from = "/blog/*"
+  to = "/blog/:splat"
+  status = 200
