@@ -23,10 +23,10 @@ export default function (eleventyConfig) {
   // 4. Konfigurasi direktori utama untuk SELURUH SITUS
   return {
     dir: {
-      input: "src",          // Folder sumber utama
-      output: "_site",       // Folder hasil build utama
-      includes: "_includes", // Folder untuk template (akan dicari di dalam 'src')
-      layouts: "_layouts"    // (opsional) jika Anda punya folder layouts di 'src/_includes'
+      input: "src",
+      output: "_site",
+      includes: "_includes",          // Folder untuk semua partials & layouts
+      layouts: "_includes/layouts"    // Subfolder khusus untuk file layout utama
     },
     markdownTemplateEngine: "njk",
     htmlTemplateEngine: "njk",
