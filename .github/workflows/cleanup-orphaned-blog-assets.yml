@@ -1,0 +1,139 @@
+name: Cleanup orphaned blog assets
+
+# Pastikan workflow berjalan hanya pada push ke branch production
+on:
+  push:
+    branches:
+      - master
+      - main
+
+# Beri permission agar workflow bisa melakukan git push
+permissions:
+  contents: write
+
+jobs:
+  cleanup:
+    # Jangan jalankan ulang jika action ini dibuat oleh github-actions bot
+    if: ${{ github.actor != 'github-actions[bot]' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository (full history)
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: true
+
+      - name: Show diff (for debugging)
+        run: |
+          echo "Before: ${{ github.event.before }}"
+          echo "After:  ${{ github.sha }}"
+          git --no-pager diff --name-status ${{ github.event.before }} ${{ github.sha }} | sed -n '1,200p' || true
+
+      - name: Detect deleted markdown files
+        run: |
+          git --no-pager diff --name-status ${{ github.event.before }} ${{ github.sha }} > /tmp/changes.txt || true
+          echo "All changes:"
+          cat /tmp/changes.txt || true
+          # Ambil path file yang di-delete (status 'D'), filter .md di folder blog/posts
+          grep '^D' /tmp/changes.txt | awk '{print $2}' | grep -E '^blog/posts/.*\.md$' > /tmp/deleted_md.txt || true
+          echo "Deleted markdown files:"
+          cat /tmp/deleted_md.txt || true
+
+      - name: Remove orphaned generated HTML and assets
+        id: cleanup
+        run: |
+          set -euo pipefail
+
+          DELETED_FILE_LIST=/tmp/deleted_md.txt
+          if [ ! -s "$DELETED_FILE_LIST" ]; then
+            echo "No deleted markdown files detected. Nothing to do."
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          CHANGED=0
+
+          BEFORE_SHA="${{ github.event.before }}"
+
+          while IFS= read -r md_path; do
+            [ -z "$md_path" ] && continue
+            echo "Processing deleted md: $md_path"
+
+            # Ambil konten file dari commit sebelum dihapus
+            if ! content=$(git show "${BEFORE_SHA}:${md_path}" 2>/dev/null); then
+              echo "  ⚠️ Could not retrieve previous content for $md_path"
+              continue
+            fi
+
+            # Coba ambil field 'slug' dari frontmatter; jika tidak ada fallback ke filename
+            slug=$(echo "$content" | sed -n 's/^slug:[[:space:]]*"\?\(.*\)"\?/\1/p' | head -n1)
+            if [ -z "$slug" ]; then
+              slug=$(basename "$md_path" .md)
+            fi
+            echo "  slug => $slug"
+
+            # Ambil thumbnail (jika ada)
+            thumbnail=$(echo "$content" | sed -n 's/^thumbnail:[[:space:]]*"\?\(.*\)"\?/\1/p' | head -n1)
+            thumbnail=$(echo "$thumbnail" | sed 's/^"\(.*\)"$/\1/' || true)
+            echo "  thumbnail => '$thumbnail'"
+
+            # Kandidat path generated HTML (sesuaikan dengan output configuration projectmu)
+            candidates=(
+              "blog/_site/${slug}/index.html"
+              "blog/_site/${slug}.html"
+              "blog/_site/posts/${slug}/index.html"
+              "_site/blog/${slug}/index.html"
+              "_site/blog/posts/${slug}/index.html"
+              "_site/blog/${slug}.html"
+              "blog/${slug}.html"
+              "_site/blog/posts/${slug}.html"
+            )
+
+            for f in "${candidates[@]}"; do
+              if [ -f "$f" ]; then
+                echo "  Removing generated HTML: $f"
+                git rm -f "$f" || true
+                CHANGED=1
+              fi
+            done
+
+            # Hapus thumbnail berdasarkan path frontmatter (hilangkan leading slash jika ada)
+            if [ -n "$thumbnail" ]; then
+              candidate=$(echo "$thumbnail" | sed 's@^/@@')
+              if [ -f "$candidate" ]; then
+                echo "  Removing thumbnail: $candidate"
+                git rm -f "$candidate" || true
+                CHANGED=1
+              elif [ -f "blog/$candidate" ]; then
+                echo "  Removing thumbnail: blog/$candidate"
+                git rm -f "blog/$candidate" || true
+                CHANGED=1
+              fi
+            fi
+
+            # Hapus gambar yang namanya mirip dengan basename markdown di images/uploads
+            base=$(basename "$md_path" .md)
+            for img in images/uploads/"${base}"*; do
+              if [ -f "$img" ]; then
+                echo "  Removing related image: $img"
+                git rm -f "$img" || true
+                CHANGED=1
+              fi
+            done
+
+          done < "$DELETED_FILE_LIST"
+
+          if [ "$CHANGED" -eq 1 ]; then
+            echo "Committing removals..."
+            git commit -m "chore(blog): remove orphaned generated HTML and assets for deleted posts" || true
+            echo "Pushing commit back to repo..."
+            git push origin HEAD:${{ github.ref_name }} || true
+            echo "Changes pushed."
+          else
+            echo "No files removed; nothing to commit."
+          fi
+
+      - name: Done
+        run: echo "Cleanup job finished."
