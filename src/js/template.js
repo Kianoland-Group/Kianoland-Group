@@ -19,7 +19,7 @@ function loadTemplate(id, path) {
     });
 }
 
-// ✅ Load semua partial dari root /template/
-loadTemplate('footer-placeholder', '/template/footer.html');
-loadTemplate('whatsapp-button', '/template/whatsapp-button.html');
-loadTemplate('chattbot', '/template/chattbot.html');
+// ✅ Load semua partial dari _includes
+loadTemplate('footer-placeholder', '/_includes/footer.html');
+loadTemplate('whatsapp-button', '/_includes/whatsapp-button.html');
+loadTemplate('chattbot', '/_includes/chattbot.html');
