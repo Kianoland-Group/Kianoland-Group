@@ -2,20 +2,12 @@
   command = "npm run build"
   publish = "_site"
 
-# Redirect agar semua /blog/* diarahkan ke hasil build Eleventy
-[[redirects]]
-  from = "/blog/*"
-  to = "/_site/blog/:splat"
-  status = 200
+# Anda mungkin tidak memerlukan redirect sama sekali.
+# Coba hapus semua aturan di bawah ini terlebih dahulu.
+# Jika Anda benar-benar membutuhkannya (misalnya untuk Netlify CMS),
+# versi yang benar adalah seperti ini (tanpa "/_site"):
 
-# Redirect agar semua /posts/... diarahkan ke hasil build blog
-[[redirects]]
-  from = "/posts/*"
-  to = "/blog/_site/posts/:splat"
-  status = 200
-
-# Redirect agar gambar bisa diakses langsung
-[[redirects]]
-  from = "/images/uploads/*"
-  to = "/blog/images/uploads/:splat"
-  status = 200
+# [[redirects]]
+#   from = "/images/uploads/*"
+#   to = "/images/uploads/:splat"
+#   status = 200
