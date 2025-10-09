@@ -1164,26 +1164,32 @@ html, body {
 }
 
 .custom-btn-berita {
-  background-color: #0071c8; /* Warna background tombol */
-  color: white; /* Warna teks tombol */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #0071c8; /* Warna biru */
+  color: white; /* Warna teks */
   border: none;
-  padding: 5px 10px;
+  padding: 10px 20px;
+  border-radius: 50px; /* Membuat bentuk oval */
+  font-size: 16px;
+  font-weight: 500;
+  text-decoration: none; /* Hilangkan underline */
   cursor: pointer;
-  border-radius: 50px;
-  width: 160px;
-  height: 45px;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s ease;
 }
+
 .custom-btn-berita:hover {
-  background-color: #005a99;
+  background-color: #005a99; /* Biru lebih gelap saat hover */
 }
 
 .custom-btn-berita i {
-  transition: transform 0.3s; /* Animasi hanya untuk panah */
+  margin-left: 8px; /* Jarak antara teks dan ikon */
+  transition: transform 0.3s;
 }
 
 .custom-btn-berita:hover i {
-  transform: translateX(5px); /* Menggerakkan panah ke kanan saat hover */
+  transform: translateX(5px); /* Ikon bergeser ke kanan saat hover */
 }
 
 .google-map {
