@@ -7,7 +7,7 @@ export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/css");
   eleventyConfig.addPassthroughCopy("src/js");
   eleventyConfig.addPassthroughCopy("src/blog/images"); // Contoh jika ada gambar khusus blog
-  // Tambahkan folder lain dari 'src' yang perlu disalin jika ada.
+  eleventyConfig.addPassthroughCopy("src/_includes");
 
   // 2. Tambahkan filter tanggal (ini sudah benar)
   eleventyConfig.addFilter("readableDate", (dateObj) => {
