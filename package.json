@@ -3,9 +3,7 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "build": "npm run build:blog",
-    "build:blog": "npx @11ty/eleventy --input=blog --output=_site/blog",
-    "serve:blog": "npx @11ty/eleventy --serve --input=blog --output=_site/blog"
+    "build": "npx @11ty/eleventy"
   },
   "dependencies": {
     "@11ty/eleventy": "^3.1.2",
