@@ -1166,17 +1166,16 @@ html, body {
 .custom-btn-berita {
   background-color: #0071c8; /* Warna background tombol */
   color: white; /* Warna teks tombol */
-  border: none; /* Menghilangkan border default */
-  padding: 5px 10px; /* Mengatur padding tombol */
-  cursor: pointer; /* Menambahkan pointer saat hover */
-  border-radius: 50px; /* Membuat sudut tombol sedikit melengkung */
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 50px;
   width: 160px;
   height: 45px;
-  transition: background-color 0.3s; /* Menghapus animasi transform dan box-shadow */
+  transition: background-color 0.3s;
 }
-
 .custom-btn-berita:hover {
-  background-color: #005a99; /* Mengubah warna background saat hover */
+  background-color: #005a99;
 }
 
 .custom-btn-berita i {
