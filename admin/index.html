@@ -49,12 +49,18 @@
                 create: true,
                 slug: "{{slug}}",
                 fields: [
-                { label: "Judul", name: "title", widget: "string" },
-                { label: "Tanggal", name: "date", widget: "datetime" },
-                { label: "Deskripsi Singkat", name: "summary", widget: "text" },
-                { label: "Gambar Utama", name: "thumbnail", widget: "image" },
-                { label: "Isi Artikel", name: "body", widget: "markdown" },
-                { label: "Tags", name: "tags", widget: "list", default: ["blog"] }
+                  { label: "Judul", name: "title", widget: "string" },
+                  { label: "Tanggal", name: "date", widget: "datetime" },
+                  { label: "Deskripsi Singkat", name: "summary", widget: "text" },
+                  { label: "Gambar Utama", name: "thumbnail", widget: "image" },
+                  { label: "Isi Artikel", name: "body", widget: "markdown" },
+                  {
+                    label: "Tags",
+                    name: "tags",
+                    widget: "list",
+                    default: ["blog"],
+                    hidden: true   // 🟢 ini kuncinya!
+                  }
                 ],
             },
             ],

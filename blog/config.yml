@@ -23,3 +23,10 @@ collections:
       - { label: "Deskripsi Singkat", name: "summary", widget: "text" }
       - { label: "Gambar Utama", name: "thumbnail", widget: "image" }
       - { label: "Isi Artikel", name: "body", widget: "markdown" }
+      - {
+          label: "Tags",
+          name: "tags",
+          widget: "list",
+          default: ["blog"],
+          hidden: true,
+        }
