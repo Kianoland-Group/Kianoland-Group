@@ -5,7 +5,7 @@
 # Redirect agar semua /blog/* diarahkan ke hasil build Eleventy
 [[redirects]]
   from = "/blog/*"
-  to = "/blog/_site/:splat"
+  to = "/_site/blog/:splat"
   status = 200
 
 # Redirect agar semua /posts/... diarahkan ke hasil build blog
