@@ -1,6 +1,12 @@
 backend:
   name: git-gateway
   branch: master
+  site_domain: kianolandgroup.com
+  publish_mode: editorial_workflow
+  # tambahkan ini:
+  base_url: https://api.netlify.com
+  auth_endpoint: /.netlify/functions/auth
+  webhook_url: https://api.netlify.com/build_hooks/68e77b4e55d115bd755ed8cf
 
 media_folder: "blog/images/uploads"
 public_folder: "/images/uploads"
