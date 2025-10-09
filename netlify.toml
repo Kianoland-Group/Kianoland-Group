@@ -1,6 +1,6 @@
 [build]
   command = "npm run build"
-  publish = "."
+  publish = "_site"
 
 # Redirect agar semua /blog/* diarahkan ke hasil build Eleventy
 [[redirects]]
